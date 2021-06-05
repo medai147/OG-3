@@ -64,7 +64,7 @@ public class Story : MonoBehaviour
         if(_qdataList[index].storyText.Length == messageCount)
         {
             click = 1;
-            novelSpeed = 0.3f;
+            novelSpeed = 0.2f;
         }
     }
 
