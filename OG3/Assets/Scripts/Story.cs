@@ -9,7 +9,16 @@ public class Story : MonoBehaviour
     private Text _story; //ストーリーテキスト
     private Text _name;
     private AudioSource Soundbgm; //bgm
-    public Image ouzi;//Image
+    public GameObject charactercenter;
+    public GameObject characterright;
+    public GameObject characterleft;
+    public Sprite ouziSprite;
+    public Sprite rukiaSprite;
+    public Sprite clearSprite;
+    private string centersr;
+    private string rightsr;
+    private string leftsr;
+
     GameObject _Screenbutton;//button
     public TextAsset storyText; //csvストーリーデータ
     private string _storyArray;
@@ -49,12 +58,57 @@ public class Story : MonoBehaviour
 
 
     }
-
     private IEnumerator Novel(int index)
     {
         int messageCount = 0; //表示中の文字数
         _story.text = "";
         _name.text = _qdataList[index].nameText;
+
+        //センター画像
+        centersr = _qdataList[index].centerimage;
+        Image centerCharacter = (Image)charactercenter.GetComponent<Image>();
+        if (int.Parse(centersr) == 1)
+        {
+            centerCharacter.sprite = ouziSprite;
+        }else if(int.Parse(centersr) == 2)
+        {
+            centerCharacter.sprite = rukiaSprite;
+        } else if(int.Parse(centersr) == 0)
+        {
+            centerCharacter.sprite = clearSprite;
+        }
+        //ライト画像
+        rightsr = _qdataList[index].rightimage;
+        Image rightCharacter = (Image)characterright.GetComponent<Image>();
+        if (int.Parse(rightsr) == 1)
+        {
+            rightCharacter.sprite = ouziSprite;
+        }
+        else if (int.Parse(rightsr) == 2)
+        {
+            rightCharacter.sprite = rukiaSprite;
+        }
+        else if (int.Parse(rightsr) == 0)
+        {
+            rightCharacter.sprite = clearSprite;
+        }
+
+        //レフト画像
+        leftsr = _qdataList[index].leftimage;
+        Image leftCharacter = (Image)characterleft.GetComponent<Image>();
+        if (int.Parse(leftsr) == 1)
+        {
+            leftCharacter.sprite = ouziSprite;
+        }
+        else if (int.Parse(leftsr) == 2)
+        {
+            leftCharacter.sprite = rukiaSprite;
+        }
+        else if (int.Parse(leftsr) == 0)
+        {
+            leftCharacter.sprite = clearSprite;
+        }
+
         while (_qdataList[index].storyText.Length > messageCount)
         {
             _story.text += _qdataList[index].storyText[messageCount];
@@ -64,7 +118,7 @@ public class Story : MonoBehaviour
         if(_qdataList[index].storyText.Length == messageCount)
         {
             click = 1;
-            novelSpeed = 0.3f;
+            novelSpeed = 0.1f;
         }
     }
 
@@ -93,25 +147,30 @@ public class Qdata
 {
     int number;
     public string storyText;
-    public string imageText;
     public string nameText;
+    public string centerimage;
+    public string rightimage;
+    public string leftimage;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 4)
+        if (spTxt.Length == 6)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
-            imageText = spTxt[2];
-            nameText = spTxt[3];
+            nameText = spTxt[2];
+            centerimage = spTxt[3];
+            rightimage = spTxt[4];
+            leftimage = spTxt[5];
+            
         }
 
     }
 
     public void WriteDebugLog()
     {
-        Debug.Log(number + "\t" + storyText + "\t" + imageText + "\t" + nameText + "\t");
+        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t");
     }
 
 }

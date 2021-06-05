@@ -1,4 +1,4 @@
-﻿number,mainstory,characterimage,name
-1,おはよう。僕の名前は犬山桜児,ouzi,犬山　桜児
-2,今日は良い天気だね,ouzi,犬山　桜児
-3,今日も一日頑張ろう！,ouzi,犬山　桜児
+﻿number,mainstory,name,centercharacterimage,rightcenterimage,leftcenterimage
+1,「おはよう。僕の名前は犬山桜児」,犬山　桜児,1,0,0
+2,「今日は良い天気だね」,犬山　桜児,0,1,2
+3,「今日も一日頑張ろう！」,本田 琉絆空,0,1,2
