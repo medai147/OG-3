@@ -18,6 +18,10 @@ public class Story : MonoBehaviour
     public int qstory = 0; //storyの番号
     public int qNum = 0; //story数
 
+    public float novelSpeed; //表示の速さ
+    private int click = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +38,6 @@ public class Story : MonoBehaviour
             _qdataList.Add(new Qdata(line));
             qNum++;           
         }
-        setStory(qstory++);
         print("A");
           //最初のストーリーをセット
         //確認のためにConsoleに出力
@@ -42,15 +45,27 @@ public class Story : MonoBehaviour
         {
             q.WriteDebugLog();
         }
+        StartCoroutine(Novel(qstory++));
 
 
     }
 
-    //質問番号を渡すと、その番号の質問をセットするメソッド
-    private void setStory(int index)
+    private IEnumerator Novel(int index)
     {
-        _story.text = _qdataList[index].storyText;  //質問文テキストに質問文をセット
+        int messageCount = 0; //表示中の文字数
+        _story.text = "";
         _name.text = _qdataList[index].nameText;
+        while (_qdataList[index].storyText.Length > messageCount)
+        {
+            _story.text += _qdataList[index].storyText[messageCount];
+            messageCount++;
+            yield return new WaitForSeconds(novelSpeed);
+        }
+        if(_qdataList[index].storyText.Length == messageCount)
+        {
+            click = 1;
+            novelSpeed = 0.3f;
+        }
     }
 
     // Update is called once per frame
@@ -60,9 +75,14 @@ public class Story : MonoBehaviour
 
     public void onClick_Screenbutton()
     {
-        if (qNum > qstory)
+        if(click == 0)
         {
-            setStory(qstory++);
+            novelSpeed = 0;
+        }
+        if (qNum > qstory && click == 1)
+        {
+            StartCoroutine(Novel(qstory++));
+            click = 0;
         }
     }
 

@@ -321,6 +321,7 @@ MonoBehaviour:
   storyText: {fileID: 4900000, guid: a1ff82b0501e08c4ba3a24fe83f56bca, type: 3}
   qstory: 0
   qNum: 0
+  novelSpeed: 0.3
 --- !u!82 &149050668
 AudioSource:
   m_ObjectHideFlags: 0
