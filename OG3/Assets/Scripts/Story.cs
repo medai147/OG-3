@@ -12,12 +12,26 @@ public class Story : MonoBehaviour
     public GameObject charactercenter;
     public GameObject characterright;
     public GameObject characterleft;
+    public GameObject background;
     public Sprite ouziSprite;
     public Sprite rukiaSprite;
+    public Sprite hikaruSprite;
     public Sprite clearSprite;
+    public Sprite statueSprite;
+    public Sprite ouziojiSprite;
+    public Sprite rukiaojiSprite;
+    public Sprite hikaruojiSprite;
+    public Sprite back_classroomSprite;
+    public Sprite back_stairsSprite;
+    public Sprite back_corridorSprite;
+    public Sprite back_gardenSprite;
+    public Sprite back_schoolSprite;
+    public Sprite back_dispensarySprite;
+    public Sprite blackSprite;
     private string centersr;
     private string rightsr;
     private string leftsr;
+    private string backsr;
 
     GameObject _Screenbutton;//button
     public TextAsset storyText; //csvストーリーデータ
@@ -64,18 +78,72 @@ public class Story : MonoBehaviour
         _story.text = "";
         _name.text = _qdataList[index].nameText;
 
+        //背景
+        backsr = _qdataList[index].backimage;
+        Image backimage = (Image)background.GetComponent<Image>();
+        if (int.Parse(backsr) == 1)
+        {
+            backimage.sprite = back_corridorSprite;
+        }
+        else if (int.Parse(backsr) == 2)
+        {
+            backimage.sprite = back_stairsSprite;
+        }
+        else if (int.Parse(backsr) == 0)
+        {
+            backimage.sprite = back_classroomSprite;
+        }
+        else if (int.Parse(backsr) == 3)
+        {
+            backimage.sprite = back_gardenSprite;
+        }
+        else if (int.Parse(backsr) == 4)
+        {
+            backimage.sprite = back_schoolSprite;
+        }
+        else if (int.Parse(backsr) == 5)
+        {
+            backimage.sprite = back_dispensarySprite;
+        }
+        else if (int.Parse(backsr) == 24)
+        {
+            backimage.sprite = blackSprite;
+        }
+
+
         //センター画像
         centersr = _qdataList[index].centerimage;
         Image centerCharacter = (Image)charactercenter.GetComponent<Image>();
         if (int.Parse(centersr) == 1)
         {
             centerCharacter.sprite = ouziSprite;
-        }else if(int.Parse(centersr) == 2)
+        } else if (int.Parse(centersr) == 2)
         {
             centerCharacter.sprite = rukiaSprite;
-        } else if(int.Parse(centersr) == 0)
+        }
+        else if (int.Parse(centersr) == 0)
         {
             centerCharacter.sprite = clearSprite;
+        }
+        else if (int.Parse(centersr) == 3)
+        {
+            centerCharacter.sprite = hikaruSprite;
+        }
+        else if (int.Parse(centersr) == 4)
+        {
+            centerCharacter.sprite = ouziojiSprite;
+        }
+        else if (int.Parse(centersr) == 5)
+        {
+            centerCharacter.sprite = rukiaojiSprite;
+        }
+        else if (int.Parse(centersr) == 6)
+        {
+            centerCharacter.sprite = hikaruojiSprite;
+        }
+        else if (int.Parse(centersr) == 24)
+        {
+            centerCharacter.sprite = statueSprite;
         }
         //ライト画像
         rightsr = _qdataList[index].rightimage;
@@ -92,6 +160,26 @@ public class Story : MonoBehaviour
         {
             rightCharacter.sprite = clearSprite;
         }
+        else if (int.Parse(rightsr) == 3)
+        {
+            rightCharacter.sprite = hikaruSprite;
+        }
+        else if (int.Parse(rightsr) == 4)
+        {
+            rightCharacter.sprite = ouziojiSprite;
+        }
+        else if (int.Parse(rightsr) == 5)
+        {
+            rightCharacter.sprite = rukiaojiSprite;
+        }
+        else if (int.Parse(rightsr) == 6)
+        {
+            rightCharacter.sprite = hikaruojiSprite;
+        }
+        else if (int.Parse(rightsr) == 24)
+        {
+            rightCharacter.sprite = statueSprite;
+        }
 
         //レフト画像
         leftsr = _qdataList[index].leftimage;
@@ -107,6 +195,26 @@ public class Story : MonoBehaviour
         else if (int.Parse(leftsr) == 0)
         {
             leftCharacter.sprite = clearSprite;
+        }
+        else if (int.Parse(leftsr) == 3)
+        {
+            leftCharacter.sprite = hikaruSprite;
+        }
+        else if (int.Parse(leftsr) == 4)
+        {
+            leftCharacter.sprite = ouziojiSprite;
+        }
+        else if (int.Parse(leftsr) == 5)
+        {
+            leftCharacter.sprite = rukiaojiSprite;
+        }
+        else if (int.Parse(leftsr) == 6)
+        {
+            leftCharacter.sprite = hikaruojiSprite;
+        }
+        else if (int.Parse(leftsr) == 24)
+        {
+            leftCharacter.sprite = statueSprite;
         }
 
         while (_qdataList[index].storyText.Length > messageCount)
@@ -151,11 +259,12 @@ public class Qdata
     public string centerimage;
     public string rightimage;
     public string leftimage;
+    public string backimage;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 6)
+        if (spTxt.Length == 7)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -163,6 +272,7 @@ public class Qdata
             centerimage = spTxt[3];
             rightimage = spTxt[4];
             leftimage = spTxt[5];
+            backimage = spTxt[6];
             
         }
 
