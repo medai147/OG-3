@@ -13,6 +13,7 @@ public class Story : MonoBehaviour
     public GameObject characterright;
     public GameObject characterleft;
     public GameObject background;
+    public GameObject still;
     public Sprite ouziSprite;
     public Sprite rukiaSprite;
     public Sprite hikaruSprite;
@@ -28,10 +29,13 @@ public class Story : MonoBehaviour
     public Sprite back_schoolSprite;
     public Sprite back_dispensarySprite;
     public Sprite blackSprite;
+    public Sprite still_clearSprite;
+    public Sprite still_AprilSprite;
     private string centersr;
     private string rightsr;
     private string leftsr;
     private string backsr;
+    private string stillsr;
 
     GameObject _Screenbutton;//button
     public TextAsset storyText; //csvストーリーデータ
@@ -78,6 +82,18 @@ public class Story : MonoBehaviour
         _story.text = "";
         _name.text = _qdataList[index].nameText;
 
+        //一枚絵
+        stillsr = _qdataList[index].stillimage;
+        Image stillimage = (Image)still.GetComponent<Image>();
+        if (int.Parse(stillsr) == 0)
+        {
+            stillimage.sprite = still_clearSprite;
+        }
+        else if (int.Parse(stillsr) == 4)
+        {
+            stillimage.sprite = still_AprilSprite;
+        }
+
         //背景
         backsr = _qdataList[index].backimage;
         Image backimage = (Image)background.GetComponent<Image>();
@@ -108,6 +124,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(backsr) == 24)
         {
             backimage.sprite = blackSprite;
+        }
+        else if(int.Parse(backsr) == 30)
+        {
+            backimage.sprite = still_AprilSprite;
         }
 
 
@@ -260,11 +280,12 @@ public class Qdata
     public string rightimage;
     public string leftimage;
     public string backimage;
+    public string stillimage;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 7)
+        if (spTxt.Length == 8)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -273,6 +294,7 @@ public class Qdata
             rightimage = spTxt[4];
             leftimage = spTxt[5];
             backimage = spTxt[6];
+            stillimage = spTxt[7];
             
         }
 
