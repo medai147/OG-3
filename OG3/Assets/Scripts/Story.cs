@@ -47,6 +47,7 @@ public class Story : MonoBehaviour
 
     public float novelSpeed; //表示の速さ
     private int click = 0;
+    private int kakuninnyou = 0;
 
 
     // Start is called before the first frame update
