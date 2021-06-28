@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Story : MonoBehaviour
@@ -36,6 +38,7 @@ public class Story : MonoBehaviour
     private string leftsr;
     private string backsr;
     private string stillsr;
+    private string colorsr;
 
     GameObject _Screenbutton;//button
     public TextAsset storyText; //csvストーリーデータ
@@ -44,10 +47,9 @@ public class Story : MonoBehaviour
 
     public int qstory = 0; //storyの番号
     public int qNum = 0; //story数
-
+    public int savenum = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
-    private int kakuninnyou = 0;
 
 
     // Start is called before the first frame update
@@ -56,6 +58,11 @@ public class Story : MonoBehaviour
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
         _Screenbutton = GameObject.Find("Screenbutton");
+
+        PlayerPrefs.SetInt("SAVE", 0);
+        PlayerPrefs.Save();
+
+        qstory = PlayerPrefs.GetInt("NUMBERLOAD");
 
         //csvファイルからテキストを読み込み
         StringReader sr = new StringReader(storyText.text);
@@ -237,6 +244,31 @@ public class Story : MonoBehaviour
         {
             leftCharacter.sprite = statueSprite;
         }
+        //画像の色
+        colorsr = _qdataList[index].charactercolor;
+        if(int.Parse(colorsr) == 0)
+        {
+            centerCharacter.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            rightCharacter.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            leftCharacter.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }else if(int.Parse(colorsr) == 1)
+        {
+            centerCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            rightCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            leftCharacter.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }else if(int.Parse(colorsr) == 2)
+        {
+            centerCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            rightCharacter.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            leftCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+        }
+        else
+        {
+            centerCharacter.GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            rightCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            leftCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+        }
+
 
         while (_qdataList[index].storyText.Length > messageCount)
         {
@@ -254,6 +286,20 @@ public class Story : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Keysave();
+    }
+
+    private void Keysave()
+    {
+        if (Input.GetKey(KeyCode.S))
+        {
+            savenum = 1;
+            PlayerPrefs.SetInt("SAVE", savenum);
+            PlayerPrefs.Save();
+            PlayerPrefs.SetInt("NUMBER", qstory);
+            PlayerPrefs.Save();
+            SceneManager.LoadScene("save scene");
+        }
     }
 
     public void onClick_Screenbutton()
@@ -282,11 +328,12 @@ public class Qdata
     public string leftimage;
     public string backimage;
     public string stillimage;
+    public string charactercolor;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 8)
+        if (spTxt.Length == 9)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -296,6 +343,7 @@ public class Qdata
             leftimage = spTxt[5];
             backimage = spTxt[6];
             stillimage = spTxt[7];
+            charactercolor = spTxt[8];
             
         }
 
@@ -307,3 +355,4 @@ public class Qdata
     }
 
 }
+
