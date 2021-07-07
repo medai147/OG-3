@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/start scene.unity
     guid: 7e61d13b3f5c00b4689964a7574ab6ed
+  - enabled: 1
+    path: Assets/Scenes/icegame scene.unity
+    guid: 549deb0ff859a9444bf215a1bd34874a
   m_configObjects: {}
