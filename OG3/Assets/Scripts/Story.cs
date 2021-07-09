@@ -39,6 +39,21 @@ public class Story : MonoBehaviour
     private string backsr;
     private string stillsr;
     private string colorsr;
+    private string bgm_state_sr;
+    private string bgm_num_sr;
+    private string se_num_sr;
+    private string selectdisp_sr;
+    private string selectbutton_num_sr;
+
+    public AudioClip bgm1;
+    public AudioClip bgm2;
+    public AudioClip bgm3;
+
+    public AudioClip[] cv;
+
+    public AudioClip se1;
+
+    AudioSource[] sounds;
 
     GameObject _Screenbutton;//button
     public TextAsset storyText; //csvストーリーデータ
@@ -51,10 +66,24 @@ public class Story : MonoBehaviour
     public float novelSpeed; //表示の速さ
     private int click = 0;
 
+    [SerializeField] GameObject ScreenButton;
+    [SerializeField] GameObject SelectButtonPanel;
+
+    [SerializeField] GameObject SelectButton_3;
+
+    private int selected = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        //BGM初期状態
+        sounds = GetComponents<AudioSource>();
+        sounds[0].clip = bgm1;
+        sounds[0].Play();
+
+        //選択肢パネル非表示
+        SelectButtonPanel.SetActive(false);
+
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
         _Screenbutton = GameObject.Find("Screenbutton");
@@ -73,7 +102,7 @@ public class Story : MonoBehaviour
             _qdataList.Add(new Qdata(line));
             qNum++;           
         }
-        print("A");
+        //print("A");
           //最初のストーリーをセット
         //確認のためにConsoleに出力
         foreach (Qdata q in _qdataList)
@@ -89,6 +118,69 @@ public class Story : MonoBehaviour
         int messageCount = 0; //表示中の文字数
         _story.text = "";
         _name.text = _qdataList[index].nameText;
+
+        //SE
+        se_num_sr = _qdataList[index].se_num;
+        if (int.Parse(se_num_sr) == 1)
+        {
+            sounds[1].PlayOneShot(se1);
+        }
+
+        //CV
+        Debug.Log(index);
+        sounds[2].PlayOneShot(cv[index]);
+
+        //BGM種類
+        bgm_num_sr = _qdataList[index].bgm_num;
+        if (int.Parse(bgm_num_sr) == 1)
+        {
+            sounds[0].clip = bgm1;
+        }
+        if (int.Parse(bgm_num_sr) == 2)
+        {
+            sounds[0].clip = bgm2;
+        }
+        if (int.Parse(bgm_num_sr) == 3)
+        {
+            sounds[0].clip = bgm3;
+        }
+
+        //BGM状態
+        bgm_state_sr = _qdataList[index].bgm_state;
+        if (int.Parse(bgm_state_sr) == 1)
+        {
+            sounds[0].Play();
+        }
+        if (int.Parse(bgm_state_sr) == 2)
+        {
+            sounds[0].Stop();
+        }
+
+        SelectButton_3.SetActive(true);
+
+        //選択肢が３つ以外の時はSelectButton_3を表示しない
+        selectbutton_num_sr = _qdataList[index].selectbutton_num;
+        //Debug.Log("selectbutton_num_sr: " + selectbutton_num_sr);
+        if (int.Parse(selectbutton_num_sr) != 3)
+        {
+            //Debug.Log(selectbutton_num_sr);
+            SelectButton_3.SetActive(false);
+        }
+
+        //選択肢パネル表示
+        selectdisp_sr = _qdataList[index].selectdisp;
+        if (int.Parse(selectdisp_sr) == 1)
+        {
+            novelSpeed = 0;
+            ScreenButton.SetActive(false);
+            SelectButtonPanel.SetActive(true);
+            if (selected == 0)
+            {
+                SelectButtonPanel.SetActive(true);
+                ScreenButton.SetActive(false);
+            }
+        }
+
 
         //一枚絵
         stillsr = _qdataList[index].stillimage;
@@ -310,11 +402,35 @@ public class Story : MonoBehaviour
         }
         if (qNum > qstory && click == 1)
         {
+            sounds[2].Stop();
             StartCoroutine(Novel(qstory++));
             click = 0;
         }
     }
 
+    public void onClick_SelectButton_3()
+    {
+        selected = 1;
+        SelectButtonPanel.SetActive(false);
+        ScreenButton.SetActive(true);
+        onClick_Screenbutton();
+    }
+
+    public void onClick_SelectButton_1()
+    {
+        selected = 1;
+        SelectButtonPanel.SetActive(false);
+        ScreenButton.SetActive(true);
+        onClick_Screenbutton();
+    }
+
+    public void onClick_SelectButton_2()
+    {
+        selected = 1;
+        SelectButtonPanel.SetActive(false);
+        ScreenButton.SetActive(true);
+        onClick_Screenbutton();
+    }
 }
 
 //質問を管理するクラス
@@ -329,11 +445,16 @@ public class Qdata
     public string backimage;
     public string stillimage;
     public string charactercolor;
+    public string bgm_state;
+    public string bgm_num;
+    public string se_num;
+    public string selectdisp;
+    public string selectbutton_num;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 9)
+        if (spTxt.Length == 14)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -344,14 +465,17 @@ public class Qdata
             backimage = spTxt[6];
             stillimage = spTxt[7];
             charactercolor = spTxt[8];
-            
+            bgm_state = spTxt[9];
+            bgm_num = spTxt[10];
+            se_num = spTxt[11];
+            selectdisp = spTxt[12];
+            selectbutton_num = spTxt[13];
         }
-
     }
 
     public void WriteDebugLog()
     {
-        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t");
+        //Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t");
     }
 
 }
