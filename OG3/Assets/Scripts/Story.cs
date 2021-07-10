@@ -24,6 +24,8 @@ public class Story : MonoBehaviour
     public Sprite ouziojiSprite;
     public Sprite rukiaojiSprite;
     public Sprite hikaruojiSprite;
+    public Sprite ouzismileSprite;
+    public Sprite hikarutroubleSprite;
     public Sprite back_classroomSprite;
     public Sprite back_stairsSprite;
     public Sprite back_corridorSprite;
@@ -261,10 +263,19 @@ public class Story : MonoBehaviour
         {
             centerCharacter.sprite = hikaruojiSprite;
         }
+        else if (int.Parse(centersr) == 7)
+        {
+            centerCharacter.sprite = ouzismileSprite;
+        }
+        else if(int.Parse(centersr) == 8)
+        {
+            centerCharacter.sprite = hikarutroubleSprite;
+        }
         else if (int.Parse(centersr) == 24)
         {
             centerCharacter.sprite = statueSprite;
         }
+
         //ライト画像
         rightsr = _qdataList[index].rightimage;
         Image rightCharacter = (Image)characterright.GetComponent<Image>();
@@ -295,6 +306,14 @@ public class Story : MonoBehaviour
         else if (int.Parse(rightsr) == 6)
         {
             rightCharacter.sprite = hikaruojiSprite;
+        }
+        else if (int.Parse(centersr) == 7)
+        {
+            rightCharacter.sprite = ouzismileSprite;
+        }
+        else if (int.Parse(centersr) == 8)
+        {
+            rightCharacter.sprite = hikarutroubleSprite;
         }
         else if (int.Parse(rightsr) == 24)
         {
@@ -331,6 +350,14 @@ public class Story : MonoBehaviour
         else if (int.Parse(leftsr) == 6)
         {
             leftCharacter.sprite = hikaruojiSprite;
+        }
+        else if (int.Parse(centersr) == 7)
+        {
+            leftCharacter.sprite = ouzismileSprite;
+        }
+        else if (int.Parse(centersr) == 8)
+        {
+            leftCharacter.sprite = hikarutroubleSprite;
         }
         else if (int.Parse(leftsr) == 24)
         {

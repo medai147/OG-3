@@ -406,6 +406,9 @@ MonoBehaviour:
   ouziojiSprite: {fileID: 21300000, guid: 22e68f52985b9a24ba8184dcaa3d215e, type: 3}
   rukiaojiSprite: {fileID: 21300000, guid: 81d06242e24bf8c4aba67e05a4bb09e9, type: 3}
   hikaruojiSprite: {fileID: 21300000, guid: a6f01d68f7779bf419f854d164e901cd, type: 3}
+  ouzismileSprite: {fileID: 21300000, guid: 5f4d6d6343758874e956b50509ac2476, type: 3}
+  hikarutroubleSprite: {fileID: 21300000, guid: dc1a00ae52044064182d01212e38b6c8,
+    type: 3}
   back_classroomSprite: {fileID: 21300000, guid: 3d6124223901d6c4fb7ca29f95c4f217,
     type: 3}
   back_stairsSprite: {fileID: 21300000, guid: 99bc0846291460640922a80fdc23e3e9, type: 3}
