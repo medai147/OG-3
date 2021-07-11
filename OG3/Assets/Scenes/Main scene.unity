@@ -403,7 +403,7 @@ MonoBehaviour:
   hikaruSprite: {fileID: 21300000, guid: 09ad32d6fb203c94c927cabb70a5445b, type: 3}
   clearSprite: {fileID: 21300000, guid: 27e222d19f7197a44b496b7accf26704, type: 3}
   statueSprite: {fileID: 21300000, guid: 209a7bf0d4931634ebbcbf509698ad8e, type: 3}
-  ouziojiSprite: {fileID: 21300000, guid: 22e68f52985b9a24ba8184dcaa3d215e, type: 3}
+  ouziojiSprite: {fileID: 21300000, guid: 72c3c96133476244a8155d75e2dfd535, type: 3}
   rukiaojiSprite: {fileID: 21300000, guid: 81d06242e24bf8c4aba67e05a4bb09e9, type: 3}
   hikaruojiSprite: {fileID: 21300000, guid: a6f01d68f7779bf419f854d164e901cd, type: 3}
   ouzismileSprite: {fileID: 21300000, guid: 5f4d6d6343758874e956b50509ac2476, type: 3}
