@@ -16,6 +16,7 @@ public class Story : MonoBehaviour
     public GameObject characterleft;
     public GameObject background;
     public GameObject still;
+    public GameObject month;
     public Sprite ouziSprite;
     public Sprite rukiaSprite;
     public Sprite hikaruSprite;
@@ -35,6 +36,10 @@ public class Story : MonoBehaviour
     public Sprite blackSprite;
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
+    public Sprite still_May_ouzi_Sprite;
+    public Sprite still_May_hikaru_Sprite;
+    public Sprite month_MaySprite;
+    public Sprite month_clearSprite;
     private string centersr;
     private string rightsr;
     private string leftsr;
@@ -46,6 +51,7 @@ public class Story : MonoBehaviour
     private string se_num_sr;
     private string selectdisp_sr;
     private string selectbutton_num_sr;
+    private string monthsr;
 
     public AudioClip bgm1;
     public AudioClip bgm2;
@@ -54,6 +60,7 @@ public class Story : MonoBehaviour
     public AudioClip[] cv;
 
     public AudioClip se1;
+    public AudioClip Jingle;
 
     AudioSource[] sounds;
 
@@ -127,6 +134,10 @@ public class Story : MonoBehaviour
         {
             sounds[1].PlayOneShot(se1);
         }
+        if (int.Parse(se_num_sr) == 2)
+        {
+            sounds[1].PlayOneShot(Jingle);
+        }
 
         //CV
         Debug.Log(index);
@@ -194,6 +205,26 @@ public class Story : MonoBehaviour
         else if (int.Parse(stillsr) == 4)
         {
             stillimage.sprite = still_AprilSprite;
+        }
+        else if (int.Parse(stillsr) == 5)
+        {
+            stillimage.sprite = still_May_ouzi_Sprite;
+        }
+        else if (int.Parse(stillsr) == 6)
+        {
+            stillimage.sprite = still_May_hikaru_Sprite;
+        }
+
+        //月のはじめの画像
+        monthsr = _qdataList[index].monthimage;
+        Image monthimage = (Image)month.GetComponent<Image>();
+        if (int.Parse(monthsr) == 0)
+        {
+            monthimage.sprite = month_clearSprite;
+        }
+        if (int.Parse(monthsr) == 5)
+        {
+            monthimage.sprite = month_MaySprite;
         }
 
         //背景
@@ -477,11 +508,12 @@ public class Qdata
     public string se_num;
     public string selectdisp;
     public string selectbutton_num;
+    public string monthimage;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 14)
+        if (spTxt.Length == 15)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -497,6 +529,7 @@ public class Qdata
             se_num = spTxt[11];
             selectdisp = spTxt[12];
             selectbutton_num = spTxt[13];
+            monthimage = spTxt[14];
         }
     }
 
