@@ -221,10 +221,12 @@ public class Story : MonoBehaviour
         if (int.Parse(monthsr) == 0)
         {
             monthimage.sprite = month_clearSprite;
+            month.SetActive(false);
         }
         if (int.Parse(monthsr) == 5)
         {
             monthimage.sprite = month_MaySprite;
+            month.SetActive(true);
         }
 
         //背景
