@@ -27,17 +27,20 @@ public class Story : MonoBehaviour
     public Sprite hikaruojiSprite;
     public Sprite ouzismileSprite;
     public Sprite hikarutroubleSprite;
+    public Sprite ouziojismileSprite;
     public Sprite back_classroomSprite;
     public Sprite back_stairsSprite;
     public Sprite back_corridorSprite;
     public Sprite back_gardenSprite;
     public Sprite back_schoolSprite;
     public Sprite back_dispensarySprite;
+    public Sprite back_shoploadSprite;
+    public Sprite back_fancyshopSprite;
+    public Sprite back_May;
     public Sprite blackSprite;
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
-    public Sprite still_May_ouzi_Sprite;
-    public Sprite still_May_hikaru_Sprite;
+    public Sprite still_MaySprite;
     public Sprite month_MaySprite;
     public Sprite month_clearSprite;
     private string centersr;
@@ -208,11 +211,7 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(stillsr) == 5)
         {
-            stillimage.sprite = still_May_ouzi_Sprite;
-        }
-        else if (int.Parse(stillsr) == 6)
-        {
-            stillimage.sprite = still_May_hikaru_Sprite;
+            stillimage.sprite = still_MaySprite;
         }
 
         //月のはじめの画像
@@ -260,10 +259,22 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = blackSprite;
         }
-        else if(int.Parse(backsr) == 30)
+        else if (int.Parse(backsr) == 30)
         {
             backimage.sprite = still_AprilSprite;
         }
+        else if(int.Parse(backsr) == 31)
+        {
+            backimage.sprite = still_MaySprite;
+        }
+        else if(int.Parse(backsr) == 8) {
+            backimage.sprite = back_shoploadSprite;
+        }
+        else if(int.Parse(backsr) == 9)
+        {
+            backimage.sprite = back_fancyshopSprite;
+        }
+
 
 
         //センター画像

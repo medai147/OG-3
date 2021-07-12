@@ -410,6 +410,7 @@ MonoBehaviour:
   ouzismileSprite: {fileID: 21300000, guid: 5f4d6d6343758874e956b50509ac2476, type: 3}
   hikarutroubleSprite: {fileID: 21300000, guid: dc1a00ae52044064182d01212e38b6c8,
     type: 3}
+  ouziojismileSprite: {fileID: 21300000, guid: 96cb27a55d7c78c4087e2efa60eb9700, type: 3}
   back_classroomSprite: {fileID: 21300000, guid: 3d6124223901d6c4fb7ca29f95c4f217,
     type: 3}
   back_stairsSprite: {fileID: 21300000, guid: 99bc0846291460640922a80fdc23e3e9, type: 3}
@@ -419,13 +420,15 @@ MonoBehaviour:
   back_schoolSprite: {fileID: 21300000, guid: 1cbfa9c86a5489d4fbac85b404a6b2e0, type: 3}
   back_dispensarySprite: {fileID: 21300000, guid: b923a6c5406eefb48a9f1bf21e24a590,
     type: 3}
+  back_shoploadSprite: {fileID: 21300000, guid: 5dee1cf0ce1a3d94da86f98e749a2841,
+    type: 3}
+  back_fancyshopSprite: {fileID: 21300000, guid: 8d886d2bce834e643bf453457f6fd17c,
+    type: 3}
+  back_May: {fileID: 21300000, guid: c908469b2c28f554e9551cdceddac0be, type: 3}
   blackSprite: {fileID: 21300000, guid: 7e18a25445844b14c86dc41e249f8d81, type: 3}
   still_clearSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9, type: 3}
   still_AprilSprite: {fileID: 21300000, guid: fd6431e2ed7dba04f8ecf60bd7a36b83, type: 3}
-  still_May_ouzi_Sprite: {fileID: 21300000, guid: c6445688373a21e4397538218d2d863d,
-    type: 3}
-  still_May_hikaru_Sprite: {fileID: 21300000, guid: c908469b2c28f554e9551cdceddac0be,
-    type: 3}
+  still_MaySprite: {fileID: 21300000, guid: c908469b2c28f554e9551cdceddac0be, type: 3}
   month_MaySprite: {fileID: 21300000, guid: 9575414cb1e055a45b7fb301e2fce220, type: 3}
   month_clearSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9, type: 3}
   bgm1: {fileID: 8300000, guid: 8e422e083b24a3042ba7158208986672, type: 3}
