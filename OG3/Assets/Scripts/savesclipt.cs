@@ -25,6 +25,8 @@ public class savesclipt : MonoBehaviour
         save = PlayerPrefs.GetInt("SAVE");
         PlayerPrefs.SetInt("SAVE", 0);
         number = PlayerPrefs.GetInt("NUMBER");
+        //ここに飛びたいストーリー番号を書いてsave画面から始める　例  number = 34;
+
         _save1 = GameObject.Find("save1text").GetComponent<Text>();
         _save2 = GameObject.Find("save2text").GetComponent<Text>();
         _save3 = GameObject.Find("save3text").GetComponent<Text>();

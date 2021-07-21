@@ -449,19 +449,19 @@ public class Story : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Keysave();
+        Menu();
     }
 
-    private void Keysave()
+    private void Menu()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.M))
         {
             savenum = 1;
             PlayerPrefs.SetInt("SAVE", savenum);
             PlayerPrefs.Save();
             PlayerPrefs.SetInt("NUMBER", qstory);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("save scene");
+            SceneManager.LoadScene("menu scene");
         }
     }
 
