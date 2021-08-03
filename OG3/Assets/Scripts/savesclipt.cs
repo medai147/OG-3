@@ -8,6 +8,8 @@ using UnityEngine.UI;
 
 public class savesclipt : MonoBehaviour
 {
+    public GameObject loadstill;
+    public Sprite loadsprite;
     private int save;
     private static int load;
     private Text _save1;
@@ -19,6 +21,14 @@ public class savesclipt : MonoBehaviour
     private static int number2;
     private static int number3;
     private static int number4;
+    private static DateTime dt1;
+    private static DateTime dt2;
+    private static DateTime dt3;
+    private static DateTime dt4;
+    private static int[]count = { 0, 0, 0, 0 };
+    [SerializeField] GameObject loadPanel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,65 +46,62 @@ public class savesclipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _save1.text = number1.ToString("000");
-        _save2.text = number2.ToString("000");
-        _save3.text = number3.ToString("000");
-        _save4.text = number4.ToString("000");
+        _save1.text = number1.ToString("000") + "日付" + dt1;
+        _save2.text = number2.ToString("000") + "日付" + dt2;
+        _save3.text = number3.ToString("000") + "日付" + dt3;
+        _save4.text = number4.ToString("000") + "日付" + dt4;
+        if (count[0] == 0)
+        {
+            _save1.text = "セーブできるよ";
+        }
+        if(count[1] == 0)
+        {
+            _save2.text = "セーブできるよ";
+        }
+        if (count[2] == 0)
+        {
+            _save3.text = "セーブできるよ";
+        }
+        if (count[3] == 0)
+        {
+            _save4.text = "セーブできるよ";
+        }
         Debug.Log(load);
     }
     public void save1_onClicked()
     {
         Debug.Log(save);
-        if (load != 1)
-        {
-            number1 = number;
-            _save1.text = "記録されました";
-            SceneManager.LoadScene("start scene");
-        }
-        else if (load == 1)
-        {
-            if (number1 == 0)
-            {
-                PlayerPrefs.SetInt("NUMBERLOAD", number1);
-                PlayerPrefs.Save();
-            }
-            else
-            {
-                PlayerPrefs.SetInt("NUMBERLOAD", number1 - 1);
-                PlayerPrefs.Save();
-            }
-
-            load = 0;
-            SceneManager.LoadScene("main scene");
-        }
+        Save(ref number1, ref _save1, ref dt1,ref count[0]);
     }
 
     public void save2_onClicked()
     {
         Debug.Log(save);
-        Save(ref number2, ref _save2);
+        Save(ref number2, ref _save2,ref dt2,ref count[1]);
     }
 
     public void save3_onClicked()
     {
         Debug.Log(save);
-        Save(ref number3, ref _save3);
+        Save(ref number3, ref _save3,ref dt3, ref count[2]);
     }
 
     public void save4_onClicked()
     {
         Debug.Log(save);
-        Save(ref number4, ref _save4);
+        Save(ref number4, ref _save4,ref dt4, ref count[3]);
     }
 
 
 
-    public void Save(ref int savenum, ref Text savetext)
+    public void Save(ref int savenum, ref Text savetext,ref DateTime dt,ref int savecount)
     {
         if (load != 1)
 
         {
             savenum = number;
+            dt = DateTime.Now;
+            savecount = 1;
             savetext.text = "記録されました";
             SceneManager.LoadScene("start scene");
         }
@@ -102,11 +109,17 @@ public class savesclipt : MonoBehaviour
         {
             if (savenum == 0)
             {
+                loadPanel.SetActive(true);
+                Image loadimage = (Image)loadstill.GetComponent<Image>();
+                loadimage.sprite = loadsprite;
                 PlayerPrefs.SetInt("NUMBERLOAD", savenum);
                 PlayerPrefs.Save();
             }
             else
             {
+                loadPanel.SetActive(true);
+                Image loadimage = (Image)loadstill.GetComponent<Image>();
+                loadimage.sprite = loadsprite;
                 PlayerPrefs.SetInt("NUMBERLOAD", savenum - 1);
                 PlayerPrefs.Save();
             }
