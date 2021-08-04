@@ -476,6 +476,9 @@ public class Story : MonoBehaviour
             sounds[2].Stop();
             StartCoroutine(Novel(qstory++));
             click = 0;
+            if (selected == 1) {
+                selected = 0;
+            }
         }
     }
 
@@ -490,6 +493,8 @@ public class Story : MonoBehaviour
     public void onClick_SelectButton_1()
     {
         selected = 1;
+        //qstoryは　number - 1　にする(スクリーンボタンクリックで１加算されるため)
+        qstory = 1 - 1;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -498,6 +503,8 @@ public class Story : MonoBehaviour
     public void onClick_SelectButton_2()
     {
         selected = 1;
+        //qstoryは　number - 1　にする(スクリーンボタンクリックで１加算されるため)
+        qstory = 20 - 1;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -548,7 +555,7 @@ public class Qdata
 
     public void WriteDebugLog()
     {
-        //Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t");
+        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t");
     }
 
 }
