@@ -146,7 +146,7 @@ public class Story : MonoBehaviour
         }
 
         //CV
-        Debug.Log(index);
+        //Debug.Log(index);
         sounds[2].PlayOneShot(cv[index]);
 
         //BGM種類
@@ -480,17 +480,23 @@ public class Story : MonoBehaviour
         if (qNum > qstory && click == 1)
         {
             sounds[2].Stop();
-            StartCoroutine(Novel(qstory++));
-            click = 0;
-            if (selected == 1) {
-                selected = 0;
+            //StartCoroutine(Novel(qstory++));
+            //click = 0;
+            
+            //if (selected != 0) {
+            //    selected = 0;
+            //}
+            if(!(selected == 1 && qstory == 91))
+            {
+                StartCoroutine(Novel(qstory++));
+                click = 0;
             }
         }
     }
 
     public void onClick_SelectButton_3()
     {
-        selected = 1;
+        selected = 3;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -499,8 +505,8 @@ public class Story : MonoBehaviour
     public void onClick_SelectButton_1()
     {
         selected = 1;
-        //qstoryは　number - 1　にする(スクリーンボタンクリックで１加算されるため)
-        qstory = 1 - 1;
+        //qstoryは調整する
+        qstory = 70 - 2;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -508,9 +514,9 @@ public class Story : MonoBehaviour
 
     public void onClick_SelectButton_2()
     {
-        selected = 1;
-        //qstoryは　number - 1　にする(スクリーンボタンクリックで１加算されるため)
-        qstory = 20 - 1;
+        selected = 2;
+        //qstoryは調整する
+        qstory = 93 - 2;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
