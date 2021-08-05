@@ -393,6 +393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da6ef22b5864d147b33776fc5e2d825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _selectbuttontext3: {fileID: 727778091}
+  _selectbuttontext1: {fileID: 1909568686}
+  _selectbuttontext2: {fileID: 1829961250}
   charactercenter: {fileID: 1157097985}
   characterright: {fileID: 1393402817}
   characterleft: {fileID: 21378656}
@@ -1222,7 +1225,7 @@ GameObject:
   - component: {fileID: 727778092}
   - component: {fileID: 727778091}
   m_Layer: 5
-  m_Name: Text
+  m_Name: selectbuttonText3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2381,7 +2384,7 @@ GameObject:
   - component: {fileID: 1829961251}
   - component: {fileID: 1829961250}
   m_Layer: 5
-  m_Name: Text
+  m_Name: selectbuttonText2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2459,7 +2462,7 @@ GameObject:
   - component: {fileID: 1909568687}
   - component: {fileID: 1909568686}
   m_Layer: 5
-  m_Name: Text
+  m_Name: selectbuttonText1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,6 +10,9 @@ public class Story : MonoBehaviour
 {
     private Text _story; //ストーリーテキスト
     private Text _name;
+    public Text _selectbuttontext3;
+    public Text _selectbuttontext1;
+    public Text _selectbuttontext2;
     private AudioSource Soundbgm; //bgm
     public GameObject charactercenter;
     public GameObject characterright;
@@ -190,6 +193,9 @@ public class Story : MonoBehaviour
             novelSpeed = 0;
             ScreenButton.SetActive(false);
             SelectButtonPanel.SetActive(true);
+            _selectbuttontext3.text = _qdataList[index].selectbuttontext3;
+            _selectbuttontext1.text = _qdataList[index].selectbuttontext1;
+            _selectbuttontext2.text = _qdataList[index].selectbuttontext2;
             if (selected == 0)
             {
                 SelectButtonPanel.SetActive(true);
@@ -529,11 +535,14 @@ public class Qdata
     public string selectdisp;
     public string selectbutton_num;
     public string monthimage;
+    public string selectbuttontext3;
+    public string selectbuttontext1;
+    public string selectbuttontext2;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 15)
+        if (spTxt.Length == 18)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -550,12 +559,15 @@ public class Qdata
             selectdisp = spTxt[12];
             selectbutton_num = spTxt[13];
             monthimage = spTxt[14];
+            selectbuttontext3 = spTxt[15];
+            selectbuttontext1 = spTxt[16];
+            selectbuttontext2 = spTxt[17];
         }
     }
 
     public void WriteDebugLog()
     {
-        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t");
+        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
     }
 
 }
