@@ -494,6 +494,7 @@ public class Story : MonoBehaviour
         }
     }
 
+    //選択肢ボタン選択時の動き
     public void onClick_SelectButton_3()
     {
         selected = 3;
