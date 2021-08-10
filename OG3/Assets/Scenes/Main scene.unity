@@ -547,6 +547,7 @@ MonoBehaviour:
   novelSpeed: 0.1
   ScreenButton: {fileID: 527820360}
   SelectButtonPanel: {fileID: 1700621256}
+  InputNamePanel: {fileID: 0}
   SelectButton_3: {fileID: 1555609096}
 --- !u!82 &149050668
 AudioSource:

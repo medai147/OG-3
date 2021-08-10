@@ -10,6 +10,7 @@ public class Story : MonoBehaviour
 {
     private Text _story; //ストーリーテキスト
     private Text _name;
+    private Text _inputName;
     public Text _selectbuttontext3;
     public Text _selectbuttontext1;
     public Text _selectbuttontext2;
@@ -59,6 +60,8 @@ public class Story : MonoBehaviour
     private string selectbutton_num_sr;
     private string monthsr;
 
+    private String heroineName;
+
     public AudioClip bgm1;
     public AudioClip bgm2;
     public AudioClip bgm3;
@@ -83,6 +86,7 @@ public class Story : MonoBehaviour
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
+    [SerializeField] GameObject InputNamePanel;
 
     [SerializeField] GameObject SelectButton_3;
 
@@ -101,12 +105,16 @@ public class Story : MonoBehaviour
 
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
+        //_inputName = GameObject.Find("InputField").GetComponent<Text>();
         _Screenbutton = GameObject.Find("Screenbutton");
 
         PlayerPrefs.SetInt("SAVE", 0);
         PlayerPrefs.Save();
 
         qstory = PlayerPrefs.GetInt("NUMBERLOAD");
+
+        heroineName = PlayerPrefs.GetString("INPUTNAME");
+        Debug.Log(heroineName);
 
         //csvファイルからテキストを読み込み
         StringReader sr = new StringReader(storyText.text);
@@ -128,8 +136,14 @@ public class Story : MonoBehaviour
 
 
     }
+
     private IEnumerator Novel(int index)
     {
+        if (qstory == 0)
+        {
+            InputNamePanel.SetActive(true);
+        }
+
         int messageCount = 0; //表示中の文字数
         _story.text = "";
         _name.text = _qdataList[index].nameText;
@@ -574,8 +588,7 @@ public class Qdata
 
     public void WriteDebugLog()
     {
-        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
+        //Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
     }
 
 }
-

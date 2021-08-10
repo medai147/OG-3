@@ -66,7 +66,7 @@ public class savesclipt : MonoBehaviour
         {
             _save4.text = "セーブできるよ";
         }
-        Debug.Log(load);
+        //Debug.Log(load);
     }
     public void save1_onClicked()
     {
