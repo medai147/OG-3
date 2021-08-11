@@ -81,12 +81,14 @@ public class Story : MonoBehaviour
     public int qstory = 0; //storyの番号
     public int qNum = 0; //story数
     public int savenum = 0;
+    public int menucount = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
-    [SerializeField] GameObject InputNamePanel;
+    //[SerializeField] GameObject InputNamePanel;
+    [SerializeField] GameObject MenuPanel;
 
     [SerializeField] GameObject SelectButton_3;
 
@@ -139,10 +141,6 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
-        if (qstory == 0)
-        {
-            InputNamePanel.SetActive(true);
-        }
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
@@ -474,15 +472,31 @@ public class Story : MonoBehaviour
 
     private void Menu()
     {
-        if (Input.GetKey(KeyCode.M))
+        Debug.Log(menucount);
+        if (MenuPanel.activeSelf == true)
+        {
+            menucount++;
+        } else if(MenuPanel.activeSelf == false)
+        {
+            if(menucount != 0)
+            {
+                menucount--;
+            }
+        }
+        if (Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == false && menucount == 0)
         {
             savenum = 1;
             PlayerPrefs.SetInt("SAVE", savenum);
             PlayerPrefs.Save();
             PlayerPrefs.SetInt("NUMBER", qstory);
             PlayerPrefs.Save();
-            SceneManager.LoadScene("menu scene");
+            MenuPanel.SetActive(true);
+        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 200)
+        {
+            menucount = 200;
+            MenuPanel.SetActive(false);
         }
+
     }
 
     public void onClick_Screenbutton()
