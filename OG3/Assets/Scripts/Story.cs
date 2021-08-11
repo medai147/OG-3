@@ -11,6 +11,7 @@ public class Story : MonoBehaviour
     private Text _story; //ストーリーテキスト
     private Text _name;
     private Text _inputName;
+    private Text _monthtext;
     public Text _selectbuttontext3;
     public Text _selectbuttontext1;
     public Text _selectbuttontext2;
@@ -112,6 +113,7 @@ public class Story : MonoBehaviour
 
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
+        _monthtext = GameObject.Find("monthtext").GetComponent<Text>();
         //_inputName = GameObject.Find("InputField").GetComponent<Text>();
         _Screenbutton = GameObject.Find("Screenbutton");
 
@@ -455,8 +457,7 @@ public class Story : MonoBehaviour
             leftCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
         }
 
-        //てきすとぼっくすの色
-
+        //テキストボックスの色
         textcolorsr= _qdataList[index].textcolor;
         Image textboximage = (Image)textbox.GetComponent<Image>();
         if (int.Parse(textcolorsr) == 1)
@@ -485,8 +486,17 @@ public class Story : MonoBehaviour
         {
             _name.text = _qdataList[index].nameText;
         }
-        //_name.text = _qdataList[index].nameText;
+        
+        //左上の月の表示
+        if(index < 50)
+        {
+            _monthtext.text = "4月";
+        } else if(index < 55)
+        {
+            _monthtext.text = "5月";
+        }
 
+        //ストーリーテキスト表示
         while (_qdataList[index].storyText.Length > messageCount)
         {
             _story.text += _qdataList[index].storyText[messageCount];
@@ -508,7 +518,7 @@ public class Story : MonoBehaviour
 
     private void Menu()
     {
-        Debug.Log(menucount);
+        //Debug.Log(menucount);
         if (MenuPanel.activeSelf == true)
         {
             menucount++;
@@ -640,7 +650,7 @@ public class Qdata
 
     public void WriteDebugLog()
     {
-        //Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
+        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
     }
 
 }
