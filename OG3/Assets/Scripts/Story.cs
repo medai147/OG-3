@@ -19,6 +19,7 @@ public class Story : MonoBehaviour
     public GameObject characterright;
     public GameObject characterleft;
     public GameObject background;
+    public GameObject textbox;
     public GameObject still;
     public GameObject month;
     public Sprite ouziSprite;
@@ -47,6 +48,10 @@ public class Story : MonoBehaviour
     public Sprite still_MaySprite;
     public Sprite month_MaySprite;
     public Sprite month_clearSprite;
+    public Sprite text_ouzi;
+    public Sprite text_hikaru;
+    public Sprite text_rukia;
+    public Sprite text_mob;
     private string centersr;
     private string rightsr;
     private string leftsr;
@@ -59,7 +64,7 @@ public class Story : MonoBehaviour
     private string selectdisp_sr;
     private string selectbutton_num_sr;
     private string monthsr;
-
+    private string textcolorsr;
     private String heroineName;
 
     public AudioClip bgm1;
@@ -450,6 +455,27 @@ public class Story : MonoBehaviour
             leftCharacter.GetComponent<Image>().color = new Color32(100, 100, 100, 255);
         }
 
+        //てきすとぼっくすの色
+
+        textcolorsr= _qdataList[index].textcolor;
+        Image textboximage = (Image)textbox.GetComponent<Image>();
+        if (int.Parse(textcolorsr) == 1)
+        {
+            textboximage.sprite = text_ouzi;
+        }
+        else if (int.Parse(textcolorsr) == 2)
+        {
+            textboximage.sprite = text_rukia;
+        }
+        else if (int.Parse(textcolorsr) == 3)
+        {
+            textboximage.sprite = text_hikaru;
+        }
+        else if (int.Parse(textcolorsr) == 0 || int.Parse(textcolorsr) == 4)
+        {
+            textboximage.sprite = text_mob;
+        }
+
 
         while (_qdataList[index].storyText.Length > messageCount)
         {
@@ -573,11 +599,12 @@ public class Qdata
     public string selectbuttontext3;
     public string selectbuttontext1;
     public string selectbuttontext2;
+    public string textcolor;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 18)
+        if (spTxt.Length == 19)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -597,6 +624,7 @@ public class Qdata
             selectbuttontext3 = spTxt[15];
             selectbuttontext1 = spTxt[16];
             selectbuttontext2 = spTxt[17];
+            textcolor = spTxt[18];
         }
     }
 
