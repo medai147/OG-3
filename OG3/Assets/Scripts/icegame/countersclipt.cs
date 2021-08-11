@@ -10,6 +10,7 @@ public class countersclipt : MonoBehaviour
     private int score;
     public Text scoretext;
     public Text icetext;
+    public Text finishscoretext;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class countersclipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        finishscoretext.text = score.ToString();
        // Debug.Log("bbb");
        if(ice == 1)
         {
