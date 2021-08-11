@@ -149,7 +149,7 @@ public class Story : MonoBehaviour
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
-        _name.text = _qdataList[index].nameText;
+
 
         //SE
         se_num_sr = _qdataList[index].se_num;
@@ -476,6 +476,16 @@ public class Story : MonoBehaviour
             textboximage.sprite = text_mob;
         }
 
+        //名前
+        if (int.Parse(textcolorsr) == 0)
+        {
+            _name.text = heroineName;
+        }
+        else
+        {
+            _name.text = _qdataList[index].nameText;
+        }
+        //_name.text = _qdataList[index].nameText;
 
         while (_qdataList[index].storyText.Length > messageCount)
         {
