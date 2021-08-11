@@ -178,7 +178,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 19a8d2caacfa79f4ba0e660143428d7f, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save1
+  m_Text: 
 --- !u!222 &56198398
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -236,8 +236,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 51}
-  m_SizeDelta: {x: 675.3289, y: 90.554276}
+  m_AnchoredPosition: {x: -3.7997, y: 56.1}
+  m_SizeDelta: {x: 606.4959, y: 80.37085}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &75389239
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadstill: {fileID: 451580876}
-  loadsprite: {fileID: 21300000, guid: 9575414cb1e055a45b7fb301e2fce220, type: 3}
+  loadsprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
   loadPanel: {fileID: 1220275799}
 --- !u!1 &318343796
 GameObject:
@@ -382,8 +382,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.1642e-10, y: -51}
-  m_SizeDelta: {x: 675.3289, y: 90.554276}
+  m_AnchoredPosition: {x: -3.821, y: -39.9}
+  m_SizeDelta: {x: 606.45355, y: 79.73372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318343798
 MonoBehaviour:
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -489,7 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadstill: {fileID: 451580876}
-  loadsprite: {fileID: 21300000, guid: 9575414cb1e055a45b7fb301e2fce220, type: 3}
+  loadsprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
   loadPanel: {fileID: 1220275799}
 --- !u!1 &386950099
 GameObject:
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -809,7 +809,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 19a8d2caacfa79f4ba0e660143428d7f, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -821,7 +821,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save4
+  m_Text: 
 --- !u!222 &1196955655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -998,18 +998,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484275168}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0008335589, w: 0.99999964}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.00014, y: 1.00014, z: 1.00014}
   m_Children:
   - {fileID: 1196955653}
   m_Father: {fileID: 386950103}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.096}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0011292, y: -150}
-  m_SizeDelta: {x: 675.3289, y: 90.554276}
+  m_AnchoredPosition: {x: -3.9105, y: -131.9}
+  m_SizeDelta: {x: 606.41473, y: 80.25578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1484275170
 MonoBehaviour:
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadstill: {fileID: 451580876}
-  loadsprite: {fileID: 21300000, guid: 9575414cb1e055a45b7fb301e2fce220, type: 3}
+  loadsprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
   loadPanel: {fileID: 1220275799}
 --- !u!1 &1529932029
 GameObject:
@@ -1174,7 +1174,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 19a8d2caacfa79f4ba0e660143428d7f, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1186,7 +1186,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save3
+  m_Text: 
 --- !u!222 &1529932032
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1251,7 +1251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4299cbea8b1d7264a8c9900cf71ba35d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1326,7 +1326,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 19a8d2caacfa79f4ba0e660143428d7f, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1338,7 +1338,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Save2
+  m_Text: 
 --- !u!222 &1749102463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1384,8 +1384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0011292001, y: 150}
-  m_SizeDelta: {x: 675.3289, y: 90.554276}
+  m_AnchoredPosition: {x: -3.8, y: 151.9}
+  m_SizeDelta: {x: 606.58136, y: 86.735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031081991
 MonoBehaviour:
@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1491,5 +1491,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadstill: {fileID: 451580876}
-  loadsprite: {fileID: 21300000, guid: 9575414cb1e055a45b7fb301e2fce220, type: 3}
+  loadsprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
   loadPanel: {fileID: 1220275799}
