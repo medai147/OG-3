@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class menusclipt : MonoBehaviour
 {
+    [SerializeField] GameObject logPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,4 +27,10 @@ public class menusclipt : MonoBehaviour
     {
         SceneManager.LoadScene("start scene");
     }
+
+    public void onClicked_log()
+    {
+        logPanel.SetActive(true);
+    }
+
 }

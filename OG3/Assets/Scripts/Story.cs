@@ -12,6 +12,7 @@ public class Story : MonoBehaviour
     private Text _name;
     private Text _inputName;
     private Text _monthtext;
+    private Text _logtext;
     public Text _selectbuttontext3;
     public Text _selectbuttontext1;
     public Text _selectbuttontext2;
@@ -93,7 +94,7 @@ public class Story : MonoBehaviour
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
-    //[SerializeField] GameObject InputNamePanel;
+    [SerializeField] GameObject logPanel;
     [SerializeField] GameObject MenuPanel;
 
     [SerializeField] GameObject SelectButton_3;
@@ -111,9 +112,16 @@ public class Story : MonoBehaviour
         //選択肢パネル非表示
         SelectButtonPanel.SetActive(false);
 
+        logPanel.SetActive(true);
+
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
         _monthtext = GameObject.Find("monthtext").GetComponent<Text>();
+        _logtext = GameObject.Find("logtext").GetComponent<Text>();
+
+        //logパネル非表示
+        logPanel.SetActive(false);
+
         //_inputName = GameObject.Find("InputField").GetComponent<Text>();
         _Screenbutton = GameObject.Find("Screenbutton");
 
@@ -151,7 +159,6 @@ public class Story : MonoBehaviour
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
-
 
         //SE
         se_num_sr = _qdataList[index].se_num;
@@ -500,6 +507,7 @@ public class Story : MonoBehaviour
         while (_qdataList[index].storyText.Length > messageCount)
         {
             _story.text += _qdataList[index].storyText[messageCount];
+
             messageCount++;
             yield return new WaitForSeconds(novelSpeed);
         }
@@ -507,6 +515,8 @@ public class Story : MonoBehaviour
         {
             click = 1;
             novelSpeed = 0.1f;
+            _logtext.text += _qdataList[index].storyText;
+            _logtext.text += "\n";
         }
     }
 
