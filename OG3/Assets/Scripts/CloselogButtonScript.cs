@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloselogButtonScript : MonoBehaviour
 {
     [SerializeField] GameObject logPanel;
+    [SerializeField] GameObject Screenbutton;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,6 @@ public class CloselogButtonScript : MonoBehaviour
     public void OnCLicked_CloselogButton()
     {
         logPanel.SetActive(false);
+        Screenbutton.SetActive(true);
     }
 }

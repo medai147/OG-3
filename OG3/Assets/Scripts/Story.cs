@@ -515,7 +515,9 @@ public class Story : MonoBehaviour
         {
             click = 1;
             novelSpeed = 0.1f;
+            //全文表示され終わったらlogにテキストを追加
             _logtext.text += _qdataList[index].storyText;
+            _logtext.text += "\n";
             _logtext.text += "\n";
         }
     }
