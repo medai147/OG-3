@@ -68,6 +68,10 @@ public class Story : MonoBehaviour
     private string monthsr;
     private string textcolorsr;
     private String heroineName;
+    private String logheroineName;
+    private String characternamelength;
+    private String logcharacterName;
+    private String logstory;
 
     public AudioClip bgm1;
     public AudioClip bgm2;
@@ -131,10 +135,22 @@ public class Story : MonoBehaviour
         qstory = PlayerPrefs.GetInt("NUMBERLOAD");
 
         heroineName = PlayerPrefs.GetString("INPUTNAME");
-        Debug.Log(heroineName);
+        logheroineName = heroineName;
+        int namelength = System.Text.Encoding.GetEncoding(932).GetByteCount(heroineName);
+        //Debug.Log(heroineName);
+        if(namelength != 12)
+        {
+            int spacecount = 12 - namelength;
+            for (int i = 0; i < spacecount; i++)
+            {
+                logheroineName += "\u00A0";
+            }
+            //Debug.Log(logheroineName);
+        }
 
         //csvファイルからテキストを読み込み
-        StringReader sr = new StringReader(storyText.text);
+        _storyArray = storyText.text.Replace(" ", "\u00A0");
+        StringReader sr = new StringReader(_storyArray);
         sr.ReadLine();
         while (sr.Peek() > -1)
         {
@@ -507,7 +523,6 @@ public class Story : MonoBehaviour
         while (_qdataList[index].storyText.Length > messageCount)
         {
             _story.text += _qdataList[index].storyText[messageCount];
-
             messageCount++;
             yield return new WaitForSeconds(novelSpeed);
         }
@@ -516,6 +531,23 @@ public class Story : MonoBehaviour
             click = 1;
             novelSpeed = 0.1f;
             //全文表示され終わったらlogにテキストを追加
+            if(_qdataList[index].nameText == "えみ")
+            {
+                _logtext.text += logheroineName;
+            } else
+            {
+                int characternamelength = System.Text.Encoding.GetEncoding(932).GetByteCount(_qdataList[index].nameText);
+                logcharacterName = _qdataList[index].nameText;
+                if (characternamelength != 12)
+                {
+                    int spacecount = 12 - characternamelength;
+                    for (int i = 0; i < spacecount; i++)
+                    {
+                        logcharacterName += "\u00A0";
+                    }
+                }
+                _logtext.text += logcharacterName;
+            }
             _logtext.text += _qdataList[index].storyText;
             _logtext.text += "\n";
             _logtext.text += "\n";
