@@ -548,6 +548,7 @@ public class Story : MonoBehaviour
                 }
                 _logtext.text += logcharacterName;
             }
+            
             _logtext.text += _qdataList[index].storyText;
             _logtext.text += "\n";
             _logtext.text += "\n";
