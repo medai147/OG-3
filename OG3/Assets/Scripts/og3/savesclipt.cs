@@ -10,6 +10,8 @@ public class savesclipt : MonoBehaviour
 {
     public GameObject loadstill;
     public Sprite loadsprite;
+    private String heroinname;
+    private static String[]heroin = { "", "", "", "" };
     private int save;
     private static int load;
     private Text _save1;
@@ -35,6 +37,7 @@ public class savesclipt : MonoBehaviour
         save = PlayerPrefs.GetInt("SAVE");
         PlayerPrefs.SetInt("SAVE", 0);
         number = PlayerPrefs.GetInt("NUMBER");
+        heroinname = PlayerPrefs.GetString("INPUTNAME");
         //ここに飛びたいストーリー番号を書いてsave画面から始める　例  number = 34;
 
         _save1 = GameObject.Find("save1text").GetComponent<Text>();
@@ -70,31 +73,29 @@ public class savesclipt : MonoBehaviour
     }
     public void save1_onClicked()
     {
-        Debug.Log(save);
-        Save(ref number1, ref _save1, ref dt1,ref count[0]);
+        Save(ref number1, ref _save1, ref dt1,ref count[0],ref heroin[0]);
     }
 
     public void save2_onClicked()
     {
         Debug.Log(save);
-        Save(ref number2, ref _save2,ref dt2,ref count[1]);
+        Save(ref number2, ref _save2,ref dt2,ref count[1], ref heroin[1]);
     }
 
     public void save3_onClicked()
     {
         Debug.Log(save);
-        Save(ref number3, ref _save3,ref dt3, ref count[2]);
+        Save(ref number3, ref _save3,ref dt3, ref count[2],ref heroin[2]);
     }
 
     public void save4_onClicked()
     {
-        Debug.Log(save);
-        Save(ref number4, ref _save4,ref dt4, ref count[3]);
+        Save(ref number4, ref _save4,ref dt4, ref count[3], ref heroin[3]);
     }
 
 
 
-    public void Save(ref int savenum, ref Text savetext,ref DateTime dt,ref int savecount)
+    public void Save(ref int savenum, ref Text savetext,ref DateTime dt,ref int savecount,ref string name)
     {
         if (load != 1)
 
@@ -102,6 +103,8 @@ public class savesclipt : MonoBehaviour
             savenum = number;
             dt = DateTime.Now;
             savecount = 1;
+            name = heroinname;
+            Debug.Log(name);
             savetext.text = "記録されました";
             SceneManager.LoadScene("start scene");
         }
@@ -114,6 +117,10 @@ public class savesclipt : MonoBehaviour
                 loadimage.sprite = loadsprite;
                 PlayerPrefs.SetInt("NUMBERLOAD", savenum);
                 PlayerPrefs.Save();
+                PlayerPrefs.SetInt("NAMEINPUT", 1);
+                PlayerPrefs.Save();
+                PlayerPrefs.SetString("INPUTNAME2", name);
+                PlayerPrefs.Save();
             }
             else
             {
@@ -122,6 +129,11 @@ public class savesclipt : MonoBehaviour
                 loadimage.sprite = loadsprite;
                 PlayerPrefs.SetInt("NUMBERLOAD", savenum - 1);
                 PlayerPrefs.Save();
+                PlayerPrefs.SetInt("NAMEINPUT", 1);
+                PlayerPrefs.Save();
+                PlayerPrefs.SetString("INPUTNAME2", name);
+                PlayerPrefs.Save();
+                
             }
 
             load = 0;

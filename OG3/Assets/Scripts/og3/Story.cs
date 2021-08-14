@@ -88,6 +88,7 @@ public class Story : MonoBehaviour
     public int qNum = 0; //story数
     public int savenum = 0;
     public int menucount = 0;
+    public int nameinput = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
 
@@ -121,10 +122,17 @@ public class Story : MonoBehaviour
         PlayerPrefs.Save();
 
         qstory = PlayerPrefs.GetInt("NUMBERLOAD");
-
-        heroineName = PlayerPrefs.GetString("INPUTNAME");
-        Debug.Log(heroineName);
-
+        nameinput = PlayerPrefs.GetInt("NAMEINPUT");
+        
+        if(nameinput == 0)
+        {
+            heroineName = PlayerPrefs.GetString("INPUTNAME");
+            Debug.Log("名前" + heroineName);
+        } else
+        {
+            heroineName = PlayerPrefs.GetString("INPUTNAME2");
+            Debug.Log("名前だよ" + heroineName);
+        }
         //csvファイルからテキストを読み込み
         StringReader sr = new StringReader(storyText.text);
         sr.ReadLine();
