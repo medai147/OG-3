@@ -11,6 +11,7 @@ public class NamecompleteButtonScript : MonoBehaviour
     public InputField _inputName;
     public String heroineName;
     [SerializeField] GameObject InputNamePanel;
+    [SerializeField] GameObject LoadingPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,10 @@ public class NamecompleteButtonScript : MonoBehaviour
     }
     public void OnClicked_NamecompleteButton()
     {
+        LoadingPanel.SetActive(true);
         heroineName = _inputName.text;
         //Debug.Log(heroineName);
+        
         PlayerPrefs.SetString("INPUTNAME", heroineName);
         PlayerPrefs.Save();
         SceneManager.LoadScene("Main scene");
