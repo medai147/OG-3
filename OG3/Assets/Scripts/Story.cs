@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Qdata;
 
 public class Story : MonoBehaviour
 {
@@ -89,6 +90,16 @@ public class Story : MonoBehaviour
     private string _storyArray;
     private List<Qdata> _qdataList = new List<Qdata>();
 
+    //logのcsv用
+    public TextAsset logstoryText; //csvlogstorytextデータ
+    private string _logstoryArray;
+    private List<Logdata> _logdataList = new List<Logdata>();
+    int logNum = 0; //story数
+    //int logtextprintcount = 0;
+
+    //log用終わり
+
+
     public int qstory = 0; //storyの番号
     public int qNum = 0; //story数
     public int savenum = 0;
@@ -163,8 +174,27 @@ public class Story : MonoBehaviour
         //確認のためにConsoleに出力
         foreach (Qdata q in _qdataList)
         {
-            q.WriteDebugLog();
+            //q.WriteDebugLog();
         }
+
+        //log用
+        //log用のcsvファイルからテキストを読み込み
+        _logstoryArray = logstoryText.text.Replace(" ", "\u00A0");
+        //_logstoryArray = logstoryText.text.Replace("?", "\u0030");
+        StringReader logr = new StringReader(_logstoryArray);
+        logr.ReadLine();
+        while (logr.Peek() > -1)
+        {
+            string line = logr.ReadLine();
+            _logdataList.Add(new Logdata(line));
+            logNum++;
+        }
+        foreach (Logdata q in _logdataList)
+        {
+            q.WriteDebugLog_logstory();
+        }
+        //
+
         StartCoroutine(Novel(qstory++));
 
 
@@ -549,8 +579,7 @@ public class Story : MonoBehaviour
                 _logtext.text += logcharacterName;
             }
             
-            _logtext.text += _qdataList[index].storyText;
-            _logtext.text += "\n";
+            _logtext.text += _logdataList[index].logstorytext1;
             _logtext.text += "\n";
         }
     }
@@ -696,6 +725,55 @@ public class Qdata
     public void WriteDebugLog()
     {
         Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
+    }
+
+    public class Logdata
+    {
+        int textnumber;
+        public string logstorytext1;
+        public string logstorytext2;
+        public string logstorytext3;
+        public string logstorytext4;
+        public string logstorytext5;
+        public string logstorytext6;
+        int lengthcount;
+        public string mainstory;
+        public int check;
+        public int nokori1;
+        public int nokori2;
+        public int nokori3;
+        public int nokori4;
+        public int nokori5;
+        public int nokori6;
+
+        public Logdata(string txt)
+        {
+            string[] spTxt = txt.Split(',');
+            if (spTxt.Length == 16)
+            {
+                textnumber = int.Parse(spTxt[0]);
+                logstorytext1 = spTxt[1];
+                logstorytext2 = spTxt[2];
+                logstorytext3 = spTxt[3];
+                logstorytext4 = spTxt[4];
+                logstorytext5 = spTxt[5];
+                logstorytext6 = spTxt[6];
+                lengthcount = int.Parse(spTxt[7]);
+                mainstory = spTxt[8];
+                check = int.Parse(spTxt[9]);
+                nokori1 = int.Parse(spTxt[10]);
+                nokori2 = int.Parse(spTxt[11]);
+                nokori3 = int.Parse(spTxt[12]);
+                nokori4 = int.Parse(spTxt[13]);
+                nokori5 = int.Parse(spTxt[14]);
+                nokori6 = int.Parse(spTxt[15]);
+            }
+        }
+
+        public void WriteDebugLog_logstory()
+        {
+            Debug.Log(logstorytext1 + "\t" + logstorytext2 + "\t" + logstorytext3 + "\t" + logstorytext4 + "\t" + logstorytext5 + "\t" + logstorytext6);
+        }
     }
 
 }
