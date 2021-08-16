@@ -8,9 +8,15 @@ public class countersclipt : MonoBehaviour
 {
     private int ice;
     private int score;
+    private int finishcount;
+    private static int nowcoin;
     public Text scoretext;
     public Text icetext;
     public Text finishscoretext;
+    public Text getcointext;
+    public Text cointext;
+    public Text startcointext;
+    [SerializeField] GameObject finishpanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +26,20 @@ public class countersclipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        finishscoretext.text = score.ToString();
+        startcointext.text = "所持金:" + nowcoin;
+        scoretext.text = "score:" + score;
+        if (finishpanel.activeSelf == true)
+        {
+            finishcount++;
+        } else
+        {
+            finishcount = 0;
+        }
+        if(finishcount == 1)
+        {
+            finishscore();
+        }
+
        // Debug.Log("bbb");
        if(ice == 1)
         {
@@ -32,7 +51,6 @@ public class countersclipt : MonoBehaviour
         {
             icetext.text = "チョコレート";
         }
-        scoretext.text = "score:" + score;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -55,5 +73,34 @@ public class countersclipt : MonoBehaviour
             score -= 1;
             ice = Random.Range(1, 4);
         }
+    }
+
+    private void finishscore()
+    {
+        finishscoretext.text = score.ToString();
+        if (score > 30 && finishpanel.activeSelf == true)
+        {
+            getcointext.text = "30コインゲット！";
+            nowcoin += 30;
+            score = 0;
+
+        }
+        else if (score > 25 && finishpanel.activeSelf == true)
+        {
+            getcointext.text = "25コインゲット！";
+            nowcoin += 25;
+            score = 0;
+        }
+        else if (score > 20 && finishpanel.activeSelf == true)
+        {
+            getcointext.text = "20コインゲット！";
+            nowcoin += 20;
+            score = 0;
+        }
+        else if (finishpanel.activeSelf == true && score >= 0)
+        {
+            getcointext.text = "給料無し！";
+        }
+        cointext.text = "所持金:" + nowcoin;
     }
 }

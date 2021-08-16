@@ -10,7 +10,6 @@ public class Startsclipt : MonoBehaviour
 {
     private Text timetext;
     float countTime = 0;
-    int finish;
     [SerializeField] GameObject startpanel;
     [SerializeField] GameObject finishpanel;
     // Start is called before the first frame update
@@ -29,7 +28,7 @@ public class Startsclipt : MonoBehaviour
             countTime += Time.deltaTime; //スタートしてからの秒数を格納
             timetext.text = countTime.ToString("F0"); //整数にして表示
         }
-        if (countTime > 10)
+        if (countTime > 30)
         {
             startpanel.SetActive(true);
             countTime = 0;
