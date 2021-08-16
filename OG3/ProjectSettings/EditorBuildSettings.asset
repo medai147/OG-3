@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/menu scene.unity
     guid: 2ff6687f26200b045b81b4d4718d592a
+  - enabled: 1
+    path: Assets/Scenes/gacha scene.unity
+    guid: b9d71fd96baa9a242b2c6819ed14a1a5
+  - enabled: 1
+    path: Assets/Scenes/minigamemenuscene.unity
+    guid: 9f67935f93efca64e94e70d6189a3d2b
   m_configObjects: {}

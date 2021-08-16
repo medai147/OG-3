@@ -21,6 +21,7 @@ public class countersclipt : MonoBehaviour
     void Start()
     {
         ice =  Random.Range(1, 4);
+        nowcoin = PlayerPrefs.GetInt("NEWCOIN");
     }
 
     // Update is called once per frame
@@ -102,5 +103,7 @@ public class countersclipt : MonoBehaviour
             getcointext.text = "給料無し！";
         }
         cointext.text = "所持金:" + nowcoin;
+        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+        PlayerPrefs.Save();
     }
 }

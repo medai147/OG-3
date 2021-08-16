@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class buttonsclipt : MonoBehaviour
 {
@@ -32,6 +35,10 @@ public class buttonsclipt : MonoBehaviour
             resultpanel.SetActive(false);
             time = 0;
         }
+    }
+    public void onClicked_returnmenubutton()
+    {
+        SceneManager.LoadScene("start scene");
     }
 
 

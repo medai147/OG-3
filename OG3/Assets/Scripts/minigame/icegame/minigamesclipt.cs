@@ -21,6 +21,6 @@ public class minigamesclipt : MonoBehaviour
     }
     public void minigame_onClicked()
     {
-        SceneManager.LoadScene("icegame scene");
+        SceneManager.LoadScene("minigamemenuscene");
     }
 }
