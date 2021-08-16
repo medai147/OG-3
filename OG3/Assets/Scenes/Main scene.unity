@@ -624,6 +624,7 @@ MonoBehaviour:
   Jingle: {fileID: 8300000, guid: e374bebd834284c4bbdfcb891be38113, type: 3}
   storyText: {fileID: 4900000, guid: a1ff82b0501e08c4ba3a24fe83f56bca, type: 3}
   logstoryText: {fileID: 4900000, guid: 3c0ffe89379a845439c9ee899c91644b, type: 3}
+  logspace: "\_\_\_\_\_\_\_\_\_\_\_\_"
   qstory: 0
   qNum: 0
   savenum: 0
@@ -1214,7 +1215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &517198360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4618,8 +4619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -339.76996, y: 152.3826}
-  m_SizeDelta: {x: 688.19727, y: 34.229828}
+  m_AnchoredPosition: {x: -339.76996, y: 152.38258}
+  m_SizeDelta: {x: 688.19727, y: 0}
   m_Pivot: {x: 0, y: 0.95}
 --- !u!114 &2070979698
 MonoBehaviour:
@@ -4642,7 +4643,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d0fc0dde5eb3e6a4cad9b67aa138a09c, type: 3}
-    m_FontSize: 35
+    m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -4858,7 +4859,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
