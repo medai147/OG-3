@@ -96,7 +96,7 @@ public class Story : MonoBehaviour
     private List<Logdata> _logdataList = new List<Logdata>();
     int logNum = 0; //story数
     //int logtextprintcount = 0;
-
+    public string logspace = "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0" + "\u00A0";
     //log用終わり
 
 
@@ -172,8 +172,7 @@ public class Story : MonoBehaviour
         }
 
         //csvファイルからテキストを読み込み
-        _storyArray = storyText.text.Replace(" ", "");
-        //_storyArray = storyText.text.Replace(" ", "\u00A0");
+        _storyArray = storyText.text.Replace(" ", "\u00A0");
         StringReader sr = new StringReader(_storyArray);
         sr.ReadLine();
         while (sr.Peek() > -1)
@@ -593,6 +592,53 @@ public class Story : MonoBehaviour
             }
             
             _logtext.text += _logdataList[index].logstorytext1;
+            _logtext.text += "\n";
+            if(_logdataList[index].logstorytext2 != "0")
+            {
+                _logtext.text += logspace;
+                _logtext.text += _logdataList[index].logstorytext2;
+                _logtext.text += "\n";
+            }
+
+            if (_logdataList[index].logstorytext3 != "0")
+            {
+                _logtext.text += logspace;
+                _logtext.text += _logdataList[index].logstorytext3;
+                _logtext.text += "\n";
+            }
+
+            if (_logdataList[index].logstorytext4 != "0")
+            {
+                _logtext.text += logspace;
+                _logtext.text += _logdataList[index].logstorytext4;
+                _logtext.text += "\n";
+            }
+
+            if (_logdataList[index].logstorytext5 != "0")
+            {
+                _logtext.text += logspace;
+                _logtext.text += _logdataList[index].logstorytext5;
+                _logtext.text += "\n";
+            }
+
+            if (_logdataList[index].logstorytext6 != "0")
+            {
+                _logtext.text += logspace;
+                _logtext.text += _logdataList[index].logstorytext6;
+                _logtext.text += "\n";
+            }
+            
+            //_logtext.text += logspace;
+            //_logtext.text += _logdataList[index].logstorytext3;
+            //_logtext.text += "\n";
+            //_logtext.text += logspace;
+            //_logtext.text += _logdataList[index].logstorytext4;
+            //_logtext.text += "\n";
+            //_logtext.text += logspace;
+            //_logtext.text += _logdataList[index].logstorytext5;
+            //_logtext.text += "\n";
+            //_logtext.text += logspace;
+            //_logtext.text += _logdataList[index].logstorytext6;
             _logtext.text += "\n";
         }
     }
