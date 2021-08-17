@@ -160,7 +160,8 @@ public class Story : MonoBehaviour
         }
 
         //csvファイルからテキストを読み込み
-        _storyArray = storyText.text.Replace(" ", "\u00A0");
+        _storyArray = storyText.text.Replace(" ", "");
+        //_storyArray = storyText.text.Replace(" ", "\u00A0");
         StringReader sr = new StringReader(_storyArray);
         sr.ReadLine();
         while (sr.Peek() > -1)
@@ -179,7 +180,7 @@ public class Story : MonoBehaviour
 
         //log用
         //log用のcsvファイルからテキストを読み込み
-        _logstoryArray = logstoryText.text.Replace(" ", "\u00A0");
+        _logstoryArray = logstoryText.text.Replace(" ", "");
         //_logstoryArray = logstoryText.text.Replace("?", "\u0030");
         StringReader logr = new StringReader(_logstoryArray);
         logr.ReadLine();
