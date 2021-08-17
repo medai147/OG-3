@@ -624,7 +624,6 @@ MonoBehaviour:
   Jingle: {fileID: 8300000, guid: e374bebd834284c4bbdfcb891be38113, type: 3}
   storyText: {fileID: 4900000, guid: a1ff82b0501e08c4ba3a24fe83f56bca, type: 3}
   logstoryText: {fileID: 4900000, guid: 3c0ffe89379a845439c9ee899c91644b, type: 3}
-  logspace: "\_\_\_\_\_\_\_\_\_\_\_\_"
   qstory: 0
   qNum: 0
   savenum: 0
@@ -4620,7 +4619,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -339.76996, y: 152.3826}
-  m_SizeDelta: {x: 688.19727, y: 33.25183}
+  m_SizeDelta: {x: 688.19727, y: 34.229828}
   m_Pivot: {x: 0, y: 0.95}
 --- !u!114 &2070979698
 MonoBehaviour:
@@ -4643,7 +4642,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d0fc0dde5eb3e6a4cad9b67aa138a09c, type: 3}
-    m_FontSize: 34
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
