@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Qdata;
 
 public class Story : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Story : MonoBehaviour
     private Text _name;
     private Text _inputName;
     private Text _monthtext;
+    private Text _logtext;
     public Text _selectbuttontext3;
     public Text _selectbuttontext1;
     public Text _selectbuttontext2;
@@ -67,6 +69,10 @@ public class Story : MonoBehaviour
     private string monthsr;
     private string textcolorsr;
     private String heroineName;
+    private String logheroineName;
+    private String characternamelength;
+    private String logcharacterName;
+    private String logstory;
 
     public AudioClip bgm1;
     public AudioClip bgm2;
@@ -84,6 +90,16 @@ public class Story : MonoBehaviour
     private string _storyArray;
     private List<Qdata> _qdataList = new List<Qdata>();
 
+    //logのcsv用
+    public TextAsset logstoryText; //csvlogstorytextデータ
+    private string _logstoryArray;
+    private List<Logdata> _logdataList = new List<Logdata>();
+    int logNum = 0; //story数
+    //int logtextprintcount = 0;
+
+    //log用終わり
+
+
     public int qstory = 0; //storyの番号
     public int qNum = 0; //story数
     public int savenum = 0;
@@ -94,7 +110,7 @@ public class Story : MonoBehaviour
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
-    //[SerializeField] GameObject InputNamePanel;
+    [SerializeField] GameObject logPanel;
     [SerializeField] GameObject MenuPanel;
 
     [SerializeField] GameObject SelectButton_3;
@@ -112,9 +128,16 @@ public class Story : MonoBehaviour
         //選択肢パネル非表示
         SelectButtonPanel.SetActive(false);
 
+        logPanel.SetActive(true);
+
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
         _monthtext = GameObject.Find("monthtext").GetComponent<Text>();
+        _logtext = GameObject.Find("logtext").GetComponent<Text>();
+
+        //logパネル非表示
+        logPanel.SetActive(false);
+
         //_inputName = GameObject.Find("InputField").GetComponent<Text>();
         _Screenbutton = GameObject.Find("Screenbutton");
 
@@ -133,8 +156,25 @@ public class Story : MonoBehaviour
             heroineName = PlayerPrefs.GetString("INPUTNAME2");
             Debug.Log("名前だよ" + heroineName);
         }
+
+        heroineName = PlayerPrefs.GetString("INPUTNAME");
+        logheroineName = heroineName;
+        int namelength = System.Text.Encoding.GetEncoding(932).GetByteCount(heroineName);
+        //Debug.Log(heroineName);
+        if(namelength != 12)
+        {
+            int spacecount = 12 - namelength;
+            for (int i = 0; i < spacecount; i++)
+            {
+                logheroineName += "\u00A0";
+            }
+            //Debug.Log(logheroineName);
+        }
+
         //csvファイルからテキストを読み込み
-        StringReader sr = new StringReader(storyText.text);
+        _storyArray = storyText.text.Replace(" ", "");
+        //_storyArray = storyText.text.Replace(" ", "\u00A0");
+        StringReader sr = new StringReader(_storyArray);
         sr.ReadLine();
         while (sr.Peek() > -1)
         {
@@ -147,8 +187,27 @@ public class Story : MonoBehaviour
         //確認のためにConsoleに出力
         foreach (Qdata q in _qdataList)
         {
-            q.WriteDebugLog();
+            //q.WriteDebugLog();
         }
+
+        //log用
+        //log用のcsvファイルからテキストを読み込み
+        _logstoryArray = logstoryText.text.Replace(" ", "");
+        //_logstoryArray = logstoryText.text.Replace("?", "\u0030");
+        StringReader logr = new StringReader(_logstoryArray);
+        logr.ReadLine();
+        while (logr.Peek() > -1)
+        {
+            string line = logr.ReadLine();
+            _logdataList.Add(new Logdata(line));
+            logNum++;
+        }
+        foreach (Logdata q in _logdataList)
+        {
+            q.WriteDebugLog_logstory();
+        }
+        //
+
         StartCoroutine(Novel(qstory++));
 
 
@@ -159,7 +218,6 @@ public class Story : MonoBehaviour
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
-
 
         //SE
         se_num_sr = _qdataList[index].se_num;
@@ -515,6 +573,27 @@ public class Story : MonoBehaviour
         {
             click = 1;
             novelSpeed = 0.1f;
+            //全文表示され終わったらlogにテキストを追加
+            if(_qdataList[index].nameText == "えみ")
+            {
+                _logtext.text += logheroineName;
+            } else
+            {
+                int characternamelength = System.Text.Encoding.GetEncoding(932).GetByteCount(_qdataList[index].nameText);
+                logcharacterName = _qdataList[index].nameText;
+                if (characternamelength != 12)
+                {
+                    int spacecount = 12 - characternamelength;
+                    for (int i = 0; i < spacecount; i++)
+                    {
+                        logcharacterName += "\u00A0";
+                    }
+                }
+                _logtext.text += logcharacterName;
+            }
+            
+            _logtext.text += _logdataList[index].logstorytext1;
+            _logtext.text += "\n";
         }
     }
 
@@ -659,6 +738,55 @@ public class Qdata
     public void WriteDebugLog()
     {
         Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
+    }
+
+    public class Logdata
+    {
+        int textnumber;
+        public string logstorytext1;
+        public string logstorytext2;
+        public string logstorytext3;
+        public string logstorytext4;
+        public string logstorytext5;
+        public string logstorytext6;
+        int lengthcount;
+        public string mainstory;
+        public int check;
+        public int nokori1;
+        public int nokori2;
+        public int nokori3;
+        public int nokori4;
+        public int nokori5;
+        public int nokori6;
+
+        public Logdata(string txt)
+        {
+            string[] spTxt = txt.Split(',');
+            if (spTxt.Length == 16)
+            {
+                textnumber = int.Parse(spTxt[0]);
+                logstorytext1 = spTxt[1];
+                logstorytext2 = spTxt[2];
+                logstorytext3 = spTxt[3];
+                logstorytext4 = spTxt[4];
+                logstorytext5 = spTxt[5];
+                logstorytext6 = spTxt[6];
+                lengthcount = int.Parse(spTxt[7]);
+                mainstory = spTxt[8];
+                check = int.Parse(spTxt[9]);
+                nokori1 = int.Parse(spTxt[10]);
+                nokori2 = int.Parse(spTxt[11]);
+                nokori3 = int.Parse(spTxt[12]);
+                nokori4 = int.Parse(spTxt[13]);
+                nokori5 = int.Parse(spTxt[14]);
+                nokori6 = int.Parse(spTxt[15]);
+            }
+        }
+
+        public void WriteDebugLog_logstory()
+        {
+            Debug.Log(logstorytext1 + "\t" + logstorytext2 + "\t" + logstorytext3 + "\t" + logstorytext4 + "\t" + logstorytext5 + "\t" + logstorytext6);
+        }
     }
 
 }
