@@ -9,10 +9,17 @@ using UnityEngine.UI;
 public class startbuttonscript: MonoBehaviour
 {
     [SerializeField] GameObject InputNamePanel;
+    static int count;
     // Start is called before the first frame update
     void Start()
     {
         InputNamePanel.SetActive(false);
+        if (count == 0)
+        {
+            PlayerPrefs.SetInt("COUNTERCOUNT", count);
+            PlayerPrefs.Save();
+        }
+        count++;
     }
 
     // Update is called once per frame

@@ -10,6 +10,7 @@ public class countersclipt : MonoBehaviour
     private int score;
     private int finishcount;
     private static int nowcoin;
+    private static int count;
     public Text scoretext;
     public Text icetext;
     public Text finishscoretext;
@@ -20,13 +21,16 @@ public class countersclipt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        count++;
+        PlayerPrefs.SetInt("COUNTERCOUNT", count);
+        PlayerPrefs.Save();
         ice =  Random.Range(1, 4);
-        nowcoin = PlayerPrefs.GetInt("NEWCOIN");
     }
 
     // Update is called once per frame
     void Update()
     {
+        nowcoin = PlayerPrefs.GetInt("NOWCOIN");
         startcointext.text = "所持金:" + nowcoin;
         scoretext.text = "score:" + score;
         if (finishpanel.activeSelf == true)

@@ -22,22 +22,23 @@ public class gachasclipt : MonoBehaviour
         resultpanel.SetActive(false);
         fa = GetComponent<AudioSource>();
         nowcoin = PlayerPrefs.GetInt("NOWCOIN");
-        Debug.Log(nowcoin);
     }
 
     // Update is called once per frame
     void Update()
     {
         cointext.text = "所持金:" + nowcoin;
-        PlayerPrefs.SetInt("NEWCOIN", nowcoin);
+        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
         PlayerPrefs.Save();
     }
 
     public void onClicked_gacha()
     {
-        if (nowcoin > 50)
+        if (nowcoin >= 50)
         {
             nowcoin -= 50;
+            PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+            PlayerPrefs.Save();
             fa.Play();
             resultpanel.SetActive(true);
             value = Random.Range(0, 2);
