@@ -179,7 +179,7 @@ public class Story : MonoBehaviour
 
         //log用
         //log用のcsvファイルからテキストを読み込み
-        _logstoryArray = logstoryText.text.Replace(" ", "\u00A0");
+        _logstoryArray = logstoryText.text.Replace(" ", "");
         //_logstoryArray = logstoryText.text.Replace("?", "\u0030");
         StringReader logr = new StringReader(_logstoryArray);
         logr.ReadLine();
