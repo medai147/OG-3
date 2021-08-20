@@ -14,11 +14,12 @@ public class menusclipt : MonoBehaviour
     [SerializeField] GameObject monthtext;
     [SerializeField] GameObject SelectButtonPanel;
     [SerializeField] GameObject deleteResetButton;
+    private int selectState;
 
     // Start is called before the first frame update
     void Start()
     {
- 
+        
     }
 
     // Update is called once per frame
@@ -51,7 +52,10 @@ public class menusclipt : MonoBehaviour
         NameTextPanel.SetActive(false);
         monthtext.SetActive(false);
         Screenbutton.SetActive(false);
-        SelectButtonPanel.SetActive(false);
+        if(SelectButtonPanel.activeSelf == true) {
+            //Debug.Log("選択肢あり");
+            SelectButtonPanel.SetActive(false);
+        }
         MenuPanel.SetActive(false);
         deleteResetButton.SetActive(true);
     }
@@ -63,9 +67,13 @@ public class menusclipt : MonoBehaviour
         MainTextPanel.SetActive(true);
         NameTextPanel.SetActive(true);
         monthtext.SetActive(true);
-        Screenbutton.SetActive(false);
-        SelectButtonPanel.SetActive(true);
-        MenuPanel.SetActive(true);
+        Screenbutton.SetActive(true);
+        selectState = Story.selectpanelState;
+        if (selectState == 1)
+        {
+            SelectButtonPanel.SetActive(true);
+            Screenbutton.SetActive(false);
+        }
         deleteResetButton.SetActive(false);
     }
 }

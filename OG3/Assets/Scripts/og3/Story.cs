@@ -74,6 +74,8 @@ public class Story : MonoBehaviour
     private String logcharacterName;
     private String logstory;
 
+    public static int selectpanelState;
+
     public AudioClip bgm1;
     public AudioClip bgm2;
     public AudioClip bgm3;
@@ -154,7 +156,7 @@ public class Story : MonoBehaviour
         } else
         {
             heroineName = PlayerPrefs.GetString("INPUTNAME2");
-            Debug.Log("名前だよ" + heroineName);
+            //Debug.Log("名前だよ" + heroineName);
         }
 
         heroineName = PlayerPrefs.GetString("INPUTNAME");
@@ -272,8 +274,10 @@ public class Story : MonoBehaviour
 
         //選択肢パネル表示
         selectdisp_sr = _qdataList[index].selectdisp;
+        selectpanelState = 0;
         if (int.Parse(selectdisp_sr) == 1)
         {
+            selectpanelState = 1;
             novelSpeed = 0;
             ScreenButton.SetActive(false);
             SelectButtonPanel.SetActive(true);
@@ -831,7 +835,7 @@ public class Qdata
 
         public void WriteDebugLog_logstory()
         {
-            Debug.Log(logstorytext1 + "\t" + logstorytext2 + "\t" + logstorytext3 + "\t" + logstorytext4 + "\t" + logstorytext5 + "\t" + logstorytext6);
+            //Debug.Log(logstorytext1 + "\t" + logstorytext2 + "\t" + logstorytext3 + "\t" + logstorytext4 + "\t" + logstorytext5 + "\t" + logstorytext6);
         }
     }
 

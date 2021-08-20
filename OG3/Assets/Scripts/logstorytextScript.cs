@@ -28,7 +28,7 @@ public class logstorytextScript : MonoBehaviour
         }
         foreach (Qdata q in _logdataList)
         {
-            q.WriteDebugLog();
+            //q.WriteDebugLog();
         }
     }
 
