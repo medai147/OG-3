@@ -2120,11 +2120,8 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-<<<<<<< HEAD
   automode: 0
-=======
   SkipselectPanel: {fileID: 319267614}
->>>>>>> b7759bc7af6cd7a5c928d0c48b638e6c487ce66a
 --- !u!1 &675824978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2355,11 +2352,8 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-<<<<<<< HEAD
   automode: 0
-=======
   SkipselectPanel: {fileID: 319267614}
->>>>>>> b7759bc7af6cd7a5c928d0c48b638e6c487ce66a
 --- !u!1 &727778089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3510,11 +3504,8 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-<<<<<<< HEAD
   automode: 0
-=======
   SkipselectPanel: {fileID: 319267614}
->>>>>>> b7759bc7af6cd7a5c928d0c48b638e6c487ce66a
 --- !u!1 &1393402817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,11 +4033,8 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-<<<<<<< HEAD
   automode: 0
-=======
   SkipselectPanel: {fileID: 319267614}
->>>>>>> b7759bc7af6cd7a5c928d0c48b638e6c487ce66a
 --- !u!1 &1517604611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,11 +5365,8 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-<<<<<<< HEAD
   automode: 0
-=======
   SkipselectPanel: {fileID: 319267614}
->>>>>>> b7759bc7af6cd7a5c928d0c48b638e6c487ce66a
 --- !u!1 &2070979696
 GameObject:
   m_ObjectHideFlags: 0
