@@ -17,7 +17,7 @@ public class menusclipt : MonoBehaviour
     [SerializeField] GameObject deleteResetButton;
     [SerializeField] GameObject SkipselectPanel;
     [SerializeField] GameObject SkipselectpanelText;
-    [SerializeField] GameObject cannnotSkipTextImage;
+    [SerializeField] GameObject cannotskipAlertPanel;
     private Text skiptext;
     private int selectState;
 
@@ -84,7 +84,7 @@ public class menusclipt : MonoBehaviour
 
     public void onClicked_skip()
     {
-        if(Story.index_read != 49)
+        if(Story.index_skip != 50 && Story.index_skip != 66)
         {
             MenuPanel.SetActive(false);
             Screenbutton.SetActive(false);
@@ -106,15 +106,20 @@ public class menusclipt : MonoBehaviour
                 SkipselectpanelText.SetActive(true);
             }
         }
-        else if(Story.index_read == 49)
+        else if(Story.index_skip >= 49 || SelectButtonPanel.activeSelf == true)
         {
-            cannnotSkipTextImage.SetActive(true);
-            Invoke("delete_cannnotskiptextImage", 3);
+            cannotskipAlertPanel.SetActive(true);
+            Invoke("deleteAlertPanel", 2.0f);
         }
+    }
+
+    private void deleteAlertPanel()
+    {
+        delete_cannnotskiptextImage();
     }
 
     public void delete_cannnotskiptextImage()
     {
-        cannnotSkipTextImage.SetActive(false);
+        cannotskipAlertPanel.SetActive(false);
     }
 }

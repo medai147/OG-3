@@ -78,6 +78,9 @@ public class Story : MonoBehaviour
     public static int index_read; //読み取り用
     public static int index_skip; //skip用
 
+    
+    
+
     public AudioClip bgm1;
     public AudioClip bgm2;
     public AudioClip bgm3;
@@ -220,22 +223,24 @@ public class Story : MonoBehaviour
     {
         //skip用
         index_read = index;
-        if(SkipselectPanelScript.ckicked_skip == true) {
+        if(SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
             {
                 index_read = index;
                 index = index_skip;
+                //qstory = index_skip;
                 SkipselectPanelScript.first = false;
-            } else if(SkipselectPanelScript.first == false)
+            }
+            else if(SkipselectPanelScript.first == false)
             {
                 index_skip++;
                 index = index_skip;
                 index_read = index;
             }
-            if(index == 67)
+            if(index == 90)
             {
                 index_read = index;
-                SkipselectPanelScript.ckicked_skip = false;
+                SkipselectPanelScript.clicked_skip = false;
             }
         }
         Debug.Log(index_skip);

@@ -384,7 +384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -145, y: -53}
+  m_AnchoredPosition: {x: 134, y: -49}
   m_SizeDelta: {x: 160, y: 38.935753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115657879
@@ -673,7 +673,6 @@ RectTransform:
   - {fileID: 354492203}
   - {fileID: 886290453}
   - {fileID: 517198360}
-  - {fileID: 1906242543}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1891,8 +1890,8 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
   SkipselectPanel: {fileID: 319267614}
-  SkipselectpanelText: {fileID: 0}
-  cannnotSkipTextImage: {fileID: 0}
+  SkipselectpanelText: {fileID: 68867003}
+  cannotskipAlertPanel: {fileID: 1906242542}
 --- !u!1 &569329248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,8 +2122,8 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
   SkipselectPanel: {fileID: 319267614}
-  SkipselectpanelText: {fileID: 0}
-  cannnotSkipTextImage: {fileID: 0}
+  SkipselectpanelText: {fileID: 68867003}
+  cannotskipAlertPanel: {fileID: 1906242542}
 --- !u!1 &675824978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2356,8 +2355,8 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
   SkipselectPanel: {fileID: 319267614}
-  SkipselectpanelText: {fileID: 0}
-  cannnotSkipTextImage: {fileID: 0}
+  SkipselectpanelText: {fileID: 68867003}
+  cannotskipAlertPanel: {fileID: 1906242542}
 --- !u!1 &727778089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,6 +2471,7 @@ RectTransform:
   - {fileID: 1704670046}
   - {fileID: 539413354}
   - {fileID: 727347070}
+  - {fileID: 1906242543}
   m_Father: {fileID: 149050666}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3509,8 +3509,8 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
   SkipselectPanel: {fileID: 319267614}
-  SkipselectpanelText: {fileID: 0}
-  cannnotSkipTextImage: {fileID: 0}
+  SkipselectpanelText: {fileID: 68867003}
+  cannotskipAlertPanel: {fileID: 1906242542}
 --- !u!1 &1393402817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,7 +3697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -4.4}
+  m_AnchoredPosition: {x: 0, y: -4.4}
   m_SizeDelta: {x: 295.5592, y: 104.75284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460790558
@@ -4117,8 +4117,8 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
   SkipselectPanel: {fileID: 319267614}
-  SkipselectpanelText: {fileID: 0}
-  cannnotSkipTextImage: {fileID: 0}
+  SkipselectpanelText: {fileID: 68867003}
+  cannotskipAlertPanel: {fileID: 1906242542}
 --- !u!1 &1517604611
 GameObject:
   m_ObjectHideFlags: 0
@@ -4965,7 +4965,7 @@ GameObject:
   - component: {fileID: 1906242545}
   - component: {fileID: 1906242544}
   m_Layer: 5
-  m_Name: cannnotskipAlertPanel
+  m_Name: cannotskipAlertPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4978,17 +4978,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906242542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1460790557}
-  m_Father: {fileID: 149050666}
-  m_RootOrder: 3
+  m_Father: {fileID: 886290453}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 183.53, y: 57.4}
+  m_AnchoredPosition: {x: 183.53, y: 57.399994}
   m_SizeDelta: {x: -422.05588, y: -281.6269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906242544
@@ -5143,7 +5143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 134.00002, y: -55}
+  m_AnchoredPosition: {x: -152.8, y: -49}
   m_SizeDelta: {x: 160, y: 38.935753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947343110
@@ -5514,8 +5514,8 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
   SkipselectPanel: {fileID: 319267614}
-  SkipselectpanelText: {fileID: 0}
-  cannnotSkipTextImage: {fileID: 0}
+  SkipselectpanelText: {fileID: 68867003}
+  cannotskipAlertPanel: {fileID: 1906242542}
 --- !u!1 &2070979696
 GameObject:
   m_ObjectHideFlags: 0
