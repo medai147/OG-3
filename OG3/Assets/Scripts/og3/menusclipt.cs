@@ -78,13 +78,10 @@ public class menusclipt : MonoBehaviour
         deleteResetButton.SetActive(false);
     }
 
-<<<<<<< HEAD
-=======
     public void onClicked_skip()
     {
         MenuPanel.SetActive(false);
         Screenbutton.SetActive(false);
         SkipselectPanel.SetActive(true);
     }
->>>>>>> b7759bc7af6cd7a5c928d0c48b638e6c487ce66a
 }
