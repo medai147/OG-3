@@ -29,6 +29,9 @@ public class SkipselectPanelScript : MonoBehaviour
         if (Story.index_read < 49)
         {
             Story.index_skip = 49;
+        } else if(Story.index_read > 49 && Story.index_read < 66)
+        {
+            Story.index_skip = 66;
         }
     }
 

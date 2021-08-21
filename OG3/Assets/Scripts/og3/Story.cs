@@ -223,15 +223,18 @@ public class Story : MonoBehaviour
         if(SkipselectPanelScript.ckicked_skip == true) {
             if(SkipselectPanelScript.first == true)
             {
+                index_read = index;
                 index = index_skip;
                 SkipselectPanelScript.first = false;
             } else if(SkipselectPanelScript.first == false)
             {
                 index_skip++;
                 index = index_skip;
+                index_read = index;
             }
             if(index == 67)
             {
+                index_read = index;
                 SkipselectPanelScript.ckicked_skip = false;
             }
         }
