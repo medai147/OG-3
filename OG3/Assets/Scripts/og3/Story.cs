@@ -75,6 +75,8 @@ public class Story : MonoBehaviour
     private String logstory;
 
     public static int selectpanelState;
+    public static int index_read; //読み取り用
+    public static int index_skip; //skip用
 
     public AudioClip bgm1;
     public AudioClip bgm2;
@@ -216,6 +218,24 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
+        //skip用
+        index_read = index;
+        if(SkipselectPanelScript.ckicked_skip == true) {
+            if(SkipselectPanelScript.first == true)
+            {
+                index = index_skip;
+                SkipselectPanelScript.first = false;
+            } else if(SkipselectPanelScript.first == false)
+            {
+                index_skip++;
+                index = index_skip;
+            }
+            if(index == 67)
+            {
+                SkipselectPanelScript.ckicked_skip = false;
+            }
+        }
+        Debug.Log(index_skip);
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";

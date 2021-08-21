@@ -264,7 +264,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &68867006
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -359,6 +359,7 @@ GameObject:
   - component: {fileID: 115657881}
   - component: {fileID: 115657880}
   - component: {fileID: 115657879}
+  - component: {fileID: 115657882}
   m_Layer: 5
   m_Name: backButton
   m_TagString: Untagged
@@ -428,7 +429,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 115657880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 115657882}
+        m_MethodName: onClicked_backButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &115657880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +478,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115657877}
   m_CullTransparentMesh: 0
+--- !u!114 &115657882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115657877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9e83c2432ec2f4d8e1dff991b5768b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkipselectPanel: {fileID: 319267614}
+  Screenbutton: {fileID: 527820360}
 --- !u!1 &120002763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &319267615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1723,6 +1749,7 @@ GameObject:
   - component: {fileID: 539413357}
   - component: {fileID: 539413356}
   - component: {fileID: 539413355}
+  - component: {fileID: 539413358}
   m_Layer: 5
   m_Name: Skipbutton
   m_TagString: Untagged
@@ -1792,7 +1819,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 539413356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 539413358}
+        m_MethodName: onClicked_skip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &539413356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1830,6 +1868,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539413353}
   m_CullTransparentMesh: 0
+--- !u!114 &539413358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539413353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8f153989dd4cca4a81bab029a0f276f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logPanel: {fileID: 517198359}
+  MenuPanel: {fileID: 886290452}
+  Screenbutton: {fileID: 527820360}
+  TextImage: {fileID: 74986249}
+  MainTextPanel: {fileID: 991979957}
+  NameTextPanel: {fileID: 1119405667}
+  monthtext: {fileID: 1169502369}
+  SelectButtonPanel: {fileID: 1700621256}
+  deleteResetButton: {fileID: 606233262}
+  SkipselectPanel: {fileID: 319267614}
 --- !u!1 &569329248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,6 +2119,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  SkipselectPanel: {fileID: 319267614}
 --- !u!1 &675824978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2350,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  SkipselectPanel: {fileID: 319267614}
 --- !u!1 &727778089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,6 +3501,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  SkipselectPanel: {fileID: 319267614}
 --- !u!1 &1393402817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,6 +4029,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  SkipselectPanel: {fileID: 319267614}
 --- !u!1 &1517604611
 GameObject:
   m_ObjectHideFlags: 0
@@ -4890,6 +4954,7 @@ GameObject:
   - component: {fileID: 1947343112}
   - component: {fileID: 1947343111}
   - component: {fileID: 1947343110}
+  - component: {fileID: 1947343113}
   m_Layer: 5
   m_Name: okButton
   m_TagString: Untagged
@@ -4959,7 +5024,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1947343111}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1947343113}
+        m_MethodName: onClicked_okButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1947343111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4997,6 +5073,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947343108}
   m_CullTransparentMesh: 0
+--- !u!114 &1947343113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947343108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9e83c2432ec2f4d8e1dff991b5768b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkipselectPanel: {fileID: 319267614}
+  Screenbutton: {fileID: 527820360}
 --- !u!1 &1957640134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5259,6 +5349,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  SkipselectPanel: {fileID: 319267614}
 --- !u!1 &2070979696
 GameObject:
   m_ObjectHideFlags: 0

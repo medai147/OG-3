@@ -14,6 +14,7 @@ public class menusclipt : MonoBehaviour
     [SerializeField] GameObject monthtext;
     [SerializeField] GameObject SelectButtonPanel;
     [SerializeField] GameObject deleteResetButton;
+    [SerializeField] GameObject SkipselectPanel;
     private int selectState;
 
     // Start is called before the first frame update
@@ -75,5 +76,12 @@ public class menusclipt : MonoBehaviour
             Screenbutton.SetActive(false);
         }
         deleteResetButton.SetActive(false);
+    }
+
+    public void onClicked_skip()
+    {
+        MenuPanel.SetActive(false);
+        Screenbutton.SetActive(false);
+        SkipselectPanel.SetActive(true);
     }
 }
