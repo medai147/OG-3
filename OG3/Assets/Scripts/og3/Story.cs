@@ -75,6 +75,8 @@ public class Story : MonoBehaviour
     private String logstory;
 
     public static int selectpanelState;
+    public static int index_read; //読み取り用
+    public static int index_skip; //skip用
 
     public AudioClip bgm1;
     public AudioClip bgm2;
@@ -107,6 +109,7 @@ public class Story : MonoBehaviour
     public int savenum = 0;
     public int menucount = 0;
     public int nameinput = 0;
+    public int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
 
@@ -216,6 +219,27 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
+        //skip用
+        index_read = index;
+        if(SkipselectPanelScript.ckicked_skip == true) {
+            if(SkipselectPanelScript.first == true)
+            {
+                index_read = index;
+                index = index_skip;
+                SkipselectPanelScript.first = false;
+            } else if(SkipselectPanelScript.first == false)
+            {
+                index_skip++;
+                index = index_skip;
+                index_read = index;
+            }
+            if(index == 67)
+            {
+                index_read = index;
+                SkipselectPanelScript.ckicked_skip = false;
+            }
+        }
+        Debug.Log(index_skip);
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
@@ -568,9 +592,9 @@ public class Story : MonoBehaviour
         //ストーリーテキスト表示
         while (_qdataList[index].storyText.Length > messageCount)
         {
-            _story.text += _qdataList[index].storyText[messageCount];
-            messageCount++;
-            yield return new WaitForSeconds(novelSpeed);
+                _story.text += _qdataList[index].storyText[messageCount];
+                messageCount++;
+                yield return new WaitForSeconds(novelSpeed);
         }
         if(_qdataList[index].storyText.Length == messageCount)
         {
@@ -644,6 +668,23 @@ public class Story : MonoBehaviour
             //_logtext.text += logspace;
             //_logtext.text += _logdataList[index].logstorytext6;
             _logtext.text += "\n";
+        }
+
+//オートモード
+        if (qNum > qstory && automode == 1)
+        {
+            sounds[2].Stop();
+            //StartCoroutine(Novel(qstory++));
+            //click = 0;
+
+            //if (selected != 0) {
+            //    selected = 0;
+            //}
+            if (!(selected == 1 && qstory == 91))
+            {
+                StartCoroutine(Novel(qstory++));
+                click = 0;
+            }
         }
     }
 
@@ -733,6 +774,18 @@ public class Story : MonoBehaviour
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
     }
+    public void onClicked_Autobutton()
+    {
+        MenuPanel.SetActive(false);
+        if (automode == 0)
+        {
+            automode = 1;
+        }
+        else
+        {
+            automode = 0;
+        }
+    }
 }
 
 //質問を管理するクラス
@@ -757,6 +810,7 @@ public class Qdata
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
+    private int automode;
 
     public Qdata(string txt)
     {
