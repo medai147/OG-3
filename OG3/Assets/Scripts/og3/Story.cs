@@ -112,6 +112,7 @@ public class Story : MonoBehaviour
     public int savenum = 0;
     public int menucount = 0;
     public int nameinput = 0;
+    public int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
 
@@ -600,9 +601,9 @@ public class Story : MonoBehaviour
         index_read = index; //skip用
         while (_qdataList[index].storyText.Length > messageCount)
         {
-            _story.text += _qdataList[index].storyText[messageCount];
-            messageCount++;
-            yield return new WaitForSeconds(novelSpeed);
+                _story.text += _qdataList[index].storyText[messageCount];
+                messageCount++;
+                yield return new WaitForSeconds(novelSpeed);
         }
         if(_qdataList[index].storyText.Length == messageCount)
         {
@@ -677,7 +678,25 @@ public class Story : MonoBehaviour
             //_logtext.text += _logdataList[index].logstorytext6;
             _logtext.text += "\n";
         }
+
         index_read = index;
+
+//オートモード
+        if (qNum > qstory && automode == 1)
+        {
+            sounds[2].Stop();
+            //StartCoroutine(Novel(qstory++));
+            //click = 0;
+
+            //if (selected != 0) {
+            //    selected = 0;
+            //}
+            if (!(selected == 1 && qstory == 91))
+            {
+                StartCoroutine(Novel(qstory++));
+                click = 0;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -770,6 +789,18 @@ public class Story : MonoBehaviour
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
     }
+    public void onClicked_Autobutton()
+    {
+        MenuPanel.SetActive(false);
+        if (automode == 0)
+        {
+            automode = 1;
+        }
+        else
+        {
+            automode = 0;
+        }
+    }
 }
 
 //質問を管理するクラス
@@ -794,6 +825,7 @@ public class Qdata
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
+    private int automode;
 
     public Qdata(string txt)
     {

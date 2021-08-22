@@ -854,6 +854,7 @@ MonoBehaviour:
   savenum: 0
   menucount: 0
   nameinput: 0
+  automode: 0
   novelSpeed: 0.1
   ScreenButton: {fileID: 527820360}
   SelectButtonPanel: {fileID: 1700621256}
@@ -2126,6 +2127,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -2360,6 +2362,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -3593,6 +3596,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -4202,6 +4206,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -4777,7 +4782,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1704670048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 149050667}
+        m_MethodName: onClicked_Autobutton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1704670048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5676,6 +5692,7 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
+  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
