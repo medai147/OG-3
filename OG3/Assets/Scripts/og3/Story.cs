@@ -309,6 +309,7 @@ public class Story : MonoBehaviour
         selectpanelState = 0;
         if (int.Parse(selectdisp_sr) == 1)
         {
+            automode = 0;
             selectpanelState = 1;
             novelSpeed = 0;
             ScreenButton.SetActive(false);
