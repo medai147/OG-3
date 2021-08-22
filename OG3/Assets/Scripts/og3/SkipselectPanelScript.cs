@@ -6,6 +6,7 @@ public class SkipselectPanelScript : MonoBehaviour
 {
     [SerializeField] GameObject SkipselectPanel;
     [SerializeField] GameObject Screenbutton;
+    [SerializeField] GameObject LoadingPanel;
     public static bool clicked_skip;
     public static bool first;
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class SkipselectPanelScript : MonoBehaviour
         Screenbutton.SetActive(true);
         clicked_skip = true;
         first = true;
+        LoadingPanel.SetActive(true);
         if (Story.index_read < 49)
         {
             Story.index_skip = 49;

@@ -120,6 +120,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject logPanel;
     [SerializeField] GameObject MenuPanel;
     [SerializeField] GameObject cannotskipAlertPanel;
+    [SerializeField] GameObject LoadingPanel;
 
     [SerializeField] GameObject SelectButton_3;
 
@@ -227,6 +228,7 @@ public class Story : MonoBehaviour
         if(SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
             {
+                LoadingPanel.SetActive(false);
                 index_read = index;
                 index = index_skip;
                 //qstory = index_skip;
