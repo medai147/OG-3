@@ -73,3 +73,7 @@ Preset:
     propertyPath: cannotskipAlertPanel
     value: 
     objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: monthimage
+    value: 
+    objectReference: {fileID: 0}

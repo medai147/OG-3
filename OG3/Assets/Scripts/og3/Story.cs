@@ -594,6 +594,7 @@ public class Story : MonoBehaviour
         }
 
         //ストーリーテキスト表示
+        index_read = index; //skip用
         while (_qdataList[index].storyText.Length > messageCount)
         {
             _story.text += _qdataList[index].storyText[messageCount];
@@ -673,6 +674,7 @@ public class Story : MonoBehaviour
             //_logtext.text += _logdataList[index].logstorytext6;
             _logtext.text += "\n";
         }
+        index_read = index;
     }
 
     // Update is called once per frame

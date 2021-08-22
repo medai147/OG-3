@@ -1892,6 +1892,7 @@ MonoBehaviour:
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
+  monthimage: {fileID: 1140249021}
 --- !u!1 &569329248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2125,7 @@ MonoBehaviour:
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
+  monthimage: {fileID: 1140249021}
 --- !u!1 &675824978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2357,6 +2359,7 @@ MonoBehaviour:
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
+  monthimage: {fileID: 1140249021}
 --- !u!1 &727778089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,6 +3514,7 @@ MonoBehaviour:
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
+  monthimage: {fileID: 1140249021}
 --- !u!1 &1393402817
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,6 +4123,7 @@ MonoBehaviour:
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
+  monthimage: {fileID: 1140249021}
 --- !u!1 &1517604611
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,6 +5521,7 @@ MonoBehaviour:
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
+  monthimage: {fileID: 1140249021}
 --- !u!1 &2070979696
 GameObject:
   m_ObjectHideFlags: 0
