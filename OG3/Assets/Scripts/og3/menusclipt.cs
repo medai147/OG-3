@@ -113,10 +113,6 @@ public class menusclipt : MonoBehaviour
                 SkipselectpanelText.SetActive(true);
             }
         }
-        if(MenuPanel.activeSelf == false)
-        {
-            cannotskipAlertPanel.SetActive(false);
-        }
     }
 
     private void deleteAlertPanel()

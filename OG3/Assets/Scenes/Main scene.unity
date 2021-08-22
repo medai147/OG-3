@@ -858,6 +858,7 @@ MonoBehaviour:
   SelectButtonPanel: {fileID: 1700621256}
   logPanel: {fileID: 517198359}
   MenuPanel: {fileID: 886290452}
+  cannotskipAlertPanel: {fileID: 1906242542}
   SelectButton_3: {fileID: 1555609096}
 --- !u!82 &149050668
 AudioSource:

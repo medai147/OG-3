@@ -119,6 +119,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject SelectButtonPanel;
     [SerializeField] GameObject logPanel;
     [SerializeField] GameObject MenuPanel;
+    [SerializeField] GameObject cannotskipAlertPanel;
 
     [SerializeField] GameObject SelectButton_3;
 
@@ -708,6 +709,10 @@ public class Story : MonoBehaviour
         {
             menucount = 200;
             MenuPanel.SetActive(false);
+            
+            //skip用
+                cannotskipAlertPanel.SetActive(false);
+            //
         }
 
     }
