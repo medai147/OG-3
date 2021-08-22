@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class menusclipt : MonoBehaviour
 {
@@ -15,18 +16,23 @@ public class menusclipt : MonoBehaviour
     [SerializeField] GameObject SelectButtonPanel;
     [SerializeField] GameObject deleteResetButton;
     [SerializeField] GameObject SkipselectPanel;
+    [SerializeField] GameObject SkipselectpanelText;
+    [SerializeField] GameObject cannotskipAlertPanel;
+    [SerializeField] GameObject monthimage;
+    private Text skiptext;
     private int selectState;
+    private int alertdisp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void onClicked_Save()
@@ -53,7 +59,7 @@ public class menusclipt : MonoBehaviour
         NameTextPanel.SetActive(false);
         monthtext.SetActive(false);
         Screenbutton.SetActive(false);
-        if(SelectButtonPanel.activeSelf == true) {
+        if (SelectButtonPanel.activeSelf == true) {
             //Debug.Log("選択肢あり");
             SelectButtonPanel.SetActive(false);
         }
@@ -80,8 +86,42 @@ public class menusclipt : MonoBehaviour
 
     public void onClicked_skip()
     {
-        MenuPanel.SetActive(false);
-        Screenbutton.SetActive(false);
-        SkipselectPanel.SetActive(true);
+        if ((SelectButtonPanel.activeSelf == true || monthimage.activeSelf == true || Story.index_read >= 65) && cannotskipAlertPanel.activeSelf != true)
+        {
+            cannotskipAlertPanel.SetActive(true);
+            Invoke("deleteAlertPanel", 2.0f);
+        }
+        else if (Story.index_skip != 49 && Story.index_skip != 66)
+        {
+            MenuPanel.SetActive(false);
+            Screenbutton.SetActive(false);
+            SkipselectPanel.SetActive(true);
+            if (Story.index_read < 49)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "4月をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 49 && Story.index_read < 65)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "5月(光と勉強)をスキップしますか？";
+                skiptext.text += "\n";
+                skiptext.text += "(選択肢のところまで)";
+                SkipselectpanelText.SetActive(true);
+            }
+        }
+    }
+
+    private void deleteAlertPanel()
+    {
+        delete_cannnotskiptextImage();
+    }
+
+    public void delete_cannnotskiptextImage()
+    {
+        cannotskipAlertPanel.SetActive(false);
     }
 }

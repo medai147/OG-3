@@ -78,6 +78,9 @@ public class Story : MonoBehaviour
     public static int index_read; //読み取り用
     public static int index_skip; //skip用
 
+    
+    
+
     public AudioClip bgm1;
     public AudioClip bgm2;
     public AudioClip bgm3;
@@ -117,6 +120,8 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject SelectButtonPanel;
     [SerializeField] GameObject logPanel;
     [SerializeField] GameObject MenuPanel;
+    [SerializeField] GameObject cannotskipAlertPanel;
+    [SerializeField] GameObject LoadingPanel;
 
     [SerializeField] GameObject SelectButton_3;
 
@@ -221,22 +226,25 @@ public class Story : MonoBehaviour
     {
         //skip用
         index_read = index;
-        if(SkipselectPanelScript.ckicked_skip == true) {
+        if(SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
             {
+                LoadingPanel.SetActive(false);
                 index_read = index;
                 index = index_skip;
+                //qstory = index_skip;
                 SkipselectPanelScript.first = false;
-            } else if(SkipselectPanelScript.first == false)
+            }
+            else if(SkipselectPanelScript.first == false)
             {
                 index_skip++;
                 index = index_skip;
                 index_read = index;
             }
-            if(index == 67)
+            if(index == 90)
             {
                 index_read = index;
-                SkipselectPanelScript.ckicked_skip = false;
+                SkipselectPanelScript.clicked_skip = false;
             }
         }
         Debug.Log(index_skip);
@@ -590,6 +598,7 @@ public class Story : MonoBehaviour
         }
 
         //ストーリーテキスト表示
+        index_read = index; //skip用
         while (_qdataList[index].storyText.Length > messageCount)
         {
                 _story.text += _qdataList[index].storyText[messageCount];
@@ -670,6 +679,8 @@ public class Story : MonoBehaviour
             _logtext.text += "\n";
         }
 
+        index_read = index;
+
 //オートモード
         if (qNum > qstory && automode == 1)
         {
@@ -719,6 +730,10 @@ public class Story : MonoBehaviour
         {
             menucount = 200;
             MenuPanel.SetActive(false);
+            
+            //skip用
+                cannotskipAlertPanel.SetActive(false);
+            //
         }
 
     }
