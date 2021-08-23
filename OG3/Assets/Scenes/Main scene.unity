@@ -2127,7 +2127,6 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -2166,8 +2165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.038576122}
   m_AnchorMax: {x: 1, y: 0.96142757}
-  m_AnchoredPosition: {x: 9.983826, y: 2.5}
-  m_SizeDelta: {x: -744.9728, y: -140.59778}
+  m_AnchoredPosition: {x: -6.5999756, y: -0.000030517578}
+  m_SizeDelta: {x: -835.7377, y: -117.89197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675824980
 MonoBehaviour:
@@ -2190,7 +2189,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 19a8d2caacfa79f4ba0e660143428d7f, type: 3}
-    m_FontSize: 30
+    m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2362,7 +2361,6 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -2721,8 +2719,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 260.2, y: -359.9}
-  m_SizeDelta: {x: 1604.738, y: 279.2401}
+  m_AnchoredPosition: {x: 259.3, y: -351}
+  m_SizeDelta: {x: 1736.7805, y: 279.24005}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &991979959
 MonoBehaviour:
@@ -2874,8 +2872,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -329.9, y: 0.7}
-  m_SizeDelta: {x: 189.4335, y: 64.836426}
+  m_AnchoredPosition: {x: -397.3, y: 23}
+  m_SizeDelta: {x: 182.54358, y: 81.61398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119405669
 MonoBehaviour:
@@ -3096,7 +3094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316, y: 202.00002}
+  m_AnchoredPosition: {x: -321.92, y: 178.93}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169502371
@@ -3596,7 +3594,6 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -3709,8 +3706,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.9996178, y: 1}
-  m_AnchoredPosition: {x: -8.699997, y: 0}
-  m_SizeDelta: {x: -29.52324, y: -37.769646}
+  m_AnchoredPosition: {x: 0.041778564, y: 0}
+  m_SizeDelta: {x: 11.604523, y: -0.000015258789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1450458201
 MonoBehaviour:
@@ -3733,7 +3730,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d0fc0dde5eb3e6a4cad9b67aa138a09c, type: 3}
-    m_FontSize: 35
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
@@ -4206,7 +4203,6 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
@@ -5692,7 +5688,6 @@ MonoBehaviour:
   monthtext: {fileID: 1169502369}
   SelectButtonPanel: {fileID: 1700621256}
   deleteResetButton: {fileID: 606233262}
-  automode: 0
   SkipselectPanel: {fileID: 319267614}
   SkipselectpanelText: {fileID: 68867003}
   cannotskipAlertPanel: {fileID: 1906242542}
