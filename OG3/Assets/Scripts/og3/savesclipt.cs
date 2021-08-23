@@ -11,23 +11,35 @@ public class savesclipt : MonoBehaviour
     public GameObject loadstill;
     public Sprite loadsprite;
     private String heroinname;
-    private static String[]heroin = { "", "", "", "" };
+    private static String[]heroin = { "", "", "", "" , "", "", "", "" };
     private int save;
     private static int load;
-    private Text _save1;
-    private Text _save2;
-    private Text _save3;
-    private Text _save4;
+    public Text _save1;
+    public Text _save2;
+    public Text _save3;
+    public Text _save4;
+    public Text _save5;
+    public Text _save6;
+    public Text _save7;
+    public Text _save8;
     private static int number;
     private static int number1;
     private static int number2;
     private static int number3;
     private static int number4;
+    private static int number5;
+    private static int number6;
+    private static int number7;
+    private static int number8;
     private static DateTime dt1;
     private static DateTime dt2;
     private static DateTime dt3;
     private static DateTime dt4;
-    private static int[]count = { 0, 0, 0, 0 };
+    private static DateTime dt5;
+    private static DateTime dt6;
+    private static DateTime dt7;
+    private static DateTime dt8;
+    private static int[]count = { 0, 0, 0, 0, 0, 0, 0, 0 };
     [SerializeField] GameObject loadPanel;
 
 
@@ -39,11 +51,6 @@ public class savesclipt : MonoBehaviour
         number = PlayerPrefs.GetInt("NUMBER");
         heroinname = PlayerPrefs.GetString("INPUTNAME");
         //ここに飛びたいストーリー番号を書いてsave画面から始める　例  number = 34;
-
-        _save1 = GameObject.Find("save1text").GetComponent<Text>();
-        _save2 = GameObject.Find("save2text").GetComponent<Text>();
-        _save3 = GameObject.Find("save3text").GetComponent<Text>();
-        _save4 = GameObject.Find("save4text").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -53,6 +60,10 @@ public class savesclipt : MonoBehaviour
         _save2.text = number2.ToString("000") + "日付" + dt2;
         _save3.text = number3.ToString("000") + "日付" + dt3;
         _save4.text = number4.ToString("000") + "日付" + dt4;
+        _save5.text = number5.ToString("000") + "日付" + dt5;
+        _save6.text = number6.ToString("000") + "日付" + dt6;
+        _save7.text = number7.ToString("000") + "日付" + dt7;
+        _save8.text = number8.ToString("000") + "日付" + dt8;
         if (count[0] == 0)
         {
             _save1.text = "セーブできるよ";
@@ -68,6 +79,22 @@ public class savesclipt : MonoBehaviour
         if (count[3] == 0)
         {
             _save4.text = "セーブできるよ";
+        }
+        if (count[4] == 0)
+        {
+            _save5.text = "セーブできるよ";
+        }
+        if (count[5] == 0)
+        {
+            _save6.text = "セーブできるよ";
+        }
+        if (count[6] == 0)
+        {
+            _save7.text = "セーブできるよ";
+        }
+        if (count[7] == 0)
+        {
+            _save8.text = "セーブできるよ";
         }
         //Debug.Log(load);
     }
@@ -93,6 +120,28 @@ public class savesclipt : MonoBehaviour
         Save(ref number4, ref _save4,ref dt4, ref count[3], ref heroin[3]);
     }
 
+    public void save5_onClicked()
+    {
+        Save(ref number5, ref _save5, ref dt5, ref count[4], ref heroin[4]);
+    }
+
+    public void save6_onClicked()
+    {
+        Save(ref number6, ref _save6, ref dt6, ref count[5], ref heroin[5]);
+    }
+
+    public void save7_onClicked()
+    {
+        Save(ref number7, ref _save7, ref dt7, ref count[6], ref heroin[6]);
+    }
+
+    public void save8_onClicked()
+    {
+        Save(ref number8, ref _save8, ref dt8, ref count[7], ref heroin[7]);
+    }
+
+
+
 
 
     public void Save(ref int savenum, ref Text savetext,ref DateTime dt,ref int savecount,ref string name)
@@ -110,30 +159,36 @@ public class savesclipt : MonoBehaviour
         }
         else if (load == 1)
         {
-            if (savenum == 0)
+            if (savecount == 1)
             {
-                loadPanel.SetActive(true);
-                Image loadimage = (Image)loadstill.GetComponent<Image>();
-                loadimage.sprite = loadsprite;
-                PlayerPrefs.SetInt("NUMBERLOAD", savenum);
-                PlayerPrefs.Save();
-                PlayerPrefs.SetInt("NAMEINPUT", 1);
-                PlayerPrefs.Save();
-                PlayerPrefs.SetString("INPUTNAME2", name);
-                PlayerPrefs.Save();
-            }
-            else
+                if (savenum == 0)
+                {
+                    loadPanel.SetActive(true);
+                    Image loadimage = (Image)loadstill.GetComponent<Image>();
+                    loadimage.sprite = loadsprite;
+                    PlayerPrefs.SetInt("NUMBERLOAD", savenum);
+                    PlayerPrefs.Save();
+                    PlayerPrefs.SetInt("NAMEINPUT", 1);
+                    PlayerPrefs.Save();
+                    PlayerPrefs.SetString("INPUTNAME2", name);
+                    PlayerPrefs.Save();
+                }
+                else
+                {
+                    loadPanel.SetActive(true);
+                    Image loadimage = (Image)loadstill.GetComponent<Image>();
+                    loadimage.sprite = loadsprite;
+                    PlayerPrefs.SetInt("NUMBERLOAD", savenum - 1);
+                    PlayerPrefs.Save();
+                    PlayerPrefs.SetInt("NAMEINPUT", 1);
+                    PlayerPrefs.Save();
+                    PlayerPrefs.SetString("INPUTNAME2", name);
+                    PlayerPrefs.Save();
+
+                }
+            } else
             {
-                loadPanel.SetActive(true);
-                Image loadimage = (Image)loadstill.GetComponent<Image>();
-                loadimage.sprite = loadsprite;
-                PlayerPrefs.SetInt("NUMBERLOAD", savenum - 1);
-                PlayerPrefs.Save();
-                PlayerPrefs.SetInt("NAMEINPUT", 1);
-                PlayerPrefs.Save();
-                PlayerPrefs.SetString("INPUTNAME2", name);
-                PlayerPrefs.Save();
-                
+                savetext.text = "セーブデータがないよ";
             }
 
             load = 0;
