@@ -11,7 +11,7 @@ public class minigamesclipt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,6 +21,12 @@ public class minigamesclipt : MonoBehaviour
     }
     public void minigame_onClicked()
     {
+        Invoke("jumptoMinigame", 0.52f);
+    }
+
+    public void jumptoMinigame()
+    {
         SceneManager.LoadScene("minigamemenuscene");
     }
+
 }

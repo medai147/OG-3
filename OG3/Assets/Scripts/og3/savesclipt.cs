@@ -8,10 +8,6 @@ using UnityEngine.UI;
 
 public class savesclipt : MonoBehaviour
 {
-    public AudioClip startbgm;
-    public AudioClip buttonclicked_se;
-    AudioSource[] sounds;
-
     public GameObject loadstill;
     public Sprite loadsprite;
     private String heroinname;
@@ -50,10 +46,6 @@ public class savesclipt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sounds = GetComponents<AudioSource>();
-        sounds[0].clip = startbgm;
-        sounds[0].Play();
-
         save = PlayerPrefs.GetInt("SAVE");
         PlayerPrefs.SetInt("SAVE", 0);
         number = PlayerPrefs.GetInt("NUMBER");
@@ -205,11 +197,14 @@ public class savesclipt : MonoBehaviour
     }
     public void load_onClicked()
     {
-        sounds[1].PlayOneShot(buttonclicked_se);
-
         save = 0;
         load = 1;
-        SceneManager.LoadScene("save scene");
+        Invoke("jumptoSave", 0.52f);
+        //SceneManager.LoadScene("save scene");
     }
 
+    public void jumptoSave()
+    {
+        SceneManager.LoadScene("save scene");
+    }
 }
