@@ -67,6 +67,7 @@ public class Story : MonoBehaviour
     public Sprite text_hikaru;
     public Sprite text_rukia;
     public Sprite text_mob;
+
     private string centersr;
     private string rightsr;
     private string leftsr;
@@ -93,9 +94,10 @@ public class Story : MonoBehaviour
     
     
 
-    public AudioClip bgm1;
-    public AudioClip bgm2;
-    public AudioClip bgm3;
+    public AudioClip bgm1; //ikemen_theme
+    public AudioClip bgm2; //dark
+    public AudioClip bgm3; //shock
+    public AudioClip bgm4; //cafe
 
     public AudioClip[] cv;
 

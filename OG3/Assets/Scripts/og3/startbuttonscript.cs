@@ -10,9 +10,18 @@ public class startbuttonscript: MonoBehaviour
 {
     [SerializeField] GameObject InputNamePanel;
     static int count;
+
+    public AudioClip startbgm;
+    public AudioClip buttonclicked_se;
+    AudioSource[] sounds;
+
     // Start is called before the first frame update
     void Start()
     {
+        sounds = GetComponents<AudioSource>();
+        sounds[0].clip = startbgm;
+        sounds[0].Play();
+
         InputNamePanel.SetActive(false);
         if (count == 0)
         {
@@ -29,6 +38,7 @@ public class startbuttonscript: MonoBehaviour
     }
     public void onClicked_startButton()
     {
+        sounds[1].PlayOneShot(buttonclicked_se);
         InputNamePanel.SetActive(true);
         PlayerPrefs.SetInt("NUMBERLOAD", 0);
         PlayerPrefs.Save();

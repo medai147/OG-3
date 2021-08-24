@@ -755,6 +755,7 @@ MonoBehaviour:
   bgm1: {fileID: 8300000, guid: 8e422e083b24a3042ba7158208986672, type: 3}
   bgm2: {fileID: 8300000, guid: c6bfc5abe4fd58c469dd00da461856b1, type: 3}
   bgm3: {fileID: 8300000, guid: 8ed6bc2823ace6e438c7958daeb08e8a, type: 3}
+  bgm4: {fileID: 8300000, guid: 5d2386ca13835244b83a0c7865e2e2c3, type: 3}
   cv:
   - {fileID: 8300000, guid: cd260cc45e9c2534fae11a407b628180, type: 3}
   - {fileID: 8300000, guid: cd260cc45e9c2534fae11a407b628180, type: 3}
@@ -1333,7 +1334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.5, y: 28.097992}
+  m_AnchoredPosition: {x: -20.5, y: 28.097961}
   m_SizeDelta: {x: -55.34198, y: -77.77319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402444143
