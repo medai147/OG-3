@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Qdata;
 
@@ -25,32 +25,44 @@ public class Story : MonoBehaviour
     public GameObject textbox;
     public GameObject still;
     public GameObject month;
+    public Sprite clearSprite;
     public Sprite ouziSprite;
     public Sprite rukiaSprite;
     public Sprite hikaruSprite;
-    public Sprite clearSprite;
-    public Sprite statueSprite;
     public Sprite ouziojiSprite;
     public Sprite rukiaojiSprite;
     public Sprite hikaruojiSprite;
     public Sprite ouzismileSprite;
     public Sprite hikarutroubleSprite;
     public Sprite ouziojismileSprite;
+    public Sprite ouziojiangrySprite;
+    public Sprite ouziojitroubleSprite;
+    public Sprite rukiatroubleSprite;
+    public Sprite rukiaojismileSprite;
+    public Sprite statueSprite;
+    //背景
     public Sprite back_classroomSprite;
-    public Sprite back_stairsSprite;
     public Sprite back_corridorSprite;
+    public Sprite back_stairsSprite;
     public Sprite back_gardenSprite;
     public Sprite back_schoolSprite;
     public Sprite back_dispensarySprite;
+    public Sprite back_seaSprite;
+    public Sprite back_groundSprite;
     public Sprite back_shoploadSprite;
     public Sprite back_fancyshopSprite;
-    public Sprite back_May;
+    public Sprite back_cafeSprite;
+    public Sprite back_heroineroom_noonSprite;
+    public Sprite back_heroineroom_nightSprite;
     public Sprite blackSprite;
+    //スチル
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
     public Sprite still_MaySprite;
+    //月
     public Sprite month_MaySprite;
     public Sprite month_clearSprite;
+    //名前の色
     public Sprite text_ouzi;
     public Sprite text_hikaru;
     public Sprite text_rukia;
@@ -70,9 +82,9 @@ public class Story : MonoBehaviour
     private string textcolorsr;
     private String heroineName;
     private String logheroineName;
-    private String characternamelength;
+    //private String characternamelength;
     private String logcharacterName;
-    private String logstory;
+    //private String logstory;
 
     public static int selectpanelState;
     public static int index_read; //読み取り用
@@ -442,6 +454,26 @@ public class Story : MonoBehaviour
         {
             centerCharacter.sprite = hikarutroubleSprite;
         }
+        else if (int.Parse(centersr) == 9)
+        { 
+            centerCharacter.sprite = ouziojismileSprite;
+        }
+        else if (int.Parse(centersr) == 10)
+        {
+            centerCharacter.sprite = ouziojiangrySprite;
+        }
+        else if (int.Parse(centersr) == 11)
+        {
+            centerCharacter.sprite = ouziojitroubleSprite;
+        }
+        else if (int.Parse(centersr) == 12)
+        {
+            centerCharacter.sprite = rukiatroubleSprite;
+        }
+        else if (int.Parse(centersr) == 13)
+        {
+            centerCharacter.sprite = rukiaojismileSprite;
+        }
         else if (int.Parse(centersr) == 24)
         {
             centerCharacter.sprite = statueSprite;
@@ -486,6 +518,26 @@ public class Story : MonoBehaviour
         {
             rightCharacter.sprite = hikarutroubleSprite;
         }
+        else if (int.Parse(centersr) == 9)
+        {
+            rightCharacter.sprite = ouziojismileSprite;
+        }
+        else if (int.Parse(centersr) == 10)
+        {
+            rightCharacter.sprite = ouziojiangrySprite;
+        }
+        else if (int.Parse(centersr) == 11)
+        {
+            rightCharacter.sprite = ouziojitroubleSprite;
+        }
+        else if (int.Parse(centersr) == 12)
+        {
+            rightCharacter.sprite = rukiatroubleSprite;
+        }
+        else if (int.Parse(centersr) == 13)
+        {
+            rightCharacter.sprite = rukiaojismileSprite;
+        }
         else if (int.Parse(rightsr) == 24)
         {
             rightCharacter.sprite = statueSprite;
@@ -529,6 +581,26 @@ public class Story : MonoBehaviour
         else if (int.Parse(centersr) == 8)
         {
             leftCharacter.sprite = hikarutroubleSprite;
+        }
+        else if (int.Parse(centersr) == 9)
+        {
+            leftCharacter.sprite = ouziojismileSprite;
+        }
+        else if (int.Parse(centersr) == 10)
+        {
+            leftCharacter.sprite = ouziojiangrySprite;
+        }
+        else if (int.Parse(centersr) == 11)
+        {
+            leftCharacter.sprite = ouziojitroubleSprite;
+        }
+        else if (int.Parse(centersr) == 12)
+        {
+            leftCharacter.sprite = rukiatroubleSprite;
+        }
+        else if (int.Parse(centersr) == 13)
+        {
+            leftCharacter.sprite = rukiaojismileSprite;
         }
         else if (int.Parse(leftsr) == 24)
         {

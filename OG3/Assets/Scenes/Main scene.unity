@@ -704,32 +704,44 @@ MonoBehaviour:
   textbox: {fileID: 74986249}
   still: {fileID: 1323825581}
   month: {fileID: 1140249021}
+  clearSprite: {fileID: 21300000, guid: 27e222d19f7197a44b496b7accf26704, type: 3}
   ouziSprite: {fileID: 21300000, guid: 12a2d8691eb438149ad35b5826affcbe, type: 3}
   rukiaSprite: {fileID: 21300000, guid: 82d0a1365ea50924798db97882a00a35, type: 3}
   hikaruSprite: {fileID: 21300000, guid: 09ad32d6fb203c94c927cabb70a5445b, type: 3}
-  clearSprite: {fileID: 21300000, guid: 27e222d19f7197a44b496b7accf26704, type: 3}
-  statueSprite: {fileID: 21300000, guid: 209a7bf0d4931634ebbcbf509698ad8e, type: 3}
   ouziojiSprite: {fileID: 21300000, guid: 72c3c96133476244a8155d75e2dfd535, type: 3}
   rukiaojiSprite: {fileID: 21300000, guid: 81d06242e24bf8c4aba67e05a4bb09e9, type: 3}
   hikaruojiSprite: {fileID: 21300000, guid: a6f01d68f7779bf419f854d164e901cd, type: 3}
   ouzismileSprite: {fileID: 21300000, guid: 5f4d6d6343758874e956b50509ac2476, type: 3}
   hikarutroubleSprite: {fileID: 21300000, guid: dc1a00ae52044064182d01212e38b6c8,
     type: 3}
-  ouziojismileSprite: {fileID: 21300000, guid: 96cb27a55d7c78c4087e2efa60eb9700, type: 3}
+  ouziojismileSprite: {fileID: 21300000, guid: 24aee6f3842da264b8957d3578b60d8d, type: 3}
+  ouziojiangrySprite: {fileID: 21300000, guid: 362cef8af0c2ac542bacca35eafc607f, type: 3}
+  ouziojitroubleSprite: {fileID: 21300000, guid: c8592e33f9abdfb4eb633a4e213545c8,
+    type: 3}
+  rukiatroubleSprite: {fileID: 21300000, guid: f5617ca4f23b87849ab3da10045aa735, type: 3}
+  rukiaojismileSprite: {fileID: 21300000, guid: ecab7166525624f4485c900b82f9f1d3,
+    type: 3}
+  statueSprite: {fileID: 21300000, guid: 209a7bf0d4931634ebbcbf509698ad8e, type: 3}
   back_classroomSprite: {fileID: 21300000, guid: 3d6124223901d6c4fb7ca29f95c4f217,
     type: 3}
-  back_stairsSprite: {fileID: 21300000, guid: 99bc0846291460640922a80fdc23e3e9, type: 3}
   back_corridorSprite: {fileID: 21300000, guid: 5856e79ba37ec404c9d864a9b64bf9da,
     type: 3}
+  back_stairsSprite: {fileID: 21300000, guid: 99bc0846291460640922a80fdc23e3e9, type: 3}
   back_gardenSprite: {fileID: 21300000, guid: 81ce8b3efa84686408e5bad4ef4fa0f7, type: 3}
   back_schoolSprite: {fileID: 21300000, guid: 1cbfa9c86a5489d4fbac85b404a6b2e0, type: 3}
   back_dispensarySprite: {fileID: 21300000, guid: b923a6c5406eefb48a9f1bf21e24a590,
     type: 3}
+  back_seaSprite: {fileID: 21300000, guid: 5d721ef3f9234064d8e10986c9e3c4a7, type: 3}
+  back_groundSprite: {fileID: 21300000, guid: 0371be21fdae7414ca69d313e6477e30, type: 3}
   back_shoploadSprite: {fileID: 21300000, guid: 5dee1cf0ce1a3d94da86f98e749a2841,
     type: 3}
   back_fancyshopSprite: {fileID: 21300000, guid: 8d886d2bce834e643bf453457f6fd17c,
     type: 3}
-  back_May: {fileID: 21300000, guid: c908469b2c28f554e9551cdceddac0be, type: 3}
+  back_cafeSprite: {fileID: 21300000, guid: 8b24efc8275282f4d951d80a8f346d78, type: 3}
+  back_heroineroom_noonSprite: {fileID: 21300000, guid: cfa3233d850ea2e409002b73c6ae97ce,
+    type: 3}
+  back_heroineroom_nightSprite: {fileID: 21300000, guid: 7d8f56716065f5a41887b8d43331fc6a,
+    type: 3}
   blackSprite: {fileID: 21300000, guid: 7e18a25445844b14c86dc41e249f8d81, type: 3}
   still_clearSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9, type: 3}
   still_AprilSprite: {fileID: 21300000, guid: fd6431e2ed7dba04f8ecf60bd7a36b83, type: 3}
@@ -1321,8 +1333,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -24.099976, y: 33.5}
-  m_SizeDelta: {x: -48.14142, y: -66.96835}
+  m_AnchoredPosition: {x: -20.5, y: 28.097992}
+  m_SizeDelta: {x: -55.34198, y: -77.77319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402444143
 MonoBehaviour:
@@ -5744,8 +5756,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -339.76996, y: 152.3826}
-  m_SizeDelta: {x: 688.19727, y: 33.25183}
+  m_AnchoredPosition: {x: -344.94, y: 147.60071}
+  m_SizeDelta: {x: 688.19727, y: 33.983925}
   m_Pivot: {x: 0, y: 0.95}
 --- !u!114 &2070979698
 MonoBehaviour:
@@ -5908,7 +5920,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2092399677}
   m_HandleRect: {fileID: 2092399676}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
