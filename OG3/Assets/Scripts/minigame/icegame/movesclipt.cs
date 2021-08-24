@@ -63,7 +63,7 @@ public class movesclipt : MonoBehaviour
             pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, MousePos.y);
         } else
         {
-            pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-255, -106);
+            pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-244.6f, -82.9f);
         }
     }
 
@@ -77,7 +77,7 @@ public class movesclipt : MonoBehaviour
         }
         else
         {
-            green_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1.5f, -106);
+            green_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(9.4f, -87.6f);
         }
     }
 
@@ -91,24 +91,24 @@ public class movesclipt : MonoBehaviour
         }
         else
         {
-            brown_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(273, -106);
+            brown_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(244, -98.428f);
         }
     }
     public void Pinkicedrop()
     {
-        pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-255, -106);
+        pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-244.6f, -82.9f);
         hit = false;
     }
 
     public void Greenicedrop()
     {
-        green_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1.5f, -106);
+        green_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(9.4f, -87.6f);
         hit = false;
     }
 
     public void Brownicedrop()
     {
-        brown_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(273, -106);
+        brown_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(244, -98.428f);
         hit = false;
     }
 

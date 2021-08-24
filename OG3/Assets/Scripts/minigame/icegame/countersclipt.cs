@@ -32,7 +32,7 @@ public class countersclipt : MonoBehaviour
     {
         nowcoin = PlayerPrefs.GetInt("NOWCOIN");
         startcointext.text = "所持金:" + nowcoin;
-        scoretext.text = "score:" + score;
+        scoretext.text =score.ToString();
         if (finishpanel.activeSelf == true)
         {
             finishcount++;
