@@ -1006,7 +1006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startpanel: {fileID: 834761366}
   finishpanel: {fileID: 481888203}
-
 --- !u!82 &212731075
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1103,8 +1102,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-
-
 --- !u!1 &460544205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &481888204
 RectTransform:
   m_ObjectHideFlags: 0
