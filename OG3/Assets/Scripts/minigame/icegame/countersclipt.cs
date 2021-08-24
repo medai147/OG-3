@@ -18,9 +18,20 @@ public class countersclipt : MonoBehaviour
     public Text cointext;
     public Text startcointext;
     [SerializeField] GameObject finishpanel;
+    public int clearcount;
+
+    public AudioClip ice_bgm;
+    public AudioClip coinget;
+    public AudioClip nocoin;
+
+    AudioSource[] sounds;
     // Start is called before the first frame update
     void Start()
     {
+        sounds = GetComponents<AudioSource>();
+        sounds[0].clip = ice_bgm;
+        sounds[0].Play();
+
         count++;
         PlayerPrefs.SetInt("COUNTERCOUNT", count);
         PlayerPrefs.Save();
@@ -36,12 +47,23 @@ public class countersclipt : MonoBehaviour
         if (finishpanel.activeSelf == true)
         {
             finishcount++;
+            sounds[0].clip = ice_bgm;
+            sounds[0].Play();
         } else
         {
             finishcount = 0;
+            sounds[1].Stop();
         }
         if(finishcount == 1)
         {
+            if(score < 20) {
+                sounds[1].clip = nocoin;
+            } else
+            {
+                sounds[1].clip = coinget;
+            }
+            sounds[1].Play();
+
             finishscore();
         }
 
@@ -82,6 +104,7 @@ public class countersclipt : MonoBehaviour
 
     private void finishscore()
     {
+        clearcount++;
         finishscoretext.text = score.ToString();
         if (score > 30 && finishpanel.activeSelf == true)
         {
@@ -102,7 +125,7 @@ public class countersclipt : MonoBehaviour
             nowcoin += 20;
             score = 0;
         }
-        else if (finishpanel.activeSelf == true && score >= 0)
+        else if (score >= 0 && finishpanel.activeSelf == true)
         {
             getcointext.text = "給料無し！";
         }
