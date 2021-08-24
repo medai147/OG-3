@@ -8,11 +8,10 @@ using UnityEngine.UI;
 
 public class Startsclipt : MonoBehaviour
 {
-    public Text timetext;
+    private Text timetext;
     float countTime = 30;
     [SerializeField] GameObject startpanel;
     [SerializeField] GameObject finishpanel;
-
     // Start is called before the first frame update
     void Start()
     {
