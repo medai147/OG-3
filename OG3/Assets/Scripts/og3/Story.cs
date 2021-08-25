@@ -58,7 +58,11 @@ public class Story : MonoBehaviour
     //スチル
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
-    public Sprite still_MaySprite;
+    public Sprite still_May_hikaruSprite;
+    public Sprite still_July_hikaruSprite;
+    public Sprite still_July_ouziSprite;
+    public Sprite still_August_hikaruSprite;
+    public Sprite still_August_ouziSprite;
     //月
     public Sprite month_MaySprite;
     public Sprite month_clearSprite;
@@ -352,7 +356,7 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(stillsr) == 5)
         {
-            stillimage.sprite = still_MaySprite;
+            stillimage.sprite = still_May_hikaruSprite;
         }
 
         //月のはじめの画像
@@ -406,7 +410,7 @@ public class Story : MonoBehaviour
         }
         else if(int.Parse(backsr) == 31)
         {
-            backimage.sprite = still_MaySprite;
+            backimage.sprite = still_May_hikaruSprite;
         }
         else if(int.Parse(backsr) == 8) {
             backimage.sprite = back_shoploadSprite;
@@ -739,18 +743,6 @@ public class Story : MonoBehaviour
                 _logtext.text += _logdataList[index].logstorytext6;
                 _logtext.text += "\n";
             }
-            
-            //_logtext.text += logspace;
-            //_logtext.text += _logdataList[index].logstorytext3;
-            //_logtext.text += "\n";
-            //_logtext.text += logspace;
-            //_logtext.text += _logdataList[index].logstorytext4;
-            //_logtext.text += "\n";
-            //_logtext.text += logspace;
-            //_logtext.text += _logdataList[index].logstorytext5;
-            //_logtext.text += "\n";
-            //_logtext.text += logspace;
-            //_logtext.text += _logdataList[index].logstorytext6;
             _logtext.text += "\n";
         }
 
@@ -760,12 +752,7 @@ public class Story : MonoBehaviour
         if (qNum > qstory && automode == 1)
         {
             sounds[2].Stop();
-            //StartCoroutine(Novel(qstory++));
-            //click = 0;
 
-            //if (selected != 0) {
-            //    selected = 0;
-            //}
             if (!(selected == 1 && qstory == 91))
             {
                 StartCoroutine(Novel(qstory++));
@@ -785,6 +772,7 @@ public class Story : MonoBehaviour
         //Debug.Log(menucount);
         if (MenuPanel.activeSelf == true)
         {
+            //automode = 0;
             menucount++;
         } else if(MenuPanel.activeSelf == false)
         {
