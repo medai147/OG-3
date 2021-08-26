@@ -714,7 +714,7 @@ MonoBehaviour:
   ouzismileSprite: {fileID: 21300000, guid: 5f4d6d6343758874e956b50509ac2476, type: 3}
   hikarutroubleSprite: {fileID: 21300000, guid: dc1a00ae52044064182d01212e38b6c8,
     type: 3}
-  ouziojismileSprite: {fileID: 21300000, guid: 24aee6f3842da264b8957d3578b60d8d, type: 3}
+  ouziojismileSprite: {fileID: 21300000, guid: 96cb27a55d7c78c4087e2efa60eb9700, type: 3}
   ouziojiangrySprite: {fileID: 21300000, guid: 362cef8af0c2ac542bacca35eafc607f, type: 3}
   ouziojitroubleSprite: {fileID: 21300000, guid: c8592e33f9abdfb4eb633a4e213545c8,
     type: 3}
