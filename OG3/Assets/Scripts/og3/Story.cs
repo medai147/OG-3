@@ -117,6 +117,7 @@ public class Story : MonoBehaviour
 
     public AudioClip se1;
     public AudioClip Jingle;
+    public AudioClip se2;
 
     AudioSource[] sounds;
 
@@ -320,6 +321,10 @@ public class Story : MonoBehaviour
         {
             sounds[1].PlayOneShot(Jingle);
         }
+        if (int.Parse(se_num_sr) == 3)
+        {
+            sounds[1].PlayOneShot(se2);
+        }
 
         //CV
         //Debug.Log(index);
@@ -396,6 +401,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(stillsr) == 5)
         {
             stillimage.sprite = still_May_hikaruSprite;
+        }
+        else if (int.Parse(stillsr) == 81)
+        {
+            stillimage.sprite = still_August_ouziSprite; //8月おうじ
         }
 
         //月のはじめの画像
@@ -511,7 +520,10 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = back_heroineroom_noonSprite;
         }
-
+        else if (int.Parse(backsr) == 10)
+        {
+            backimage.sprite = back_cafeSprite;
+        }
 
 
         //センター画像
