@@ -64,8 +64,11 @@ public class Story : MonoBehaviour
     public Sprite still_August_hikaruSprite;
     public Sprite still_August_ouziSprite;
     //月
-    public Sprite month_MaySprite;
     public Sprite month_clearSprite;
+    public Sprite month_MaySprite;
+    public Sprite month_JuneSprite;
+    public Sprite month_JulySprite;
+    public Sprite month_AugustSprite;
     //名前の色
     public Sprite text_ouzi;
     public Sprite text_hikaru;
