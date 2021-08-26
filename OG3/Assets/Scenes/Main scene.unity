@@ -760,6 +760,18 @@ MonoBehaviour:
   month_JuneSprite: {fileID: 21300000, guid: d49fc8d0b32857a4fb5a5f7cea265e59, type: 3}
   month_JulySprite: {fileID: 21300000, guid: b7785dadd3fd86e4b998e08fd95f50fe, type: 3}
   month_AugustSprite: {fileID: 21300000, guid: eb74fed56791c6f4897dba39a779de48, type: 3}
+  month_SeptemberSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9,
+    type: 3}
+  month_OctoberSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9,
+    type: 3}
+  month_NovemberSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9,
+    type: 3}
+  month_DecemberSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9,
+    type: 3}
+  month_JanuarySprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9,
+    type: 3}
+  month_FebruarySprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9,
+    type: 3}
   text_ouzi: {fileID: 21300000, guid: b03c0d6d3da4a0e4f8c9d80a80c4649b, type: 3}
   text_hikaru: {fileID: 21300000, guid: 04ab32840f66b7842a7782e4faa03272, type: 3}
   text_rukia: {fileID: 21300000, guid: 06b37da296e794f4995346d3316f7384, type: 3}

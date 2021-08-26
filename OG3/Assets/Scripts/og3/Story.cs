@@ -69,6 +69,13 @@ public class Story : MonoBehaviour
     public Sprite month_JuneSprite;
     public Sprite month_JulySprite;
     public Sprite month_AugustSprite;
+    public Sprite month_SeptemberSprite;
+    public Sprite month_OctoberSprite;
+    public Sprite month_NovemberSprite;
+    public Sprite month_DecemberSprite;
+    public Sprite month_JanuarySprite;
+    public Sprite month_FebruarySprite;
+
     //名前の色
     public Sprite text_ouzi;
     public Sprite text_hikaru;
@@ -263,15 +270,40 @@ public class Story : MonoBehaviour
                 index = index_skip;
                 index_read = index;
             }
-            if(index == 91 && selected == 1)
-            {
-                index_read = index;
-                index_skip = 94;
-                qstory = index_skip;
-                index = index_skip;
-                SkipselectPanelScript.clicked_skip = false;
-            }
+            //if(index == 91 && selected == 1)
+            //{
+                //index_read = index;
+                //index_skip = 94;
+                //qstory = index_skip;
+                //index = index_skip;
+                //SkipselectPanelScript.clicked_skip = false;
+            //}
         }
+
+        //選択肢で飛んだ先から次の話に飛ぶところまとめ
+        if (index == 91 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
+        {
+            index_read = index;
+            index_skip = 94;
+            qstory = index_skip;
+            index = index_skip;
+        }
+
+        if (index == 115 && selected == 3) //おうじ誕プレから６月へ飛ぶ
+        {
+            index_read = index;
+            index_skip = 124;
+            qstory = index_skip;
+            index = index_skip;
+        }
+        if (index == 119 && selected == 1)
+        {
+            index_read = index;
+            index_skip = 124;
+            qstory = index_skip;
+            index = index_skip;
+        }
+
 
         Debug.Log(index_read);
 
@@ -379,6 +411,51 @@ public class Story : MonoBehaviour
             monthimage.sprite = month_MaySprite;
             month.SetActive(true);
         }
+        if(int.Parse(monthsr) == 6)
+        {
+            monthimage.sprite = month_JuneSprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 7)
+        {
+            monthimage.sprite = month_JulySprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 8)
+        {
+            monthimage.sprite = month_AugustSprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 9)
+        {
+            monthimage.sprite = month_SeptemberSprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 10)
+        {
+            monthimage.sprite = month_OctoberSprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 11)
+        {
+            monthimage.sprite = month_NovemberSprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 12)
+        {
+            monthimage.sprite = month_DecemberSprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 1)
+        {
+            monthimage.sprite = month_JanuarySprite;
+            month.SetActive(true);
+        }
+        if (int.Parse(monthsr) == 2)
+        {
+            monthimage.sprite = month_FebruarySprite;
+            month.SetActive(true);
+        }
 
         //背景
         backsr = _qdataList[index].backimage;
@@ -429,6 +506,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(backsr) == 12)
         {
             backimage.sprite = back_heroineroom_nightSprite;
+        }
+        else if (int.Parse(backsr) == 11)
+        {
+            backimage.sprite = back_heroineroom_noonSprite;
         }
 
 

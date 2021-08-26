@@ -86,7 +86,7 @@ public class menusclipt : MonoBehaviour
 
     public void onClicked_skip()
     {
-        if ((SelectButtonPanel.activeSelf == true || monthimage.activeSelf == true || Story.index_read >= 65) && cannotskipAlertPanel.activeSelf != true)
+        if ((SelectButtonPanel.activeSelf == true || monthimage.activeSelf == true || Story.index_read >= 65 && Story.index_read < 94) && cannotskipAlertPanel.activeSelf != true)
         {
             cannotskipAlertPanel.SetActive(true);
             Invoke("deleteAlertPanel", 2.0f);
@@ -108,6 +108,15 @@ public class menusclipt : MonoBehaviour
                 //SkipselectpanelText.SetActive(true);
                 skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
                 skiptext.text = "5月(光と勉強)をスキップしますか？";
+                skiptext.text += "\n";
+                skiptext.text += "(選択肢のところまで)";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 65 && Story.index_read < 107)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "5月(おうじからのDM)をスキップしますか？";
                 skiptext.text += "\n";
                 skiptext.text += "(選択肢のところまで)";
                 SkipselectpanelText.SetActive(true);

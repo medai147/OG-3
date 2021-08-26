@@ -30,10 +30,15 @@ public class SkipselectPanelScript : MonoBehaviour
         LoadingPanel.SetActive(true);
         if (Story.index_read < 49)
         {
-            Story.index_skip = 49;
-        } else if(Story.index_read > 49 && Story.index_read < 66)
+            Story.index_skip = 49; //5月に飛ぶ
+        }
+        else if(Story.index_read > 49 && Story.index_read < 66)
         {
-            Story.index_skip = 66;
+            Story.index_skip = 66; //5月ひかるの選択肢に飛ぶ
+        }
+        else if(Story.index_read > 66 && Story.index_read < 108)
+        {
+            Story.index_skip = 109; //5月おうじの選択肢に飛ぶ
         }
     }
 
