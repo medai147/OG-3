@@ -253,22 +253,27 @@ public class Story : MonoBehaviour
                 LoadingPanel.SetActive(false);
                 index_read = index;
                 index = index_skip;
-                //qstory = index_skip;
+                qstory = index_skip;
                 SkipselectPanelScript.first = false;
             }
             else if(SkipselectPanelScript.first == false)
             {
                 index_skip++;
+                qstory = index_skip;
                 index = index_skip;
                 index_read = index;
             }
-            if(index == 90)
+            if(index == 91 && selected == 1)
             {
                 index_read = index;
+                index_skip = 94;
+                qstory = index_skip;
+                index = index_skip;
                 SkipselectPanelScript.clicked_skip = false;
             }
         }
-        Debug.Log(index_skip);
+
+        Debug.Log(index_read);
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
@@ -420,6 +425,10 @@ public class Story : MonoBehaviour
         else if(int.Parse(backsr) == 9)
         {
             backimage.sprite = back_fancyshopSprite;
+        }
+        else if (int.Parse(backsr) == 12)
+        {
+            backimage.sprite = back_heroineroom_nightSprite;
         }
 
 
@@ -818,7 +827,7 @@ public class Story : MonoBehaviour
             //if (selected != 0) {
             //    selected = 0;
             //}
-            if(!(selected == 1 && qstory == 91))
+            if(!(selected == 3 && index_skip == 123))  //とめるところ
             {
                 StartCoroutine(Novel(qstory++));
                 click = 0;
@@ -841,7 +850,14 @@ public class Story : MonoBehaviour
         Debug.Log("1がおされている");
         selected = 1;
         //qstoryは調整する
-        index_skip = 67;
+        if(index_read == 67)
+        {
+            index_skip = 67;
+        }
+        else if(index_read == 110)
+        {
+            index_skip = 114;
+        }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -850,9 +866,18 @@ public class Story : MonoBehaviour
     public void onClick_SelectButton_2()
     {
         Debug.Log("2がおされている");
+        Debug.Log(index_read);
         selected = 2;
         //qstoryは調整する
-        index_skip = 90;
+        if (index_read == 67)
+        {
+            index_skip = 90;
+        }
+        else if (index_read == 110)
+        {
+            index_skip = 119;
+        }
+        
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -893,7 +918,6 @@ public class Qdata
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
-    private int automode;
 
     public Qdata(string txt)
     {
