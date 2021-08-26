@@ -297,14 +297,20 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 119 && selected == 1)
+        if (index == 119 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
             index_skip = 124;
             qstory = index_skip;
             index = index_skip;
         }
-
+        if (index == 164 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        {
+            index_read = index;
+            index_skip = 169;
+            qstory = index_skip;
+            index = index_skip;
+        }
 
         Debug.Log(index_read);
 
@@ -920,7 +926,7 @@ public class Story : MonoBehaviour
             //if (selected != 0) {
             //    selected = 0;
             //}
-            if(!(selected == 3 && index_skip == 123))  //とめるところ
+            if(!(selected == 2 && index_skip == 169))  //とめるところ
             {
                 StartCoroutine(Novel(qstory++));
                 click = 0;
@@ -970,7 +976,10 @@ public class Story : MonoBehaviour
         {
             index_skip = 119;
         }
-        
+        else if(index_read == 138)
+        {
+            index_skip = 165;
+        }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
