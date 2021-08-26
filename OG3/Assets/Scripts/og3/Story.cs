@@ -345,7 +345,6 @@ public class Story : MonoBehaviour
             }
         }
 
-
         //一枚絵
         stillsr = _qdataList[index].stillimage;
         Image stillimage = (Image)still.GetComponent<Image>();
@@ -830,6 +829,7 @@ public class Story : MonoBehaviour
     //選択肢ボタン選択時の動き
     public void onClick_SelectButton_3()
     {
+        Debug.Log("3がおされている");
         selected = 3;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -838,9 +838,10 @@ public class Story : MonoBehaviour
 
     public void onClick_SelectButton_1()
     {
+        Debug.Log("1がおされている");
         selected = 1;
         //qstoryは調整する
-        qstory = 70 - 2;
+        index_skip = 67;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -848,9 +849,10 @@ public class Story : MonoBehaviour
 
     public void onClick_SelectButton_2()
     {
+        Debug.Log("2がおされている");
         selected = 2;
         //qstoryは調整する
-        qstory = 93 - 2;
+        index_skip = 90;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
