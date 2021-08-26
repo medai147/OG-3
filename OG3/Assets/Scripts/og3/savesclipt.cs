@@ -41,6 +41,7 @@ public class savesclipt : MonoBehaviour
     private static DateTime dt8;
     private static int[]count = { 0, 0, 0, 0, 0, 0, 0, 0 };
     [SerializeField] GameObject loadPanel;
+    [SerializeField] GameObject savePanel;
 
 
     // Start is called before the first frame update
@@ -206,5 +207,14 @@ public class savesclipt : MonoBehaviour
     public void jumptoSave()
     {
         SceneManager.LoadScene("save scene");
+    }
+
+    public void onClicked_next()
+    {
+        savePanel.SetActive(true);
+    }
+    public void onClicked_back()
+    {
+        savePanel.SetActive(false);
     }
 }

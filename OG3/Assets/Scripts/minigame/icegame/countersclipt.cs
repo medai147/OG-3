@@ -128,6 +128,7 @@ public class countersclipt : MonoBehaviour
         else if (score >= 0 && finishpanel.activeSelf == true)
         {
             getcointext.text = "給料無し！";
+            score = 0;
         }
         cointext.text = "所持金:" + nowcoin;
         PlayerPrefs.SetInt("NOWCOIN", nowcoin);
