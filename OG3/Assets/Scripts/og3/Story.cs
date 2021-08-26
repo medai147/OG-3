@@ -304,10 +304,10 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 164 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        if (index == 166 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
-            index_skip = 169;
+            index_skip = 170;
             qstory = index_skip;
             index = index_skip;
         }
@@ -926,7 +926,7 @@ public class Story : MonoBehaviour
             //if (selected != 0) {
             //    selected = 0;
             //}
-            if(!(selected == 2 && index_skip == 169))  //とめるところ
+            if(!(selected == 2 && index_skip == 171))  //とめるところ
             {
                 StartCoroutine(Novel(qstory++));
                 click = 0;
