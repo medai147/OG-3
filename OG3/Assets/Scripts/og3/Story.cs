@@ -117,6 +117,7 @@ public class Story : MonoBehaviour
 
     public AudioClip se1;
     public AudioClip Jingle;
+    public AudioClip se2;
 
     AudioSource[] sounds;
 
@@ -296,14 +297,20 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 119 && selected == 1)
+        if (index == 119 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
             index_skip = 124;
             qstory = index_skip;
             index = index_skip;
         }
-
+        if (index == 164 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        {
+            index_read = index;
+            index_skip = 169;
+            qstory = index_skip;
+            index = index_skip;
+        }
 
         Debug.Log(index_read);
 
@@ -319,6 +326,10 @@ public class Story : MonoBehaviour
         if (int.Parse(se_num_sr) == 2)
         {
             sounds[1].PlayOneShot(Jingle);
+        }
+        if (int.Parse(se_num_sr) == 3)
+        {
+            sounds[1].PlayOneShot(se2);
         }
 
         //CV
@@ -396,6 +407,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(stillsr) == 5)
         {
             stillimage.sprite = still_May_hikaruSprite;
+        }
+        else if (int.Parse(stillsr) == 81)
+        {
+            stillimage.sprite = still_August_ouziSprite; //8月おうじ
         }
 
         //月のはじめの画像
@@ -511,7 +526,10 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = back_heroineroom_noonSprite;
         }
-
+        else if (int.Parse(backsr) == 10)
+        {
+            backimage.sprite = back_cafeSprite;
+        }
 
 
         //センター画像
@@ -908,7 +926,7 @@ public class Story : MonoBehaviour
             //if (selected != 0) {
             //    selected = 0;
             //}
-            if(!(selected == 3 && index_skip == 123))  //とめるところ
+            if(!(selected == 2 && index_skip == 169))  //とめるところ
             {
                 StartCoroutine(Novel(qstory++));
                 click = 0;
@@ -958,7 +976,10 @@ public class Story : MonoBehaviour
         {
             index_skip = 119;
         }
-        
+        else if(index_read == 138)
+        {
+            index_skip = 165;
+        }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();

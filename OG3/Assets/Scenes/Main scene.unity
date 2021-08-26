@@ -1083,6 +1083,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cd260cc45e9c2534fae11a407b628180, type: 3}
   se1: {fileID: 8300000, guid: eaba3f4dc13afed42a8a799f5f0da56a, type: 3}
   Jingle: {fileID: 8300000, guid: e374bebd834284c4bbdfcb891be38113, type: 3}
+  se2: {fileID: 8300000, guid: 8bd7b6f24683e55458470201f0472b7c, type: 3}
   storyText: {fileID: 4900000, guid: a1ff82b0501e08c4ba3a24fe83f56bca, type: 3}
   logstoryText: {fileID: 4900000, guid: 3c0ffe89379a845439c9ee899c91644b, type: 3}
   logspace: "\_\_\_\_\_\_\_\_\_\_\_\_"
