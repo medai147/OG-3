@@ -255,7 +255,8 @@ public class Story : MonoBehaviour
     {
         //skip用
         index_read = index;
-        if(SkipselectPanelScript.clicked_skip == true) {
+        
+        if (SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
             {
                 LoadingPanel.SetActive(false);
@@ -946,6 +947,7 @@ public class Story : MonoBehaviour
 
     public void onClick_SelectButton_1()
     {
+        SkipselectPanelScript.clicked_skip = true;
         Debug.Log("1がおされている");
         selected = 1;
         //qstoryは調整する
@@ -964,6 +966,7 @@ public class Story : MonoBehaviour
 
     public void onClick_SelectButton_2()
     {
+        SkipselectPanelScript.clicked_skip = true;
         Debug.Log("2がおされている");
         Debug.Log(index_read);
         selected = 2;
