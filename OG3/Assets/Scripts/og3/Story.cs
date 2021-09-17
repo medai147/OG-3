@@ -105,6 +105,8 @@ public class Story : MonoBehaviour
     public static int index_read; //読み取り用
     public static int index_skip; //skip用
 
+    public static int startscene; //スタート画面の画像切り替え、ミニゲームボタン用
+
     
     
 
@@ -159,6 +161,19 @@ public class Story : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(startscene == 1)
+        {
+            //スタート画面の切り替え
+            PlayerPrefs.SetInt("START", 1);
+            PlayerPrefs.Save();
+        }else
+        {
+            //スタート画面の切り替え
+            PlayerPrefs.SetInt("START", 0);
+            PlayerPrefs.Save();
+        }
+
+
         //BGM初期状態
         sounds = GetComponents<AudioSource>();
         sounds[0].clip = bgm1;
@@ -426,6 +441,10 @@ public class Story : MonoBehaviour
         {
             monthimage.sprite = month_MaySprite;
             month.SetActive(true);
+            startscene = 1;
+            //スタート画面の切り替え
+            PlayerPrefs.SetInt("START", 1);
+            PlayerPrefs.Save();
         }
         if(int.Parse(monthsr) == 6)
         {

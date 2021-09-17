@@ -11,9 +11,11 @@ public class minimenusclipt : MonoBehaviour
     int nowcoin;
     public Text cointext;
     static int count;
+
     // Start is called before the first frame update
     void Start()
     {
+
         Debug.Log("カウント" + count);
         count = PlayerPrefs.GetInt("COUNTERCOUNT");
         nowcoin = PlayerPrefs.GetInt("NOWCOIN");
@@ -28,13 +30,17 @@ public class minimenusclipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         PlayerPrefs.SetInt("NOWCOIN", nowcoin);
         PlayerPrefs.Save();
     }
 
     public void onClicked_icebutton()
     {
-        SceneManager.LoadScene("icegame scene");
+
+
+            SceneManager.LoadScene("icegame scene");
+
     }
     public void onClicked_gachabutton()
     {
