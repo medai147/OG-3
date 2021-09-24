@@ -153,15 +153,29 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject MenuPanel;
     [SerializeField] GameObject cannotskipAlertPanel;
     [SerializeField] GameObject LoadingPanel;
+    [SerializeField] GameObject settingPanel;
 
     [SerializeField] GameObject SelectButton_3;
 
     private int selected = 0;
 
+    //設定画面
+    public Image speedslide;
+    public Vector2 MousePos;
+    public Canvas canvas;
+    public RectTransform canvasRect;
+    static int novelspeedcount = 3;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(startscene == 1)
+
+        //設定画面用
+        //speedslide = GameObject.Find("slideonimage").GetComponent<Image>();
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        canvasRect = canvas.GetComponent<RectTransform>();
+
+        if (startscene == 1)
         {
             //スタート画面の切り替え
             PlayerPrefs.SetInt("START", 1);
@@ -817,7 +831,23 @@ public class Story : MonoBehaviour
         if(_qdataList[index].storyText.Length == messageCount)
         {
             click = 1;
-            novelSpeed = 0.1f;
+            if(novelspeedcount == 1)
+            {
+                novelSpeed = 0.3f;
+            } else if(novelspeedcount == 2)
+            {
+                novelSpeed = 0.2f;
+            } else if(novelspeedcount == 3)
+            {
+                novelSpeed = 0.15f;
+            } else if(novelspeedcount == 4)
+            {
+                novelSpeed = 0.1f;
+            } else
+            {
+                novelSpeed = 0.05f;
+            }
+            
             //全文表示され終わったらlogにテキストを追加
             if(_qdataList[index].nameText == "えみ")
             {
@@ -1006,6 +1036,51 @@ public class Story : MonoBehaviour
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
     }
+
+    public void onClicked_settingbutton()
+    {
+        settingPanel.SetActive(true);
+    }
+
+    public void speedslidedrag()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,Input.mousePosition, canvas.worldCamera, out MousePos);
+        if (MousePos.x > -330.66 && -106.74 > MousePos.x)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+        }
+    }
+
+    public void speedslidedrop()
+    {
+        float x;
+        x = speedslide.transform.position.x;
+        Debug.Log(x);
+        if(x > 46 && 70 >= x)
+        {
+            novelspeedcount = 1;
+        } else if(x > 70 && 100 >= x)
+        {
+            novelspeedcount = 2;
+        } else if(x > 100 && 140 >= x)
+        {
+            novelspeedcount = 3;
+        } else if(x > 140 && 170 > x)
+        {
+            novelspeedcount = 4;
+        } else if(x > 170 && 200 > x)
+        {
+            novelspeedcount = 5;
+        }
+    }
+
+    public void onClicked_settingreturnbutton()
+    {
+        settingPanel.SetActive(false);
+        
+        MenuPanel.SetActive(false);
+    }
+
     public void onClicked_Autobutton()
     {
         MenuPanel.SetActive(false);
