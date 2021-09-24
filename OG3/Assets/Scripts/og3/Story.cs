@@ -949,9 +949,9 @@ public class Story : MonoBehaviour
             PlayerPrefs.SetInt("NUMBER", qstory);
             PlayerPrefs.Save();
             MenuPanel.SetActive(true);
-        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 200)
+        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 100)
         {
-            menucount = 200;
+            menucount = 100;
             MenuPanel.SetActive(false);
             
             //skip用
