@@ -146,6 +146,7 @@ public class Story : MonoBehaviour
     public int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
+    public float sevolume;
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
@@ -346,6 +347,7 @@ public class Story : MonoBehaviour
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
+
 
         //SE
         se_num_sr = _qdataList[index].se_num;
@@ -1073,6 +1075,45 @@ public class Story : MonoBehaviour
             novelspeedcount = 5;
         }
     }
+
+    public void seslidedrag()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+        if (MousePos.x > -330.66 && -106.74 > MousePos.x)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+        }
+    }
+
+    public void seslidedrop()
+    {
+        float x_se;
+        x_se = speedslide.transform.position.x;
+        Debug.Log(x_se);
+        if (x_se > 46 && 70 >= x_se)
+        {
+            sevolume = 0.1f;
+        }
+        else if (x_se > 70 && 100 >= x_se)
+        {
+            sevolume = 0.25f;
+        }
+        else if (x_se > 100 && 140 >= x_se)
+        {
+            sevolume = 0.5f;
+        }
+        else if (x_se > 140 && 170 > x_se)
+        {
+            sevolume = 0.7f;
+        }
+        else if (x_se > 170 && 200 > x_se)
+        {
+            sevolume = 1;
+        }
+
+        sounds[1].volume = sevolume;
+    }
+
 
     public void onClicked_settingreturnbutton()
     {
