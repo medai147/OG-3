@@ -172,6 +172,11 @@ public class Story : MonoBehaviour
     static int novelspeedcount = 4;
     static int sevolumecount = 4;
     static int bgmvolumecount = 4;
+    static int autospeedcount = 4;
+    public Image autoslide;
+    static float autoslidebar_x;
+    float time;
+    bool autoclick;
 
     // Start is called before the first frame update
     void Start()
@@ -921,10 +926,9 @@ public class Story : MonoBehaviour
         {
             sounds[2].Stop();
 
-            if (!(selected == 1 && qstory == 91))
+            if (!(selected == 1 && qstory == 91) && MenuPanel.activeSelf == false)
             {
-                StartCoroutine(Novel(qstory++));
-                click = 0;
+                autoclick = true;
             }
         }
     }
@@ -933,6 +937,7 @@ public class Story : MonoBehaviour
     void Update()
     {
         Menu();
+        auto();
         //Debug.Log(MousePos.y);
     }
 
@@ -1067,6 +1072,29 @@ public class Story : MonoBehaviour
             speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 117.5f);
         }
 
+
+        if (autospeedcount == 1)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(79.047f, 117.5f);
+        }
+        else if (autospeedcount == 2)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(134, 117.5f);
+        }
+        else if (autospeedcount == 3)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(191, 117.5f);
+        }
+        else if (autospeedcount == 4)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(254, 117.5f);
+        }
+        else
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(298, 117.5f);
+        }
+
+
         if (sevolumecount == 1)
         {
             seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 0.0001678467f);
@@ -1128,19 +1156,60 @@ public class Story : MonoBehaviour
         if (speedbar_x > 46 && 70 >= speedbar_x)
         {
             novelspeedcount = 1;
-        } else if(speedbar_x > 70 && 100 >= speedbar_x)
+        }
+        else if (speedbar_x > 70 && 100 >= speedbar_x)
         {
             novelspeedcount = 2;
-        } else if(speedbar_x > 100 && 140 >= speedbar_x)
+        }
+        else if (speedbar_x > 100 && 140 >= speedbar_x)
         {
             novelspeedcount = 3;
-        } else if(speedbar_x > 140 && 170 > speedbar_x)
+        }
+        else if (speedbar_x > 140 && 170 > speedbar_x)
         {
             novelspeedcount = 4;
-        } else if(speedbar_x > 170 && 200 > speedbar_x)
+        }
+        else if (speedbar_x > 170 && 200 > speedbar_x)
         {
             novelspeedcount = 5;
         }
+
+    }
+
+    public void autoslidedrag()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+        if ((MousePos.y <= 147.5 && MousePos.y >= 87.5) && MousePos.x > 79.047f && 302.96f > MousePos.x)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+        }
+    }
+    public void autoslidedrop()
+    {
+        autoslidebar_x = autoslide.transform.position.x;
+        Debug.Log(autoslidebar_x);
+        //Debug.Log(MousePos.y);
+        if (autoslidebar_x > 326.0981f && 350 >= autoslidebar_x)
+        {
+            autospeedcount = 1;
+        }
+        else if (autoslidebar_x > 350 && 375 >= autoslidebar_x)
+        {
+            autospeedcount = 2;
+        }
+        else if (autoslidebar_x > 375 && 419 >= autoslidebar_x)
+        {
+            autospeedcount = 3;
+        }
+        else if (autoslidebar_x > 419 && 440 > autoslidebar_x)
+        {
+            autospeedcount = 4;
+        }
+        else if (autoslidebar_x > 440 && 476.42 > autoslidebar_x)
+        {
+            autospeedcount = 5;
+        }
+
     }
 
     public void seslidedrag()
@@ -1250,6 +1319,64 @@ public class Story : MonoBehaviour
         else
         {
             automode = 0;
+            autoclick = false;
+            time = 0;
+        }
+    }
+
+    void auto()
+    {
+        if (autoclick == true)
+        {
+            time += Time.deltaTime;
+            Debug.Log("time:" + time);
+            if(autospeedcount == 1)
+            {
+                if (time > 1.5f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else if(autospeedcount == 2)
+            {
+                if (time > 1)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else if(autospeedcount == 3)
+            {
+                if (time > 0.8f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else if(autospeedcount == 4)
+            {
+                if (time > 0.5f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else
+            {
+                if (time > 0.2f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            }
+
         }
     }
 }
