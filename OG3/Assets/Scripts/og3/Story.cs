@@ -163,12 +163,13 @@ public class Story : MonoBehaviour
 
     //設定画面
     public Image speedslide;
+    static float speedbar_x;
     public Image seslide;
     public Image bgmslide;
     public Vector2 MousePos;
     public Canvas canvas;
     public RectTransform canvasRect;
-    static int novelspeedcount = 3;
+    static int novelspeedcount = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -955,9 +956,9 @@ public class Story : MonoBehaviour
             PlayerPrefs.SetInt("NUMBER", qstory);
             PlayerPrefs.Save();
             MenuPanel.SetActive(true);
-        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 100)
+        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 30)
         {
-            menucount = 100;
+            menucount = 30;
             MenuPanel.SetActive(false);
             
             //skip用
@@ -1046,6 +1047,25 @@ public class Story : MonoBehaviour
     public void onClicked_settingbutton()
     {
         settingPanel.SetActive(true);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+        if(novelspeedcount == 1)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 117.5f);
+        } else if(novelspeedcount == 2)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, 117.5f);
+        } else if(novelspeedcount == 3)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, 117.5f);
+        } else if(novelspeedcount == 4)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, 117.5f);
+        } else
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 117.5f);
+        }
+        
+
     }
 
     public void speedslidedrag()
@@ -1059,23 +1079,22 @@ public class Story : MonoBehaviour
 
     public void speedslidedrop()
     {
-        float x;
-        x = speedslide.transform.position.x;
+        speedbar_x = speedslide.transform.position.x;
         // Debug.Log(x);
         //Debug.Log(MousePos.y);
-        if (x > 46 && 70 >= x)
+        if (speedbar_x > 46 && 70 >= speedbar_x)
         {
             novelspeedcount = 1;
-        } else if(x > 70 && 100 >= x)
+        } else if(speedbar_x > 70 && 100 >= speedbar_x)
         {
             novelspeedcount = 2;
-        } else if(x > 100 && 140 >= x)
+        } else if(speedbar_x > 100 && 140 >= speedbar_x)
         {
             novelspeedcount = 3;
-        } else if(x > 140 && 170 > x)
+        } else if(speedbar_x > 140 && 170 > speedbar_x)
         {
             novelspeedcount = 4;
-        } else if(x > 170 && 200 > x)
+        } else if(speedbar_x > 170 && 200 > speedbar_x)
         {
             novelspeedcount = 5;
         }
