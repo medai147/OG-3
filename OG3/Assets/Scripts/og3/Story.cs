@@ -147,6 +147,7 @@ public class Story : MonoBehaviour
     public float novelSpeed; //表示の速さ
     private int click = 0;
     public float sevolume;
+    public float bgmvolume;
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
@@ -162,6 +163,8 @@ public class Story : MonoBehaviour
 
     //設定画面
     public Image speedslide;
+    public Image seslide;
+    public Image bgmslide;
     public Vector2 MousePos;
     public Canvas canvas;
     public RectTransform canvasRect;
@@ -343,7 +346,7 @@ public class Story : MonoBehaviour
             index = index_skip;
         }
 
-        Debug.Log(index_read);
+        //Debug.Log(index_read);
 
         int messageCount = 0; //表示中の文字数
         _story.text = "";
@@ -927,6 +930,7 @@ public class Story : MonoBehaviour
     void Update()
     {
         Menu();
+        //Debug.Log(MousePos.y);
     }
 
     private void Menu()
@@ -1047,7 +1051,7 @@ public class Story : MonoBehaviour
     public void speedslidedrag()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,Input.mousePosition, canvas.worldCamera, out MousePos);
-        if (MousePos.x > -330.66 && -106.74 > MousePos.x)
+        if ((MousePos.y <= 147.5 && MousePos.y >= 87.5) && MousePos.x > -330.66 && -106.74 > MousePos.x)
         {
             speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
         }
@@ -1057,8 +1061,9 @@ public class Story : MonoBehaviour
     {
         float x;
         x = speedslide.transform.position.x;
-        Debug.Log(x);
-        if(x > 46 && 70 >= x)
+        // Debug.Log(x);
+        //Debug.Log(MousePos.y);
+        if (x > 46 && 70 >= x)
         {
             novelspeedcount = 1;
         } else if(x > 70 && 100 >= x)
@@ -1079,17 +1084,18 @@ public class Story : MonoBehaviour
     public void seslidedrag()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if (MousePos.x > -330.66 && -106.74 > MousePos.x)
+        if ((MousePos.y <= -9.499825+30 && MousePos.y >= -9.499825-30) && MousePos.x > -330.66 && -106.74 > MousePos.x )
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 0.0001678467f);
         }
     }
 
     public void seslidedrop()
     {
         float x_se;
-        x_se = speedslide.transform.position.x;
-        Debug.Log(x_se);
+        x_se = seslide.transform.position.x;
+        //Debug.Log(x_se);
+        Debug.Log(MousePos.x);
         if (x_se > 46 && 70 >= x_se)
         {
             sevolume = 0.1f;
@@ -1112,6 +1118,46 @@ public class Story : MonoBehaviour
         }
 
         sounds[1].volume = sevolume;
+    }
+
+
+    public void bgmslidedrag()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+        if ((MousePos.y <= -114 + 30 && MousePos.y >= -114 - 30) && MousePos.x > -330.66 && -106.74 > MousePos.x)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, -117.9998f);
+        }
+    }
+
+    public void bgmslidedrop()
+    {
+        float x_bgm;
+        x_bgm = bgmslide.transform.position.x;
+        //Debug.Log(x_se);
+        Debug.Log(MousePos.x);
+        if (x_bgm > 46 && 70 >= x_bgm)
+        {
+            bgmvolume = 0.1f;
+        }
+        else if (x_bgm > 70 && 100 >= x_bgm)
+        {
+            bgmvolume = 0.25f;
+        }
+        else if (x_bgm > 100 && 140 >= x_bgm)
+        {
+            bgmvolume = 0.5f;
+        }
+        else if (x_bgm > 140 && 170 > x_bgm)
+        {
+            bgmvolume = 0.7f;
+        }
+        else if (x_bgm > 170 && 200 > x_bgm)
+        {
+            bgmvolume = 1;
+        }
+        
+        sounds[0].volume = bgmvolume;
     }
 
 
@@ -1188,7 +1234,7 @@ public class Qdata
 
     public void WriteDebugLog()
     {
-        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
+        //Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
     }
 
     public class Logdata
