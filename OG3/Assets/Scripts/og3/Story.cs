@@ -148,6 +148,8 @@ public class Story : MonoBehaviour
     private int click = 0;
     public float sevolume;
     public float bgmvolume;
+    static int seMutecount = 0;
+    static int bgmMutecount = 0;
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
@@ -1301,6 +1303,33 @@ public class Story : MonoBehaviour
         sounds[0].volume = bgmvolume;
     }
 
+    public void OnClicked_SEMuteButton()
+    {
+        if(seMutecount == 0)
+        {
+            sounds[1].volume = 0;
+            seMutecount = 1;
+        } else if(seMutecount == 1)
+        {
+            sounds[1].volume = sevolume;
+            seMutecount = 0;
+        }
+        
+    }
+
+    public void OnClicked_BGMMuteButton()
+    {
+        if (bgmMutecount == 0)
+        {
+            sounds[0].volume = 0;
+            bgmMutecount = 1;
+        }
+        else if (bgmMutecount == 1)
+        {
+            sounds[0].volume = bgmvolume;
+            bgmMutecount = 0;
+        }
+    }
 
     public void onClicked_settingreturnbutton()
     {
