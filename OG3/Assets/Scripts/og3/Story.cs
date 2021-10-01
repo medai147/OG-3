@@ -170,6 +170,8 @@ public class Story : MonoBehaviour
     public Canvas canvas;
     public RectTransform canvasRect;
     static int novelspeedcount = 4;
+    static int sevolumecount = 4;
+    static int bgmvolumecount = 4;
 
     // Start is called before the first frame update
     void Start()
@@ -1064,7 +1066,48 @@ public class Story : MonoBehaviour
         {
             speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 117.5f);
         }
-        
+
+        if (sevolumecount == 1)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 0.0001678467f);
+        }
+        else if (sevolumecount == 2)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, 0.0001678467f);
+        }
+        else if (sevolumecount == 3)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, 0.0001678467f);
+        }
+        else if (sevolumecount == 4)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, 0.0001678467f);
+        }
+        else
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 0.0001678467f);
+        }
+
+        if (bgmvolumecount == 1)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, -117.9998f);
+        }
+        else if (bgmvolumecount == 2)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, -117.9998f);
+        }
+        else if (bgmvolumecount == 3)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, -117.9998f);
+        }
+        else if (bgmvolumecount == 4)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, -117.9998f);
+        }
+        else
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, -117.9998f);
+        }
 
     }
 
@@ -1117,22 +1160,27 @@ public class Story : MonoBehaviour
         Debug.Log(MousePos.x);
         if (x_se > 46 && 70 >= x_se)
         {
+            sevolumecount = 1;
             sevolume = 0.1f;
         }
         else if (x_se > 70 && 100 >= x_se)
         {
+            sevolumecount = 2;
             sevolume = 0.25f;
         }
         else if (x_se > 100 && 140 >= x_se)
         {
+            sevolumecount = 3;
             sevolume = 0.5f;
         }
         else if (x_se > 140 && 170 > x_se)
         {
+            sevolumecount = 4;
             sevolume = 0.7f;
         }
         else if (x_se > 170 && 200 > x_se)
         {
+            sevolumecount = 5;
             sevolume = 1;
         }
 
@@ -1157,22 +1205,27 @@ public class Story : MonoBehaviour
         Debug.Log(MousePos.x);
         if (x_bgm > 46 && 70 >= x_bgm)
         {
+            bgmvolumecount = 1;
             bgmvolume = 0.1f;
         }
         else if (x_bgm > 70 && 100 >= x_bgm)
         {
+            bgmvolumecount = 2;
             bgmvolume = 0.25f;
         }
         else if (x_bgm > 100 && 140 >= x_bgm)
         {
+            bgmvolumecount = 3;
             bgmvolume = 0.5f;
         }
         else if (x_bgm > 140 && 170 > x_bgm)
         {
+            bgmvolumecount = 4;
             bgmvolume = 0.7f;
         }
         else if (x_bgm > 170 && 200 > x_bgm)
         {
+            bgmvolumecount = 5;
             bgmvolume = 1;
         }
         
