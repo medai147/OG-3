@@ -52,51 +52,76 @@ public class savesclipt : MonoBehaviour
         number = PlayerPrefs.GetInt("NUMBER");
         heroinname = PlayerPrefs.GetString("INPUTNAME");
         //ここに飛びたいストーリー番号を書いてsave画面から始める　例  number = 34;
+        if (count[0] == 0)
+        {
+            _save1.text = "セーブできるよ";
+        } else
+        {
+            _save1.text = number1.ToString("000") + "日付" + dt1;
+        }
+        if (count[1] == 0)
+        {
+            _save2.text = "セーブできるよ";
+        } else
+        {
+            _save2.text = number2.ToString("000") + "日付" + dt2;
+        }
+        if (count[2] == 0)
+        {
+            _save3.text = "セーブできるよ";
+        } else
+        {
+            _save3.text = number3.ToString("000") + "日付" + dt3;
+        }
+        if (count[3] == 0)
+        {
+            _save4.text = "セーブできるよ";
+        } else
+        {
+            _save4.text = number4.ToString("000") + "日付" + dt4;
+        }
+        if (count[4] == 0)
+        {
+            _save5.text = "セーブできるよ";
+        } else
+        {
+            _save5.text = number5.ToString("000") + "日付" + dt5;
+        }
+        if (count[5] == 0)
+        {
+            _save6.text = "セーブできるよ";
+        } else
+        {
+            _save6.text = number6.ToString("000") + "日付" + dt6;
+        }
+        if (count[6] == 0)
+        {
+            _save7.text = "セーブできるよ";
+        } else
+        {
+            _save7.text = number7.ToString("000") + "日付" + dt7;
+        }
+        if (count[7] == 0)
+        {
+            _save8.text = "セーブできるよ";
+        } else
+        {
+            _save8.text = number8.ToString("000") + "日付" + dt8;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        _save1.text = number1.ToString("000") + "日付" + dt1;
-        _save2.text = number2.ToString("000") + "日付" + dt2;
-        _save3.text = number3.ToString("000") + "日付" + dt3;
-        _save4.text = number4.ToString("000") + "日付" + dt4;
-        _save5.text = number5.ToString("000") + "日付" + dt5;
-        _save6.text = number6.ToString("000") + "日付" + dt6;
-        _save7.text = number7.ToString("000") + "日付" + dt7;
-        _save8.text = number8.ToString("000") + "日付" + dt8;
-        if (count[0] == 0)
-        {
-            _save1.text = "セーブできるよ";
-        }
-        if(count[1] == 0)
-        {
-            _save2.text = "セーブできるよ";
-        }
-        if (count[2] == 0)
-        {
-            _save3.text = "セーブできるよ";
-        }
-        if (count[3] == 0)
-        {
-            _save4.text = "セーブできるよ";
-        }
-        if (count[4] == 0)
-        {
-            _save5.text = "セーブできるよ";
-        }
-        if (count[5] == 0)
-        {
-            _save6.text = "セーブできるよ";
-        }
-        if (count[6] == 0)
-        {
-            _save7.text = "セーブできるよ";
-        }
-        if (count[7] == 0)
-        {
-            _save8.text = "セーブできるよ";
-        }
+        
+
+       
+       
+        
+        
+        
+        
+
         //Debug.Log(load);
     }
     public void save1_onClicked()
@@ -156,6 +181,7 @@ public class savesclipt : MonoBehaviour
             name = heroinname;
             Debug.Log(name);
             savetext.text = "記録されました";
+            load = 0;
             SceneManager.LoadScene("start scene");
         }
         else if (load == 1)
@@ -187,13 +213,15 @@ public class savesclipt : MonoBehaviour
                     PlayerPrefs.Save();
 
                 }
+                load = 0;
+                SceneManager.LoadScene("main scene");
             } else
             {
                 savetext.text = "セーブデータがないよ";
+                
             }
 
-            load = 0;
-            SceneManager.LoadScene("main scene");
+
         }
     }
     public void load_onClicked()
@@ -217,4 +245,10 @@ public class savesclipt : MonoBehaviour
     {
         savePanel.SetActive(false);
     }
-}
+
+    public void onClicked_startback()
+    {
+        load = 0;
+        SceneManager.LoadScene("start scene");
+    }
+ }
