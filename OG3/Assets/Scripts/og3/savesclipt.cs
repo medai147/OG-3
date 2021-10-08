@@ -180,7 +180,7 @@ public class savesclipt : MonoBehaviour
             savecount = 1;
             name = heroinname;
             Debug.Log(name);
-            savetext.text = "記録されました";
+            savetext.text = "記録されました" + savenum;
             load = 0;
             SceneManager.LoadScene("start scene");
         }

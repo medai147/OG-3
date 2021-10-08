@@ -159,7 +159,6 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject cannotskipAlertPanel;
     [SerializeField] GameObject LoadingPanel;
     [SerializeField] GameObject settingPanel;
-
     [SerializeField] GameObject SelectButton_3;
 
     private int selected = 0;
@@ -982,23 +981,26 @@ public class Story : MonoBehaviour
 
     public void onClick_Screenbutton()
     {
-        if(click == 0)
+        if (automode != 1)
         {
-            novelSpeed = 0;
-        }
-        if (qNum > qstory && click == 1)
-        {
-            sounds[2].Stop();
-            //StartCoroutine(Novel(qstory++));
-            //click = 0;
-            
-            //if (selected != 0) {
-            //    selected = 0;
-            //}
-            if(!(selected == 2 && index_skip == 171))  //とめるところ
+            if (click == 0)
             {
-                StartCoroutine(Novel(qstory++));
-                click = 0;
+                novelSpeed = 0;
+            }
+            if (qNum > qstory && click == 1)
+            {
+                sounds[2].Stop();
+                //StartCoroutine(Novel(qstory++));
+                //click = 0;
+
+                //if (selected != 0) {
+                //    selected = 0;
+                //}
+                if (!(selected == 2 && index_skip == 171))  //とめるところ
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                }
             }
         }
     }
@@ -1347,6 +1349,7 @@ public class Story : MonoBehaviour
         if (automode == 0)
         {
             automode = 1;
+            //StartCoroutine(Novel(qstory++));
         }
         else
         {
@@ -1382,7 +1385,7 @@ public class Story : MonoBehaviour
                 }
             } else if(autospeedcount == 3)
             {
-                if (time > 0.8f)
+                if (time > 0.9f)
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1391,7 +1394,7 @@ public class Story : MonoBehaviour
                 }
             } else if(autospeedcount == 4)
             {
-                if (time > 0.5f)
+                if (time > 0.7f)
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1400,7 +1403,7 @@ public class Story : MonoBehaviour
                 }
             } else
             {
-                if (time > 0.2f)
+                if (time > 0.5f)
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
