@@ -146,6 +146,7 @@ public class Story : MonoBehaviour
     public int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
+
     public float sevolume;
     public float bgmvolume;
     static int seMutecount = 0;
@@ -204,6 +205,8 @@ public class Story : MonoBehaviour
 
         //BGM初期状態
         sounds = GetComponents<AudioSource>();
+        sounds[0].volume = bgmvolume;
+        sounds[1].volume = sevolume;
         sounds[0].clip = bgm1;
         sounds[0].Play();
 
@@ -1228,7 +1231,7 @@ public class Story : MonoBehaviour
         float x_se;
         x_se = seslide.transform.position.x;
         //Debug.Log(x_se);
-        Debug.Log(MousePos.x);
+        //Debug.Log(MousePos.x);
         if (x_se > 46 && 70 >= x_se)
         {
             sevolumecount = 1;
