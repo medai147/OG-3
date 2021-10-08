@@ -146,8 +146,11 @@ public class Story : MonoBehaviour
     public int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
-    public static float sevolume = 1;
-    public static float bgmvolume = 1;
+
+    public float sevolume;
+    public float bgmvolume;
+    static int seMutecount = 0;
+    static int bgmMutecount = 0;
 
     [SerializeField] GameObject ScreenButton;
     [SerializeField] GameObject SelectButtonPanel;
@@ -163,12 +166,20 @@ public class Story : MonoBehaviour
 
     //設定画面
     public Image speedslide;
+    static float speedbar_x;
     public Image seslide;
     public Image bgmslide;
     public Vector2 MousePos;
     public Canvas canvas;
     public RectTransform canvasRect;
-    static int novelspeedcount = 3;
+    static int novelspeedcount = 4;
+    static int sevolumecount = 4;
+    static int bgmvolumecount = 4;
+    static int autospeedcount = 4;
+    public Image autoslide;
+    static float autoslidebar_x;
+    float time;
+    bool autoclick;
 
     // Start is called before the first frame update
     void Start()
@@ -920,10 +931,9 @@ public class Story : MonoBehaviour
         {
             sounds[2].Stop();
 
-            if (!(selected == 1 && qstory == 91))
+            if (!(selected == 1 && qstory == 91) && MenuPanel.activeSelf == false)
             {
-                StartCoroutine(Novel(qstory++));
-                click = 0;
+                autoclick = true;
             }
         }
     }
@@ -932,6 +942,7 @@ public class Story : MonoBehaviour
     void Update()
     {
         Menu();
+        auto();
         //Debug.Log(MousePos.y);
     }
 
@@ -957,9 +968,9 @@ public class Story : MonoBehaviour
             PlayerPrefs.SetInt("NUMBER", qstory);
             PlayerPrefs.Save();
             MenuPanel.SetActive(true);
-        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 100)
+        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 30)
         {
-            menucount = 100;
+            menucount = 30;
             MenuPanel.SetActive(false);
             
             //skip用
@@ -1048,6 +1059,89 @@ public class Story : MonoBehaviour
     public void onClicked_settingbutton()
     {
         settingPanel.SetActive(true);
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+        if(novelspeedcount == 1)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 117.5f);
+        } else if(novelspeedcount == 2)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, 117.5f);
+        } else if(novelspeedcount == 3)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, 117.5f);
+        } else if(novelspeedcount == 4)
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, 117.5f);
+        } else
+        {
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 117.5f);
+        }
+
+
+        if (autospeedcount == 1)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(79.047f, 117.5f);
+        }
+        else if (autospeedcount == 2)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(134, 117.5f);
+        }
+        else if (autospeedcount == 3)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(191, 117.5f);
+        }
+        else if (autospeedcount == 4)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(254, 117.5f);
+        }
+        else
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(298, 117.5f);
+        }
+
+
+        if (sevolumecount == 1)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 0.0001678467f);
+        }
+        else if (sevolumecount == 2)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, 0.0001678467f);
+        }
+        else if (sevolumecount == 3)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, 0.0001678467f);
+        }
+        else if (sevolumecount == 4)
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, 0.0001678467f);
+        }
+        else
+        {
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 0.0001678467f);
+        }
+
+        if (bgmvolumecount == 1)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, -117.9998f);
+        }
+        else if (bgmvolumecount == 2)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, -117.9998f);
+        }
+        else if (bgmvolumecount == 3)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, -117.9998f);
+        }
+        else if (bgmvolumecount == 4)
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, -117.9998f);
+        }
+        else
+        {
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, -117.9998f);
+        }
+
     }
 
     public void speedslidedrag()
@@ -1061,26 +1155,66 @@ public class Story : MonoBehaviour
 
     public void speedslidedrop()
     {
-        float x;
-        x = speedslide.transform.position.x;
+        speedbar_x = speedslide.transform.position.x;
         // Debug.Log(x);
         //Debug.Log(MousePos.y);
-        if (x > 46 && 70 >= x)
+        if (speedbar_x > 46 && 70 >= speedbar_x)
         {
             novelspeedcount = 1;
-        } else if(x > 70 && 100 >= x)
+        }
+        else if (speedbar_x > 70 && 100 >= speedbar_x)
         {
             novelspeedcount = 2;
-        } else if(x > 100 && 140 >= x)
+        }
+        else if (speedbar_x > 100 && 140 >= speedbar_x)
         {
             novelspeedcount = 3;
-        } else if(x > 140 && 170 > x)
+        }
+        else if (speedbar_x > 140 && 170 > speedbar_x)
         {
             novelspeedcount = 4;
-        } else if(x > 170 && 200 > x)
+        }
+        else if (speedbar_x > 170 && 200 > speedbar_x)
         {
             novelspeedcount = 5;
         }
+
+    }
+
+    public void autoslidedrag()
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
+        if ((MousePos.y <= 147.5 && MousePos.y >= 87.5) && MousePos.x > 79.047f && 302.96f > MousePos.x)
+        {
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+        }
+    }
+    public void autoslidedrop()
+    {
+        autoslidebar_x = autoslide.transform.position.x;
+        Debug.Log(autoslidebar_x);
+        //Debug.Log(MousePos.y);
+        if (autoslidebar_x > 326.0981f && 350 >= autoslidebar_x)
+        {
+            autospeedcount = 1;
+        }
+        else if (autoslidebar_x > 350 && 375 >= autoslidebar_x)
+        {
+            autospeedcount = 2;
+        }
+        else if (autoslidebar_x > 375 && 419 >= autoslidebar_x)
+        {
+            autospeedcount = 3;
+        }
+        else if (autoslidebar_x > 419 && 440 > autoslidebar_x)
+        {
+            autospeedcount = 4;
+        }
+        else if (autoslidebar_x > 440 && 476.42 > autoslidebar_x)
+        {
+            autospeedcount = 5;
+        }
+
     }
 
     public void seslidedrag()
@@ -1100,22 +1234,27 @@ public class Story : MonoBehaviour
         //Debug.Log(MousePos.x);
         if (x_se > 46 && 70 >= x_se)
         {
+            sevolumecount = 1;
             sevolume = 0.1f;
         }
         else if (x_se > 70 && 100 >= x_se)
         {
+            sevolumecount = 2;
             sevolume = 0.25f;
         }
         else if (x_se > 100 && 140 >= x_se)
         {
+            sevolumecount = 3;
             sevolume = 0.5f;
         }
         else if (x_se > 140 && 170 > x_se)
         {
+            sevolumecount = 4;
             sevolume = 0.7f;
         }
         else if (x_se > 170 && 200 > x_se)
         {
+            sevolumecount = 5;
             sevolume = 1;
         }
 
@@ -1140,28 +1279,60 @@ public class Story : MonoBehaviour
         Debug.Log(MousePos.x);
         if (x_bgm > 46 && 70 >= x_bgm)
         {
+            bgmvolumecount = 1;
             bgmvolume = 0.1f;
         }
         else if (x_bgm > 70 && 100 >= x_bgm)
         {
+            bgmvolumecount = 2;
             bgmvolume = 0.25f;
         }
         else if (x_bgm > 100 && 140 >= x_bgm)
         {
+            bgmvolumecount = 3;
             bgmvolume = 0.5f;
         }
         else if (x_bgm > 140 && 170 > x_bgm)
         {
+            bgmvolumecount = 4;
             bgmvolume = 0.7f;
         }
         else if (x_bgm > 170 && 200 > x_bgm)
         {
+            bgmvolumecount = 5;
             bgmvolume = 1;
         }
         
         sounds[0].volume = bgmvolume;
     }
 
+    public void OnClicked_SEMuteButton()
+    {
+        if(seMutecount == 0)
+        {
+            sounds[1].volume = 0;
+            seMutecount = 1;
+        } else if(seMutecount == 1)
+        {
+            sounds[1].volume = sevolume;
+            seMutecount = 0;
+        }
+        
+    }
+
+    public void OnClicked_BGMMuteButton()
+    {
+        if (bgmMutecount == 0)
+        {
+            sounds[0].volume = 0;
+            bgmMutecount = 1;
+        }
+        else if (bgmMutecount == 1)
+        {
+            sounds[0].volume = bgmvolume;
+            bgmMutecount = 0;
+        }
+    }
 
     public void onClicked_settingreturnbutton()
     {
@@ -1180,6 +1351,64 @@ public class Story : MonoBehaviour
         else
         {
             automode = 0;
+            autoclick = false;
+            time = 0;
+        }
+    }
+
+    void auto()
+    {
+        if (autoclick == true)
+        {
+            time += Time.deltaTime;
+            Debug.Log("time:" + time);
+            if(autospeedcount == 1)
+            {
+                if (time > 1.5f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else if(autospeedcount == 2)
+            {
+                if (time > 1)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else if(autospeedcount == 3)
+            {
+                if (time > 0.8f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else if(autospeedcount == 4)
+            {
+                if (time > 0.5f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            } else
+            {
+                if (time > 0.2f)
+                {
+                    StartCoroutine(Novel(qstory++));
+                    click = 0;
+                    autoclick = false;
+                    time = 0;
+                }
+            }
+
         }
     }
 }
