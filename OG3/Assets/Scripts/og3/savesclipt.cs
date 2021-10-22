@@ -22,6 +22,14 @@ public class savesclipt : MonoBehaviour
     public Text _save6;
     public Text _save7;
     public Text _save8;
+    public Text _save1sentence;
+    public Text _save2sentence;
+    public Text _save3sentence;
+    public Text _save4sentence;
+    public Text _save5sentence;
+    public Text _save6sentence;
+    public Text _save7sentence;
+    public Text _save8sentence;
     private static int number;
     private static int number1;
     private static int number2;
@@ -57,56 +65,64 @@ public class savesclipt : MonoBehaviour
             _save1.text = "セーブできるよ";
         } else
         {
-            _save1.text = number1.ToString("000") + "日付" + dt1;
+            _save1.text = number1.ToString("000") + dt1;
+            sentence(ref _save1sentence, number1);
         }
         if (count[1] == 0)
         {
             _save2.text = "セーブできるよ";
         } else
         {
-            _save2.text = number2.ToString("000") + "日付" + dt2;
+            _save2.text = number2.ToString("000") + dt2;
+            sentence(ref _save2sentence, number2);
         }
         if (count[2] == 0)
         {
             _save3.text = "セーブできるよ";
         } else
         {
-            _save3.text = number3.ToString("000") + "日付" + dt3;
+            _save3.text = number3.ToString("000") + dt3;
+            sentence(ref _save3sentence, number3);
         }
         if (count[3] == 0)
         {
             _save4.text = "セーブできるよ";
         } else
         {
-            _save4.text = number4.ToString("000") + "日付" + dt4;
+            _save4.text = number4.ToString("000") + dt4;
+            sentence(ref _save4sentence, number4);
         }
         if (count[4] == 0)
         {
             _save5.text = "セーブできるよ";
         } else
         {
-            _save5.text = number5.ToString("000") + "日付" + dt5;
+            _save5.text = number5.ToString("000") + dt5;
+            sentence(ref _save5sentence, number5);
         }
         if (count[5] == 0)
         {
             _save6.text = "セーブできるよ";
         } else
         {
-            _save6.text = number6.ToString("000") + "日付" + dt6;
+            _save6.text = number6.ToString("000") + dt6;
+            sentence(ref _save6sentence, number6);
         }
         if (count[6] == 0)
         {
             _save7.text = "セーブできるよ";
         } else
         {
-            _save7.text = number7.ToString("000") + "日付" + dt7;
+            _save7.text = number7.ToString("000") + dt7;
+            sentence(ref _save7sentence, number7);
         }
         if (count[7] == 0)
         {
             _save8.text = "セーブできるよ";
         } else
         {
-            _save8.text = number8.ToString("000") + "日付" + dt8;
+            _save8.text = number8.ToString("000") + dt8;
+            sentence(ref _save8sentence, number8);
         }
     }
 
@@ -250,5 +266,41 @@ public class savesclipt : MonoBehaviour
     {
         load = 0;
         SceneManager.LoadScene("start scene");
+    }
+
+    public void sentence(ref Text sentence,int number)
+    {
+        if (number > 139)
+        {
+            sentence.text = "おうじくんとパンケーキを食べに行くことに！なんだか照れちゃうな";
+        }
+        else if (number > 107)
+        {
+            sentence.text = "おうじくんに誕生日プレゼントを渡すことに！";
+        }
+        else if (number > 99)
+        {
+            sentence.text = "家に帰ると誰かからSNSにフォローリクエストが来ていた";
+        }
+        else if (number > 68)
+        {
+            sentence.text = "光先輩と商店街に行くことに！もしかしてデート！？";
+        }
+        else if (number > 61 || 90 < number)
+        {
+            sentence.text = "光先輩に勉強を教えてもらうことに！近づくチャンスかも！";
+        }
+        else if (number > 44)
+        {
+            sentence.text = "目が覚めるとおじさん達に覗き込まれてた！";
+        }
+        else if (number > 27)
+        {
+            sentence.text = "転校初日に銅像にぶつかってしまった！ついてない日だな";
+        }
+        else if (number > 0)
+        {
+            sentence.text = "今日から新しい学校に通うの楽しみだな！";
+        }
     }
  }

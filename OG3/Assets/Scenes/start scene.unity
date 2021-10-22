@@ -1077,6 +1077,14 @@ MonoBehaviour:
   _save6: {fileID: 0}
   _save7: {fileID: 0}
   _save8: {fileID: 0}
+  _save1sentence: {fileID: 0}
+  _save2sentence: {fileID: 0}
+  _save3sentence: {fileID: 0}
+  _save4sentence: {fileID: 0}
+  _save5sentence: {fileID: 0}
+  _save6sentence: {fileID: 0}
+  _save7sentence: {fileID: 0}
+  _save8sentence: {fileID: 0}
   loadPanel: {fileID: 0}
   savePanel: {fileID: 0}
 --- !u!114 &496443944
@@ -2083,6 +2091,14 @@ MonoBehaviour:
   _save6: {fileID: 0}
   _save7: {fileID: 0}
   _save8: {fileID: 0}
+  _save1sentence: {fileID: 0}
+  _save2sentence: {fileID: 0}
+  _save3sentence: {fileID: 0}
+  _save4sentence: {fileID: 0}
+  _save5sentence: {fileID: 0}
+  _save6sentence: {fileID: 0}
+  _save7sentence: {fileID: 0}
+  _save8sentence: {fileID: 0}
   loadPanel: {fileID: 0}
   savePanel: {fileID: 0}
 --- !u!114 &1390081957
@@ -2691,6 +2707,14 @@ MonoBehaviour:
   _save6: {fileID: 123515413}
   _save7: {fileID: 472181648}
   _save8: {fileID: 1995007245}
+  _save1sentence: {fileID: 467251577}
+  _save2sentence: {fileID: 1675668523}
+  _save3sentence: {fileID: 1869233468}
+  _save4sentence: {fileID: 1477733734}
+  _save5sentence: {fileID: 1655976731}
+  _save6sentence: {fileID: 123515413}
+  _save7sentence: {fileID: 472181648}
+  _save8sentence: {fileID: 1995007245}
   loadPanel: {fileID: 707123300}
   savePanel: {fileID: 0}
 --- !u!1 &1869233467
