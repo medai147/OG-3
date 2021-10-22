@@ -146,6 +146,7 @@ public class Story : MonoBehaviour
     public int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
+    public int messageCount = 0;
 
     public float sevolume;
     public float bgmvolume;
@@ -360,7 +361,7 @@ public class Story : MonoBehaviour
 
         //Debug.Log(index_read);
 
-        int messageCount = 0; //表示中の文字数
+        messageCount = 0; //表示中の文字数
         _story.text = "";
 
 
@@ -1349,7 +1350,10 @@ public class Story : MonoBehaviour
         if (automode == 0)
         {
             automode = 1;
-            //StartCoroutine(Novel(qstory++));
+            if (_qdataList[index_read].storyText.Length == messageCount)
+            {
+                StartCoroutine(Novel(qstory++));
+            }
         }
         else
         {
