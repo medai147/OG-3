@@ -55,15 +55,12 @@ public class Story : MonoBehaviour
     public Sprite back_heroineroom_noonSprite;
     public Sprite back_heroineroom_nightSprite;
     public Sprite blackSprite;
-    public Sprite back_garageSprite;
     //スチル
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
     public Sprite still_May_hikaruSprite;
-    public Sprite still_June_ouziSprite;
     public Sprite still_July_hikaruSprite;
     public Sprite still_July_ouziSprite;
-    public Sprite still_July_rukiaSprite;
     public Sprite still_August_hikaruSprite;
     public Sprite still_August_ouziSprite;
     //月
@@ -291,7 +288,7 @@ public class Story : MonoBehaviour
         }
         foreach (Logdata q in _logdataList)
         {
-            //q.WriteDebugLog_logstory();
+            q.WriteDebugLog_logstory();
         }
         //
 
@@ -459,22 +456,6 @@ public class Story : MonoBehaviour
         {
             stillimage.sprite = still_May_hikaruSprite;
         }
-        else if (int.Parse(stillsr) == 6)
-        {
-            stillimage.sprite = still_June_ouziSprite;
-        }
-        else if (int.Parse(stillsr) == 71)
-        {
-            stillimage.sprite = still_July_rukiaSprite; //7月るきあ
-        }
-        else if (int.Parse(stillsr) == 72)
-        {
-            stillimage.sprite = still_July_ouziSprite; //7月おうじ
-        }
-        else if (int.Parse(stillsr) == 73)
-        {
-            stillimage.sprite = still_July_hikaruSprite; //7月ひかる
-        }
         else if (int.Parse(stillsr) == 81)
         {
             stillimage.sprite = still_August_ouziSprite; //8月おうじ
@@ -589,23 +570,18 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = back_fancyshopSprite;
         }
-        else if (int.Parse(backsr) == 10)
+        else if (int.Parse(backsr) == 12)
         {
-            backimage.sprite = back_cafeSprite;
+            backimage.sprite = back_heroineroom_nightSprite;
         }
         else if (int.Parse(backsr) == 11)
         {
             backimage.sprite = back_heroineroom_noonSprite;
         }
-        else if (int.Parse(backsr) == 12)
+        else if (int.Parse(backsr) == 10)
         {
-            backimage.sprite = back_heroineroom_nightSprite;
+            backimage.sprite = back_cafeSprite;
         }
-        else if (int.Parse(backsr) == 13)
-        {
-            backimage.sprite = back_garageSprite;
-        }
-
 
 
         //センター画像
@@ -1021,7 +997,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 234))  //とめるところ
+                if (!(selected == 2 && index_skip == 171))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1496,7 +1472,7 @@ public class Qdata
 
     public void WriteDebugLog()
     {
-        Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
+        //Debug.Log(number + "\t" + storyText + "\t" + centerimage + "\t" + nameText + "\t" + selectbuttontext1 + "\t" + selectbuttontext2);
     }
 
     public class Logdata
