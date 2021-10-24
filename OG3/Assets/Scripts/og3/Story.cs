@@ -1021,7 +1021,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 234))  //とめるところ
+                if (!(selected == 2 && index_skip == 235))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
