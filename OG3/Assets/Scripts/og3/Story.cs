@@ -354,10 +354,10 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 166 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        if (index == 167 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
-            index_skip = 170;
+            index_skip = 171;
             qstory = index_skip;
             index = index_skip;
         }
@@ -1076,7 +1076,7 @@ public class Story : MonoBehaviour
         }
         else if(index_read == 138)
         {
-            index_skip = 165;
+            index_skip = 166;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
