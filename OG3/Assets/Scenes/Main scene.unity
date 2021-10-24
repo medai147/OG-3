@@ -754,12 +754,12 @@ MonoBehaviour:
   back_heroineroom_nightSprite: {fileID: 21300000, guid: 7d8f56716065f5a41887b8d43331fc6a,
     type: 3}
   blackSprite: {fileID: 21300000, guid: 7e18a25445844b14c86dc41e249f8d81, type: 3}
-  back_garageSprite: {fileID: 21300000, guid: fdea8984b93fdaa4289c9549daf78798, type: 3}
+  back_garageSprite: {fileID: 21300000, guid: 5b0fe921fc37eb244b7fcbeb152b6f82, type: 3}
   still_clearSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9, type: 3}
   still_AprilSprite: {fileID: 21300000, guid: fd6431e2ed7dba04f8ecf60bd7a36b83, type: 3}
   still_May_hikaruSprite: {fileID: 21300000, guid: c908469b2c28f554e9551cdceddac0be,
     type: 3}
-  still_June_ouziSprite: {fileID: 21300000, guid: edfbd9f9ed7b02a4bb1b2319600da059,
+  still_June_ouziSprite: {fileID: 21300000, guid: 5a13bafea3c702d41b1ba82735694367,
     type: 3}
   still_July_hikaruSprite: {fileID: 21300000, guid: c10e0cb773382eb47b9ccbd0509e354e,
     type: 3}
