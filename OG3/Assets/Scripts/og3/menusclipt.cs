@@ -19,6 +19,7 @@ public class menusclipt : MonoBehaviour
     [SerializeField] GameObject SkipselectpanelText;
     [SerializeField] GameObject cannotskipAlertPanel;
     [SerializeField] GameObject monthimage;
+    [SerializeField] GameObject menubutton;
     private Text skiptext;
     private int selectState;
     private int alertdisp;
@@ -59,6 +60,7 @@ public class menusclipt : MonoBehaviour
         NameTextPanel.SetActive(false);
         monthtext.SetActive(false);
         Screenbutton.SetActive(false);
+        menubutton.SetActive(false);
         if (SelectButtonPanel.activeSelf == true) {
             //Debug.Log("選択肢あり");
             SelectButtonPanel.SetActive(false);
@@ -75,6 +77,7 @@ public class menusclipt : MonoBehaviour
         NameTextPanel.SetActive(true);
         monthtext.SetActive(true);
         Screenbutton.SetActive(true);
+        menubutton.SetActive(true);
         selectState = Story.selectpanelState;
         if (selectState == 1)
         {
