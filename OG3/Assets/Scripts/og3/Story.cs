@@ -941,26 +941,28 @@ public class Story : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Menu();
+        //Menu();
         auto();
         //Debug.Log(MousePos.y);
     }
-
-    private void Menu()
+    public void onClicked_closebutton()
+    {
+        MenuPanel.SetActive(false);
+    }
+    public void onClick_Menu()
     {
         //Debug.Log(menucount);
         if (MenuPanel.activeSelf == true)
-        {
-            //automode = 0;
+        {           
             menucount++;
         } else if(MenuPanel.activeSelf == false)
         {
             if(menucount != 0)
-            {
+           {
                 menucount--;
             }
         }
-        if (Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == false && menucount == 0)
+        if ( MenuPanel.activeSelf == false && menucount == 0)
         {
             savenum = 1;
             PlayerPrefs.SetInt("SAVE", savenum);
@@ -968,7 +970,7 @@ public class Story : MonoBehaviour
             PlayerPrefs.SetInt("NUMBER", qstory);
             PlayerPrefs.Save();
             MenuPanel.SetActive(true);
-        } else if(Input.GetKey(KeyCode.M) && MenuPanel.activeSelf == true && menucount > 30)
+        } else if(MenuPanel.activeSelf == true && menucount > 30)
         {
             menucount = 30;
             MenuPanel.SetActive(false);
@@ -1058,6 +1060,7 @@ public class Story : MonoBehaviour
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
     }
+
 
     public void onClicked_settingbutton()
     {
