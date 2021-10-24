@@ -1065,84 +1065,84 @@ public class Story : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
         if(novelspeedcount == 1)
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 117.5f);
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, 43);
         } else if(novelspeedcount == 2)
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, 117.5f);
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, 43);
         } else if(novelspeedcount == 3)
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, 117.5f);
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, 43);
         } else if(novelspeedcount == 4)
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, 117.5f);
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, 43);
         } else
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 117.5f);
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, 43);
         }
 
 
         if (autospeedcount == 1)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(79.047f, 117.5f);
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, 129);
         }
         else if (autospeedcount == 2)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(134, 117.5f);
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, 129);
         }
         else if (autospeedcount == 3)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(191, 117.5f);
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, 129);
         }
         else if (autospeedcount == 4)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(254, 117.5f);
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, 129);
         }
         else
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(298, 117.5f);
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, 129);
         }
 
 
         if (sevolumecount == 1)
         {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, 0.0001678467f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, -52);
         }
         else if (sevolumecount == 2)
         {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, 0.0001678467f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, -52);
         }
         else if (sevolumecount == 3)
         {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, 0.0001678467f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, -52);
         }
         else if (sevolumecount == 4)
         {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, 0.0001678467f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, -52);
         }
         else
         {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, 0.0001678467f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, -52);
         }
 
         if (bgmvolumecount == 1)
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-316, -117.9998f);
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, -138);
         }
         else if (bgmvolumecount == 2)
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-287, -117.9998f);
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, -138);
         }
         else if (bgmvolumecount == 3)
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-226, -117.9998f);
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, -138);
         }
         else if (bgmvolumecount == 4)
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-162.96f, -117.9998f);
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, -138);
         }
         else
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-111, -117.9998f);
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, -138);
         }
 
     }
@@ -1150,34 +1150,34 @@ public class Story : MonoBehaviour
     public void speedslidedrag()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= 147.5 && MousePos.y >= 87.5) && MousePos.x > -330.66 && -106.74 > MousePos.x)
+        if ((MousePos.y <= 43 + 43 && MousePos.y >= 43 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 43);
         }
     }
 
     public void speedslidedrop()
     {
         speedbar_x = speedslide.transform.position.x;
-        // Debug.Log(x);
+        Debug.Log(speedbar_x);
         //Debug.Log(MousePos.y);
-        if (speedbar_x > 46 && 70 >= speedbar_x)
+        if (speedbar_x > 169.6606f && 219.5f >= speedbar_x)
         {
             novelspeedcount = 1;
         }
-        else if (speedbar_x > 70 && 100 >= speedbar_x)
+        else if (speedbar_x > 219.5f && 270 >= speedbar_x)
         {
             novelspeedcount = 2;
         }
-        else if (speedbar_x > 100 && 140 >= speedbar_x)
+        else if (speedbar_x > 270 && 346.5f >= speedbar_x)
         {
             novelspeedcount = 3;
         }
-        else if (speedbar_x > 140 && 170 > speedbar_x)
+        else if (speedbar_x > 346.5f && 421.5f > speedbar_x)
         {
             novelspeedcount = 4;
         }
-        else if (speedbar_x > 170 && 200 > speedbar_x)
+        else if (speedbar_x > 421.5f && 465.3495f > speedbar_x)
         {
             novelspeedcount = 5;
         }
@@ -1187,9 +1187,9 @@ public class Story : MonoBehaviour
     public void autoslidedrag()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= 147.5 && MousePos.y >= 87.5) && MousePos.x > 79.047f && 302.96f > MousePos.x)
+        if ((MousePos.y <= 129 + 43 && MousePos.y >= 129 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 117.5f);
+            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 129);
         }
     }
     public void autoslidedrop()
@@ -1197,23 +1197,23 @@ public class Story : MonoBehaviour
         autoslidebar_x = autoslide.transform.position.x;
         Debug.Log(autoslidebar_x);
         //Debug.Log(MousePos.y);
-        if (autoslidebar_x > 326.0981f && 350 >= autoslidebar_x)
+        if (autoslidebar_x > 169.6606f && 219.5f >= autoslidebar_x)
         {
             autospeedcount = 1;
         }
-        else if (autoslidebar_x > 350 && 375 >= autoslidebar_x)
+        else if (autoslidebar_x > 219.5f && 270 >= autoslidebar_x)
         {
             autospeedcount = 2;
         }
-        else if (autoslidebar_x > 375 && 419 >= autoslidebar_x)
+        else if (autoslidebar_x > 270 && 346.5f >= autoslidebar_x)
         {
             autospeedcount = 3;
         }
-        else if (autoslidebar_x > 419 && 440 > autoslidebar_x)
+        else if (autoslidebar_x > 346.5f && 421.5f > autoslidebar_x)
         {
             autospeedcount = 4;
         }
-        else if (autoslidebar_x > 440 && 476.42 > autoslidebar_x)
+        else if (autoslidebar_x > 421.5f && 465.3495f > autoslidebar_x)
         {
             autospeedcount = 5;
         }
@@ -1223,9 +1223,9 @@ public class Story : MonoBehaviour
     public void seslidedrag()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= -9.499825+30 && MousePos.y >= -9.499825-30) && MousePos.x > -330.66 && -106.74 > MousePos.x )
+        if ((MousePos.y <= -52 + 43 && MousePos.y >= -52 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
         {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 0.0001678467f);
+            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, -52);
         }
     }
 
@@ -1235,27 +1235,27 @@ public class Story : MonoBehaviour
         x_se = seslide.transform.position.x;
         //Debug.Log(x_se);
         //Debug.Log(MousePos.x);
-        if (x_se > 46 && 70 >= x_se)
+        if (x_se > 169.6606f && 219.5f >= x_se)
         {
             sevolumecount = 1;
             sevolume = 0.1f;
         }
-        else if (x_se > 70 && 100 >= x_se)
+        else if (x_se > 219.5f && 270 >= x_se)
         {
             sevolumecount = 2;
             sevolume = 0.25f;
         }
-        else if (x_se > 100 && 140 >= x_se)
+        else if (x_se > 270 && 346.5f >= x_se)
         {
             sevolumecount = 3;
             sevolume = 0.5f;
         }
-        else if (x_se > 140 && 170 > x_se)
+        else if (x_se > 346.5f && 421.5f > x_se)
         {
             sevolumecount = 4;
             sevolume = 0.7f;
         }
-        else if (x_se > 170 && 200 > x_se)
+        else if (x_se > 421.5f && 465.3495f > x_se)
         {
             sevolumecount = 5;
             sevolume = 1;
@@ -1268,9 +1268,9 @@ public class Story : MonoBehaviour
     public void bgmslidedrag()
     {
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= -114 + 30 && MousePos.y >= -114 - 30) && MousePos.x > -330.66 && -106.74 > MousePos.x)
+        if ((MousePos.y <= -138 + 43 && MousePos.y >= -138 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, -117.9998f);
+            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, -138);
         }
     }
 
@@ -1280,27 +1280,27 @@ public class Story : MonoBehaviour
         x_bgm = bgmslide.transform.position.x;
         //Debug.Log(x_se);
         Debug.Log(MousePos.x);
-        if (x_bgm > 46 && 70 >= x_bgm)
+        if (x_bgm > 169.6606f && 219.5f >= x_bgm)
         {
             bgmvolumecount = 1;
             bgmvolume = 0.1f;
         }
-        else if (x_bgm > 70 && 100 >= x_bgm)
+        else if (x_bgm > 219.5f && 270 >= x_bgm)
         {
             bgmvolumecount = 2;
             bgmvolume = 0.25f;
         }
-        else if (x_bgm > 100 && 140 >= x_bgm)
+        else if (x_bgm > 270 && 346.5f >= x_bgm)
         {
             bgmvolumecount = 3;
             bgmvolume = 0.5f;
         }
-        else if (x_bgm > 140 && 170 > x_bgm)
+        else if (x_bgm > 346.5f && 421.5f > x_bgm)
         {
             bgmvolumecount = 4;
             bgmvolume = 0.7f;
         }
-        else if (x_bgm > 170 && 200 > x_bgm)
+        else if (x_bgm > 421.5f && 465.3495f > x_bgm)
         {
             bgmvolumecount = 5;
             bgmvolume = 1;
