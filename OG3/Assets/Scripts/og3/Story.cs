@@ -165,7 +165,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject LoadingPanel;
     [SerializeField] GameObject settingPanel;
     [SerializeField] GameObject SelectButton_3;
-
+    [SerializeField] GameObject menubutton;
     private int selected = 0;
 
     //設定画面
@@ -450,13 +450,21 @@ public class Story : MonoBehaviour
         //一枚絵
         stillsr = _qdataList[index].stillimage;
         Image stillimage = (Image)still.GetComponent<Image>();
+        if(int.Parse(stillsr) == 0)
+        {
+            menubutton.SetActive(true);
+        } else
+        {
+            menubutton.SetActive(false);
+        }
+
         if (int.Parse(stillsr) == 0)
         {
             stillimage.sprite = still_clearSprite;
         }
         else if (int.Parse(stillsr) == 4)
         {
-            stillimage.sprite = still_AprilSprite;
+            stillimage.sprite = still_AprilSprite;   
         }
         else if (int.Parse(stillsr) == 5)
         {
@@ -486,6 +494,14 @@ public class Story : MonoBehaviour
         //月のはじめの画像
         monthsr = _qdataList[index].monthimage;
         Image monthimage = (Image)month.GetComponent<Image>();
+        if (int.Parse(monthsr) == 0 && int.Parse(stillsr) == 0)
+        {
+            menubutton.SetActive(true);
+        }
+        else
+        {
+            menubutton.SetActive(false);
+        }
         if (int.Parse(monthsr) == 0)
         {
             monthimage.sprite = month_clearSprite;
