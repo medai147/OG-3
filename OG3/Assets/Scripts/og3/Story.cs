@@ -48,19 +48,23 @@ public class Story : MonoBehaviour
     public Sprite back_schoolSprite;
     public Sprite back_dispensarySprite;
     public Sprite back_seaSprite;
-    public Sprite back_groundSprite;
+    public Sprite back_ground_noonSprite;
+    public Sprite back_ground_eveningSprite;
     public Sprite back_shoploadSprite;
     public Sprite back_fancyshopSprite;
     public Sprite back_cafeSprite;
     public Sprite back_heroineroom_noonSprite;
     public Sprite back_heroineroom_nightSprite;
+    public Sprite back_garageSprite;
     public Sprite blackSprite;
     //スチル
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
     public Sprite still_May_hikaruSprite;
-    public Sprite still_July_hikaruSprite;
+    public Sprite still_June_ouziSprite;
+    public Sprite still_July_rukiaSprite;
     public Sprite still_July_ouziSprite;
+    public Sprite still_July_hikaruSprite;
     public Sprite still_August_hikaruSprite;
     public Sprite still_August_ouziSprite;
     //月
@@ -205,6 +209,8 @@ public class Story : MonoBehaviour
 
         //BGM初期状態
         sounds = GetComponents<AudioSource>();
+        bgmvolume = 0.7f;
+        sevolume = 0.7f;
         sounds[0].volume = bgmvolume;
         sounds[1].volume = sevolume;
         sounds[0].clip = bgm1;
@@ -351,10 +357,10 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 166 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        if (index == 167 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
-            index_skip = 170;
+            index_skip = 171;
             qstory = index_skip;
             index = index_skip;
         }
@@ -455,6 +461,22 @@ public class Story : MonoBehaviour
         else if (int.Parse(stillsr) == 5)
         {
             stillimage.sprite = still_May_hikaruSprite;
+        }
+        else if (int.Parse(stillsr) == 6)
+        {
+            stillimage.sprite = still_June_ouziSprite;
+        }
+        else if (int.Parse(stillsr) == 71)
+        {
+            stillimage.sprite = still_July_rukiaSprite; //7月
+        }
+        else if (int.Parse(stillsr) == 72)
+        {
+            stillimage.sprite = still_July_ouziSprite; //7月
+        }
+        else if (int.Parse(stillsr) == 73)
+        {
+            stillimage.sprite = still_July_hikaruSprite; //7月
         }
         else if (int.Parse(stillsr) == 81)
         {
@@ -578,11 +600,34 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = back_heroineroom_noonSprite;
         }
+        else if (int.Parse(backsr) == 7)
+        {
+            backimage.sprite = back_ground_noonSprite;
+        }
         else if (int.Parse(backsr) == 10)
         {
             backimage.sprite = back_cafeSprite;
         }
-
+        else if (int.Parse(backsr) == 13)
+        {
+            backimage.sprite = back_garageSprite;
+        }
+        else if (int.Parse(backsr) == 14)
+        {
+            backimage.sprite = back_ground_eveningSprite;
+        }
+        else if (int.Parse(backsr) == 71)
+        {
+            backimage.sprite = still_July_rukiaSprite;
+        }
+        else if (int.Parse(backsr) == 72)
+        {
+            backimage.sprite = still_July_ouziSprite;
+        }
+        else if (int.Parse(backsr) == 73)
+        {
+            backimage.sprite = still_July_hikaruSprite;
+        }
 
         //センター画像
         centersr = _qdataList[index].centerimage;
@@ -818,6 +863,10 @@ public class Story : MonoBehaviour
         {
             textboximage.sprite = text_mob;
         }
+        else if (int.Parse(textcolorsr) == 5)
+        {
+            textboximage.sprite = clearSprite;
+        }
 
         //名前
         if (int.Parse(textcolorsr) == 0)
@@ -999,7 +1048,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 171))  //とめるところ
+                if (!(selected == 2 && index_skip == 235))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1054,7 +1103,7 @@ public class Story : MonoBehaviour
         }
         else if(index_read == 138)
         {
-            index_skip = 165;
+            index_skip = 166;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
