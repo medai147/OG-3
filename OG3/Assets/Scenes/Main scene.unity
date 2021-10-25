@@ -742,7 +742,10 @@ MonoBehaviour:
   back_dispensarySprite: {fileID: 21300000, guid: b923a6c5406eefb48a9f1bf21e24a590,
     type: 3}
   back_seaSprite: {fileID: 21300000, guid: 5d721ef3f9234064d8e10986c9e3c4a7, type: 3}
-  back_groundSprite: {fileID: 21300000, guid: 0371be21fdae7414ca69d313e6477e30, type: 3}
+  back_ground_noonSprite: {fileID: 21300000, guid: ac12404e77f068f4ea7ce3720c42ec63,
+    type: 3}
+  back_ground_eveningSprite: {fileID: 21300000, guid: f196baaf80b516847b9063ddbda9e321,
+    type: 3}
   back_shoploadSprite: {fileID: 21300000, guid: 5dee1cf0ce1a3d94da86f98e749a2841,
     type: 3}
   back_fancyshopSprite: {fileID: 21300000, guid: 8d886d2bce834e643bf453457f6fd17c,

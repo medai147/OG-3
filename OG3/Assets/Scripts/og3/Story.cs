@@ -48,7 +48,8 @@ public class Story : MonoBehaviour
     public Sprite back_schoolSprite;
     public Sprite back_dispensarySprite;
     public Sprite back_seaSprite;
-    public Sprite back_groundSprite;
+    public Sprite back_ground_noonSprite;
+    public Sprite back_ground_eveningSprite;
     public Sprite back_shoploadSprite;
     public Sprite back_fancyshopSprite;
     public Sprite back_cafeSprite;
@@ -601,7 +602,7 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(backsr) == 7)
         {
-            backimage.sprite = back_groundSprite;
+            backimage.sprite = back_ground_noonSprite;
         }
         else if (int.Parse(backsr) == 10)
         {
@@ -610,6 +611,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(backsr) == 13)
         {
             backimage.sprite = back_garageSprite;
+        }
+        else if (int.Parse(backsr) == 14)
+        {
+            backimage.sprite = back_ground_eveningSprite;
         }
         else if (int.Parse(backsr) == 71)
         {
@@ -1043,7 +1048,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 234))  //とめるところ
+                if (!(selected == 2 && index_skip == 235))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
