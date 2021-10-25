@@ -208,6 +208,8 @@ public class Story : MonoBehaviour
 
         //BGM初期状態
         sounds = GetComponents<AudioSource>();
+        bgmvolume = 0.7f;
+        sevolume = 0.7f;
         sounds[0].volume = bgmvolume;
         sounds[1].volume = sevolume;
         sounds[0].clip = bgm1;
@@ -1096,7 +1098,7 @@ public class Story : MonoBehaviour
         }
         else if(index_read == 138)
         {
-            index_skip = 165;
+            index_skip = 166;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
