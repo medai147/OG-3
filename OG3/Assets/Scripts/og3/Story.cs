@@ -166,6 +166,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject settingPanel;
     [SerializeField] GameObject SelectButton_3;
     [SerializeField] GameObject menubutton;
+    [SerializeField] GameObject monthtext;
     private int selected = 0;
 
     //設定画面
@@ -496,10 +497,12 @@ public class Story : MonoBehaviour
         Image monthimage = (Image)month.GetComponent<Image>();
         if (int.Parse(monthsr) == 0 && int.Parse(stillsr) == 0)
         {
+            monthtext.SetActive(true);
             menubutton.SetActive(true);
         }
         else
         {
+            monthtext.SetActive(false);
             menubutton.SetActive(false);
         }
         if (int.Parse(monthsr) == 0)
@@ -898,10 +901,19 @@ public class Story : MonoBehaviour
         if(index < 50)
         {
             _monthtext.text = "4月";
-        } else if(index < 55)
+        } else if(index == 50)
         {
             _monthtext.text = "5月";
         }
+        else if (index == 124)
+        {
+            _monthtext.text = "6月";
+        }
+        else if (index == 171)
+        {
+            _monthtext.text = "7月";
+        }
+
 
         //ストーリーテキスト表示
         index_read = index; //skip用
