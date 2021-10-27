@@ -325,14 +325,6 @@ public class Story : MonoBehaviour
                 index = index_skip;
                 index_read = index;
             }
-            //if(index == 91 && selected == 1)
-            //{
-                //index_read = index;
-                //index_skip = 94;
-                //qstory = index_skip;
-                //index = index_skip;
-                //SkipselectPanelScript.clicked_skip = false;
-            //}
         }
 
         //選択肢で飛んだ先から次の話に飛ぶところまとめ
