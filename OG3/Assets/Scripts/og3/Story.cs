@@ -85,6 +85,7 @@ public class Story : MonoBehaviour
     public Sprite text_hikaru;
     public Sprite text_rukia;
     public Sprite text_mob;
+    public Sprite text_monologue; //心の声
 
     private string centersr;
     private string rightsr;
@@ -873,6 +874,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(textcolorsr) == 0 || int.Parse(textcolorsr) == 4)
         {
             textboximage.sprite = text_mob;
+        }
+        else if (int.Parse(textcolorsr) == 6)
+        {
+            textboximage.sprite = text_monologue;
         }
         else if (int.Parse(textcolorsr) == 5)
         {

@@ -794,6 +794,7 @@ MonoBehaviour:
   text_hikaru: {fileID: 21300000, guid: 04ab32840f66b7842a7782e4faa03272, type: 3}
   text_rukia: {fileID: 21300000, guid: 06b37da296e794f4995346d3316f7384, type: 3}
   text_mob: {fileID: 21300000, guid: f126160501e5ab140ae711b5f9bf1f30, type: 3}
+  text_monologue: {fileID: 21300000, guid: 4c86501d5c1d21043ac7fcfdc4cc2517, type: 3}
   bgm1: {fileID: 8300000, guid: 8e422e083b24a3042ba7158208986672, type: 3}
   bgm2: {fileID: 8300000, guid: c6bfc5abe4fd58c469dd00da461856b1, type: 3}
   bgm3: {fileID: 8300000, guid: 8ed6bc2823ace6e438c7958daeb08e8a, type: 3}
@@ -2994,8 +2995,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.216}
   m_AnchorMin: {x: 0, y: 0.038576122}
   m_AnchorMax: {x: 1, y: 0.96142757}
-  m_AnchoredPosition: {x: 3.6019897, y: 1}
-  m_SizeDelta: {x: -782.672, y: -127.691}
+  m_AnchoredPosition: {x: 3.6170044, y: -2.6620026}
+  m_SizeDelta: {x: -782.672, y: -131.658}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675824980
 MonoBehaviour:
@@ -3029,7 +3030,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 1.2
   m_Text: Story
 --- !u!222 &675824981
 CanvasRenderer:
@@ -3046,7 +3047,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675824978}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
@@ -5282,8 +5283,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000020980835}
+  m_SizeDelta: {x: 0.000015259, y: 0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1370771216
 MonoBehaviour:
@@ -5306,7 +5307,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d0fc0dde5eb3e6a4cad9b67aa138a09c, type: 3}
+    m_Font: {fileID: 12800000, guid: e7c9a42e7fe1ca64583a278edf51224d, type: 3}
     m_FontSize: 14
     m_FontStyle: 2
     m_BestFit: 1
@@ -7505,7 +7506,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 183.53, y: 57.399994}
+  m_AnchoredPosition: {x: 183.53003, y: 57.399994}
   m_SizeDelta: {x: -422.05588, y: -281.6269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1906242544
