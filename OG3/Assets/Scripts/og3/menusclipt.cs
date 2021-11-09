@@ -99,7 +99,7 @@ public class menusclipt : MonoBehaviour
             MenuPanel.SetActive(false);
             Screenbutton.SetActive(false);
             SkipselectPanel.SetActive(true);
-            if (Story.index_read < 49)
+            if (Story.index_read < 49) 
             {
                 //SkipselectpanelText.SetActive(true);
                 skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
@@ -115,13 +115,57 @@ public class menusclipt : MonoBehaviour
                 skiptext.text += "(選択肢のところまで)";
                 SkipselectpanelText.SetActive(true);
             }
-            else if (Story.index_read > 65 && Story.index_read < 107)
+            else if (Story.index_read > 66 && Story.index_read < 94)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "5月(光と勉強)をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 94 && Story.index_read < 107)
             {
                 //SkipselectpanelText.SetActive(true);
                 skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
                 skiptext.text = "5月(おうじからのDM)をスキップしますか？";
                 skiptext.text += "\n";
                 skiptext.text += "(選択肢のところまで)";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 107 && Story.index_read < 124)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "5月(おうじからのDM)をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 124 && Story.index_read < 137)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "6月(おうじからのDM)をスキップしますか？";
+                skiptext.text += "\n";
+                skiptext.text += "(選択肢のところまで)";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 137 && Story.index_read < 171)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "6月(おうじからのDM)をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 171 && Story.index_read < 188)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "7月(体育祭の道具運び)をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 188 && Story.index_read < 210)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "7月(リレーのアンカー)をスキップしますか？";
                 SkipselectpanelText.SetActive(true);
             }
         }

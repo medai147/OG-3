@@ -36,7 +36,11 @@ public class SkipselectPanelScript : MonoBehaviour
         {
             Story.index_skip = 66; //5月ひかるの選択肢に飛ぶ
         }
-        else if(Story.index_read > 66 && Story.index_read < 108)
+        else if (Story.index_read > 66 && Story.index_read < 94)
+        {
+            Story.index_skip = 94; //5月おうじの先頭に飛ぶ
+        }
+        else if(Story.index_read > 94 && Story.index_read < 108)
         {
             Story.index_skip = 109; //5月おうじの選択肢に飛ぶ
         }
@@ -44,7 +48,7 @@ public class SkipselectPanelScript : MonoBehaviour
         {
             Story.index_skip = 124; //6月に飛ぶ
         }
-        else if (Story.index_read > 123 && Story.index_read < 137)
+        else if (Story.index_read > 124 && Story.index_read < 137)
         {
             Story.index_skip = 137; //6月おうじの選択肢に飛ぶ
         }

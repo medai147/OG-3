@@ -351,7 +351,7 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 167 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        if (index == 168 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
             index_skip = 171;
@@ -888,6 +888,10 @@ public class Story : MonoBehaviour
         if (int.Parse(textcolorsr) == 0)
         {
             _name.text = heroineName;
+        }
+        else if(int.Parse(textcolorsr) == 6)
+        {
+            _name.text = "";
         }
         else
         {
