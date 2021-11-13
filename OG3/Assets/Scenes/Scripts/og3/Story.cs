@@ -120,6 +120,9 @@ public class Story : MonoBehaviour
     public AudioClip bgm2; //dark
     public AudioClip bgm3; //shock
     public AudioClip bgm4; //cafe
+    public AudioClip bgm5; //street
+    public AudioClip bgm6; //fancyshop
+    public AudioClip bgm7; //room
 
     public AudioClip[] cv;
 
@@ -345,7 +348,7 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 119 && selected == 1) //おうじ誕プレから６月へ飛ぶ
+        if (index == 120 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
             index_skip = 124;
@@ -399,6 +402,23 @@ public class Story : MonoBehaviour
         {
             sounds[0].clip = bgm3;
         }
+        if (int.Parse(bgm_num_sr) == 4)
+        {
+            sounds[0].clip = bgm4;
+        }
+        if (int.Parse(bgm_num_sr) == 5)
+        {
+            sounds[0].clip = bgm5;
+        }
+        if (int.Parse(bgm_num_sr) == 6)
+        {
+            sounds[0].clip = bgm6;
+        }
+        if (int.Parse(bgm_num_sr) == 7)
+        {
+            sounds[0].clip = bgm7;
+        }
+
 
         //BGM状態
         bgm_state_sr = _qdataList[index].bgm_state;
