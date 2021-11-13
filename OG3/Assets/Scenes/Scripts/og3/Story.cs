@@ -81,6 +81,7 @@ public class Story : MonoBehaviour
     public Sprite month_FebruarySprite;
 
     //名前の色
+    public Sprite text_own;
     public Sprite text_ouzi;
     public Sprite text_hikaru;
     public Sprite text_rukia;
@@ -871,7 +872,7 @@ public class Story : MonoBehaviour
         {
             textboximage.sprite = text_hikaru;
         }
-        else if (int.Parse(textcolorsr) == 0 || int.Parse(textcolorsr) == 4)
+        else if (int.Parse(textcolorsr) == 4)
         {
             textboximage.sprite = text_mob;
         }
@@ -882,6 +883,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(textcolorsr) == 5)
         {
             textboximage.sprite = clearSprite;
+        }
+        else if (int.Parse(textcolorsr) == 0)
+        {
+            textboximage.sprite = text_own;
         }
 
         //名前
