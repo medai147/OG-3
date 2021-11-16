@@ -39,14 +39,14 @@ public class savesclipt : MonoBehaviour
     private static int number6;
     private static int number7;
     private static int number8;
-    private static DateTime dt1;
-    private static DateTime dt2;
-    private static DateTime dt3;
-    private static DateTime dt4;
-    private static DateTime dt5;
-    private static DateTime dt6;
-    private static DateTime dt7;
-    private static DateTime dt8;
+    private static string dt1;
+    private static string dt2;
+    private static string dt3;
+    private static string dt4;
+    private static string dt5;
+    private static string dt6;
+    private static string dt7;
+    private static string dt8;
     private static int[]count = { 0, 0, 0, 0, 0, 0, 0, 0 };
     [SerializeField] GameObject loadPanel;
     [SerializeField] GameObject savePanel;
@@ -55,10 +55,54 @@ public class savesclipt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerPrefs.DeleteAll();
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
         save = PlayerPrefs.GetInt("SAVE");
         PlayerPrefs.SetInt("SAVE", 0);
         number = PlayerPrefs.GetInt("NUMBER");
         heroinname = PlayerPrefs.GetString("INPUTNAME");
+
+        count[0] = PlayerPrefs.GetInt("SAVECOUNT1");
+        number1 = PlayerPrefs.GetInt("SAVEDATA1");
+        heroin[0] = PlayerPrefs.GetString("SAVENAME1");
+        dt1 = PlayerPrefs.GetString("SAVETIME1");
+
+        count[1] = PlayerPrefs.GetInt("SAVECOUNT2");
+        number2 = PlayerPrefs.GetInt("SAVEDATA2");
+        heroin[1] = PlayerPrefs.GetString("SAVENAME2");
+        dt2 = PlayerPrefs.GetString("SAVETIME2");
+
+        count[2] = PlayerPrefs.GetInt("SAVECOUNT3");
+        number3 = PlayerPrefs.GetInt("SAVEDATA3");
+        heroin[2] = PlayerPrefs.GetString("SAVENAME3");
+        dt3 = PlayerPrefs.GetString("SAVETIME3");
+
+        count[3] = PlayerPrefs.GetInt("SAVECOUNT4");
+        number4 = PlayerPrefs.GetInt("SAVEDATA4");
+        heroin[3] = PlayerPrefs.GetString("SAVENAME4");
+        dt4 = PlayerPrefs.GetString("SAVETIME4");
+
+        count[4] = PlayerPrefs.GetInt("SAVECOUNT5");
+        number5 = PlayerPrefs.GetInt("SAVEDATE5");
+        heroin[4] = PlayerPrefs.GetString("SAVENAME5");
+        dt5 = PlayerPrefs.GetString("SAVETIME5");
+
+        count[5] = PlayerPrefs.GetInt("SAVECOUNT6");
+        number6 = PlayerPrefs.GetInt("SAVEDATA6");
+        heroin[5] = PlayerPrefs.GetString("SAVENAME6");
+        dt6 = PlayerPrefs.GetString("SAVETIME6");
+
+        count[6] = PlayerPrefs.GetInt("SAVECOUNT7");
+        number7 = PlayerPrefs.GetInt("SAVEDATA7");
+        heroin[6] = PlayerPrefs.GetString("SAVENAME7");
+        dt7 = PlayerPrefs.GetString("SAVETIME7");
+
+        count[7] = PlayerPrefs.GetInt("SAVECOUNT8");
+        number8 = PlayerPrefs.GetInt("SAVEDATA8");
+        heroin[7] = PlayerPrefs.GetString("SAVENAME8");
+        dt8 = PlayerPrefs.GetString("SAVETIME8");
+
+
         //ここに飛びたいストーリー番号を書いてsave画面から始める　例  number = 34;
         if (count[0] == 0)
         {
@@ -186,13 +230,13 @@ public class savesclipt : MonoBehaviour
 
 
 
-    public void Save(ref int savenum, ref Text savetext,ref DateTime dt,ref int savecount,ref string name)
+    public void Save(ref int savenum, ref Text savetext,ref string dt,ref int savecount,ref string name)
     {
         if (load != 1)
 
         {
             savenum = number;
-            dt = DateTime.Now;
+            dt = DateTime.Now.ToString();
             savecount = 1;
             name = heroinname;
             Debug.Log(name);
@@ -303,4 +347,49 @@ public class savesclipt : MonoBehaviour
             sentence.text = "今日から新しい学校に通うの楽しみだな！";
         }
     }
- }
+
+    void OnActiveSceneChanged(Scene thisScene, Scene nextScene)
+    {
+        PlayerPrefs.SetInt("SAVEDATA1", number1);
+        PlayerPrefs.SetString("SAVENAME1", heroin[0]);
+        PlayerPrefs.SetInt("SAVECOUNT1", count[0]);
+        PlayerPrefs.SetString("SAVETIME1", dt1.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA2", number2);
+        PlayerPrefs.SetString("SAVENAME2", heroin[1]);
+        PlayerPrefs.SetInt("SAVECOUNT2", count[1]);
+        PlayerPrefs.SetString("SAVETIME2", dt2.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA3", number3);
+        PlayerPrefs.SetString("SAVENAME3", heroin[2]);
+        PlayerPrefs.SetInt("SAVECOUNT3", count[2]);
+        PlayerPrefs.SetString("SAVETIME3", dt3.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA4", number4);
+        PlayerPrefs.SetString("SAVENAME4", heroin[3]);
+        PlayerPrefs.SetInt("SAVECOUNT4", count[3]);
+        PlayerPrefs.SetString("SAVETIME4", dt4.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA5", number5);
+        PlayerPrefs.SetString("SAVENAME5", heroin[4]);
+        PlayerPrefs.SetInt("SAVECOUNT5", count[4]);
+        PlayerPrefs.SetString("SAVETIME5", dt5.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA6", number6);
+        PlayerPrefs.SetString("SAVENAME6", heroin[5]);
+        PlayerPrefs.SetInt("SAVECOUNT6", count[5]);
+        PlayerPrefs.SetString("SAVETIME6", dt6.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA7", number7);
+        PlayerPrefs.SetString("SAVENAME7", heroin[6]);
+        PlayerPrefs.SetInt("SAVECOUNT7", count[6]);
+        PlayerPrefs.SetString("SAVETIME7", dt7.ToString());
+
+        PlayerPrefs.SetInt("SAVEDATA8", number8);
+        PlayerPrefs.SetString("SAVENAME8", heroin[7]);
+        PlayerPrefs.SetInt("SAVECOUNT8", count[7]);
+        PlayerPrefs.SetString("SAVETIME8", dt8.ToString());
+
+
+    }
+}
