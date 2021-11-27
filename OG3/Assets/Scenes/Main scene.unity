@@ -796,6 +796,8 @@ MonoBehaviour:
   text_rukia: {fileID: 21300000, guid: 06b37da296e794f4995346d3316f7384, type: 3}
   text_mob: {fileID: 21300000, guid: f126160501e5ab140ae711b5f9bf1f30, type: 3}
   text_monologue: {fileID: 21300000, guid: 89fe6eb8d1b5c8b4292285ae285f74f8, type: 3}
+  select_now: {fileID: 21300000, guid: 53e2eabfcd1409e4d9b7a2d2289da3a4, type: 3}
+  select_not: {fileID: 21300000, guid: 68222923332782d409e578fb71bbb9e1, type: 3}
   bgm1: {fileID: 8300000, guid: 8e422e083b24a3042ba7158208986672, type: 3}
   bgm2: {fileID: 8300000, guid: c6bfc5abe4fd58c469dd00da461856b1, type: 3}
   bgm3: {fileID: 8300000, guid: 8ed6bc2823ace6e438c7958daeb08e8a, type: 3}
@@ -1127,6 +1129,8 @@ MonoBehaviour:
   cannotskipAlertPanel: {fileID: 1906242542}
   LoadingPanel: {fileID: 1661964028}
   settingPanel: {fileID: 948353150}
+  Selectbutton_1: {fileID: 422531810}
+  Selectbutton_2: {fileID: 1692515692}
   SelectButton_3: {fileID: 1555609096}
   menubutton: {fileID: 553519921}
   monthtext: {fileID: 1169502369}
@@ -1801,6 +1805,7 @@ GameObject:
   - component: {fileID: 422531814}
   - component: {fileID: 422531813}
   - component: {fileID: 422531812}
+  - component: {fileID: 422531815}
   m_Layer: 5
   m_Name: SelectButton_1
   m_TagString: Untagged
@@ -1922,6 +1927,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422531810}
   m_CullTransparentMesh: 0
+--- !u!114 &422531815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422531810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 149050667}
+          m_TargetAssemblyTypeName: Story, Assembly-CSharp
+          m_MethodName: selectbutton1_Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 149050667}
+          m_TargetAssemblyTypeName: Story, Assembly-CSharp
+          m_MethodName: selectbutton1_Exit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &445216265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6464,6 +6514,7 @@ GameObject:
   - component: {fileID: 1555609100}
   - component: {fileID: 1555609099}
   - component: {fileID: 1555609098}
+  - component: {fileID: 1555609101}
   m_Layer: 5
   m_Name: SelectButton_3
   m_TagString: Untagged
@@ -6585,6 +6636,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555609096}
   m_CullTransparentMesh: 0
+--- !u!114 &1555609101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555609096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 149050667}
+          m_TargetAssemblyTypeName: Story, Assembly-CSharp
+          m_MethodName: selectbutton3_Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 149050667}
+          m_TargetAssemblyTypeName: Story, Assembly-CSharp
+          m_MethodName: selectbutton3_Exit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1659157155
 GameObject:
   m_ObjectHideFlags: 0
@@ -6752,6 +6848,7 @@ GameObject:
   - component: {fileID: 1692515696}
   - component: {fileID: 1692515695}
   - component: {fileID: 1692515694}
+  - component: {fileID: 1692515697}
   m_Layer: 5
   m_Name: SelectButton_2
   m_TagString: Untagged
@@ -6855,7 +6952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 53e2eabfcd1409e4d9b7a2d2289da3a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 68222923332782d409e578fb71bbb9e1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6873,6 +6970,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692515692}
   m_CullTransparentMesh: 0
+--- !u!114 &1692515697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692515692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 149050667}
+          m_TargetAssemblyTypeName: Story, Assembly-CSharp
+          m_MethodName: selectbutton2_Event
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 149050667}
+          m_TargetAssemblyTypeName: Story, Assembly-CSharp
+          m_MethodName: selectbutton2_Exit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1700621256
 GameObject:
   m_ObjectHideFlags: 0
@@ -6890,7 +7032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1700621257
 RectTransform:
   m_ObjectHideFlags: 0

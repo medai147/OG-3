@@ -88,6 +88,10 @@ public class Story : MonoBehaviour
     public Sprite text_mob;
     public Sprite text_monologue; //心の声
 
+    //選択ボタンの色
+    public Sprite select_now;
+    public Sprite select_not;
+
     private string centersr;
     private string rightsr;
     private string leftsr;
@@ -169,6 +173,8 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject cannotskipAlertPanel;
     [SerializeField] GameObject LoadingPanel;
     [SerializeField] GameObject settingPanel;
+    [SerializeField] GameObject Selectbutton_1;
+    [SerializeField] GameObject Selectbutton_2;
     [SerializeField] GameObject SelectButton_3;
     [SerializeField] GameObject menubutton;
     [SerializeField] GameObject monthtext;
@@ -1119,6 +1125,9 @@ public class Story : MonoBehaviour
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
+        selectbutton1_Exit();
+        selectbutton2_Exit();
+        selectbutton3_Exit();
     }
 
     public void onClick_SelectButton_1()
@@ -1138,6 +1147,9 @@ public class Story : MonoBehaviour
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
+        selectbutton1_Exit();
+        selectbutton2_Exit();
+        selectbutton3_Exit();
     }
 
     public void onClick_SelectButton_2()
@@ -1162,6 +1174,9 @@ public class Story : MonoBehaviour
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
+        selectbutton1_Exit();
+        selectbutton2_Exit();
+        selectbutton3_Exit();
     }
 
 
@@ -1469,6 +1484,41 @@ public class Story : MonoBehaviour
         }
     }
 
+    public void selectbutton1_Event()
+    {
+        Image selectbutton1 = (Image)Selectbutton_1.GetComponent<Image>();
+        selectbutton1.sprite = select_now;
+    }
+
+    public void selectbutton2_Event()
+    {
+        Image selectbutton2 = (Image)Selectbutton_2.GetComponent<Image>();
+        selectbutton2.sprite = select_now;
+    }
+
+    public void selectbutton3_Event()
+    {
+        Image selectbutton3 = (Image)SelectButton_3.GetComponent<Image>();
+        selectbutton3.sprite = select_now;
+    }
+
+    public void selectbutton1_Exit()
+    {
+        Image selectbutton1 = (Image)Selectbutton_1.GetComponent<Image>();
+        selectbutton1.sprite = select_not;
+    }
+
+    public void selectbutton2_Exit()
+    {
+        Image selectbutton2 = (Image)Selectbutton_2.GetComponent<Image>();
+        selectbutton2.sprite = select_not;
+    }
+
+    public void selectbutton3_Exit()
+    {
+        Image selectbutton3 = (Image)SelectButton_3.GetComponent<Image>();
+        selectbutton3.sprite = select_not;
+    }
     void auto()
     {
         if (autoclick == true)
