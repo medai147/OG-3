@@ -341,6 +341,7 @@ public class Story : MonoBehaviour
         //選択肢で飛んだ先から次の話に飛ぶところまとめ
         if (index == 91 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
         {
+            FadeScript.isFadeIn = true;
             index_read = index;
             index_skip = 94;
             qstory = index_skip;
