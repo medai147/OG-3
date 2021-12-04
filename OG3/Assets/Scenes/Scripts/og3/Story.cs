@@ -105,6 +105,8 @@ public class Story : MonoBehaviour
     private string selectbutton_num_sr;
     private string monthsr;
     private string textcolorsr;
+    private string fadeOutsr;
+    private string fadeInsr;
     private String heroineName;
     private String logheroineName;
     //private String characternamelength;
@@ -341,7 +343,6 @@ public class Story : MonoBehaviour
         //選択肢で飛んだ先から次の話に飛ぶところまとめ
         if (index == 91 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
         {
-            FadeScript.isFadeIn = true;
             index_read = index;
             index_skip = 94;
             qstory = index_skip;
@@ -437,6 +438,30 @@ public class Story : MonoBehaviour
         {
             sounds[0].Stop();
         }
+
+        //フェードアウト
+        fadeOutsr = _qdataList[index].fadeOut;
+        if (int.Parse(fadeOutsr) == 0)
+        {
+            FadeScript.isFadeOut = false;
+        }
+        else if (int.Parse(fadeOutsr) == 1)
+        {
+            FadeScript.isFadeOut = true;
+        }
+
+        //フェードイン
+        fadeInsr = _qdataList[index].fadeOut;
+        if (int.Parse(fadeInsr) == 0)
+        {
+            FadeScript.isFadeIn = false;
+        }
+        else if (int.Parse(fadeInsr) == 1)
+        {
+            FadeScript.isFadeIn = true;
+        }
+
+
 
         SelectButton_3.SetActive(true);
 
@@ -915,6 +940,8 @@ public class Story : MonoBehaviour
         {
             textboximage.sprite = text_own;
         }
+
+
 
         //名前
         if (int.Parse(textcolorsr) == 0)
@@ -1599,11 +1626,13 @@ public class Qdata
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
+    public string fadeOut;
+    public string fadeIn;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 19)
+        if (spTxt.Length == 21)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -1624,6 +1653,8 @@ public class Qdata
             selectbuttontext1 = spTxt[16];
             selectbuttontext2 = spTxt[17];
             textcolor = spTxt[18];
+            fadeOut = spTxt[19];
+            fadeIn = spTxt[20];
         }
     }
 

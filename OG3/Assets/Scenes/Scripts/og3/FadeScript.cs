@@ -25,35 +25,40 @@ public class FadeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isFadeIn == true)
+        if (isFadeOut == true)
         {
+            fadePanel.SetActive(true);
             ScreenButton.SetActive(false);
             GetComponent<Image>().color = new Color(red, green, blue, alfa);
             alfa += speed;
             count++;
-            if(count > 200)
+            if (count > 200)
             {
-                isFadeIn = false;
-                isFadeOut = true;
+                isFadeOut = false;
+                //isFadeIn = true;
+                ScreenButton.SetActive(true);
             }
-        }
-
-        if (isFadeOut)
-        {
-            if(count == 0)
+        } else if (isFadeIn == true) {
+            if (count == 0)
             {
                 alfa = 255;
             }
+            fadePanel.SetActive(true);
             ScreenButton.SetActive(false);
             GetComponent<Image>().color = new Color(red, green, blue, alfa);
             alfa -= speed;
             count++;
-            if (count > 400)
+            if (count > 200)
             {
+                //isFadeOut = false;
                 isFadeIn = false;
                 ScreenButton.SetActive(true);
-                isFadeOut = false;
             }
+        }
+        else if (isFadeOut == false && isFadeIn == false)
+        {
+            count = 0;
+            GetComponent<Image>().color = new Color(red, green, blue, 0);
         }
     }
 }
