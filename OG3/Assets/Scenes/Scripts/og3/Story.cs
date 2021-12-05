@@ -451,13 +451,15 @@ public class Story : MonoBehaviour
         }
 
         //フェードイン
-        fadeInsr = _qdataList[index].fadeOut;
+        fadeInsr = _qdataList[index].fadeIn;
         if (int.Parse(fadeInsr) == 0)
         {
+            Debug.Log("0");
             FadeScript.isFadeIn = false;
         }
         else if (int.Parse(fadeInsr) == 1)
         {
+            Debug.Log("1");
             FadeScript.isFadeIn = true;
         }
 

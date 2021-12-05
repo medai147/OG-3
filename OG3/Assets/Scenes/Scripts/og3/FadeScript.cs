@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FadeScript : MonoBehaviour
 {
-    public float speed = 0.01f; //“§–¾‰»‚Ì‘¬‚³
+    public float speed = 0.001f; //“§–¾‰»‚Ì‘¬‚³
     float alfa;
     float red, green, blue;
     public static bool isFadeIn = false;
@@ -32,7 +32,7 @@ public class FadeScript : MonoBehaviour
             GetComponent<Image>().color = new Color(red, green, blue, alfa);
             alfa += speed;
             count++;
-            if (count > 200)
+            if (count > 400)
             {
                 isFadeOut = false;
                 //isFadeIn = true;
@@ -48,7 +48,7 @@ public class FadeScript : MonoBehaviour
             GetComponent<Image>().color = new Color(red, green, blue, alfa);
             alfa -= speed;
             count++;
-            if (count > 200)
+            if (count > 400)
             {
                 //isFadeOut = false;
                 isFadeIn = false;
