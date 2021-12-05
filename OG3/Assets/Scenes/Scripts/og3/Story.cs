@@ -119,9 +119,6 @@ public class Story : MonoBehaviour
 
     public static int startscene; //スタート画面の画像切り替え、ミニゲームボタン用
 
-    
-    
-
     public AudioClip bgm1; //ikemen_theme
     public AudioClip bgm2; //dark
     public AudioClip bgm3; //shock
