@@ -196,6 +196,9 @@ public class Story : MonoBehaviour
     float time;
     bool autoclick;
 
+    public static bool isFade = false;
+    private int count = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -1079,6 +1082,7 @@ public class Story : MonoBehaviour
     {
         //Menu();
         auto();
+        nextNovel();
         //Debug.Log(MousePos.y);
     }
     public void onClicked_closebutton()
@@ -1601,6 +1605,16 @@ public class Story : MonoBehaviour
 
         }
     }
+
+    public void nextNovel()
+    {
+        if(isFade == true)
+        {
+            StartCoroutine(Novel(qstory++));
+            isFade = false;
+        }
+    }
+
 }
 
 //質問を管理するクラス

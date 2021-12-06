@@ -37,7 +37,7 @@ public class FadeScript : MonoBehaviour
                 isFadeOut = false;
                 //isFadeIn = true;
                 ScreenButton.SetActive(true);
-
+                Story.isFade = true;
             }
         } else if (isFadeIn == true) {
             if (count == 0)
