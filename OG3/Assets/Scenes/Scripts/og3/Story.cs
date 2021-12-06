@@ -197,7 +197,6 @@ public class Story : MonoBehaviour
     bool autoclick;
 
     public static bool isFade = false;
-    private int count = 0;
 
     // Start is called before the first frame update
     void Start()
