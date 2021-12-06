@@ -37,6 +37,9 @@ public class Story : MonoBehaviour
     public Sprite ouziojismileSprite;
     public Sprite ouziojiangrySprite;
     public Sprite ouziojitroubleSprite;
+    public Sprite ouziojithink_openSprite;
+    public Sprite ouziojithink_closeSprite;
+    public Sprite ouziojishockSprite;
     public Sprite rukiatroubleSprite;
     public Sprite rukiaojismileSprite;
     public Sprite statueSprite;
@@ -753,6 +756,18 @@ public class Story : MonoBehaviour
         {
             centerCharacter.sprite = rukiaojismileSprite;
         }
+        else if(int.Parse(centersr) == 14)
+        {
+            centerCharacter.sprite = ouziojishockSprite;
+        }
+        else if (int.Parse(centersr) == 15)
+        {
+            centerCharacter.sprite = ouziojithink_openSprite;
+        }
+        else if (int.Parse(centersr) == 16)
+        {
+            centerCharacter.sprite = ouziojithink_closeSprite;
+        }
         else if (int.Parse(centersr) == 24)
         {
             centerCharacter.sprite = statueSprite;
@@ -817,6 +832,18 @@ public class Story : MonoBehaviour
         {
             rightCharacter.sprite = rukiaojismileSprite;
         }
+        else if (int.Parse(centersr) == 14)
+        {
+            rightCharacter.sprite = ouziojishockSprite;
+        }
+        else if (int.Parse(centersr) == 15)
+        {
+            rightCharacter.sprite = ouziojithink_openSprite;
+        }
+        else if (int.Parse(centersr) == 16)
+        {
+            rightCharacter.sprite = ouziojithink_closeSprite;
+        }
         else if (int.Parse(rightsr) == 24)
         {
             rightCharacter.sprite = statueSprite;
@@ -880,6 +907,18 @@ public class Story : MonoBehaviour
         else if (int.Parse(centersr) == 13)
         {
             leftCharacter.sprite = rukiaojismileSprite;
+        }
+        else if (int.Parse(centersr) == 14)
+        {
+            leftCharacter.sprite = ouziojishockSprite;
+        }
+        else if (int.Parse(centersr) == 15)
+        {
+            leftCharacter.sprite = ouziojithink_openSprite;
+        }
+        else if (int.Parse(centersr) == 16)
+        {
+            leftCharacter.sprite = ouziojithink_closeSprite;
         }
         else if (int.Parse(leftsr) == 24)
         {
