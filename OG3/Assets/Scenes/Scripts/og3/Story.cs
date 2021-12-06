@@ -105,6 +105,8 @@ public class Story : MonoBehaviour
     private string selectbutton_num_sr;
     private string monthsr;
     private string textcolorsr;
+    private string fadeOutsr;
+    private string fadeInsr;
     private String heroineName;
     private String logheroineName;
     //private String characternamelength;
@@ -116,9 +118,6 @@ public class Story : MonoBehaviour
     public static int index_skip; //skip用
 
     public static int startscene; //スタート画面の画像切り替え、ミニゲームボタン用
-
-    
-    
 
     public AudioClip bgm1; //ikemen_theme
     public AudioClip bgm2; //dark
@@ -196,6 +195,8 @@ public class Story : MonoBehaviour
     static float autoslidebar_x;
     float time;
     bool autoclick;
+
+    public static bool isFade = false;
 
     // Start is called before the first frame update
     void Start()
@@ -436,6 +437,32 @@ public class Story : MonoBehaviour
         {
             sounds[0].Stop();
         }
+
+        //フェードアウト
+        fadeOutsr = _qdataList[index].fadeOut;
+        if (int.Parse(fadeOutsr) == 0)
+        {
+            FadeScript.isFadeOut = false;
+        }
+        else if (int.Parse(fadeOutsr) == 1)
+        {
+            FadeScript.isFadeOut = true;
+        }
+
+        //フェードイン
+        fadeInsr = _qdataList[index].fadeIn;
+        if (int.Parse(fadeInsr) == 0)
+        {
+            Debug.Log("0");
+            FadeScript.isFadeIn = false;
+        }
+        else if (int.Parse(fadeInsr) == 1)
+        {
+            Debug.Log("1");
+            FadeScript.isFadeIn = true;
+        }
+
+
 
         SelectButton_3.SetActive(true);
 
@@ -915,6 +942,8 @@ public class Story : MonoBehaviour
             textboximage.sprite = text_own;
         }
 
+
+
         //名前
         if (int.Parse(textcolorsr) == 0)
         {
@@ -1052,6 +1081,7 @@ public class Story : MonoBehaviour
     {
         //Menu();
         auto();
+        nextNovel();
         //Debug.Log(MousePos.y);
     }
     public void onClicked_closebutton()
@@ -1574,6 +1604,16 @@ public class Story : MonoBehaviour
 
         }
     }
+
+    public void nextNovel()
+    {
+        if(isFade == true)
+        {
+            StartCoroutine(Novel(qstory++));
+            isFade = false;
+        }
+    }
+
 }
 
 //質問を管理するクラス
@@ -1598,11 +1638,13 @@ public class Qdata
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
+    public string fadeOut;
+    public string fadeIn;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 19)
+        if (spTxt.Length == 21)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -1623,6 +1665,8 @@ public class Qdata
             selectbuttontext1 = spTxt[16];
             selectbuttontext2 = spTxt[17];
             textcolor = spTxt[18];
+            fadeOut = spTxt[19];
+            fadeIn = spTxt[20];
         }
     }
 
