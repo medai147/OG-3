@@ -108,8 +108,7 @@ public class Story : MonoBehaviour
     private string selectbutton_num_sr;
     private string monthsr;
     private string textcolorsr;
-    private string fadeOutsr;
-    private string fadeInsr;
+    private string animationsr;
     private String heroineName;
     private String logheroineName;
     //private String characternamelength;
@@ -180,6 +179,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject SelectButton_3;
     [SerializeField] GameObject menubutton;
     [SerializeField] GameObject monthtext;
+    [SerializeField] GameObject movePanel;
     private int selected = 0;
 
     //設定画面
@@ -442,28 +442,37 @@ public class Story : MonoBehaviour
         }
 
         //フェードアウト
-        fadeOutsr = _qdataList[index].fadeOut;
-        if (int.Parse(fadeOutsr) == 0)
+        animationsr = _qdataList[index].animation;
+        if(int.Parse(animationsr) != 3)
+        {
+            //movePanel.SetActive(false);
+        }
+
+        if (int.Parse(animationsr) == 0)
         {
             FadeScript.isFadeOut = false;
         }
-        else if (int.Parse(fadeOutsr) == 1)
+        else if (int.Parse(animationsr) == 1)
         {
             FadeScript.isFadeOut = true;
         }
-
-        //フェードイン
-        fadeInsr = _qdataList[index].fadeIn;
-        if (int.Parse(fadeInsr) == 0)
+        else if (int.Parse(animationsr) == 2)
         {
-            Debug.Log("0");
-            FadeScript.isFadeIn = false;
-        }
-        else if (int.Parse(fadeInsr) == 1)
-        {
-            Debug.Log("1");
             FadeScript.isFadeIn = true;
         }
+        else if(int.Parse(animationsr) == 3)
+        {
+            //movePanel.SetActive(true);
+            string animName = "Animations/moveimage";
+            int animpos = 1;
+            GameObject animObj = Instantiate((GameObject)Resources.Load(animName), new Vector3(), Quaternion.identity);
+            if(animpos == 1)
+            {
+                animObj.transform.parent = movePanel.transform;
+                animObj.GetComponent<RectTransform>().localPosition = Vector3.zero;
+            }
+        }
+
 
 
 
@@ -1677,13 +1686,12 @@ public class Qdata
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
-    public string fadeOut;
-    public string fadeIn;
+    public string animation;
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 21)
+        if (spTxt.Length == 20)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -1704,8 +1712,7 @@ public class Qdata
             selectbuttontext1 = spTxt[16];
             selectbuttontext2 = spTxt[17];
             textcolor = spTxt[18];
-            fadeOut = spTxt[19];
-            fadeIn = spTxt[20];
+            animation = spTxt[19];
         }
     }
 
