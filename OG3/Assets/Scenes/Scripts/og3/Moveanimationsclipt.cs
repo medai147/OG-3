@@ -4,42 +4,78 @@ using UnityEngine;
 
 public class Moveanimationsclipt : MonoBehaviour
 {
+    [SerializeField] GameObject image;
+    [SerializeField] GameObject text;
     [SerializeField] float smallspeed = 200;
     [SerializeField] float bigspeed = 250;
-    RectTransform rectTransform;
+    [SerializeField] float smallspeed_text = 200;
+    [SerializeField] float bigspeed_text = 250;
+    RectTransform imagerectTransform;
+    RectTransform textrectTransform;
     int count;
     bool bigmove = true;
+    bool bigmove_text = true;
     // Start is called before the first frame update
     void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(247.2563f, 0);
+        imagerectTransform = image.GetComponent<RectTransform>();
+        imagerectTransform.sizeDelta = new Vector2(247.2563f, 0);
+        textrectTransform = text.GetComponent<RectTransform>();
+        textrectTransform.sizeDelta = new Vector2(100, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(rectTransform.sizeDelta.y < 50 && bigmove == true)
+        imagemove();
+        textmove();
+    }
+
+
+    public void imagemove()
+    {
+        if (imagerectTransform.sizeDelta.y < 70 && bigmove == true)
         {
-            rectTransform.sizeDelta += new Vector2(0, +bigspeed) * Time.deltaTime;
+            imagerectTransform.sizeDelta += new Vector2(0, +bigspeed) * Time.deltaTime;
         }
 
-        if(rectTransform.sizeDelta.y > 50)
+        if (imagerectTransform.sizeDelta.y > 70)
         {
             count++;
             bigmove = false;
         }
 
-        if (count > 200)
+        if (count > 300)
         {
-            rectTransform.sizeDelta += new Vector2(0, -smallspeed) * Time.deltaTime;
+            imagerectTransform.sizeDelta += new Vector2(0, -smallspeed) * Time.deltaTime;
         }
         
-        if(rectTransform.sizeDelta.y < 0)
+        if (imagerectTransform.sizeDelta.y < 0)
         {
-            Destroy(gameObject);
+            if(gameObject)
+            {
+                Destroy(gameObject);
+            }
             count = 0;
             bigmove = true;
+            bigmove_text = true;
+        }
+    }
+
+    public void textmove()
+    {
+        if (textrectTransform.sizeDelta.y < 40 && bigmove_text == true)
+        {
+            textrectTransform.sizeDelta += new Vector2(0, +bigspeed_text) * Time.deltaTime;
+        }
+        if(textrectTransform.sizeDelta.y > 40)
+        {
+            bigmove_text = false;
+        }
+        if (count > 300)
+        {
+            textrectTransform.sizeDelta += new Vector2(0, -smallspeed_text) * Time.deltaTime;
         }
     }
 }
+
