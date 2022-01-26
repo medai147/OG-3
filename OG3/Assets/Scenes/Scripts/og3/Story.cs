@@ -451,17 +451,33 @@ public class Story : MonoBehaviour
         if (int.Parse(animationsr) == 0)
         {
             FadeScript.isFadeOut = false;
+            if (automode == 3)
+            {
+                automode = 0;
+            }
         }
         else if (int.Parse(animationsr) == 1)
         {
             FadeScript.isFadeOut = true;
+            if (automode == 3)
+            {
+                automode = 0;
+            }
         }
         else if (int.Parse(animationsr) == 2)
         {
             FadeScript.isFadeIn = true;
+            if (automode == 3)
+            {
+                automode = 0;
+            }
         }
         else if(int.Parse(animationsr) == 3)
         {
+            if(automode == 0)
+            {
+                automode = 3;
+            }
             //movePanel.SetActive(true);
             string animName = "Animations/moveimage";
             int animpos = 1;
@@ -1113,7 +1129,7 @@ public class Story : MonoBehaviour
         index_read = index;
 
 //オートモード
-        if (qNum > qstory && automode == 1)
+        if (qNum > qstory && (automode == 1 || automode == 3))
         {
             sounds[2].Stop();
 
@@ -1171,7 +1187,7 @@ public class Story : MonoBehaviour
 
     public void onClick_Screenbutton()
     {
-        if (automode != 1)
+        if (automode == 0)
         {
             if (click == 0)
             {
