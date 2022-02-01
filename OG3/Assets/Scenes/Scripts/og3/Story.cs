@@ -343,32 +343,32 @@ public class Story : MonoBehaviour
         }
 
         //選択肢で飛んだ先から次の話に飛ぶところまとめ
-        if (index == 91 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
+        if (index == 92 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
         {
             index_read = index;
-            index_skip = 94;
+            index_skip = 95;
             qstory = index_skip;
             index = index_skip;
         }
 
-        if (index == 115 && selected == 3) //おうじ誕プレから６月へ飛ぶ
+        if (index == 116 && selected == 3) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 124;
+            index_skip = 126;
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 120 && selected == 1) //おうじ誕プレから６月へ飛ぶ
+        if (index == 121 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 124;
+            index_skip = 126;
             qstory = index_skip;
             index = index_skip;
         }
         if (index == 168 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
-            index_skip = 171;
+            index_skip = 172;
             qstory = index_skip;
             index = index_skip;
         }
@@ -1202,7 +1202,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 235))  //とめるところ
+                if (!(selected == 2 && index_skip == 236))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1234,9 +1234,9 @@ public class Story : MonoBehaviour
         {
             index_skip = 67;
         }
-        else if(index_read == 110)
+        else if(index_read == 111)
         {
-            index_skip = 114;
+            index_skip = 115;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1255,15 +1255,15 @@ public class Story : MonoBehaviour
         //qstoryは調整する
         if (index_read == 67)
         {
-            index_skip = 90;
+            index_skip = 91;
         }
-        else if (index_read == 110)
+        else if (index_read == 111)
         {
-            index_skip = 119;
+            index_skip = 120;
         }
-        else if(index_read == 138)
+        else if(index_read == 139)
         {
-            index_skip = 166;
+            index_skip = 167;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
