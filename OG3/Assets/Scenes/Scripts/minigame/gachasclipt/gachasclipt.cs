@@ -44,7 +44,7 @@ public class gachasclipt : MonoBehaviour
             value = Random.Range(0, 2);
             Image resultimage = (Image)GameObject.Find("resultImage").GetComponent<Image>();
             _result = GameObject.Find("resulttext").GetComponent<Text>();
-            if (value == 0)
+            if (value == 50)
             {
                 resultimage.sprite = bearsprite;
                 _result.text = "ぬいぐるみゲット！";
