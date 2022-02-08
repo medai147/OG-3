@@ -56,6 +56,26 @@ public class minigame_2Script : MonoBehaviour
                 ice3_Flavor = 3; // 3:チョコレートアイス
             }
         }
+
+        if (roundCounter > 10)
+        {
+            int ice3_flavor_rnd = Random.Range(1, 4);
+            if (ice3_flavor_rnd == 1)
+            {
+                ice3 = ichigo;
+                ice3_Flavor = 1; // 1:いちごアイス
+            }
+            else if (ice3_flavor_rnd == 2)
+            {
+                ice3 = greentea;
+                ice3_Flavor = 2; // 2:まっちゃアイス
+            }
+            else
+            {
+                ice3 = chocolate;
+                ice3_Flavor = 3; // 3:チョコレートアイス
+            }
+        }
     }
 
     // Update is called once per frame
@@ -64,5 +84,13 @@ public class minigame_2Script : MonoBehaviour
         gameObject.GetComponent<Text>().text = ice1;
         gameObject.GetComponent<Text>().text += "\n" + ice2;
         gameObject.GetComponent<Text>().text += "\n" + ice3;
+
+        gameObject.GetComponent<Text>().text += "\n" + roundCounter.ToString();
+
+    }
+
+    public void counter()
+    {
+        roundCounter++;
     }
 }
