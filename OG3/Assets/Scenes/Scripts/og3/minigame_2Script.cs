@@ -21,15 +21,28 @@ public class minigame_2Script : MonoBehaviour
 
     string order = "";
 
+    string result = "";
+
     int show = 1;
 
     int correct = 0;
     int wrong = 0;
 
+    [SerializeField] GameObject startpanel;
+    [SerializeField] GameObject gamePanel1;
+    [SerializeField] GameObject gamePanel2;
+    [SerializeField] GameObject resultPanel;
+
+    [SerializeField] GameObject orderText;
+    [SerializeField] GameObject resultText;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        startpanel.SetActive(true);
+        gamePanel1.SetActive(false);
+        gamePanel2.SetActive(false);
+        resultPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -96,7 +109,7 @@ public class minigame_2Script : MonoBehaviour
 
             order = ice1 + "\n" + ice2 + "\n" + ice3 + "\n" + roundCounter;
 
-            gameObject.GetComponent<Text>().text = order;
+            orderText.GetComponent<Text>().text = order;
             
             show = 0;
         }
@@ -106,23 +119,68 @@ public class minigame_2Script : MonoBehaviour
     {
         roundCounter++;
         show = 1;
+
+        gamePanel2.SetActive(true);
+        gamePanel1.SetActive(false);
     }
 
-    void ice1_button()
+    public void ice1_button()
     {
+        Debug.Log("pushed! ice1_Flavor is " + ice1_Flavor);
         if(ice1_Flavor == 1)
         {
             correct++;
+            Debug.Log("correct:" + correct);
+            result = "正解！";
+        } else {
+            wrong++;
+            Debug.Log("wrong:" + wrong);
+            result = "間違い！";
         }
+        gamePanel2.SetActive(false);
+        resultText.GetComponent<Text>().text = result;
+        resultPanel.SetActive(true);
     }
 
-    void ice2_button()
+    public void ice2_button()
     {
-
+        if (ice1_Flavor == 2)
+        {
+            correct++;
+            Debug.Log("correct:" + correct);
+            result = "正解！";
+        } else {
+            wrong++;
+            Debug.Log("wrong:" + wrong);
+            result = "間違い！";
+        }
+        gamePanel2.SetActive(false);
+        resultText.GetComponent<Text>().text = result;
+        resultPanel.SetActive(true);
     }
 
-    void ice3_button()
+    public void ice3_button()
     {
+        if (ice1_Flavor == 3)
+        {
+            correct++;
+            Debug.Log("correct:" + correct);
+            result = "正解！";
+        }
+        else
+        {
+            wrong++;
+            Debug.Log("wrong:" + wrong);
+            result = "間違い！";
+        }
+        gamePanel2.SetActive(false);
+        resultText.GetComponent<Text>().text = result;
+        resultPanel.SetActive(true);
+    }
 
+    public void startbutton()
+    {
+        gamePanel1.SetActive(true);
+        startpanel.SetActive(false);
     }
 }
