@@ -308,8 +308,41 @@ public class savesclipt : MonoBehaviour
 
     public void onClicked_startback()
     {
+        Debug.Log(load);
+        if(load == 1)
+        {
+            SceneManager.LoadScene("start scene");
+        } else if(load == 0)
+        {
+            if (number == 0)
+            {
+                loadPanel.SetActive(true);
+                Image loadimage = (Image)loadstill.GetComponent<Image>();
+                loadimage.sprite = loadsprite;
+                PlayerPrefs.SetInt("NUMBERLOAD", number);
+                PlayerPrefs.Save();
+                PlayerPrefs.SetInt("NAMEINPUT", 1);
+                PlayerPrefs.Save();
+                PlayerPrefs.SetString("INPUTNAME2", heroinname);
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                loadPanel.SetActive(true);
+                Image loadimage = (Image)loadstill.GetComponent<Image>();
+                loadimage.sprite = loadsprite;
+                PlayerPrefs.SetInt("NUMBERLOAD", number - 1);
+                PlayerPrefs.Save();
+                PlayerPrefs.SetInt("NAMEINPUT", 1);
+                PlayerPrefs.Save();
+                PlayerPrefs.SetString("INPUTNAME2", heroinname);
+                PlayerPrefs.Save();
+
+            }
+            SceneManager.LoadScene("Main scene");
+        }
         load = 0;
-        SceneManager.LoadScene("start scene");
+
     }
 
     public void sentence(ref Text sentence,int number)

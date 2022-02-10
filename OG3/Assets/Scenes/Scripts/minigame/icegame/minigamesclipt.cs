@@ -29,10 +29,12 @@ public class minigamesclipt : MonoBehaviour
     }
     public void minigame_onClicked()
     {
-        if (startchange == 1)
-        {
-            Invoke("jumptoMinigame", 0.52f);
-        }
+        // if (startchange == 1)
+        // {
+        //   Invoke("jumptoMinigame", 0.52f);
+        //}
+
+        SceneManager.LoadScene("minigamemenuscene");
     }
 
     public void jumptoMinigame()
