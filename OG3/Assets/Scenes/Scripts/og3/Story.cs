@@ -441,7 +441,7 @@ public class Story : MonoBehaviour
             sounds[0].Stop();
         }
 
-        //フェードアウト
+        //アニメーション系
         animationsr = _qdataList[index].animation;
         if(int.Parse(animationsr) != 3)
         {

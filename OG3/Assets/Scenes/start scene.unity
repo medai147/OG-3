@@ -828,7 +828,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d8734373e1adf848b92033cbba1dd8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 625e5a6002a9a6c4ead9d790aa1b4f6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1100,7 +1100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16470589, g: 0.14901961, b: 0.47058824, a: 1}
+  m_Color: {r: 0.047058824, g: 0.039215688, b: 0.23529412, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1842,7 +1842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16506487, g: 0.14907439, b: 0.4716981, a: 1}
+  m_Color: {r: 0.048542783, g: 0.03893734, b: 0.23584908, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2185,7 +2185,6 @@ GameObject:
   - component: {fileID: 1390081955}
   - component: {fileID: 1390081958}
   - component: {fileID: 1390081957}
-  - component: {fileID: 1390081956}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2212,38 +2211,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000009536743}
   m_SizeDelta: {x: -44.75, y: -16.68}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1390081956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1390081954}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa0b8a63a403e44b9f90df818b02a23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadstill: {fileID: 0}
-  loadsprite: {fileID: 0}
-  _save1: {fileID: 0}
-  _save2: {fileID: 0}
-  _save3: {fileID: 0}
-  _save4: {fileID: 0}
-  _save5: {fileID: 0}
-  _save6: {fileID: 0}
-  _save7: {fileID: 0}
-  _save8: {fileID: 0}
-  _save1sentence: {fileID: 0}
-  _save2sentence: {fileID: 0}
-  _save3sentence: {fileID: 0}
-  _save4sentence: {fileID: 0}
-  _save5sentence: {fileID: 0}
-  _save6sentence: {fileID: 0}
-  _save7sentence: {fileID: 0}
-  _save8sentence: {fileID: 0}
-  loadPanel: {fileID: 0}
-  savePanel: {fileID: 0}
 --- !u!114 &1390081957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,7 +2224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16470589, g: 0.14901961, b: 0.47058824, a: 1}
+  m_Color: {r: 0.047058824, g: 0.039215688, b: 0.23529412, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2636,7 +2603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.51500005, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000047683716, y: 96}
+  m_AnchoredPosition: {x: 0, y: 96}
   m_SizeDelta: {x: 440.36, y: 83.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663598920
@@ -2889,7 +2856,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d8734373e1adf848b92033cbba1dd8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 625e5a6002a9a6c4ead9d790aa1b4f6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3424,7 +3391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d8734373e1adf848b92033cbba1dd8c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 625e5a6002a9a6c4ead9d790aa1b4f6d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
