@@ -396,7 +396,7 @@ public class Story : MonoBehaviour
 
         //CV
         //Debug.Log(index);
-        sounds[2].PlayOneShot(cv[index]);
+        //sounds[2].PlayOneShot(cv[index]);
 
         //BGM種類
         bgm_num_sr = _qdataList[index].bgm_num;

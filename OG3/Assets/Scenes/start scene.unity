@@ -213,8 +213,8 @@ GameObject:
   - component: {fileID: 283404882}
   - component: {fileID: 283404881}
   - component: {fileID: 283404880}
-  - component: {fileID: 283404883}
   - component: {fileID: 283404884}
+  - component: {fileID: 283404883}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputNamePanel: {fileID: 633023628}
+  startbutton: {fileID: 439703413}
 --- !u!1 &467251575
 GameObject:
   m_ObjectHideFlags: 0
