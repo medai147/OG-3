@@ -458,18 +458,18 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(animationsr) == 1)
         {
-            FadeScript.isFadeOut = true;
-            if (automode == 3)
+            FadeScript.isFadeOut = true; //暗くなる
+            if (automode == 0)
             {
-                automode = 0;
+                automode = 3;
             }
         }
         else if (int.Parse(animationsr) == 2)
         {
-            FadeScript.isFadeIn = true;
-            if (automode == 3)
+            FadeScript.isFadeIn = true; //明るくなる
+            if (automode == 0)
             {
-                automode = 0;
+                automode = 3;
             }
         }
         else if(int.Parse(animationsr) == 3)
