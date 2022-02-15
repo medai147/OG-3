@@ -41,6 +41,8 @@ public class minigame_2Script : MonoBehaviour
 
     [SerializeField] GameObject iceCountText;
 
+    [SerializeField] GameObject resultPanel2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -314,11 +316,13 @@ public class minigame_2Script : MonoBehaviour
         Debug.Log("iceCount_serve:" + iceCount_serve + ", iceCount_order" + iceCount_order + "šnextš");
         if(iceCount_serve == iceCount_order)
         {
+            iceCountText.GetComponent<Text>().text = "1ŒÂ–Ú";
             resultPanel.SetActive(false);
             startbutton();
             iceCount_serve = 0;
         } else
         {
+            iceCountText.GetComponent<Text>().text = (iceCount_serve + 1) + "ŒÂ–Ú";
             gamePanel2.SetActive(true);
             resultPanel.SetActive(false);
         }
@@ -327,5 +331,15 @@ public class minigame_2Script : MonoBehaviour
     public void iceCount_serve_in()
     {
         iceCount_serve++;
+    }
+
+    public void retrybutton()
+    {
+
+    }
+
+    public void tomenubutton()
+    {
+
     }
 }
