@@ -13,6 +13,10 @@ public class minigame_2Script : MonoBehaviour
     string greentea = "まっちゃアイス";
     string chocolate = "チョコレートアイス";
 
+    string table1_order = "";
+    string table2_order = "";
+    string table3_order = "";
+
     int ice1_Flavor = 0; // 0:アイス未定義
     int ice2_Flavor = 0; // 0:アイス未定義
     int ice3_Flavor = 0; // 0:アイス未定義
@@ -30,6 +34,9 @@ public class minigame_2Script : MonoBehaviour
 
     int iceCount_order;
     int iceCount_serve = 0;
+
+    int tableNumber_order;
+    int tableNumber_serve = 0;
 
     [SerializeField] GameObject startpanel;
     [SerializeField] GameObject gamePanel1;
@@ -263,6 +270,9 @@ public class minigame_2Script : MonoBehaviour
             ice1_Flavor = 3; // 3:チョコレートアイス
         }
 
+        int tableNumber_rnd_1 = Random.Range(1, 7);
+        table1_order = tableNumber_rnd_1 + "番テーブル";
+
         if (roundCounter > 1)
         {
             iceCount_order = 2;
@@ -282,6 +292,9 @@ public class minigame_2Script : MonoBehaviour
                 ice2 = chocolate;
                 ice2_Flavor = 3; // 3:チョコレートアイス
             }
+
+            int tableNumber_rnd_2 = Random.Range(1, 7);
+            table2_order = tableNumber_rnd_2 + "番テーブル";
         }
 
         if (roundCounter > 3)
@@ -303,9 +316,12 @@ public class minigame_2Script : MonoBehaviour
                 ice3 = chocolate;
                 ice3_Flavor = 3; // 3:チョコレートアイス
             }
+
+            int tableNumber_rnd_3 = Random.Range(1, 7);
+            table3_order = tableNumber_rnd_3 + "番テーブル";
         }
 
-        order = ice1 + "\n" + ice2 + "\n" + ice3 + "\n" + roundCounter;
+        order = ice1 + ", " + table1_order + "\n" + ice2 + table2_order + "\n" + ice3 + "\n" + "(" + roundCounter + ")";
         Debug.Log(order);
 
         orderText.GetComponent<Text>().text = order;
