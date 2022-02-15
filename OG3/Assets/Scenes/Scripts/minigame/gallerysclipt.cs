@@ -27,8 +27,9 @@ public class gallerysclipt : MonoBehaviour
 
     public void onClicked_minigamemenubutton()
     {
-        minigamemenuPanel.SetActive(true);
-        galleryPanel.SetActive(false);
+        SceneManager.LoadScene("icegame scene");
+        //minigamemenuPanel.SetActive(true);
+        //galleryPanel.SetActive(false);
 
     }
 
