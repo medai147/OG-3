@@ -521,6 +521,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2076373936}
+  - {fileID: 752700458}
   m_Father: {fileID: 1571821865}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -652,6 +653,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1571821866}
         m_TargetAssemblyTypeName: minigame_2Script, Assembly-CSharp
         m_MethodName: ice1_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1571821866}
+        m_TargetAssemblyTypeName: minigame_2Script, Assembly-CSharp
+        m_MethodName: iceCount_serve_in
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -888,13 +901,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752700457}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1490228704}
-  m_Father: {fileID: 1571821865}
-  m_RootOrder: 4
+  m_Father: {fileID: 563528279}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -944,7 +957,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752700460}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1571821866}
+        m_TargetAssemblyTypeName: minigame_2Script, Assembly-CSharp
+        m_MethodName: next
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &752700460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,7 +1631,6 @@ RectTransform:
   - {fileID: 1317016568}
   - {fileID: 729858394}
   - {fileID: 563528279}
-  - {fileID: 752700458}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1634,6 +1658,7 @@ MonoBehaviour:
   resultPanel: {fileID: 563528278}
   orderText: {fileID: 1034576139}
   resultText: {fileID: 2076373935}
+  iceCountText: {fileID: 1478799122}
 --- !u!1 &1623678085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,6 +1832,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1571821866}
+        m_TargetAssemblyTypeName: minigame_2Script, Assembly-CSharp
+        m_MethodName: iceCount_serve_in
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1647086965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1930,6 +1967,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1571821866}
         m_TargetAssemblyTypeName: minigame_2Script, Assembly-CSharp
         m_MethodName: ice3_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1571821866}
+        m_TargetAssemblyTypeName: minigame_2Script, Assembly-CSharp
+        m_MethodName: iceCount_serve_in
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -23,10 +23,13 @@ public class minigame_2Script : MonoBehaviour
 
     string result = "";
 
-    int show = 1;
+    //int show = 1;
 
     int correct = 0;
     int wrong = 0;
+
+    int iceCount_order;
+    int iceCount_serve = 0;
 
     [SerializeField] GameObject startpanel;
     [SerializeField] GameObject gamePanel1;
@@ -35,6 +38,8 @@ public class minigame_2Script : MonoBehaviour
 
     [SerializeField] GameObject orderText;
     [SerializeField] GameObject resultText;
+
+    [SerializeField] GameObject iceCountText;
 
     // Start is called before the first frame update
     void Start()
@@ -48,78 +53,12 @@ public class minigame_2Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(show == 1)
-        {
-            int ice1_flavor_rnd = Random.Range(1, 4);
-            if (ice1_flavor_rnd == 1)
-            {
-                ice1 = ichigo;
-                ice1_Flavor = 1; // 1:いちごアイス
-            }
-            else if (ice1_flavor_rnd == 2)
-            {
-                ice1 = greentea;
-                ice1_Flavor = 2; // 2:まっちゃアイス
-            }
-            else
-            {
-                ice1 = chocolate;
-                ice1_Flavor = 3; // 3:チョコレートアイス
-            }
-
-            if (roundCounter > 5)
-            {
-                int ice2_flavor_rnd = Random.Range(1, 4);
-                if (ice2_flavor_rnd == 1)
-                {
-                    ice2 = ichigo;
-                    ice2_Flavor = 1; // 1:いちごアイス
-                }
-                else if (ice2_flavor_rnd == 2)
-                {
-                    ice2 = greentea;
-                    ice2_Flavor = 2; // 2:まっちゃアイス
-                }
-                else
-                {
-                    ice3 = chocolate;
-                    ice3_Flavor = 3; // 3:チョコレートアイス
-                }
-            }
-
-            if (roundCounter > 10)
-            {
-                int ice3_flavor_rnd = Random.Range(1, 4);
-                if (ice3_flavor_rnd == 1)
-                {
-                    ice3 = ichigo;
-                    ice3_Flavor = 1; // 1:いちごアイス
-                }
-                else if (ice3_flavor_rnd == 2)
-                {
-                    ice3 = greentea;
-                    ice3_Flavor = 2; // 2:まっちゃアイス
-                }
-                else
-                {
-                    ice3 = chocolate;
-                    ice3_Flavor = 3; // 3:チョコレートアイス
-                }
-            }
-
-            order = ice1 + "\n" + ice2 + "\n" + ice3 + "\n" + roundCounter;
-
-            orderText.GetComponent<Text>().text = order;
-            
-            show = 0;
-        }
+        
     }
 
     public void counter()
     {
         roundCounter++;
-        show = 1;
-
         gamePanel2.SetActive(true);
         gamePanel1.SetActive(false);
     }
@@ -127,16 +66,55 @@ public class minigame_2Script : MonoBehaviour
     public void ice1_button()
     {
         Debug.Log("pushed! ice1_Flavor is " + ice1_Flavor);
-        if(ice1_Flavor == 1)
+        if (iceCount_serve == 0)
         {
-            correct++;
-            Debug.Log("correct:" + correct);
-            result = "正解！";
-        } else {
-            wrong++;
-            Debug.Log("wrong:" + wrong);
-            result = "間違い！";
+            if (ice1_Flavor == 1)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
         }
+        else if (iceCount_serve == 1)
+        {
+            if (ice2_Flavor == 1)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
+        }
+        else if (iceCount_serve == 2)
+        {
+            if (ice3_Flavor == 1)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
+        }
+
         gamePanel2.SetActive(false);
         resultText.GetComponent<Text>().text = result;
         resultPanel.SetActive(true);
@@ -144,16 +122,55 @@ public class minigame_2Script : MonoBehaviour
 
     public void ice2_button()
     {
-        if (ice1_Flavor == 2)
+        if (iceCount_serve == 0)
         {
-            correct++;
-            Debug.Log("correct:" + correct);
-            result = "正解！";
-        } else {
-            wrong++;
-            Debug.Log("wrong:" + wrong);
-            result = "間違い！";
+            if (ice1_Flavor == 2)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
         }
+        else if (iceCount_serve == 1)
+        {
+            if (ice2_Flavor == 2)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
+        }
+        else if (iceCount_serve == 2)
+        {
+            if (ice3_Flavor == 2)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
+        }
+
         gamePanel2.SetActive(false);
         resultText.GetComponent<Text>().text = result;
         resultPanel.SetActive(true);
@@ -161,18 +178,55 @@ public class minigame_2Script : MonoBehaviour
 
     public void ice3_button()
     {
-        if (ice1_Flavor == 3)
+        if (iceCount_serve == 0)
         {
-            correct++;
-            Debug.Log("correct:" + correct);
-            result = "正解！";
+            if (ice1_Flavor == 3)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
         }
-        else
+        else if (iceCount_serve == 1)
         {
-            wrong++;
-            Debug.Log("wrong:" + wrong);
-            result = "間違い！";
+            if (ice2_Flavor == 3)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
         }
+        else if (iceCount_serve == 2)
+        {
+            if (ice3_Flavor == 3)
+            {
+                correct++;
+                Debug.Log("correct:" + correct);
+                result = "正解！";
+            }
+            else
+            {
+                wrong++;
+                Debug.Log("wrong:" + wrong);
+                result = "間違い！";
+            }
+            Debug.Log("iceCount_serve:" + iceCount_serve);
+        }
+
         gamePanel2.SetActive(false);
         resultText.GetComponent<Text>().text = result;
         resultPanel.SetActive(true);
@@ -182,5 +236,96 @@ public class minigame_2Script : MonoBehaviour
     {
         gamePanel1.SetActive(true);
         startpanel.SetActive(false);
+        orderDispbutton();
+    }
+
+    public void orderDispbutton()
+    {
+        //if (show == 1)
+        //{
+        iceCount_order = 1;
+        int ice1_flavor_rnd = Random.Range(1, 4);
+        if (ice1_flavor_rnd == 1)
+        {
+            ice1 = ichigo;
+            ice1_Flavor = 1; // 1:いちごアイス
+        }
+        else if (ice1_flavor_rnd == 2)
+        {
+            ice1 = greentea;
+            ice1_Flavor = 2; // 2:まっちゃアイス
+        }
+        else
+        {
+            ice1 = chocolate;
+            ice1_Flavor = 3; // 3:チョコレートアイス
+        }
+
+        if (roundCounter > 1)
+        {
+            iceCount_order = 2;
+            int ice2_flavor_rnd = Random.Range(1, 4);
+            if (ice2_flavor_rnd == 1)
+            {
+                ice2 = ichigo;
+                ice2_Flavor = 1; // 1:いちごアイス
+            }
+            else if (ice2_flavor_rnd == 2)
+            {
+                ice2 = greentea;
+                ice2_Flavor = 2; // 2:まっちゃアイス
+            }
+            else
+            {
+                ice2 = chocolate;
+                ice2_Flavor = 3; // 3:チョコレートアイス
+            }
+        }
+
+        if (roundCounter > 3)
+        {
+            iceCount_order = 3;
+            int ice3_flavor_rnd = Random.Range(1, 4);
+            if (ice3_flavor_rnd == 1)
+            {
+                ice3 = ichigo;
+                ice3_Flavor = 1; // 1:いちごアイス
+            }
+            else if (ice3_flavor_rnd == 2)
+            {
+                ice3 = greentea;
+                ice3_Flavor = 2; // 2:まっちゃアイス
+            }
+            else
+            {
+                ice3 = chocolate;
+                ice3_Flavor = 3; // 3:チョコレートアイス
+            }
+        }
+
+        order = ice1 + "\n" + ice2 + "\n" + ice3 + "\n" + roundCounter;
+        Debug.Log(order);
+
+        orderText.GetComponent<Text>().text = order;
+    }
+
+    public void next()
+    {
+        Debug.Log("iceCount_serve:" + iceCount_serve + ", iceCount_order" + iceCount_order + "★next★");
+        if(iceCount_serve == iceCount_order)
+        {
+            resultPanel.SetActive(false);
+            startbutton();
+            iceCount_serve = 0;
+        } else
+        {
+            gamePanel2.SetActive(true);
+            resultPanel.SetActive(false);
+        }
+    }
+
+    public void iceCount_serve_in()
+    {
+        iceCount_serve++;
     }
 }
