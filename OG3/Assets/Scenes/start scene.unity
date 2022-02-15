@@ -3301,7 +3301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startchange: 0
   startbackimage: {fileID: 2058155668}
-  ojistartimageSprite: {fileID: 21300000, guid: 23a90de82bb82214689967784e83a50d,
+  ojistartimageSprite: {fileID: 21300000, guid: 70c36a4db8ad4c346917a65ad65ba738,
     type: 3}
 --- !u!114 &2113862476
 MonoBehaviour:

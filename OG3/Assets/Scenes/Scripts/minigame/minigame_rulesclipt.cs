@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class minigame_rulesclipt : MonoBehaviour
 {
@@ -26,5 +30,10 @@ public class minigame_rulesclipt : MonoBehaviour
     public void onClicked_minigameruleclose()
     {
         minigamerulePanel1.SetActive(false);
+    }
+
+    public void onClicked_returnbutton()
+    {
+        SceneManager.LoadScene("start scene");
     }
 }
