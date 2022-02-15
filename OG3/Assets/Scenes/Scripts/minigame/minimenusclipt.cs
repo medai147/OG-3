@@ -46,4 +46,5 @@ public class minimenusclipt : MonoBehaviour
     {
         SceneManager.LoadScene("gacha scene");
     }
+
 }
