@@ -451,6 +451,7 @@ public class minigame_2Script : MonoBehaviour
         ice1 = "";
         ice2 = "";
         ice3 = "";
+        totalTime = 30;
         startbutton();
     }
 
