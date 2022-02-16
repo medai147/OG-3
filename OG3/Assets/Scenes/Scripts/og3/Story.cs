@@ -1175,6 +1175,7 @@ public class Story : MonoBehaviour
         }
         if ( MenuPanel.activeSelf == false && menucount == 0)
         {
+            automode = 0;
             savenum = 1;
             PlayerPrefs.SetInt("SAVE", savenum);
             PlayerPrefs.Save();

@@ -884,6 +884,7 @@ MonoBehaviour:
   text_monologue: {fileID: 21300000, guid: 89fe6eb8d1b5c8b4292285ae285f74f8, type: 3}
   select_now: {fileID: 21300000, guid: 53e2eabfcd1409e4d9b7a2d2289da3a4, type: 3}
   select_not: {fileID: 21300000, guid: 68222923332782d409e578fb71bbb9e1, type: 3}
+  moveanimationsr: 
   bgm1: {fileID: 8300000, guid: 8e422e083b24a3042ba7158208986672, type: 3}
   bgm2: {fileID: 8300000, guid: c6bfc5abe4fd58c469dd00da461856b1, type: 3}
   bgm3: {fileID: 8300000, guid: 8ed6bc2823ace6e438c7958daeb08e8a, type: 3}
