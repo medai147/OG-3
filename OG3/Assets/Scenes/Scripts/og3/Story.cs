@@ -95,6 +95,8 @@ public class Story : MonoBehaviour
     public Sprite select_now;
     public Sprite select_not;
 
+
+    public string moveanimationsr;
     private string centersr;
     private string rightsr;
     private string leftsr;
@@ -215,7 +217,8 @@ public class Story : MonoBehaviour
             //スタート画面の切り替え
             PlayerPrefs.SetInt("START", 1);
             PlayerPrefs.Save();
-        }else
+        }
+        else
         {
             //スタート画面の切り替え
             PlayerPrefs.SetInt("START", 0);
@@ -321,8 +324,13 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
+
+        PlayerPrefs.SetString("MOVETEXT", _qdataList[index].moveanimation);
+        PlayerPrefs.Save();
+
         //skip用
         index_read = index;
+
         
         if (SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
@@ -1703,11 +1711,13 @@ public class Qdata
     public string selectbuttontext2;
     public string textcolor;
     public string animation;
+    public string moveanimation;
+
 
     public Qdata(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 20)
+        if (spTxt.Length == 21)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -1729,6 +1739,7 @@ public class Qdata
             selectbuttontext2 = spTxt[17];
             textcolor = spTxt[18];
             animation = spTxt[19];
+            moveanimation = spTxt[20];
         }
     }
 

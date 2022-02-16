@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Moveanimationsclipt : MonoBehaviour
 {
+    private int movetxtnum;
     [SerializeField] GameObject image;
-    [SerializeField] GameObject text;
+    [SerializeField] Text text;
     [SerializeField] float smallspeed = 200;
     [SerializeField] float bigspeed = 250;
     [SerializeField] float smallspeed_text = 200;
@@ -22,6 +24,7 @@ public class Moveanimationsclipt : MonoBehaviour
         imagerectTransform.sizeDelta = new Vector2(247.2563f, 0);
         textrectTransform = text.GetComponent<RectTransform>();
         textrectTransform.sizeDelta = new Vector2(100, 0);
+        //text = GameObject.Find("movetext").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class Moveanimationsclipt : MonoBehaviour
     {
         imagemove();
         textmove();
+        textchange();
     }
 
 
@@ -75,6 +79,38 @@ public class Moveanimationsclipt : MonoBehaviour
         if (count > 300)
         {
             textrectTransform.sizeDelta += new Vector2(0, -smallspeed_text) * Time.deltaTime;
+        }
+    }
+
+    public void textchange()
+    {
+        if (gameObject)
+        {
+            movetxtnum = int.Parse(PlayerPrefs.GetString("MOVETEXT"));
+            if (movetxtnum == 1)
+            {
+                text.text = "商店街";
+            }
+            else if (movetxtnum == 2)
+            {
+                text.text = "ファンシーショップ";
+            }
+            else if (movetxtnum == 3)
+            {
+                text.text = "教室";
+            }
+            else if (movetxtnum == 4)
+            {
+                text.text = "部屋";
+            }
+            else if (movetxtnum == 5)
+            {
+                text.text = "倉庫";
+            }
+            else if (movetxtnum == 6)
+            {
+                text.text = "保健室";
+            }
         }
     }
 }

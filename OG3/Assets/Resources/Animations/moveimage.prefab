@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1323523008631547972}
-  text: {fileID: 8817651038307378742}
+  text: {fileID: 3743898747017517673}
   smallspeed: 50
   bigspeed: 50
   smallspeed_text: 30
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3743898747017517673}
   - component: {fileID: 1002171941657361840}
   m_Layer: 5
-  m_Name: Text
+  m_Name: movetext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1323523008631547972}
-  text: {fileID: 8817651038307378742}
+  text: {fileID: 3743898747017517673}
   smallspeed: 50
   bigspeed: 50
   smallspeed_text: 30
