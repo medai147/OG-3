@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class minigame_2Script : MonoBehaviour
 {
+    int nowcoin;
+
     string ice1 = "";
     string ice2 = "";
     string ice3 = "";
@@ -45,7 +47,8 @@ public class minigame_2Script : MonoBehaviour
 
     public int total;
 
-    [SerializeField] GameObject startpanel;
+    bool coincount = false;
+
     [SerializeField] GameObject gamePanel1;
     [SerializeField] GameObject gamePanel2;
     [SerializeField] GameObject gamePanel3;
@@ -64,37 +67,51 @@ public class minigame_2Script : MonoBehaviour
     [SerializeField] GameObject timerText;
     [SerializeField] GameObject resultText1;
 
+    [SerializeField] GameObject minigame2Panel;
+
     // Start is called before the first frame update
     void Start()
     {
-        startpanel.SetActive(true);
-        gamePanel1.SetActive(false);
+        gamePanel1.SetActive(true);
         gamePanel2.SetActive(false);
         gamePanel3.SetActive(false);
         resultPanel.SetActive(false);
+
+        nowcoin = PlayerPrefs.GetInt("NOWCOIN");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gamestate == 1)
+        if (minigame2Panel.activeSelf == true)
         {
-            startTimer();
-        }
-        if(seconds == 0)
-        {
-            gamestate = 0;
-            resultPanel2.SetActive(true);
-        }
-        if(resultPanel2.activeSelf)
-        {
-            if(correct >= 15)
+            if (gamestate == 1)
             {
-                resultText.GetComponent<Text>().text = "30円ゲット！" + correct + "問正解！";
+                startTimer();
             }
-            else
+            if (seconds == 0)
             {
-                resultText.GetComponent<Text>().text = "失敗…　給料無し！";
+                gamestate = 0;
+                resultPanel2.SetActive(true);
+            }
+            if (resultPanel2.activeSelf)
+            {
+                if (correct >= 1)
+                {
+                    resultText.GetComponent<Text>().text = "30円ゲット！" + correct + "問正解！";
+                    if(coincount == false)
+                    {
+                        nowcoin += 30;
+                        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+                        PlayerPrefs.Save();
+                        coincount = true;
+                    }
+
+                }
+                else
+                {
+                    resultText.GetComponent<Text>().text = "失敗…　給料無し！";
+                }
             }
         }
     }
@@ -254,7 +271,8 @@ public class minigame_2Script : MonoBehaviour
     public void startbutton()
     {
         gamePanel1.SetActive(true);
-        startpanel.SetActive(false);
+        gamePanel2.SetActive(false);
+        gamePanel3.SetActive(false);
         orderDispbutton();
         gamestate = 1;
     }
@@ -427,7 +445,12 @@ public class minigame_2Script : MonoBehaviour
 
     public void retrybutton()
     {
+        minigame2Panel.SetActive(false);
         resultPanel2.SetActive(false);
+        gamePanel1.SetActive(false);
+        gamePanel2.SetActive(false);
+        gamePanel3.SetActive(false);
+
         roundCounter = 1;
         dispCount = 0;
         iceCount_order = 0;
@@ -958,5 +981,15 @@ public class minigame_2Script : MonoBehaviour
         totalTime -= Time.deltaTime;
         seconds = (int)totalTime;
         timerText.GetComponent<Text>().text = seconds.ToString();
+    }
+
+    public void onClicked_startbutton()
+    {
+        minigame2Panel.SetActive(true);
+        gamePanel1.SetActive(true);
+        resultPanel.SetActive(false);
+        orderDispbutton();
+        gamestate = 1;
+        coincount = false;
     }
 }
