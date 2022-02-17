@@ -68,18 +68,22 @@ public class Moveanimationsclipt : MonoBehaviour
 
     public void textmove()
     {
-        if (textrectTransform.sizeDelta.y < 40 && bigmove_text == true)
+        if (imagerectTransform.sizeDelta.y >= 0)
         {
-            textrectTransform.sizeDelta += new Vector2(0, +bigspeed_text) * Time.deltaTime;
+            if (textrectTransform.sizeDelta.y < 40 && bigmove_text == true)
+            {
+                textrectTransform.sizeDelta += new Vector2(0, +bigspeed_text) * Time.deltaTime;
+            }
+            if (textrectTransform.sizeDelta.y > 40)
+            {
+                bigmove_text = false;
+            }
+            if (count > 300)
+            {
+                textrectTransform.sizeDelta += new Vector2(0, -smallspeed_text) * Time.deltaTime;
+            }
         }
-        if(textrectTransform.sizeDelta.y > 40)
-        {
-            bigmove_text = false;
-        }
-        if (count > 300)
-        {
-            textrectTransform.sizeDelta += new Vector2(0, -smallspeed_text) * Time.deltaTime;
-        }
+        
     }
 
     public void textchange()
