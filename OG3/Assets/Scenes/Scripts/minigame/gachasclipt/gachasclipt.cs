@@ -11,6 +11,15 @@ public class gachasclipt : MonoBehaviour
     int nowcoin;
     public Sprite bearsprite;
     public Sprite ringsprite;
+
+    private float _feedTime = 0.1f; // 文字送り時間
+    private float _t = 0f;
+    private int _visibleLen = 0;
+    private string _text = "";
+
+    private float time;
+
+
     //public GameObject result;
     private Text _result;
     public Text cointext;
@@ -30,6 +39,7 @@ public class gachasclipt : MonoBehaviour
         cointext.text = "所持金:" + nowcoin;
         PlayerPrefs.SetInt("NOWCOIN", nowcoin);
         PlayerPrefs.Save();
+        MoveText();
     }
 
     public void onClicked_gacha()
@@ -42,17 +52,47 @@ public class gachasclipt : MonoBehaviour
             fa.Play();
             resultpanel.SetActive(true);
             value = Random.Range(0, 2);
-            Image resultimage = (Image)GameObject.Find("resultImage").GetComponent<Image>();
+            //Image resultimage = (Image)GameObject.Find("resultImage").GetComponent<Image>();
             _result = GameObject.Find("resulttext").GetComponent<Text>();
-            if (value == 50)
+            if (value == 0)
             {
-                resultimage.sprite = bearsprite;
-                _result.text = "ぬいぐるみゲット！";
+                    //resultimage.sprite = bearsprite;
+                    SetText("僕の分のチョコはないの？");
+                    
             }
             else if (value == 1)
             {
-                resultimage.sprite = ringsprite;
-                _result.text = "指輪ゲット！";
+                //resultimage.sprite = ringsprite;
+                SetText("俺、甘いものは苦手なんだ");
+            }
+        }
+    }
+
+    public void SetText(string text)
+    {
+        _text = text;
+        _visibleLen = 0;
+        _t = 0;
+        _result.text = "";
+    }
+
+    public void MoveText()
+    {
+        time += Time.deltaTime;
+        if (time > 4.5f)
+        {
+            if (_visibleLen < _text.Length)
+            {
+                _t += Time.deltaTime;
+                if (_t >= _feedTime)
+                {
+                    _t -= _feedTime;
+                    _visibleLen++;
+                    _result.text = _text.Substring(0, _visibleLen); // 1文字ずつ増やす
+                }
+            } else
+            {
+                time = 0;
             }
         }
     }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class buttonsclipt : MonoBehaviour
 {
     [SerializeField] GameObject resultpanel;
-    [SerializeField] GameObject faImage;
+
     public int time;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,6 @@ public class buttonsclipt : MonoBehaviour
         }
         if(time > 350)
         {
-            faImage.SetActive(false);
         }
     }
     public void onClicked_resultreturn()
