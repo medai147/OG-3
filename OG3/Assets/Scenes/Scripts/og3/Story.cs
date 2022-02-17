@@ -25,6 +25,7 @@ public class Story : MonoBehaviour
     public GameObject textbox;
     public GameObject still;
     public GameObject month;
+    public GameObject monthtxtback;
     public Sprite clearSprite;
     public Sprite ouziSprite;
     public Sprite rukiaSprite;
@@ -451,13 +452,16 @@ public class Story : MonoBehaviour
 
         //アニメーション系
         animationsr = _qdataList[index].animation;
-        if(int.Parse(animationsr) != 3)
+        if(int.Parse(animationsr) != 3 || int.Parse(animationsr) != 2)
         {
             //movePanel.SetActive(false);
+
         }
 
         if (int.Parse(animationsr) == 0)
         {
+            textbox.SetActive(true);
+            monthtxtback.SetActive(true);
             FadeScript.isFadeOut = false;
             if (automode == 3)
             {
@@ -474,6 +478,8 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(animationsr) == 2)
         {
+            textbox.SetActive(false);
+            monthtxtback.SetActive(false);
             FadeScript.isFadeIn = true; //明るくなる
             if (automode == 0)
             {
@@ -482,6 +488,8 @@ public class Story : MonoBehaviour
         }
         else if(int.Parse(animationsr) == 3)
         {
+            textbox.SetActive(false);
+            monthtxtback.SetActive(false);
             if(automode == 0)
             {
                 automode = 3;
