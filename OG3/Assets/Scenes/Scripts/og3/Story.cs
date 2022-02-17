@@ -51,6 +51,7 @@ public class Story : MonoBehaviour
     public Sprite back_gardenSprite;
     public Sprite back_schoolSprite;
     public Sprite back_dispensarySprite;
+    public Sprite back_gymSprite;
     public Sprite back_seaSprite;
     public Sprite back_ground_noonSprite;
     public Sprite back_ground_eveningSprite;
@@ -297,7 +298,7 @@ public class Story : MonoBehaviour
         //確認のためにConsoleに出力
         foreach (Qdata q in _qdataList)
         {
-            //q.WriteDebugLog();
+            q.WriteDebugLog();
         }
 
         //log用
@@ -314,7 +315,7 @@ public class Story : MonoBehaviour
         }
         foreach (Logdata q in _logdataList)
         {
-            q.WriteDebugLog_logstory();
+            //q.WriteDebugLog_logstory();
         }
         //
 
@@ -686,6 +687,10 @@ public class Story : MonoBehaviour
         else if (int.Parse(backsr) == 24)
         {
             backimage.sprite = blackSprite;
+        }
+        else if(int.Parse(backsr) == 6)
+        {
+            backimage.sprite = back_gymSprite;
         }
         else if (int.Parse(backsr) == 30)
         {
@@ -1219,7 +1224,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 236))  //とめるところ
+                if (!(selected == 2 && index_skip == 353))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
