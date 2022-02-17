@@ -98,7 +98,7 @@ public class minigame_2Script : MonoBehaviour
             {
                 if (correct >= 1)
                 {
-                    resultText.GetComponent<Text>().text = "30円ゲット！" + correct + "問正解！";
+                    resultText.GetComponent<Text>().text = "30円ゲット！" + "\n" + correct + "問正解！";
                     if(coincount == false)
                     {
                         nowcoin += 30;
