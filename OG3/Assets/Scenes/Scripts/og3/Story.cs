@@ -262,7 +262,7 @@ public class Story : MonoBehaviour
         if(nameinput == 0)
         {
             heroineName = PlayerPrefs.GetString("INPUTNAME");
-            Debug.Log("名前" + heroineName);
+            //Debug.Log("名前" + heroineName);
         } else
         {
             heroineName = PlayerPrefs.GetString("INPUTNAME2");
@@ -326,7 +326,7 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
-
+        Debug.Log("index:" + index);
         PlayerPrefs.SetString("MOVETEXT", _qdataList[index].moveanimation);
         PlayerPrefs.Save();
 
@@ -353,32 +353,32 @@ public class Story : MonoBehaviour
         }
 
         //選択肢で飛んだ先から次の話に飛ぶところまとめ
-        if (index == 92 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
+        if (index == 93 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
         {
             index_read = index;
-            index_skip = 95;
+            index_skip = 97;
             qstory = index_skip;
             index = index_skip;
         }
 
-        if (index == 116 && selected == 3) //おうじ誕プレから６月へ飛ぶ
+        if (index == 123 && selected == 3) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 126;
+            index_skip = 132;
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 121 && selected == 1) //おうじ誕プレから６月へ飛ぶ
+        if (index == 128 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 126;
+            index_skip = 132;
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 168 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        if (index == 177 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
-            index_skip = 172;
+            index_skip = 182;
             qstory = index_skip;
             index = index_skip;
         }
@@ -1168,6 +1168,7 @@ public class Story : MonoBehaviour
         auto();
         nextNovel();
         //Debug.Log(MousePos.y);
+        //Debug.Log("qstory:" + qstory);
     }
     public void onClicked_closebutton()
     {
@@ -1236,7 +1237,7 @@ public class Story : MonoBehaviour
     //選択肢ボタン選択時の動き
     public void onClick_SelectButton_3()
     {
-        Debug.Log("3がおされている");
+        //Debug.Log("3がおされている");
         selected = 3;
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1249,16 +1250,16 @@ public class Story : MonoBehaviour
     public void onClick_SelectButton_1()
     {
         SkipselectPanelScript.clicked_skip = true;
-        Debug.Log("1がおされている");
+        //Debug.Log("1がおされている");
         selected = 1;
         //qstoryは調整する
         if(index_read == 67)
         {
             index_skip = 67;
         }
-        else if(index_read == 111)
+        else if(index_read == 115)
         {
-            index_skip = 115;
+            index_skip = 122;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1271,21 +1272,21 @@ public class Story : MonoBehaviour
     public void onClick_SelectButton_2()
     {
         SkipselectPanelScript.clicked_skip = true;
-        Debug.Log("2がおされている");
-        Debug.Log(index_read);
+        //Debug.Log("2がおされている");
+        //Debug.Log(index_read);
         selected = 2;
         //qstoryは調整する
         if (index_read == 67)
         {
-            index_skip = 91;
+            index_skip = 92;
         }
-        else if (index_read == 111)
+        else if (index_read == 115)
         {
-            index_skip = 120;
+            index_skip = 127;
         }
-        else if(index_read == 139)
+        else if(index_read == 146)
         {
-            index_skip = 167;
+            index_skip = 176;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1396,7 +1397,7 @@ public class Story : MonoBehaviour
     public void speedslidedrop()
     {
         speedbar_x = speedslide.transform.position.x;
-        Debug.Log(speedbar_x);
+        //Debug.Log(speedbar_x);
         //Debug.Log(MousePos.y);
         if (speedbar_x > 169.6606f && 219.5f >= speedbar_x)
         {
@@ -1432,7 +1433,7 @@ public class Story : MonoBehaviour
     public void autoslidedrop()
     {
         autoslidebar_x = autoslide.transform.position.x;
-        Debug.Log(autoslidebar_x);
+        //Debug.Log(autoslidebar_x);
         //Debug.Log(MousePos.y);
         if (autoslidebar_x > 169.6606f && 219.5f >= autoslidebar_x)
         {
@@ -1516,7 +1517,7 @@ public class Story : MonoBehaviour
         float x_bgm;
         x_bgm = bgmslide.transform.position.x;
         //Debug.Log(x_se);
-        Debug.Log(MousePos.x);
+        //Debug.Log(MousePos.x);
         if (x_bgm > 169.6606f && 219.5f >= x_bgm)
         {
             bgmvolumecount = 1;
@@ -1640,7 +1641,7 @@ public class Story : MonoBehaviour
         if (autoclick == true)
         {
             time += Time.deltaTime;
-            Debug.Log("time:" + time);
+            //Debug.Log("time:" + time);
             if(autospeedcount == 1)
             {
                 if (time > 1.5f)

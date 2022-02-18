@@ -38,31 +38,31 @@ public class SkipselectPanelScript : MonoBehaviour
         }
         else if (Story.index_read > 66 && Story.index_read < 94)
         {
-            Story.index_skip = 94; //5月おうじの先頭に飛ぶ
+            Story.index_skip = 95; //5月おうじの先頭に飛ぶ
         }
         else if(Story.index_read > 94 && Story.index_read < 108)
         {
-            Story.index_skip = 109; //5月おうじの選択肢に飛ぶ
+            Story.index_skip = 114; //5月おうじの選択肢に飛ぶ
         }
         else if (Story.index_read > 109 && Story.index_read < 124)
         {
-            Story.index_skip = 124; //6月に飛ぶ
+            Story.index_skip = 131; //6月に飛ぶ
         }
         else if (Story.index_read > 124 && Story.index_read < 137)
         {
-            Story.index_skip = 137; //6月おうじの選択肢に飛ぶ
+            Story.index_skip = 145; //6月おうじの選択肢に飛ぶ
         }
         else if (Story.index_read > 137 && Story.index_read < 171)
         {
-            Story.index_skip = 171; //7月に飛ぶ
+            Story.index_skip = 181; //7月に飛ぶ
         }
         else if (Story.index_read > 171 && Story.index_read < 188)
         {
-            Story.index_skip = 188; //7月おうじに飛ぶ
+            Story.index_skip = 199; //7月おうじに飛ぶ
         }
         else if (Story.index_read > 188 && Story.index_read < 210)
         {
-            Story.index_skip = 210; //7月ひかるに飛ぶ
+            Story.index_skip = 222; //7月ひかるに飛ぶ
         }
     }
 
