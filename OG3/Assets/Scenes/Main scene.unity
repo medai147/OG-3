@@ -844,6 +844,16 @@ MonoBehaviour:
   back_heroineroom_nightSprite: {fileID: 21300000, guid: 7d8f56716065f5a41887b8d43331fc6a,
     type: 3}
   back_garageSprite: {fileID: 21300000, guid: c625fe8135fcb2243aa24c5260aaa797, type: 3}
+  back_classroom_afternoonSprite: {fileID: 21300000, guid: e17ac1dd74cb7ca4b96f8e3d280e4f91,
+    type: 3}
+  back_garden_afternoonSprite: {fileID: 21300000, guid: 861aa6fc53a23ac4fa7f72dd25022481,
+    type: 3}
+  back_myroom_midnightSprite: {fileID: 21300000, guid: 11671010af667c34a86586d2d54fa441,
+    type: 3}
+  back_myroom_morningSprite: {fileID: 21300000, guid: 3e8ad690ebd6b594399e510372b7a361,
+    type: 3}
+  back_myroom_nightSprite: {fileID: 21300000, guid: 2e788f3574a6afe41b0d9abe92c69de2,
+    type: 3}
   blackSprite: {fileID: 21300000, guid: 7e18a25445844b14c86dc41e249f8d81, type: 3}
   still_clearSprite: {fileID: 21300000, guid: cd8326303d6f9d64993e03d7d4603ab9, type: 3}
   still_AprilSprite: {fileID: 21300000, guid: fd6431e2ed7dba04f8ecf60bd7a36b83, type: 3}

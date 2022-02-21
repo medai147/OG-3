@@ -61,7 +61,13 @@ public class Story : MonoBehaviour
     public Sprite back_heroineroom_noonSprite;
     public Sprite back_heroineroom_nightSprite;
     public Sprite back_garageSprite;
+    public Sprite back_classroom_afternoonSprite;
+    public Sprite back_garden_afternoonSprite;
+    public Sprite back_myroom_midnightSprite;
+    public Sprite back_myroom_morningSprite;
+    public Sprite back_myroom_nightSprite;
     public Sprite blackSprite;
+
     //スチル
     public Sprite still_clearSprite;
     public Sprite still_AprilSprite;
@@ -688,7 +694,7 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = blackSprite;
         }
-        else if(int.Parse(backsr) == 6)
+        else if (int.Parse(backsr) == 6)
         {
             backimage.sprite = back_gymSprite;
         }
@@ -696,14 +702,14 @@ public class Story : MonoBehaviour
         {
             backimage.sprite = still_AprilSprite;
         }
-        else if(int.Parse(backsr) == 31)
+        else if (int.Parse(backsr) == 31)
         {
             backimage.sprite = still_May_hikaruSprite;
         }
-        else if(int.Parse(backsr) == 8) {
+        else if (int.Parse(backsr) == 8) {
             backimage.sprite = back_shoploadSprite;
         }
-        else if(int.Parse(backsr) == 9)
+        else if (int.Parse(backsr) == 9)
         {
             backimage.sprite = back_fancyshopSprite;
         }
@@ -729,7 +735,23 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(backsr) == 14)
         {
-            backimage.sprite = back_ground_eveningSprite;
+            backimage.sprite = back_classroom_afternoonSprite;
+        }
+        else if (int.Parse(backsr) == 15)
+        { 
+            backimage.sprite = back_garden_afternoonSprite;
+        }
+        else if (int.Parse(backsr) == 16)
+        {
+            backimage.sprite = back_myroom_midnightSprite;
+        }
+        else if (int.Parse(backsr) == 17)
+        {
+            backimage.sprite = back_myroom_morningSprite;
+        }
+        else if (int.Parse(backsr) == 18)
+        {
+            backimage.sprite = back_myroom_nightSprite;
         }
         else if (int.Parse(backsr) == 71)
         {
@@ -1225,7 +1247,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 353))  //とめるところ
+                if (!(selected == 2 && index_skip == 378))  //とめるところ
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
