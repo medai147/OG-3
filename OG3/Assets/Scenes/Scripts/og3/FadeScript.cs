@@ -64,5 +64,7 @@ public class FadeScript : MonoBehaviour
             count = 0;
             //GetComponent<Image>().color = new Color(red, green, blue, 0);
         }
+
     }
+
 }

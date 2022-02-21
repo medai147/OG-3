@@ -497,7 +497,7 @@ public class Story : MonoBehaviour
         {
             textbox.SetActive(false);
             monthtxtback.SetActive(false);
-            if(automode == 0)
+            if (automode == 0)
             {
                 automode = 3;
             }
