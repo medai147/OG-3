@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class minigame_2Script : MonoBehaviour
 {
@@ -69,6 +70,8 @@ public class minigame_2Script : MonoBehaviour
 
     [SerializeField] GameObject minigame2Panel;
 
+    [SerializeField] GameObject coinText;
+    [SerializeField] GameObject nowcointext;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,22 +99,30 @@ public class minigame_2Script : MonoBehaviour
             }
             if (resultPanel2.activeSelf)
             {
+                resultText.GetComponent<Text>().text = correct.ToString();
                 if (correct >= 1)
                 {
-                    resultText.GetComponent<Text>().text = "30円ゲット！" + "\n" + correct + "問正解！";
-                    if(coincount == false)
+                    if(correct >= 7)
                     {
-                        nowcoin += 30;
-                        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
-                        PlayerPrefs.Save();
-                        coincount = true;
+                        if (coincount == false)
+                        {
+                            nowcoin += 30;
+                            PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+                            PlayerPrefs.Save();
+                            coincount = true;
+                        }
+                        coinText.GetComponent<Text>().text = "30コインゲット！";
                     }
-
+                    else
+                    {
+                        coinText.GetComponent<Text>().text = "失敗… 給料無し！";
+                    }
                 }
                 else
                 {
-                    resultText.GetComponent<Text>().text = "失敗…　給料無し！";
+                    coinText.GetComponent<Text>().text = "失敗… 給料無し！";
                 }
+                nowcointext.GetComponent<Text>().text = "所持金: " + nowcoin;
             }
         }
     }
@@ -480,7 +491,7 @@ public class minigame_2Script : MonoBehaviour
 
     public void tomenubutton()
     {
-
+        SceneManager.LoadScene("start scene");
     }
 
     public void tableCount_serve_in()
