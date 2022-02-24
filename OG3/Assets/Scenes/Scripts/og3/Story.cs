@@ -125,6 +125,8 @@ public class Story : MonoBehaviour
     private String logcharacterName;
     //private String logstory;
 
+    public int story_num_csv = 0;
+
     public static int selectpanelState;
     public static int index_read; //読み取り用
     public static int index_skip; //skip用
@@ -1275,13 +1277,17 @@ public class Story : MonoBehaviour
         //Debug.Log("1がおされている");
         selected = 1;
         //qstoryは調整する
-        if(index_read == 67)
+        if(index_read == 67) //ひかると勉強(5月)
         {
             index_skip = 67;
         }
-        else if(index_read == 115)
+        else if(index_read == 115)  //おうじに誕プレ(5月)
         {
             index_skip = 122;
+        }
+        else if(index_read == 278) //文化祭
+        {
+            index_skip = 309;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1309,6 +1315,10 @@ public class Story : MonoBehaviour
         else if(index_read == 146)
         {
             index_skip = 176;
+        }
+        else if (index_read == 278) //文化祭
+        {
+            index_skip = 345;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
