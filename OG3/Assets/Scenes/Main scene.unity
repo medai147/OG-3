@@ -897,6 +897,7 @@ MonoBehaviour:
   select_now: {fileID: 21300000, guid: 53e2eabfcd1409e4d9b7a2d2289da3a4, type: 3}
   select_not: {fileID: 21300000, guid: 68222923332782d409e578fb71bbb9e1, type: 3}
   moveanimationsr: 
+  story_num_csv: 0
   bgm1: {fileID: 8300000, guid: 8e422e083b24a3042ba7158208986672, type: 3}
   bgm2: {fileID: 8300000, guid: c6bfc5abe4fd58c469dd00da461856b1, type: 3}
   bgm3: {fileID: 8300000, guid: 8ed6bc2823ace6e438c7958daeb08e8a, type: 3}
@@ -1241,6 +1242,9 @@ MonoBehaviour:
   canvas: {fileID: 149050665}
   canvasRect: {fileID: 149050666}
   autoslide: {fileID: 445216268}
+  ouzi_likability: 0
+  hikaru_likability: 0
+  rukia_likability: 0
 --- !u!82 &149050668
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1979,6 +1983,18 @@ MonoBehaviour:
       - m_Target: {fileID: 149050667}
         m_TargetAssemblyTypeName: 
         m_MethodName: onClick_SelectButton_1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 149050667}
+        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+        m_MethodName: likability_button1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6779,6 +6795,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 149050667}
+        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+        m_MethodName: likability_button3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1555609099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7104,6 +7132,18 @@ MonoBehaviour:
       - m_Target: {fileID: 149050667}
         m_TargetAssemblyTypeName: 
         m_MethodName: onClick_SelectButton_2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 149050667}
+        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+        m_MethodName: likability_button2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

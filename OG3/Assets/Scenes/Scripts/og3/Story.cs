@@ -213,6 +213,12 @@ public class Story : MonoBehaviour
 
     public static bool isFade = false;
 
+
+    //パラメータ
+    public int ouzi_likability = 0; //おうじ好感度
+    public int hikaru_likability = 0; //ひかる好感度
+    public int rukia_likability = 0; //るきあ好感度
+
     // Start is called before the first frame update
     void Start()
     {
@@ -1668,6 +1674,25 @@ public class Story : MonoBehaviour
         Image selectbutton3 = (Image)SelectButton_3.GetComponent<Image>();
         selectbutton3.sprite = select_not;
     }
+
+    public void likability_button3()
+    {
+        ouzi_likability++;
+        Debug.Log("3pushed! ouzi_likability:" + ouzi_likability);
+    }
+
+    public void likability_button1()
+    {
+        hikaru_likability++;
+        Debug.Log("1pushed! hikaru_likability:" + hikaru_likability);
+    }
+
+    public void likability_button2()
+    {
+        rukia_likability++;
+        Debug.Log("2pushed! rukia_likability:" + rukia_likability);
+    }
+
     void auto()
     {
         if (autoclick == true)
