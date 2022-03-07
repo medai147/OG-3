@@ -206,6 +206,7 @@ public class Story : MonoBehaviour
     static int sevolumecount = 4;
     static int bgmvolumecount = 4;
     static int autospeedcount = 4;
+    static int novelspeedcountmemo =4;
     public Image autoslide;
     static float autoslidebar_x;
     float time;
@@ -469,6 +470,7 @@ public class Story : MonoBehaviour
 
         if (int.Parse(animationsr) == 0)
         {
+            novelspeedcount = novelspeedcountmemo;
             textbox.SetActive(true);
             monthtxtback.SetActive(true);
             FadeScript.isFadeOut = false;
@@ -479,6 +481,8 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(animationsr) == 1)
         {
+            novelspeedcountmemo = novelspeedcount;
+            novelspeedcount = 4;
             FadeScript.isFadeOut = true; //暗くなる
             if (automode == 0)
             {
@@ -487,6 +491,7 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(animationsr) == 2)
         {
+            novelspeedcount = 4;
             textbox.SetActive(false);
             monthtxtback.SetActive(false);
             FadeScript.isFadeIn = true; //明るくなる
@@ -497,6 +502,7 @@ public class Story : MonoBehaviour
         }
         else if(int.Parse(animationsr) == 3)
         {
+            novelspeedcount = 4;
             textbox.SetActive(false);
             monthtxtback.SetActive(false);
             if (automode == 0)
@@ -1434,22 +1440,27 @@ public class Story : MonoBehaviour
         if (speedbar_x > 169.6606f && 219.5f >= speedbar_x)
         {
             novelspeedcount = 1;
+            novelspeedcountmemo = 1;
         }
         else if (speedbar_x > 219.5f && 270 >= speedbar_x)
         {
             novelspeedcount = 2;
+            novelspeedcountmemo = 2;
         }
         else if (speedbar_x > 270 && 346.5f >= speedbar_x)
         {
             novelspeedcount = 3;
+            novelspeedcountmemo = 3;
         }
         else if (speedbar_x > 346.5f && 421.5f > speedbar_x)
         {
             novelspeedcount = 4;
+            novelspeedcountmemo = 4;
         }
         else if (speedbar_x > 421.5f && 465.3495f > speedbar_x)
         {
             novelspeedcount = 5;
+            novelspeedcountmemo = 5;
         }
 
     }

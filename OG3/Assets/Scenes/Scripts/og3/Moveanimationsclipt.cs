@@ -8,10 +8,10 @@ public class Moveanimationsclipt : MonoBehaviour
     private int movetxtnum;
     [SerializeField] GameObject image;
     [SerializeField] Text text;
-    [SerializeField] float smallspeed = 200;
-    [SerializeField] float bigspeed = 250;
-    [SerializeField] float smallspeed_text = 200;
-    [SerializeField] float bigspeed_text = 250;
+    [SerializeField] float smallspeed = 250;
+    [SerializeField] float bigspeed = 300;
+    [SerializeField] float smallspeed_text = 250;
+    [SerializeField] float bigspeed_text = 300;
     RectTransform imagerectTransform;
     RectTransform textrectTransform;
     int count;
