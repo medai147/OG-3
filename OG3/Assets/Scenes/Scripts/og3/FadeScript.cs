@@ -32,7 +32,7 @@ public class FadeScript : MonoBehaviour
             GetComponent<Image>().color = new Color(red, green, blue, alfa);
             alfa += speed;
             count++;
-            Debug.Log("count:" + count + ", alfa:" + alfa);
+            //Debug.Log("count:" + count + ", alfa:" + alfa);
             if (count > 300)
             {
                 isFadeOut = false;
@@ -47,13 +47,14 @@ public class FadeScript : MonoBehaviour
             GetComponent<Image>().color = new Color(red, green, blue, alfa);
             if (count == 0)
             {
-                alfa =1;
+                alfa = 1;
             }
-            alfa -= speed * 0.1f;
+            alfa -= speed;
             count++;
-            Debug.Log("count:"+count + ", alfa:" + alfa);
-            if (count > 1000)
+            //Debug.Log("count:"+count + ", alfa:" + alfa);
+            if (count > 500)
             {
+                GetComponent<Image>().color = new Color(red, green, blue, 0);
                 isFadeOut = false;
                 isFadeIn = false;
                 ScreenButton.SetActive(true);

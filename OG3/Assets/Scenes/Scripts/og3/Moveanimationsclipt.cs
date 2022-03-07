@@ -49,7 +49,7 @@ public class Moveanimationsclipt : MonoBehaviour
             bigmove = false;
         }
 
-        if (count > 300)
+        if (count > 150)
         {
             imagerectTransform.sizeDelta += new Vector2(0, -smallspeed) * Time.deltaTime;
         }
@@ -78,7 +78,7 @@ public class Moveanimationsclipt : MonoBehaviour
             {
                 bigmove_text = false;
             }
-            if (count > 300)
+            if (count > 150)
             {
                 textrectTransform.sizeDelta += new Vector2(0, -smallspeed_text) * Time.deltaTime;
             }
