@@ -397,6 +397,7 @@ public class Story : MonoBehaviour
             index = index_skip;
         }
 
+
         //Debug.Log(index_read);
 
         messageCount = 0; //表示中の文字数
@@ -1293,7 +1294,15 @@ public class Story : MonoBehaviour
         }
         else if(index_read == 278) //文化祭
         {
-            index_skip = 309;
+            index_skip = 311 - 2;
+        }
+        else if(index_read >= 286 && index_read < 288)
+        {
+            index_skip = index_read++;
+        }
+        else if (index_read == 288)
+        {
+            index_skip = 306 - 2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1325,6 +1334,14 @@ public class Story : MonoBehaviour
         else if (index_read == 278) //文化祭
         {
             index_skip = 345;
+        }
+        else if (index_read >= 286 && index_read < 288)
+        {
+            index_skip = index_read++;
+        }
+        else if (index_read == 288)
+        {
+            index_skip = 306 - 2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1677,20 +1694,41 @@ public class Story : MonoBehaviour
 
     public void likability_button3()
     {
-        ouzi_likability++;
+        if(index_read == 285)
+        {
+            ouzi_likability++;
+        }
         Debug.Log("3pushed! ouzi_likability:" + ouzi_likability);
     }
 
     public void likability_button1()
     {
-        hikaru_likability++;
-        Debug.Log("1pushed! hikaru_likability:" + hikaru_likability);
+        if (index_read == 285)
+        {
+            ouzi_likability += 2;
+        }
+        if (index_read == 287)
+        {
+            ouzi_likability++;
+            if(ouzi_likability < 3)
+            {
+                index_skip = 306;
+            }
+        }
+        Debug.Log("1pushed! ouzi_likability:" + ouzi_likability);
     }
 
     public void likability_button2()
     {
-        rukia_likability++;
-        Debug.Log("2pushed! rukia_likability:" + rukia_likability);
+        if (index_read == 287)
+        {
+            ouzi_likability += 2;
+            if (ouzi_likability < 3)
+            {
+                index_skip = 306;
+            }
+        }
+        Debug.Log("2pushed! ouzi_likability:" + ouzi_likability);
     }
 
     void auto()
