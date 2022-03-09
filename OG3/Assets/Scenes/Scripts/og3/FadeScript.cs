@@ -2,70 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class FadeScript : MonoBehaviour
 {
-    public float speed = 0.0001f; //透明化の速さ
-    float alfa;
-    float red, green, blue;
-    public static bool isFadeIn = false;
+    //アニメーター
+    [SerializeField] private Animator _animator;
+
+    // アニメーターコントローラーのレイヤー(通常は0)
+    [SerializeField] private int _layer;
+
+    //IsfadeStartフラグ
+    private static readonly int ParamIsfadeStart = Animator.StringToHash("IsfadeStart");
+
+    //fadeInisdoneフラグ
+    private static readonly int fadeInisdone = Animator.StringToHash("fadeInisdone");
+
+    //フェードフラグが立っているか
     public static bool isFadeOut = false;
-    [SerializeField] GameObject ScreenButton;
-    [SerializeField] GameObject fadePanel;
-    int count = 0;
+    public static bool isFadeIn = false;
 
-    // Start is called before the first frame update
-    void Start()
+    //アニメーション中かどうか
+    public bool IsTransition { get; private set; }
+
+    //フェードイン
+    public void fade()
     {
-        red = GetComponent<Image>().color.r;
-        green = GetComponent<Image>().color.g;
-        blue = GetComponent<Image>().color.b;
+        //不正操作防止
+        if (IsTransition) return;
+
+        //IsfadeStartフラグをセット
+        _animator.SetBool(ParamIsfadeStart, true);
+
+        //アニメーション待機
+        StartCoroutine(("start"));
     }
 
-    // Update is called once per frame
-    void Update()
+    // 開閉アニメーションの待機コルーチン
+    private IEnumerator WaitAnimation(string stateName, UnityAction onCompleted = null)
     {
-        if (isFadeOut == true) //暗くなる
-        {
-            fadePanel.SetActive(true);
-            ScreenButton.SetActive(false);
-            GetComponent<Image>().color = new Color(red, green, blue, alfa);
-            alfa += speed;
-            count++;
-            //Debug.Log("count:" + count + ", alfa:" + alfa);
-            if (count > 300)
-            {
-                isFadeOut = false;
-                alfa = 1;
-                //isFadeIn = true;
-                ScreenButton.SetActive(true);
-                //Story.isFade = true;
-            }
-        } else if (isFadeIn == true) {  //明るくなる
-            fadePanel.SetActive(true);
-            ScreenButton.SetActive(false);
-            GetComponent<Image>().color = new Color(red, green, blue, alfa);
-            if (count == 0)
-            {
-                alfa = 1;
-            }
-            alfa -= speed;
-            count++;
-            //Debug.Log("count:"+count + ", alfa:" + alfa);
-            if (count > 500)
-            {
-                GetComponent<Image>().color = new Color(red, green, blue, 0);
-                isFadeOut = false;
-                isFadeIn = false;
-                ScreenButton.SetActive(true);
-            }
-        }
-        else if (isFadeOut == false && isFadeIn == false)
-        {
-            count = 0;
-            //GetComponent<Image>().color = new Color(red, green, blue, 0);
-        }
+        IsTransition = true;
 
+        yield return new WaitUntil(() =>
+        {
+            // ステートが変化し、アニメーションが終了するまでループ
+            var state = _animator.GetCurrentAnimatorStateInfo(_layer);
+            return state.IsName(stateName) && state.normalizedTime >= 1;
+        });
+
+        IsTransition = false;
+
+        onCompleted?.Invoke();
     }
-
 }
+

@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadstill: {fileID: 451580876}
-  loadsprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
+  loadsprite: {fileID: 21300000, guid: c14a74b7c599d054996dec50e1508d83, type: 3}
   _save1: {fileID: 56198397}
   _save2: {fileID: 1749102462}
   _save3: {fileID: 1529932031}
