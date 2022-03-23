@@ -192,6 +192,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject menubutton;
     [SerializeField] GameObject monthtext;
     [SerializeField] GameObject movePanel;
+
     private int selected = 0;
 
     //設定画面
@@ -334,7 +335,7 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
-        Debug.Log("index:" + index);
+        //Debug.Log("index:" + index);
         PlayerPrefs.SetString("MOVETEXT", _qdataList[index].moveanimation);
         PlayerPrefs.Save();
 
@@ -480,6 +481,7 @@ public class Story : MonoBehaviour
         else if (int.Parse(animationsr) == 1)
         {
             FadeScript.isFadeOut = true; //暗くなる
+            fadeanimation();
             if (automode == 0)
             {
                 automode = 3;
@@ -1667,6 +1669,13 @@ public class Story : MonoBehaviour
     {
         Image selectbutton3 = (Image)SelectButton_3.GetComponent<Image>();
         selectbutton3.sprite = select_not;
+    }
+
+    void fadeanimation()
+    {
+        GameObject prefab = (GameObject)Resources.Load("Prefabs/fadePanel1");
+        GameObject cloneObject = Instantiate(prefab, new Vector3(0, 0, 0), Quaternion.identity);
+        cloneObject.transform.SetParent(canvas.transform, false);
     }
     void auto()
     {

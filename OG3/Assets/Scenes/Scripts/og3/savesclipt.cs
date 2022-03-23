@@ -265,7 +265,7 @@ public class savesclipt : MonoBehaviour
                     loadPanel.SetActive(true);
                     Image loadimage = (Image)loadstill.GetComponent<Image>();
                     loadimage.sprite = loadsprite;
-                    PlayerPrefs.SetInt("NUMBERLOAD", 244);//savenum - 1);
+                    PlayerPrefs.SetInt("NUMBERLOAD",savenum - 1);
                     PlayerPrefs.Save();
                     PlayerPrefs.SetInt("NAMEINPUT", 1);
                     PlayerPrefs.Save();
