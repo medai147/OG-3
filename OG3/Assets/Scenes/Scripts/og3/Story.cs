@@ -511,7 +511,8 @@ public class Story : MonoBehaviour
             GameObject animObj = Instantiate((GameObject)Resources.Load(animName), new Vector3(), Quaternion.identity);
             if(animpos == 1)
             {
-                animObj.transform.parent = movePanel.transform;
+                animObj.transform.SetParent(this.transform);
+                //animObj.transform.parent = movePanel.transform;
                 animObj.GetComponent<RectTransform>().localPosition = Vector3.zero;
             }
         }
