@@ -195,6 +195,10 @@ public class Story : MonoBehaviour
 
     private int selected = 0;
 
+    private int ouzi_point = 0;
+    private int hikaru_point = 0;
+    private int rukia_point = 0;
+
     //設定画面
     public Image speedslide;
     static float speedbar_x;
@@ -335,14 +339,17 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
-        Debug.Log("index:" + index + " , index_read:" + index_read + " , index_skip:" + index_skip + " , qstory:" + qstory);
+        Debug.Log("index:" + index + " , index_read:" + index_read + " , index_skip:" + index_skip + " , qstory:" + qstory + "ouzi_point: " + ouzi_point + "hikaru_point: " + hikaru_point + "rukia_point: " + rukia_point);
         PlayerPrefs.SetString("MOVETEXT", _qdataList[index].moveanimation);
         PlayerPrefs.Save();
 
         //skip用
         index_read = index;
+        //index_skip = index_read;
+        //qstory = index + 1;
 
-        
+
+
         if (SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
             {
@@ -1253,6 +1260,7 @@ public class Story : MonoBehaviour
 
     public void onClick_Screenbutton()
     {
+
         if (automode == 0)
         {
             if (click == 0)
@@ -1268,7 +1276,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!( index_skip == 390))  //とめるところ selected == 2 &&
+                if (!( index_skip == 400))  //とめるところ selected == 2 &&
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1282,6 +1290,22 @@ public class Story : MonoBehaviour
     {
         //Debug.Log("3がおされている");
         selected = 3;
+
+        if(index_read == 297)  //おうじ①
+        {
+            ouzi_point += 1;
+            index_skip = 299 - 2;
+        }
+         else if (index_read == 343)  //ひかる①
+        {
+            hikaru_point += 0;
+            index_skip = 345 - 2;
+        }
+        else if (index_read == 378)  //るきあ①
+        {
+            rukia_point += 1;
+            index_skip = 379 - 2;
+        }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
         onClick_Screenbutton();
@@ -1307,6 +1331,49 @@ public class Story : MonoBehaviour
         else if(index_read == 289) //文化祭
         {
             index_skip = 324-2;
+        }
+        else if (index_read == 297)
+        {
+            ouzi_point += 2;
+            index_skip = 299 - 2;
+        }
+        else if (index_read == 299)
+        {
+            ouzi_point += 1;
+            index_skip = 301 - 2;
+            if (ouzi_point < 3)
+            {
+                index_skip = 319 - 2;
+            }
+        }
+        else if (index_read == 343) //ひかる①
+        {
+            hikaru_point += 1;
+            index_skip = 345 - 2;
+        }
+        else if (index_read == 345) //ひかる②
+        {
+            hikaru_point += 2;
+            index_skip = 347 - 2;
+            if (hikaru_point < 3)
+            {
+                index_skip = 356 - 2;
+            }
+        }
+        else if (index_read == 378)  //るきあ①
+        {
+            rukia_point += 0;
+            index_skip = 379 - 2;
+        }
+        
+        else if (index_read == 381) //るきあ②
+        {
+            rukia_point += 1;
+            index_skip = 382 - 2;
+            if (rukia_point < 3)
+            {
+                index_skip = 392 - 2;
+            }
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1342,6 +1409,48 @@ public class Story : MonoBehaviour
         else if (index_read == 289) //文化祭
         {
             index_skip = 364-2;
+        }
+        else if (index_read == 297) //おうじ①
+        {
+            ouzi_point += 0;
+            index_skip = 299 - 2;
+        }
+        else if (index_read == 299) //おうじ②
+        {
+            ouzi_point += 2;
+            index_skip = 301 - 2;
+            if (ouzi_point < 3)
+            {
+                index_skip = 319 - 2;
+            }
+        }
+        else if (index_read == 343) //ひかる①
+        {
+            hikaru_point += 2;
+            index_skip = 345 - 2;
+        }
+        else if (index_read == 345) //ひかる②
+        {
+            hikaru_point += 1;
+            index_skip = 347 - 2;
+            if (hikaru_point < 3)
+            {
+                index_skip = 356 - 2;
+            }
+        }
+        else if (index_read == 378)  //るきあ①
+        {
+            rukia_point += 2;
+            index_skip = 379 - 2;
+        }
+        else if (index_read == 381) //るきあ②
+        {
+            rukia_point += 2;
+            index_skip = 382 - 2;
+            if (rukia_point < 3)
+            {
+                index_skip = 392 - 2;
+            }
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
