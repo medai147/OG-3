@@ -335,7 +335,7 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
-        //Debug.Log("index:" + index);
+        Debug.Log("index:" + index + " , index_read:" + index_read + " , index_skip:" + index_skip + " , qstory:" + qstory);
         PlayerPrefs.SetString("MOVETEXT", _qdataList[index].moveanimation);
         PlayerPrefs.Save();
 
@@ -362,25 +362,25 @@ public class Story : MonoBehaviour
         }
 
         //選択肢で飛んだ先から次の話に飛ぶところまとめ
-        if (index == 93 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
+        if (index == 96 && selected == 1) //ひかる買い物からおうじ誕プレへ飛ぶ
         {
             index_read = index;
-            index_skip = 97;
+            index_skip = 103-1;
             qstory = index_skip;
             index = index_skip;
         }
 
-        if (index == 123 && selected == 3) //おうじ誕プレから６月へ飛ぶ
+        if (index == 126 && selected == 3) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 133-1;
+            index_skip = 142-1;
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 128 && selected == 1) //おうじ誕プレから６月へ飛ぶ
+        if (index == 134 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 133-1;
+            index_skip = 142-1;
             qstory = index_skip;
             index = index_skip;
         }
@@ -391,20 +391,22 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        //if (index == 314) //おうじ文化祭からラスト
-        //{
-            //index_read = index;
-            //index_skip = 390;
-            //qstory = index_skip;
-            //index = index_skip;
-        //}
-        //if (index == 354) //ひかる文化祭からラスト
-        //{
-          //  index_read = index;
-           // index_skip = 390;
-           // qstory = index_skip;
-           // index = index_skip;
-       // }
+        /*
+        if (index == 314) //おうじ文化祭からラスト
+        {
+            index_read = index;
+            index_skip = 390;
+            qstory = index_skip;
+            index = index_skip;
+        }
+        if (index == 354) //ひかる文化祭からラスト
+        {
+            index_read = index;
+            index_skip = 390;
+            qstory = index_skip;
+            index = index_skip;
+        }
+        */
 
         //Debug.Log(index_read);
 
@@ -1296,11 +1298,11 @@ public class Story : MonoBehaviour
         //qstoryは調整する
         if(index_read == 67) //ひかると勉強(5月)
         {
-            index_skip = 67;
+            index_skip = 69-2;
         }
-        else if(index_read == 115)  //おうじに誕プレ(5月)
+        else if(index_read == 118)  //おうじに誕プレ(5月)
         {
-            index_skip = 120+2;
+            index_skip = 127-2;
         }
         else if(index_read == 280) //文化祭
         {
@@ -1323,15 +1325,15 @@ public class Story : MonoBehaviour
         //qstoryは調整する
         if (index_read == 67)
         {
-            index_skip = 92;
+            index_skip = 97-2;
         }
         else if (index_read == 115)
         {
             index_skip = 127;
         }
-        else if(index_read == 146)
+        else if(index_read == 118)
         {
-            index_skip = 176;
+            index_skip = 135 - 2;
         }
         else if (index_read == 280) //文化祭
         {
