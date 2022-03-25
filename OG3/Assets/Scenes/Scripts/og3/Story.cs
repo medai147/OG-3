@@ -384,10 +384,10 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
-        if (index == 177 && selected == 1) //おうじパンケーキから７月へ飛ぶ
+        if (index == 186 && selected == 1) //おうじパンケーキから７月へ飛ぶ
         {
             index_read = index;
-            index_skip = 182;
+            index_skip = 191-1;
             qstory = index_skip;
             index = index_skip;
         }
@@ -1304,9 +1304,9 @@ public class Story : MonoBehaviour
         {
             index_skip = 127-2;
         }
-        else if(index_read == 280) //文化祭
+        else if(index_read == 289) //文化祭
         {
-            index_skip = 315-2;
+            index_skip = 324-2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1335,9 +1335,13 @@ public class Story : MonoBehaviour
         {
             index_skip = 135 - 2;
         }
-        else if (index_read == 280) //文化祭
+        else if (index_read == 155)
         {
-            index_skip = 355-2;
+            index_skip = 187 - 2;
+        }
+        else if (index_read == 289) //文化祭
+        {
+            index_skip = 364-2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
