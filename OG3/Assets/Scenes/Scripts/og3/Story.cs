@@ -199,6 +199,8 @@ public class Story : MonoBehaviour
     private int hikaru_point = 0;
     private int rukia_point = 0;
 
+    //private bool stopStorybool = false;
+
     //設定画面
     public Image speedslide;
     static float speedbar_x;
@@ -397,6 +399,36 @@ public class Story : MonoBehaviour
             index_skip = 191-1;
             qstory = index_skip;
             index = index_skip;
+        }
+        if(index == 318 && !(ouzi_point < 3) && ouzi_point > 0) //おうじOK
+        {
+            //stopStorybool = true;
+            yield break;
+        }
+        if (index == 323 && ouzi_point < 3 && ouzi_point > 0) //おうじBAD
+        {
+            //stopStorybool = true;
+            yield break;
+        }
+        if (index == 355 && !(hikaru_point < 3) && hikaru_point > 0) //ひかるOK
+        {
+            //stopStorybool = true;
+            yield break;
+        }
+        if (index == 363 && hikaru_point < 3 && hikaru_point > 0) //ひかるBAD
+        {
+            //stopStorybool = true;
+            yield break;
+        }
+        if (index == 391 && !(rukia_point < 3) && rukia_point > 0) //るきあOK
+        {
+            //stopStorybool = true;
+            yield break;
+        }
+        if (index == 400 && rukia_point < 3 && rukia_point > 0) //るきあBAD
+        {
+            //stopStorybool = true;
+            yield break;
         }
         /*
         if (index == 314) //おうじ文化祭からラスト
@@ -1276,7 +1308,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!( index_skip == 400))  //とめるところ selected == 2 &&
+                if (!( index_skip == 400))  //とめるところ selected == 2 &&  || stopStorybool == true)
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1301,9 +1333,10 @@ public class Story : MonoBehaviour
             hikaru_point += 0;
             index_skip = 345 - 2;
         }
-        else if (index_read == 378)  //るきあ①
+        else if (index_read == 377)  //るきあ①
         {
             rukia_point += 1;
+            Debug.Log("るきあポイント1加算");
             index_skip = 379 - 2;
         }
         SelectButtonPanel.SetActive(false);
@@ -1360,13 +1393,13 @@ public class Story : MonoBehaviour
                 index_skip = 356 - 2;
             }
         }
-        else if (index_read == 378)  //るきあ①
+        else if (index_read == 377)  //るきあ①
         {
             rukia_point += 0;
             index_skip = 379 - 2;
         }
         
-        else if (index_read == 381) //るきあ②
+        else if (index_read == 380) //るきあ②
         {
             rukia_point += 1;
             index_skip = 382 - 2;
@@ -1438,12 +1471,12 @@ public class Story : MonoBehaviour
                 index_skip = 356 - 2;
             }
         }
-        else if (index_read == 378)  //るきあ①
+        else if (index_read == 377)  //るきあ①
         {
             rukia_point += 2;
             index_skip = 379 - 2;
         }
-        else if (index_read == 381) //るきあ②
+        else if (index_read == 380) //るきあ②
         {
             rukia_point += 2;
             index_skip = 382 - 2;
