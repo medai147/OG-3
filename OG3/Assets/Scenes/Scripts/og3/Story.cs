@@ -373,14 +373,14 @@ public class Story : MonoBehaviour
         if (index == 123 && selected == 3) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 132;
+            index_skip = 133-1;
             qstory = index_skip;
             index = index_skip;
         }
         if (index == 128 && selected == 1) //おうじ誕プレから６月へ飛ぶ
         {
             index_read = index;
-            index_skip = 132;
+            index_skip = 133-1;
             qstory = index_skip;
             index = index_skip;
         }
@@ -391,6 +391,20 @@ public class Story : MonoBehaviour
             qstory = index_skip;
             index = index_skip;
         }
+        //if (index == 314) //おうじ文化祭からラスト
+        //{
+            //index_read = index;
+            //index_skip = 390;
+            //qstory = index_skip;
+            //index = index_skip;
+        //}
+        //if (index == 354) //ひかる文化祭からラスト
+        //{
+          //  index_read = index;
+           // index_skip = 390;
+           // qstory = index_skip;
+           // index = index_skip;
+       // }
 
         //Debug.Log(index_read);
 
@@ -1252,7 +1266,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!(selected == 2 && index_skip == 378))  //とめるところ
+                if (!( index_skip == 390))  //とめるところ selected == 2 &&
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1286,11 +1300,11 @@ public class Story : MonoBehaviour
         }
         else if(index_read == 115)  //おうじに誕プレ(5月)
         {
-            index_skip = 122;
+            index_skip = 120+2;
         }
-        else if(index_read == 278) //文化祭
+        else if(index_read == 280) //文化祭
         {
-            index_skip = 309;
+            index_skip = 315-2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1319,9 +1333,9 @@ public class Story : MonoBehaviour
         {
             index_skip = 176;
         }
-        else if (index_read == 278) //文化祭
+        else if (index_read == 280) //文化祭
         {
-            index_skip = 345;
+            index_skip = 355-2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
