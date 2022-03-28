@@ -13,6 +13,8 @@ public class Startsclipt : MonoBehaviour
     [SerializeField] GameObject startpanel;
     [SerializeField] GameObject finishpanel;
 
+    public Texture2D handCursor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,18 +42,22 @@ public class Startsclipt : MonoBehaviour
     public void onClicked_startbutton()
     {
         countTime = 30;
+        Cursor.SetCursor(handCursor, Vector2.zero, CursorMode.ForceSoftware);
         startpanel.SetActive(false);
+        
     }
 
     public void onClicked_continuebutton()
     {
         countTime = 30;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         finishpanel.SetActive(false);
     }
 
     public void onClicked_returnbutton()
     {
         countTime = 30;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         SceneManager.LoadScene("start scene");
     }
 }

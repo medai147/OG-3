@@ -15,6 +15,9 @@ public class movesclipt : MonoBehaviour
     //キャンバス内のレクトトランスフォーム
     public RectTransform canvasRect;
 
+    public Texture2D handCursor;
+    public Texture2D handCursor_click;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,6 @@ public class movesclipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(hit);
     }
 
     public void Pinkicedown()
@@ -61,6 +63,8 @@ public class movesclipt : MonoBehaviour
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,
             Input.mousePosition, canvas.worldCamera, out MousePos);
             pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, MousePos.y);
+            Cursor.SetCursor(handCursor_click, Vector2.zero, CursorMode.ForceSoftware);
+
         } else
         {
             pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-244.6f, -82.9f);
@@ -74,6 +78,7 @@ public class movesclipt : MonoBehaviour
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,
             Input.mousePosition, canvas.worldCamera, out MousePos);
             green_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, MousePos.y);
+            Cursor.SetCursor(handCursor_click, Vector2.zero, CursorMode.ForceSoftware);
         }
         else
         {
@@ -88,6 +93,7 @@ public class movesclipt : MonoBehaviour
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,
             Input.mousePosition, canvas.worldCamera, out MousePos);
             brown_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, MousePos.y);
+            Cursor.SetCursor(handCursor_click, Vector2.zero, CursorMode.ForceSoftware);
         }
         else
         {
@@ -98,18 +104,22 @@ public class movesclipt : MonoBehaviour
     {
         pink_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(-244.6f, -82.9f);
         hit = false;
+        Cursor.SetCursor(handCursor, Vector2.zero, CursorMode.ForceSoftware);
+
     }
 
     public void Greenicedrop()
     {
         green_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(9.4f, -87.6f);
         hit = false;
+        Cursor.SetCursor(handCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void Brownicedrop()
     {
         brown_image.GetComponent<RectTransform>().anchoredPosition = new Vector2(244, -98.428f);
         hit = false;
+        Cursor.SetCursor(handCursor, Vector2.zero, CursorMode.ForceSoftware);
     }
 
 

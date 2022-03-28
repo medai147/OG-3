@@ -11,6 +11,7 @@ public class minigamesclipt : MonoBehaviour
     public int startchange;
     public GameObject startbackimage;
     public Sprite ojistartimageSprite;
+
     // Start is called before the first frame update
     void Start()
     {

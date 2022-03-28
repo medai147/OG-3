@@ -333,6 +333,8 @@ MonoBehaviour:
   MousePos: {x: 0, y: 0}
   canvas: {fileID: 0}
   canvasRect: {fileID: 0}
+  handCursor: {fileID: 0}
+  handCursor_click: {fileID: 0}
 --- !u!114 &31428535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1454,6 +1456,7 @@ MonoBehaviour:
   timetext: {fileID: 762989829}
   startpanel: {fileID: 834761366}
   finishpanel: {fileID: 481888203}
+  handCursor: {fileID: 2800000, guid: 8eb5185a0a326434ca17c93ca0e5283f, type: 3}
 --- !u!1 &172891694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1591,7 @@ MonoBehaviour:
   timetext: {fileID: 0}
   startpanel: {fileID: 834761366}
   finishpanel: {fileID: 481888203}
+  handCursor: {fileID: 2800000, guid: 8eb5185a0a326434ca17c93ca0e5283f, type: 3}
 --- !u!114 &178191458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1811,6 +1815,7 @@ MonoBehaviour:
   timetext: {fileID: 762989829}
   startpanel: {fileID: 834761366}
   finishpanel: {fileID: 481888203}
+  handCursor: {fileID: 0}
 --- !u!114 &212731075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3779,6 +3784,8 @@ MonoBehaviour:
   MousePos: {x: 0, y: 0}
   canvas: {fileID: 0}
   canvasRect: {fileID: 0}
+  handCursor: {fileID: 2800000, guid: 8eb5185a0a326434ca17c93ca0e5283f, type: 3}
+  handCursor_click: {fileID: 2800000, guid: 253cb4b07dd456c468eb97cc28df7007, type: 3}
 --- !u!1 &751065784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4072,6 +4079,7 @@ MonoBehaviour:
   timetext: {fileID: 0}
   startpanel: {fileID: 834761366}
   finishpanel: {fileID: 481888203}
+  handCursor: {fileID: 2800000, guid: 8eb5185a0a326434ca17c93ca0e5283f, type: 3}
 --- !u!114 &784556560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4204,7 +4212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.06278992}
+  m_AnchoredPosition: {x: 0, y: -0.062805176}
   m_SizeDelta: {x: 0.000030518, y: 0.12546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823056523
@@ -4341,7 +4349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &834761367
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5369,6 +5377,8 @@ MonoBehaviour:
   MousePos: {x: 0, y: 0}
   canvas: {fileID: 0}
   canvasRect: {fileID: 0}
+  handCursor: {fileID: 2800000, guid: 8eb5185a0a326434ca17c93ca0e5283f, type: 3}
+  handCursor_click: {fileID: 2800000, guid: 253cb4b07dd456c468eb97cc28df7007, type: 3}
 --- !u!1 &1121860596
 GameObject:
   m_ObjectHideFlags: 0
@@ -5671,6 +5681,8 @@ MonoBehaviour:
   MousePos: {x: 0, y: 0}
   canvas: {fileID: 212731072}
   canvasRect: {fileID: 0}
+  handCursor: {fileID: 2800000, guid: 8eb5185a0a326434ca17c93ca0e5283f, type: 3}
+  handCursor_click: {fileID: 2800000, guid: 253cb4b07dd456c468eb97cc28df7007, type: 3}
 --- !u!114 &1215069531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6371,7 +6383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: -1.0952148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1460443049
@@ -7250,8 +7262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00004286, y: -0.00006485}
-  m_SizeDelta: {x: 800, y: 449.42352}
+  m_AnchoredPosition: {x: 0.00004286, y: -0}
+  m_SizeDelta: {x: 800, y: 449.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1800925193
 MonoBehaviour:
@@ -7745,7 +7757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000076293945, y: -0.06272888}
+  m_AnchoredPosition: {x: 0.000061035156, y: -0.06274414}
   m_SizeDelta: {x: 0.00018311, y: 0.1256}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977297829
