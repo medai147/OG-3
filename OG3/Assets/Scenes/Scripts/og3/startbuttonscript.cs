@@ -11,6 +11,7 @@ public class startbuttonscript: MonoBehaviour
     [SerializeField] GameObject InputNamePanel;
     [SerializeField] GameObject startbutton;
     static int count;
+    public static bool start = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class startbuttonscript: MonoBehaviour
         //InputNamePanel.SetActive(true);
         PlayerPrefs.SetInt("NUMBERLOAD", 0);
         PlayerPrefs.Save();
+        start = true;
     }
 
     public void jumptoStart()

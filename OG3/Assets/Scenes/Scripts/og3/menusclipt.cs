@@ -171,6 +171,20 @@ public class menusclipt : MonoBehaviour
                 skiptext.text = "7月(リレーのアンカー)をスキップしますか？";
                 SkipselectpanelText.SetActive(true);
             }
+            else if (Story.index_read > 222 && Story.index_read < 252)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "7月(体育祭でのアクシデント)をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
+            else if (Story.index_read > 262 && Story.index_read < 277)
+            {
+                //SkipselectpanelText.SetActive(true);
+                skiptext = GameObject.Find("SkipselectpanelText").GetComponent<Text>();
+                skiptext.text = "10月をスキップしますか？";
+                SkipselectpanelText.SetActive(true);
+            }
         }
     }
 

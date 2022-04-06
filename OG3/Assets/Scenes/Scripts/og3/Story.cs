@@ -347,10 +347,16 @@ public class Story : MonoBehaviour
 
         //skip用
         index_read = index;
+
+        if(startbuttonscript.start == true)
+        {
+            index = 0;
+            index_read = 0;
+            index_skip = 0;
+            startbuttonscript.start = false;
+        }
         //index_skip = index_read;
         //qstory = index + 1;
-
-
 
         if (SkipselectPanelScript.clicked_skip == true) {
             if(SkipselectPanelScript.first == true)
@@ -1229,7 +1235,7 @@ public class Story : MonoBehaviour
             _logtext.text += "\n";
         }
 
-        index_read = index;
+        //index_read = index;
 
 //オートモード
         if (qNum > qstory && (automode == 1 || automode == 3))
@@ -1284,7 +1290,7 @@ public class Story : MonoBehaviour
             MenuPanel.SetActive(false);
             
             //skip用
-                cannotskipAlertPanel.SetActive(false);
+                //cannotskipAlertPanel.SetActive(false);
             //
         }
 
