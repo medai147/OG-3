@@ -191,6 +191,7 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject SelectButton_3;
     [SerializeField] GameObject menubutton;
     [SerializeField] GameObject monthtext;
+    [SerializeField] GameObject monthTextPanel;
     [SerializeField] GameObject movePanel;
 
     private int selected = 0;
@@ -300,6 +301,7 @@ public class Story : MonoBehaviour
 
         //csvファイルからテキストを読み込み
         _storyArray = storyText.text.Replace(" ", "\u00A0");
+        _storyArray = storyText.text.Replace("@", heroineName);
         StringReader sr = new StringReader(_storyArray);
         sr.ReadLine();
         while (sr.Peek() > -1)
@@ -1086,6 +1088,7 @@ public class Story : MonoBehaviour
         //テキストボックスの色
         textcolorsr= _qdataList[index].textcolor;
         Image textboximage = (Image)textbox.GetComponent<Image>();
+        monthTextPanel.SetActive(true);
         if (int.Parse(textcolorsr) == 1)
         {
             textboximage.sprite = text_ouzi;
@@ -1109,6 +1112,7 @@ public class Story : MonoBehaviour
         else if (int.Parse(textcolorsr) == 5)
         {
             textboximage.sprite = clearSprite;
+            monthTextPanel.SetActive(false);
         }
         else if (int.Parse(textcolorsr) == 0)
         {
@@ -1135,22 +1139,31 @@ public class Story : MonoBehaviour
         if(index < 50)
         {
             _monthtext.text = "4月";
-        } else if(index == 50)
+        } else if(index >= 50 && index < 140)
         {
             _monthtext.text = "5月";
         }
-        else if (index == 124)
+        else if (index >= 140 && index < 191)
         {
             _monthtext.text = "6月";
         }
-        else if (index == 171)
+        else if (index >= 191 && index < 262)
         {
             _monthtext.text = "7月";
+        }
+        else if (index >= 262 && index < 287)
+        {
+            _monthtext.text = "10月";
+        }
+        else if (index >= 287 && index < 400)
+        {
+            _monthtext.text = "11月";
         }
 
 
         //ストーリーテキスト表示
         index_read = index; //skip用
+
         while (_qdataList[index].storyText.Length > messageCount)
         {
                 _story.text += _qdataList[index].storyText[messageCount];
