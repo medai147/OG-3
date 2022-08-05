@@ -82,6 +82,7 @@ public class Moveanimationsclipt : MonoBehaviour
             {
                 textrectTransform.sizeDelta += new Vector2(0, -smallspeed_text) * Time.deltaTime;
             }
+            
         }
         
     }
