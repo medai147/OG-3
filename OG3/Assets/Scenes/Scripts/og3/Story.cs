@@ -193,6 +193,16 @@ public class Story : MonoBehaviour
     [SerializeField] GameObject monthtext;
     [SerializeField] GameObject movePanel;
 
+    [SerializeField] GameObject[]autosetbutton = new GameObject[5];
+
+    [SerializeField] GameObject[]textsetbutton = new GameObject[5];
+
+    [SerializeField] GameObject[]sesetbutton = new GameObject[5];
+
+    [SerializeField] GameObject[]bgmsetbutton = new GameObject[5];
+
+    public Sprite settingbuttonimg;
+
     private int selected = 0;
 
     private int ouzi_point = 0;
@@ -1496,253 +1506,177 @@ public class Story : MonoBehaviour
 
     public void onClicked_settingbutton()
     {
+        MenuPanel.SetActive(false);
         settingPanel.SetActive(true);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if(novelspeedcount == 1)
-        {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, 43);
-        } else if(novelspeedcount == 2)
-        {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, 43);
-        } else if(novelspeedcount == 3)
-        {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, 43);
-        } else if(novelspeedcount == 4)
-        {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, 43);
-        } else
-        {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, 43);
-        }
 
-
-        if (autospeedcount == 1)
+        for(int i = 0; i < 5; i++)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, 129);
+            textsetbutton[i].GetComponent<Image>().sprite = null;
+            autosetbutton[i].GetComponent<Image>().sprite = null;
+            bgmsetbutton[i].GetComponent<Image>().sprite = null;
+            sesetbutton[i].GetComponent<Image>().sprite = null;
         }
-        else if (autospeedcount == 2)
+        
+        for(int i = 1; i < 6;i++)
         {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, 129);
-        }
-        else if (autospeedcount == 3)
-        {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, 129);
-        }
-        else if (autospeedcount == 4)
-        {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, 129);
-        }
-        else
-        {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, 129);
-        }
-
-
-        if (sevolumecount == 1)
-        {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, -52);
-        }
-        else if (sevolumecount == 2)
-        {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, -52);
-        }
-        else if (sevolumecount == 3)
-        {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, -52);
-        }
-        else if (sevolumecount == 4)
-        {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, -52);
-        }
-        else
-        {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, -52);
-        }
-
-        if (bgmvolumecount == 1)
-        {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-133, -138);
-        }
-        else if (bgmvolumecount == 2)
-        {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(-9, -138);
-        }
-        else if (bgmvolumecount == 3)
-        {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(91, -138);
-        }
-        else if (bgmvolumecount == 4)
-        {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(198, -138);
-        }
-        else
-        {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(275, -138);
+            if(novelspeedcount == i)
+            {
+                textsetbutton[i - 1].GetComponent<Image>().sprite = settingbuttonimg;
+            }
+            if(autospeedcount == i)
+            {
+                autosetbutton[i - 1].GetComponent<Image>().sprite = settingbuttonimg;
+            }
+            if(sevolumecount == i)
+            {
+                sesetbutton[i - 1].GetComponent<Image>().sprite = settingbuttonimg;
+            }
+            if(bgmvolumecount == i)
+            {
+                bgmsetbutton[i - 1].GetComponent<Image>().sprite = settingbuttonimg;
+            }
         }
 
     }
 
-    public void speedslidedrag()
+
+    public void onClicked_textspeed(int number)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect,Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= 43 + 43 && MousePos.y >= 43 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
+        for (int i = 0; i < 5; i++)
         {
-            speedslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 43);
+            textsetbutton[i].GetComponent<Image>().sprite = null;
+        }
+        switch (number)
+        {
+            case 1:
+                textsetbutton[0].GetComponent<Image>().sprite = settingbuttonimg;
+                novelspeedcount = 1;
+                break;
+            case 2:
+                textsetbutton[1].GetComponent<Image>().sprite = settingbuttonimg;
+                novelspeedcount = 2;
+                break;
+            case 3:
+                textsetbutton[2].GetComponent<Image>().sprite = settingbuttonimg;
+                novelspeedcount = 3;
+                break;
+            case 4:
+                textsetbutton[3].GetComponent<Image>().sprite = settingbuttonimg;
+                novelspeedcount = 4;
+                break;
+            case 5:
+                textsetbutton[4].GetComponent<Image>().sprite = settingbuttonimg;
+                novelspeedcount = 5;
+                break;
         }
     }
 
-    public void speedslidedrop()
+    public void onClicked_autospeed(int number)
     {
-        speedbar_x = speedslide.transform.position.x;
-        //Debug.Log(speedbar_x);
-        //Debug.Log(MousePos.y);
-        if (speedbar_x > 169.6606f && 219.5f >= speedbar_x)
+        for (int i = 0; i < 5; i++)
         {
-            novelspeedcount = 1;
+            autosetbutton[i].GetComponent<Image>().sprite = null;
         }
-        else if (speedbar_x > 219.5f && 270 >= speedbar_x)
+        switch (number)
         {
-            novelspeedcount = 2;
-        }
-        else if (speedbar_x > 270 && 346.5f >= speedbar_x)
-        {
-            novelspeedcount = 3;
-        }
-        else if (speedbar_x > 346.5f && 421.5f > speedbar_x)
-        {
-            novelspeedcount = 4;
-        }
-        else if (speedbar_x > 421.5f && 465.3495f > speedbar_x)
-        {
-            novelspeedcount = 5;
-        }
-
-    }
-
-    public void autoslidedrag()
-    {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= 129 + 43 && MousePos.y >= 129 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
-        {
-            autoslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, 129);
-        }
-    }
-    public void autoslidedrop()
-    {
-        autoslidebar_x = autoslide.transform.position.x;
-        //Debug.Log(autoslidebar_x);
-        //Debug.Log(MousePos.y);
-        if (autoslidebar_x > 169.6606f && 219.5f >= autoslidebar_x)
-        {
-            autospeedcount = 1;
-        }
-        else if (autoslidebar_x > 219.5f && 270 >= autoslidebar_x)
-        {
-            autospeedcount = 2;
-        }
-        else if (autoslidebar_x > 270 && 346.5f >= autoslidebar_x)
-        {
-            autospeedcount = 3;
-        }
-        else if (autoslidebar_x > 346.5f && 421.5f > autoslidebar_x)
-        {
-            autospeedcount = 4;
-        }
-        else if (autoslidebar_x > 421.5f && 465.3495f > autoslidebar_x)
-        {
-            autospeedcount = 5;
-        }
-
-    }
-
-    public void seslidedrag()
-    {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= -52 + 43 && MousePos.y >= -52 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
-        {
-            seslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, -52);
+            case 1:
+                autosetbutton[0].GetComponent<Image>().sprite = settingbuttonimg;
+                autospeedcount = 1;
+                break;
+            case 2:
+                autosetbutton[1].GetComponent<Image>().sprite = settingbuttonimg;
+                autospeedcount = 2;
+                break;
+            case 3:
+                autosetbutton[2].GetComponent<Image>().sprite = settingbuttonimg;
+                autospeedcount = 3;
+                break;
+            case 4:
+                autosetbutton[3].GetComponent<Image>().sprite = settingbuttonimg;
+                autospeedcount = 4;
+                break;
+            case 5:
+                autosetbutton[4].GetComponent<Image>().sprite = settingbuttonimg;
+                autospeedcount = 5;
+                break;
         }
     }
 
-    public void seslidedrop()
+    public void onClicked_sevol(int number)
     {
-        float x_se;
-        x_se = seslide.transform.position.x;
-        //Debug.Log(x_se);
-        //Debug.Log(MousePos.x);
-        if (x_se > 169.6606f && 219.5f >= x_se)
+        for (int i = 0; i < 5; i++)
         {
-            sevolumecount = 1;
-            sevolume = 0.1f;
+            sesetbutton[i].GetComponent<Image>().sprite = null;
         }
-        else if (x_se > 219.5f && 270 >= x_se)
+        switch (number)
         {
-            sevolumecount = 2;
-            sevolume = 0.25f;
+            case 1:
+                sesetbutton[0].GetComponent<Image>().sprite = settingbuttonimg;
+                sevolumecount = 1;
+                sevolume = 0.1f;
+                break;
+            case 2:
+                sesetbutton[1].GetComponent<Image>().sprite = settingbuttonimg;
+                sevolumecount = 2;
+                sevolume = 0.25f;
+                break;
+            case 3:
+                sesetbutton[2].GetComponent<Image>().sprite = settingbuttonimg;
+                sevolumecount = 3;
+                sevolume = 0.5f;
+                break;
+            case 4:
+                sesetbutton[3].GetComponent<Image>().sprite = settingbuttonimg;
+                sevolumecount = 4;
+                sevolume = 0.7f;
+                break;
+            case 5:
+                sesetbutton[4].GetComponent<Image>().sprite = settingbuttonimg;
+                sevolumecount = 5;
+                sevolume = 1;
+                break;
         }
-        else if (x_se > 270 && 346.5f >= x_se)
-        {
-            sevolumecount = 3;
-            sevolume = 0.5f;
-        }
-        else if (x_se > 346.5f && 421.5f > x_se)
-        {
-            sevolumecount = 4;
-            sevolume = 0.7f;
-        }
-        else if (x_se > 421.5f && 465.3495f > x_se)
-        {
-            sevolumecount = 5;
-            sevolume = 1;
-        }
-
         sounds[1].volume = sevolume;
     }
 
-
-    public void bgmslidedrag()
+    public void onClicked_bgmvol(int number)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, Input.mousePosition, canvas.worldCamera, out MousePos);
-        if ((MousePos.y <= -138 + 43 && MousePos.y >= -138 - 43) && MousePos.x > -149.36 && 291.96 > MousePos.x)
+        for (int i = 0; i < 5; i++)
         {
-            bgmslide.GetComponent<RectTransform>().anchoredPosition = new Vector2(MousePos.x, -138);
+            bgmsetbutton[i].GetComponent<Image>().sprite = null;
         }
-    }
-
-    public void bgmslidedrop()
-    {
-        float x_bgm;
-        x_bgm = bgmslide.transform.position.x;
-        //Debug.Log(x_se);
-        //Debug.Log(MousePos.x);
-        if (x_bgm > 169.6606f && 219.5f >= x_bgm)
+        switch (number)
         {
-            bgmvolumecount = 1;
-            bgmvolume = 0.1f;
+            case 1:
+                bgmsetbutton[0].GetComponent<Image>().sprite = settingbuttonimg;
+                bgmvolumecount = 1;
+                bgmvolume = 0.1f;
+                break;
+            case 2:
+                bgmsetbutton[1].GetComponent<Image>().sprite = settingbuttonimg;
+                bgmvolumecount = 2;
+                bgmvolume = 0.25f;
+                break;
+            case 3:
+                bgmsetbutton[2].GetComponent<Image>().sprite = settingbuttonimg;
+                bgmvolumecount = 3;
+                bgmvolume = 0.5f;
+                break;
+            case 4:
+                bgmsetbutton[3].GetComponent<Image>().sprite = settingbuttonimg;
+                bgmvolumecount = 4;
+                bgmvolume = 0.7f;
+                break;
+            case 5:
+                bgmsetbutton[4].GetComponent<Image>().sprite = settingbuttonimg;
+                bgmvolumecount = 5;
+                bgmvolume = 1;
+                break;
         }
-        else if (x_bgm > 219.5f && 270 >= x_bgm)
-        {
-            bgmvolumecount = 2;
-            bgmvolume = 0.25f;
-        }
-        else if (x_bgm > 270 && 346.5f >= x_bgm)
-        {
-            bgmvolumecount = 3;
-            bgmvolume = 0.5f;
-        }
-        else if (x_bgm > 346.5f && 421.5f > x_bgm)
-        {
-            bgmvolumecount = 4;
-            bgmvolume = 0.7f;
-        }
-        else if (x_bgm > 421.5f && 465.3495f > x_bgm)
-        {
-            bgmvolumecount = 5;
-            bgmvolume = 1;
-        }
-        
         sounds[0].volume = bgmvolume;
     }
+
 
     public void OnClicked_SEMuteButton()
     {
