@@ -142,7 +142,6 @@ public class Story : MonoBehaviour
     public AudioClip bgm7; //room
 
     public AudioClip[] cv;
-
     public AudioClip se1;
     public AudioClip Jingle;
     public AudioClip se2;
@@ -169,7 +168,7 @@ public class Story : MonoBehaviour
     public int savenum = 0;
     public int menucount = 0;
     public int nameinput = 0;
-    public int automode = 0;
+    public static int automode = 0;
     public float novelSpeed; //表示の速さ
     private int click = 0;
     public int messageCount = 0;
@@ -355,9 +354,10 @@ public class Story : MonoBehaviour
 
     private IEnumerator Novel(int index)
     {
-        Debug.Log("index:" + index + " , index_read:" + index_read + " , index_skip:" + index_skip + " , qstory:" + qstory + "ouzi_point: " + ouzi_point + "hikaru_point: " + hikaru_point + "rukia_point: " + rukia_point);
+        //Debug.Log("index:" + index + " , index_read:" + index_read + " , index_skip:" + index_skip + " , qstory:" + qstory + "ouzi_point: " + ouzi_point + "hikaru_point: " + hikaru_point + "rukia_point: " + rukia_point);
         PlayerPrefs.SetString("MOVETEXT", _qdataList[index].moveanimation);
         PlayerPrefs.Save();
+        Debug.Log(automode);
 
         //skip用
         index_read = index;
@@ -1292,6 +1292,14 @@ public class Story : MonoBehaviour
     public void onClicked_closebutton()
     {
         MenuPanel.SetActive(false);
+        if(automode == 4)
+        {
+            automode = 1;
+            if (_qdataList[index_read].storyText.Length == messageCount)
+            {
+                StartCoroutine(Novel(qstory++));
+            }
+        }
     }
     public void onClick_Menu()
     {
@@ -1308,7 +1316,10 @@ public class Story : MonoBehaviour
         }
         if ( MenuPanel.activeSelf == false && menucount == 0)
         {
-            automode = 0;
+            if (automode == 1 || automode == 3)
+            {
+                automode = 4;
+            }
             savenum = 1;
             PlayerPrefs.SetInt("SAVE", savenum);
             PlayerPrefs.Save();
@@ -1330,8 +1341,12 @@ public class Story : MonoBehaviour
     public void onClick_Screenbutton()
     {
 
-        if (automode == 0)
+        if (automode == 0 || automode == 4)
         {
+            if(automode == 4)
+            {
+                automode = 0;
+            }
             if (click == 0)
             {
                 novelSpeed = 0;
@@ -1737,7 +1752,7 @@ public class Story : MonoBehaviour
     {
         settingPanel.SetActive(false);
         
-        MenuPanel.SetActive(false);
+        MenuPanel.SetActive(true);
     }
 
     public void onClicked_Autobutton()

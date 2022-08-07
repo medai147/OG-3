@@ -6,7 +6,7 @@ public class CloselogButtonScript : MonoBehaviour
 {
     [SerializeField] GameObject logPanel;
     [SerializeField] GameObject Screenbutton;
-
+    [SerializeField] GameObject menuPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +23,6 @@ public class CloselogButtonScript : MonoBehaviour
     {
         logPanel.SetActive(false);
         Screenbutton.SetActive(true);
+        menuPanel.SetActive(true);
     }
 }

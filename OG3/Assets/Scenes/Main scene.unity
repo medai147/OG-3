@@ -1371,7 +1371,6 @@ MonoBehaviour:
   savenum: 0
   menucount: 0
   nameinput: 0
-  automode: 0
   novelSpeed: 0.1
   messageCount: 0
   sevolume: 0
@@ -8916,6 +8915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logPanel: {fileID: 517198359}
   Screenbutton: {fileID: 527820360}
+  menuPanel: {fileID: 886290452}
 --- !u!1 &1502263598
 GameObject:
   m_ObjectHideFlags: 0

@@ -87,6 +87,7 @@ public class menusclipt : MonoBehaviour
             SelectButtonPanel.SetActive(true);
             Screenbutton.SetActive(false);
         }
+        MenuPanel.SetActive(true);
         deleteResetButton.SetActive(false);
     }
 
