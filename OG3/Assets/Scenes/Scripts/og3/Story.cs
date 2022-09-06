@@ -362,6 +362,9 @@ public class Story : MonoBehaviour
         //skip用
         index_read = index;
 
+        //文化祭で選んだキャラクター
+        int character_schoolfestival = 0; //おうじ:1　ひかる:2　るきあ:3
+
         if(startbuttonscript.start == true)
         {
             index = 0;
@@ -422,34 +425,111 @@ public class Story : MonoBehaviour
         }
         if(index == 318 && !(ouzi_point < 3) && ouzi_point > 0) //おうじOK
         {
+            index_read = index;
+            index_skip = 401 - 1;
+            qstory = index_skip;
+            index = index_skip;
+            character_schoolfestival = 1;
             //stopStorybool = true;
-            yield break;
+            //yield break;
         }
         if (index == 323 && ouzi_point < 3 && ouzi_point > 0) //おうじBAD
         {
+            index_read = index;
+            index_skip = 401 - 1;
+            qstory = index_skip;
+            index = index_skip;
+            character_schoolfestival = 1;
             //stopStorybool = true;
-            yield break;
+            //yield break;
         }
         if (index == 355 && !(hikaru_point < 3) && hikaru_point > 0) //ひかるOK
         {
+            index_read = index;
+            index_skip = 401 - 1;
+            qstory = index_skip;
+            index = index_skip;
+            character_schoolfestival = 2;
             //stopStorybool = true;
-            yield break;
+            //yield break;
         }
         if (index == 363 && hikaru_point < 3 && hikaru_point > 0) //ひかるBAD
         {
+            index_read = index;
+            index_skip = 401 - 1;
+            qstory = index_skip;
+            index = index_skip;
+            character_schoolfestival = 2;
             //stopStorybool = true;
-            yield break;
+            //yield break;
         }
         if (index == 391 && !(rukia_point < 3) && rukia_point > 0) //るきあOK
         {
+            index_read = index;
+            index_skip = 401 - 1;
+            qstory = index_skip;
+            index = index_skip;
+            character_schoolfestival = 3;
             //stopStorybool = true;
-            yield break;
+            //yield break;
         }
         if (index == 400 && rukia_point < 3 && rukia_point > 0) //るきあBAD
         {
+            index_read = index;
+            index_skip = 401 - 1;
+            qstory = index_skip;
+            index = index_skip;
+            character_schoolfestival = 3;
             //stopStorybool = true;
+            //yield break;
+        }
+        if(index == 416) //12月 るきあ
+        {
+            index_read = index;
+            if (rukia_point < 3)
+            {
+                index_skip = 425 - 1;
+            } else if(rukia_point == 0)
+            {
+                index_skip = 448 - 1;
+            }
+            qstory = index_skip;
+            index = index_skip;
+        }
+        if (index == 477) //12月 おうじ
+        {
+            index_read = index;
+            if (ouzi_point < 3)
+            {
+                index_skip = 485 - 1;
+            }
+            else if (ouzi_point == 0)
+            {
+                index_skip = 509 - 1;
+            }
+            qstory = index_skip;
+            index = index_skip;
+        }
+        if (index == 535) //12月 ひかる
+        {
+            index_read = index;
+            if (hikaru_point < 3)
+            {
+                index_skip = 543 - 1;
+            }
+            else if (hikaru_point == 0)
+            {
+                index_skip = 568 - 1;
+            }
+            qstory = index_skip;
+            index = index_skip;
+        }
+        if(index == 323 - 1 || index == 363 - 1 || index == 400 - 1 || index == 440 - 1 || index == 457 - 1 || index == 465 - 1 || index == 473 - 1 || index == 493 - 1 || index == 517 - 1 || index == 524 - 1 || index == 531 - 1 || index == 560 - 1 || index == 577 - 1 || index == 586 - 1 || index == 593 - 1 || index == 602 - 1)
+        {
+            Debug.Log("エンディング");
             yield break;
         }
+
         /*
         if (index == 314) //おうじ文化祭からラスト
         {
@@ -1360,7 +1440,7 @@ public class Story : MonoBehaviour
                 //if (selected != 0) {
                 //    selected = 0;
                 //}
-                if (!( index_skip == 400))  //とめるところ selected == 2 &&  || stopStorybool == true)
+                if (!( index_skip == 602))  //とめるところ selected == 2 &&  || stopStorybool == true)
                 {
                     StartCoroutine(Novel(qstory++));
                     click = 0;
@@ -1390,6 +1470,10 @@ public class Story : MonoBehaviour
             rukia_point += 1;
             Debug.Log("るきあポイント1加算");
             index_skip = 379 - 2;
+        }
+        else if (index_read == 411)  //12月 るきあ
+        {
+            index_skip = 413 - 2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1459,6 +1543,10 @@ public class Story : MonoBehaviour
             {
                 index_skip = 392 - 2;
             }
+        }
+        else if (index_read == 411)  //12月 おうじ
+        {
+            index_skip = 474 - 2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);
@@ -1536,6 +1624,10 @@ public class Story : MonoBehaviour
             {
                 index_skip = 392 - 2;
             }
+        }
+        else if (index_read == 411)  //12月 ひかる
+        {
+            index_skip = 532 - 2;
         }
         SelectButtonPanel.SetActive(false);
         ScreenButton.SetActive(true);

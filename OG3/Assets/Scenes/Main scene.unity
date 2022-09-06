@@ -1364,7 +1364,7 @@ MonoBehaviour:
   Jingle: {fileID: 8300000, guid: e374bebd834284c4bbdfcb891be38113, type: 3}
   se2: {fileID: 8300000, guid: 8bd7b6f24683e55458470201f0472b7c, type: 3}
   storyText: {fileID: 4900000, guid: a1ff82b0501e08c4ba3a24fe83f56bca, type: 3}
-  logstoryText: {fileID: 4900000, guid: 3c0ffe89379a845439c9ee899c91644b, type: 3}
+  logstoryText: {fileID: 4900000, guid: 37213f1a1599c344cb91fc83ea7294d2, type: 3}
   logspace: "\_\_\_\_\_\_\_\_\_\_\_\_"
   qstory: 0
   qNum: 0
