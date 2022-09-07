@@ -8,22 +8,22 @@ using UnityEngine.UI;
 
 public class minimenusclipt : MonoBehaviour
 {
-    int nowcoin;
+    //int nowcoin;
     public Text cointext;
-    static int count;
+    //static int count;
 
     // Start is called before the first frame update
     void Start()
     {
 
-        Debug.Log("カウント" + count);
-        count = PlayerPrefs.GetInt("COUNTERCOUNT");
-        nowcoin = PlayerPrefs.GetInt("NOWCOIN");
-        if (count == 0)
-        {
-            nowcoin = 0;
-        }
-        cointext.text = "所持金:" + nowcoin;
+        //Debug.Log("カウント" + count);
+        //count = PlayerPrefs.GetInt("COUNTERCOUNT");
+        //nowcoin = PlayerPrefs.GetInt("NOWCOIN");
+        //if (count == 0)
+        //{
+            //nowcoin = 0;
+        //}
+        //cointext.text = "所持金:" + nowcoin;
 
     }
 
@@ -31,8 +31,8 @@ public class minimenusclipt : MonoBehaviour
     void Update()
     {
 
-        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+        //PlayerPrefs.Save();
     }
 
     public void onClicked_icebutton()

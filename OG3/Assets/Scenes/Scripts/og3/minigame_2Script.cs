@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class minigame_2Script : MonoBehaviour
 {
-    int nowcoin;
+    //int nowcoin;
 
     string ice1 = "";
     string ice2 = "";
@@ -80,7 +80,7 @@ public class minigame_2Script : MonoBehaviour
         gamePanel3.SetActive(false);
         resultPanel.SetActive(false);
 
-        nowcoin = PlayerPrefs.GetInt("NOWCOIN");
+        //nowcoin = PlayerPrefs.GetInt("NOWCOIN");
     }
 
     // Update is called once per frame
@@ -106,9 +106,9 @@ public class minigame_2Script : MonoBehaviour
                     {
                         if (coincount == false)
                         {
-                            nowcoin += 30;
-                            PlayerPrefs.SetInt("NOWCOIN", nowcoin);
-                            PlayerPrefs.Save();
+                            GameManager.instance.coin += 30;
+                            //PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+                            //PlayerPrefs.Save();
                             coincount = true;
                         }
                         coinText.GetComponent<Text>().text = "30コインゲット！";
@@ -122,7 +122,7 @@ public class minigame_2Script : MonoBehaviour
                 {
                     coinText.GetComponent<Text>().text = "失敗… 給料無し！";
                 }
-                nowcointext.GetComponent<Text>().text = "所持金: " + nowcoin;
+                nowcointext.GetComponent<Text>().text = "所持金: " + GameManager.instance.coin;
             }
         }
     }

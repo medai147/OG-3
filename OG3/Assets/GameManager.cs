@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public bool[] getimage = new bool[6];
 
     public int storyindex;
+
+    public int coin;
     private void Awake()
     {
         if (instance == null)
@@ -20,6 +22,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        coin = PlayerPrefs.GetInt("COIN", 0);
     }
 
     // Start is called before the first frame update
@@ -32,5 +36,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("COIN", coin);
+        PlayerPrefs.Save();
     }
 }

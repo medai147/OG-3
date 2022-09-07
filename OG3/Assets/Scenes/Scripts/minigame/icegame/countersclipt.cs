@@ -9,8 +9,8 @@ public class countersclipt : MonoBehaviour
     private int ice;
     private int score;
     private int finishcount;
-    private static int nowcoin;
-    private static int count;
+    //private static int nowcoin;
+    //private static int count;
     public Text scoretext;
     public Text icetext;
     public Text finishscoretext;
@@ -32,17 +32,17 @@ public class countersclipt : MonoBehaviour
         sounds[0].clip = ice_bgm;
         sounds[0].Play();
 
-        count++;
-        PlayerPrefs.SetInt("COUNTERCOUNT", count);
-        PlayerPrefs.Save();
+        //count++;
+        //PlayerPrefs.SetInt("COUNTERCOUNT", count);
+        //PlayerPrefs.Save();
         ice =  Random.Range(1, 4);
     }
 
     // Update is called once per frame
     void Update()
     {
-        nowcoin = PlayerPrefs.GetInt("NOWCOIN");
-        startcointext.text = "所持金:" + nowcoin;
+        //nowcoin = PlayerPrefs.GetInt("NOWCOIN");
+        startcointext.text = "所持金:" + GameManager.instance.coin;
         scoretext.text =score.ToString();
         if (finishpanel.activeSelf == true)
         {
@@ -109,20 +109,20 @@ public class countersclipt : MonoBehaviour
         if (score > 30 && finishpanel.activeSelf == true)
         {
             getcointext.text = "30コインゲット！";
-            nowcoin += 30;
+            GameManager.instance.coin += 30;
             score = 0;
 
         }
         else if (score > 25 && finishpanel.activeSelf == true)
         {
             getcointext.text = "25コインゲット！";
-            nowcoin += 25;
+            GameManager.instance.coin += 25;
             score = 0;
         }
         else if (score > 20 && finishpanel.activeSelf == true)
         {
             getcointext.text = "20コインゲット！";
-            nowcoin += 20;
+            GameManager.instance.coin += 20;
             score = 0;
         }
         else if (score >= 0 && finishpanel.activeSelf == true)
@@ -130,8 +130,8 @@ public class countersclipt : MonoBehaviour
             getcointext.text = "給料無し！";
             score = 0;
         }
-        cointext.text = "所持金:" + nowcoin;
-        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
-        PlayerPrefs.Save();
+        cointext.text = "所持金:" + GameManager.instance.coin;
+        //PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+        //PlayerPrefs.Save();
     }
 }

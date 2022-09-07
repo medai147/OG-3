@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class gachasclipt : MonoBehaviour
 {
     int value;
-    int nowcoin;
+    //int nowcoin;
     public Sprite bearsprite;
     public Sprite ringsprite;
 
@@ -30,25 +30,25 @@ public class gachasclipt : MonoBehaviour
     {
         resultpanel.SetActive(false);
         fa = GetComponent<AudioSource>();
-        nowcoin = PlayerPrefs.GetInt("NOWCOIN");
+        //nowcoin = PlayerPrefs.GetInt("NOWCOIN");
     }
 
     // Update is called once per frame
     void Update()
     {
-        cointext.text = "所持金:" + nowcoin;
-        PlayerPrefs.SetInt("NOWCOIN", nowcoin);
-        PlayerPrefs.Save();
+        cointext.text = "所持金:" + GameManager.instance.coin;
+        //PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+        //PlayerPrefs.Save();
         MoveText();
     }
 
     public void onClicked_gacha()
     {
-        if (nowcoin >= 50)
+        if (GameManager.instance.coin >= 50)
         {
-            nowcoin -= 50;
-            PlayerPrefs.SetInt("NOWCOIN", nowcoin);
-            PlayerPrefs.Save();
+            GameManager.instance.coin -= 50;
+            //PlayerPrefs.SetInt("NOWCOIN", nowcoin);
+            //PlayerPrefs.Save();
             fa.Play();
             resultpanel.SetActive(true);
             value = Random.Range(0, 2);
