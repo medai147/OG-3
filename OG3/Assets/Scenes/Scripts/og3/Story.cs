@@ -723,32 +723,32 @@ public class Story : MonoBehaviour
         }
         else if (int.Parse(stillsr) == 4)
         {
-            GameManager.instance.getimage[0] = true;
+            GameManager.instance.getimage[0] = 1;
             stillimage.sprite = still_AprilSprite;   
         }
         else if (int.Parse(stillsr) == 5)
         {
-            GameManager.instance.getimage[1] = true;
+            GameManager.instance.getimage[1] = 1;
             stillimage.sprite = still_May_hikaruSprite;
         }
         else if (int.Parse(stillsr) == 6)
         {
-            GameManager.instance.getimage[2] = true;
+            GameManager.instance.getimage[2] = 1;
             stillimage.sprite = still_June_ouziSprite;
         }
         else if (int.Parse(stillsr) == 71)
         {
-            GameManager.instance.getimage[3] = true;
+            GameManager.instance.getimage[3] = 1;
             stillimage.sprite = still_July_rukiaSprite; //7月
         }
         else if (int.Parse(stillsr) == 72)
         {
-            GameManager.instance.getimage[4] = true;
+            GameManager.instance.getimage[4] = 1;
             stillimage.sprite = still_July_ouziSprite; //7月
         }
         else if (int.Parse(stillsr) == 73)
         {
-            GameManager.instance.getimage[5] = true;
+            GameManager.instance.getimage[5] = 1;
             stillimage.sprite = still_July_hikaruSprite; //7月
         }
         else if (int.Parse(stillsr) == 81)

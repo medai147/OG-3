@@ -26,7 +26,7 @@ public class minigamesclipt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("スタート：" + startchange);
+        //Debug.Log("スタート：" + startchange);
     }
     public void minigame_onClicked()
     {

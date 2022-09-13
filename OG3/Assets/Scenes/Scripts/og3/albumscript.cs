@@ -14,7 +14,7 @@ public class albumscript : MonoBehaviour
     {
       for(int i = 0; i < GameManager.instance.getimage.Length; i++)
         {
-            if(GameManager.instance.getimage[i] == true)
+            if(GameManager.instance.getimage[i] == 1)
             {
                 albumcolumn[i].GetComponent<Image>().sprite = still[i];
             }
@@ -54,7 +54,7 @@ public class albumscript : MonoBehaviour
 
     void click(int num)
     {
-        if (GameManager.instance.getimage[num])
+        if (GameManager.instance.getimage[num] == 1)
         {
             fullimage.SetActive(true);
             backbutton.SetActive(false);

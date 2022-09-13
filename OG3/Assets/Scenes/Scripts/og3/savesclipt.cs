@@ -251,8 +251,8 @@ public class savesclipt : MonoBehaviour
                 if (savenum == 0)
                 {
                     loadPanel.SetActive(true);
-                    Image loadimage = (Image)loadstill.GetComponent<Image>();
-                    loadimage.sprite = loadsprite;
+                    //Image loadimage = (Image)loadstill.GetComponent<Image>();
+                    //loadimage.sprite = loadsprite;
                     PlayerPrefs.SetInt("NUMBERLOAD", savenum);
                     PlayerPrefs.Save();
                     PlayerPrefs.SetInt("NAMEINPUT", 1);
@@ -263,8 +263,8 @@ public class savesclipt : MonoBehaviour
                 else
                 {
                     loadPanel.SetActive(true);
-                    Image loadimage = (Image)loadstill.GetComponent<Image>();
-                    loadimage.sprite = loadsprite;
+                    //Image loadimage = (Image)loadstill.GetComponent<Image>();
+                    //loadimage.sprite = loadsprite;
                     PlayerPrefs.SetInt("NUMBERLOAD",savenum - 1);
                     PlayerPrefs.Save();
                     PlayerPrefs.SetInt("NAMEINPUT", 1);
