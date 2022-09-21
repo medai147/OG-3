@@ -94,27 +94,27 @@ public class Moveanimationsclipt : MonoBehaviour
             movetxtnum = int.Parse(PlayerPrefs.GetString("MOVETEXT"));
             if (movetxtnum == 1)
             {
-                text.text = "¤“XŠX";
+                text.text = "å•†åº—è¡—";
             }
             else if (movetxtnum == 2)
             {
-                text.text = "ƒtƒ@ƒ“ƒV[ƒVƒ‡ƒbƒv";
+                text.text = "ãƒ•ã‚¡ãƒ³ã‚·ãƒ¼ã‚·ãƒ§ãƒƒãƒ—";
             }
             else if (movetxtnum == 3)
             {
-                text.text = "‹³º";
+                text.text = "æ•™å®¤";
             }
             else if (movetxtnum == 4)
             {
-                text.text = "•”‰®";
+                text.text = "éƒ¨å±‹";
             }
             else if (movetxtnum == 5)
             {
-                text.text = "‘qŒÉ";
+                text.text = "å€‰åº«";
             }
             else if (movetxtnum == 6)
             {
-                text.text = "•ÛŒ’º";
+                text.text = "ä¿å¥å®¤";
             }
         }
     }
