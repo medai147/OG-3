@@ -98,7 +98,7 @@ public class Moveanimationsclipt : MonoBehaviour
             }
             else if (movetxtnum == 2)
             {
-                text.text = "ファンシーショップ";
+                text.text = "ファンシーショップaaa";
             }
             else if (movetxtnum == 3)
             {
