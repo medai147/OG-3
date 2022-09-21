@@ -37,7 +37,7 @@ public class Startsclipt : MonoBehaviour
             countTime = 30;
             finishpanel.SetActive(true);
         }
-        Debug.Log(countTime);
+        //Debug.Log(countTime);
     }
     public void onClicked_startbutton()
     {
