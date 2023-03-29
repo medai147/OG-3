@@ -636,6 +636,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e220495700dd4448927ec28c3ffb40, type: 3}
+--- !u!1 &251421271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1333821667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &335352324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1134,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
     type: 3}
   m_PrefabInstance: {fileID: 1143653521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &529089575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1383112413}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &588264886 stripped
 RectTransform:
@@ -2148,7 +2160,7 @@ GameObject:
   - component: {fileID: 1004045931}
   - component: {fileID: 1004045930}
   m_Layer: 5
-  m_Name: albumnextbutton
+  m_Name: scenarionextbutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2167,7 +2179,7 @@ RectTransform:
   m_Children:
   - {fileID: 1792135231}
   m_Father: {fileID: 1401896124}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2341,6 +2353,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045013886}
   m_CullTransparentMesh: 1
+--- !u!1 &1056718448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1935713161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1064756005 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
@@ -2906,7 +2924,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -3001,7 +3019,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_Name
-      value: albumbutton (3)
+      value: scenariobutton (3)
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -3012,7 +3030,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898109756}
+      objectReference: {fileID: 1401896127}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3021,7 +3039,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: albumscript, Assembly-CSharp
+      value: scenarioscript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -3402,7 +3420,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_Name
-      value: albumbutton
+      value: scenariobutton
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341426, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -3424,7 +3442,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898109756}
+      objectReference: {fileID: 1401896127}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3433,7 +3451,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: albumscript, Assembly-CSharp
+      value: scenarioscript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -3538,6 +3556,7 @@ GameObject:
   - component: {fileID: 1401896124}
   - component: {fileID: 1401896126}
   - component: {fileID: 1401896125}
+  - component: {fileID: 1401896127}
   m_Layer: 5
   m_Name: scenarioPanel
   m_TagString: Untagged
@@ -3559,11 +3578,11 @@ RectTransform:
   - {fileID: 1364977431}
   - {fileID: 1383112414}
   - {fileID: 1727357667}
+  - {fileID: 2116588558}
   - {fileID: 1333821668}
   - {fileID: 1935713162}
   - {fileID: 1476945623}
   - {fileID: 1004045929}
-  - {fileID: 2116588558}
   - {fileID: 1542853299}
   m_Father: {fileID: 497211868}
   m_RootOrder: 2
@@ -3611,6 +3630,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1401896123}
   m_CullTransparentMesh: 1
+--- !u!114 &1401896127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401896123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e5465fb60a63041b257d4fbf50245f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenariocolumn:
+  - {fileID: 529089575}
+  - {fileID: 1933684632}
+  - {fileID: 1685169477}
+  - {fileID: 251421271}
+  - {fileID: 1056718448}
+  - {fileID: 1519668641}
+  getContents:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullimage: {fileID: 1542853298}
+  backbutton: {fileID: 347001862}
 --- !u!1 &1404025152
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,7 +3991,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -4039,7 +4086,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_Name
-      value: albumbutton (5)
+      value: scenariobutton (5)
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -4050,7 +4097,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898109756}
+      objectReference: {fileID: 1401896127}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -4059,7 +4106,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: albumscript, Assembly-CSharp
+      value: scenarioscript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -4235,6 +4282,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504485644}
   m_CullTransparentMesh: 1
+--- !u!1 &1519668641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1476945622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1542853298
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,8 +4371,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 898109756}
-        m_TargetAssemblyTypeName: albumscript, Assembly-CSharp
+      - m_Target: {fileID: 1401896127}
+        m_TargetAssemblyTypeName: scenarioscript, Assembly-CSharp
         m_MethodName: onClicked_fullimage
         m_Mode: 1
         m_Arguments:
@@ -4447,6 +4500,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647056037}
   m_CullTransparentMesh: 0
+--- !u!1 &1685169477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
+    type: 3}
+  m_PrefabInstance: {fileID: 2116588557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &1709528909
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -4775,7 +4834,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_Name
-      value: albumbutton (1)
+      value: scenariobutton (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341426, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -4797,7 +4856,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898109756}
+      objectReference: {fileID: 1401896127}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -4806,7 +4865,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: albumscript, Assembly-CSharp
+      value: scenarioscript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -5367,6 +5426,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886642104}
   m_CullTransparentMesh: 1
+--- !u!1 &1933684632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1727357666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1935713161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5387,7 +5452,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -5482,7 +5547,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_Name
-      value: albumbutton (4)
+      value: scenariobutton (4)
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -5493,7 +5558,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898109756}
+      objectReference: {fileID: 1401896127}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5502,7 +5567,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: albumscript, Assembly-CSharp
+      value: scenarioscript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -5621,7 +5686,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341424, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -5716,7 +5781,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341425, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_Name
-      value: albumbutton (2)
+      value: scenariobutton (2)
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
@@ -5727,7 +5792,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 898109756}
+      objectReference: {fileID: 1401896127}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -5736,7 +5801,7 @@ PrefabInstance:
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: albumscript, Assembly-CSharp
+      value: scenarioscript, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9033050604933341427, guid: d7e220495700dd4448927ec28c3ffb40,
         type: 3}

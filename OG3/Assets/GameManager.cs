@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public int[] getimage = new int[6];
 
+    public int[] getcontent = new int[6];
     public int storyindex;
 
     public int coin;
