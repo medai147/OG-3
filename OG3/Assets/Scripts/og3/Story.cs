@@ -228,7 +228,8 @@ public class Story : MonoBehaviour
     float time;
     bool autoclick;
 
-    public static bool isFade = false;
+
+    private bool storystop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -1365,7 +1366,6 @@ public class Story : MonoBehaviour
     {
         //Menu();
         auto();
-        nextNovel();
         //Debug.Log(MousePos.y);
         //Debug.Log("qstory:" + qstory);
     }
@@ -1964,14 +1964,7 @@ public class Story : MonoBehaviour
         }
     }
 
-    public void nextNovel()
-    {
-        if(isFade == true)
-        {
-            StartCoroutine(Novel(qstory++));
-            isFade = false;
-        }
-    }
+
 
 }
 
