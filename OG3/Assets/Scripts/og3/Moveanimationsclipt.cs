@@ -38,6 +38,7 @@ public class Moveanimationsclipt : MonoBehaviour
 
     public void imagemove()
     {
+        Debug.Log("count:" + count);
         if (imagerectTransform.sizeDelta.y < 70 && bigmove == true)
         {
             imagerectTransform.sizeDelta += new Vector2(0, +bigspeed) * Time.deltaTime;
