@@ -26,7 +26,7 @@ public class Story : MonoBehaviour
     public GameObject still;
     public GameObject month;
     public GameObject monthtxtback;
-    public Sprite clearSprite;
+    /*public Sprite clearSprite;
     public Sprite ouziSprite;
     public Sprite rukiaSprite;
     public Sprite hikaruSprite;
@@ -43,9 +43,9 @@ public class Story : MonoBehaviour
     public Sprite ouziojishockSprite;
     public Sprite rukiatroubleSprite;
     public Sprite rukiaojismileSprite;
-    public Sprite statueSprite;
+    public Sprite statueSprite;*/
     //背景
-    public Sprite back_classroomSprite;
+    /*public Sprite back_classroomSprite;
     public Sprite back_corridorSprite;
     public Sprite back_stairsSprite;
     public Sprite back_gardenSprite;
@@ -67,6 +67,7 @@ public class Story : MonoBehaviour
     public Sprite back_myroom_morningSprite;
     public Sprite back_myroom_nightSprite;
     public Sprite blackSprite;
+    */
 
     //スチル
     public Sprite still_clearSprite;
@@ -78,6 +79,7 @@ public class Story : MonoBehaviour
     public Sprite still_July_hikaruSprite;
     public Sprite still_August_hikaruSprite;
     public Sprite still_August_ouziSprite;
+
     //月
     public Sprite month_clearSprite;
     public Sprite month_MaySprite;
@@ -91,13 +93,16 @@ public class Story : MonoBehaviour
     public Sprite month_JanuarySprite;
     public Sprite month_FebruarySprite;
 
+
     //名前の色
+    /*
     public Sprite text_own;
     public Sprite text_ouzi;
     public Sprite text_hikaru;
     public Sprite text_rukia;
     public Sprite text_mob;
     public Sprite text_monologue; //心の声
+    */
 
     //選択ボタンの色
     public Sprite select_now;
@@ -234,7 +239,6 @@ public class Story : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //設定画面用
         //speedslide = GameObject.Find("slideonimage").GetComponent<Image>();
         canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
@@ -346,6 +350,7 @@ public class Story : MonoBehaviour
         }
         //
 
+        //最初のスタートだから変更無し
         StartCoroutine(Novel(qstory++));
 
 
@@ -833,332 +838,25 @@ public class Story : MonoBehaviour
         //背景
         backsr = _qdataList[index].backimage;
         Image backimage = (Image)background.GetComponent<Image>();
-        if (int.Parse(backsr) == 1)
-        {
-            backimage.sprite = back_corridorSprite;
-        }
-        else if (int.Parse(backsr) == 2)
-        {
-            backimage.sprite = back_stairsSprite;
-        }
-        else if (int.Parse(backsr) == 0)
-        {
-            backimage.sprite = back_classroomSprite;
-        }
-        else if (int.Parse(backsr) == 3)
-        {
-            backimage.sprite = back_gardenSprite;
-        }
-        else if (int.Parse(backsr) == 4)
-        {
-            backimage.sprite = back_schoolSprite;
-        }
-        else if (int.Parse(backsr) == 5)
-        {
-            backimage.sprite = back_dispensarySprite;
-        }
-        else if (int.Parse(backsr) == 24)
-        {
-            backimage.sprite = blackSprite;
-        }
-        else if (int.Parse(backsr) == 6)
-        {
-            backimage.sprite = back_gymSprite;
-        }
-        else if (int.Parse(backsr) == 30)
-        {
-            backimage.sprite = still_AprilSprite;
-        }
-        else if (int.Parse(backsr) == 31)
-        {
-            backimage.sprite = still_May_hikaruSprite;
-        }
-        else if (int.Parse(backsr) == 8) {
-            backimage.sprite = back_shoploadSprite;
-        }
-        else if (int.Parse(backsr) == 9)
-        {
-            backimage.sprite = back_fancyshopSprite;
-        }
-        else if (int.Parse(backsr) == 12)
-        {
-            backimage.sprite = back_heroineroom_nightSprite;
-        }
-        else if (int.Parse(backsr) == 11)
-        {
-            backimage.sprite = back_heroineroom_noonSprite;
-        }
-        else if (int.Parse(backsr) == 7)
-        {
-            backimage.sprite = back_ground_noonSprite;
-        }
-        else if (int.Parse(backsr) == 10)
-        {
-            backimage.sprite = back_cafeSprite;
-        }
-        else if (int.Parse(backsr) == 13)
-        {
-            backimage.sprite = back_garageSprite;
-        }
-        else if (int.Parse(backsr) == 14)
-        {
-            backimage.sprite = back_classroom_afternoonSprite;
-        }
-        else if (int.Parse(backsr) == 15)
-        { 
-            backimage.sprite = back_garden_afternoonSprite;
-        }
-        else if (int.Parse(backsr) == 16)
-        {
-            backimage.sprite = back_myroom_midnightSprite;
-        }
-        else if (int.Parse(backsr) == 17)
-        {
-            backimage.sprite = back_myroom_morningSprite;
-        }
-        else if (int.Parse(backsr) == 18)
-        {
-            backimage.sprite = back_myroom_nightSprite;
-        }
-        else if (int.Parse(backsr) == 71)
-        {
-            backimage.sprite = still_July_rukiaSprite;
-        }
-        else if (int.Parse(backsr) == 72)
-        {
-            backimage.sprite = still_July_ouziSprite;
-        }
-        else if (int.Parse(backsr) == 73)
-        {
-            backimage.sprite = still_July_hikaruSprite;
-        }
+        backimage.sprite = Resources.Load<Sprite>("Sprites/back/" + backsr);
 
         //センター画像
         centersr = _qdataList[index].centerimage;
         Image centerCharacter = (Image)charactercenter.GetComponent<Image>();
-        if (int.Parse(centersr) == 1)
-        {
-            centerCharacter.sprite = ouziSprite;
-        } else if (int.Parse(centersr) == 2)
-        {
-            centerCharacter.sprite = rukiaSprite;
-        }
-        else if (int.Parse(centersr) == 0)
-        {
-            centerCharacter.sprite = clearSprite;
-        }
-        else if (int.Parse(centersr) == 3)
-        {
-            centerCharacter.sprite = hikaruSprite;
-        }
-        else if (int.Parse(centersr) == 4)
-        {
-            centerCharacter.sprite = ouziojiSprite;
-        }
-        else if (int.Parse(centersr) == 5)
-        {
-            centerCharacter.sprite = rukiaojiSprite;
-        }
-        else if (int.Parse(centersr) == 6)
-        {
-            centerCharacter.sprite = hikaruojiSprite;
-        }
-        else if (int.Parse(centersr) == 7)
-        {
-            centerCharacter.sprite = ouzismileSprite;
-        }
-        else if(int.Parse(centersr) == 8)
-        {
-            centerCharacter.sprite = hikarutroubleSprite;
-        }
-        else if (int.Parse(centersr) == 9)
-        { 
-            centerCharacter.sprite = ouziojismileSprite;
-        }
-        else if (int.Parse(centersr) == 10)
-        {
-            centerCharacter.sprite = ouziojiangrySprite;
-        }
-        else if (int.Parse(centersr) == 11)
-        {
-            centerCharacter.sprite = ouziojitroubleSprite;
-        }
-        else if (int.Parse(centersr) == 12)
-        {
-            centerCharacter.sprite = rukiatroubleSprite;
-        }
-        else if (int.Parse(centersr) == 13)
-        {
-            centerCharacter.sprite = rukiaojismileSprite;
-        }
-        else if(int.Parse(centersr) == 14)
-        {
-            centerCharacter.sprite = ouziojishockSprite;
-        }
-        else if (int.Parse(centersr) == 15)
-        {
-            centerCharacter.sprite = ouziojithink_openSprite;
-        }
-        else if (int.Parse(centersr) == 16)
-        {
-            centerCharacter.sprite = ouziojithink_closeSprite;
-        }
-        else if (int.Parse(centersr) == 24)
-        {
-            centerCharacter.sprite = statueSprite;
-        }
+        centerCharacter.sprite = Resources.Load<Sprite>("Sprites/human/" + centersr);
+
 
         //ライト画像
         rightsr = _qdataList[index].rightimage;
         Image rightCharacter = (Image)characterright.GetComponent<Image>();
-        if (int.Parse(rightsr) == 1)
-        {
-            rightCharacter.sprite = ouziSprite;
-        }
-        else if (int.Parse(rightsr) == 2)
-        {
-            rightCharacter.sprite = rukiaSprite;
-        }
-        else if (int.Parse(rightsr) == 0)
-        {
-            rightCharacter.sprite = clearSprite;
-        }
-        else if (int.Parse(rightsr) == 3)
-        {
-            rightCharacter.sprite = hikaruSprite;
-        }
-        else if (int.Parse(rightsr) == 4)
-        {
-            rightCharacter.sprite = ouziojiSprite;
-        }
-        else if (int.Parse(rightsr) == 5)
-        {
-            rightCharacter.sprite = rukiaojiSprite;
-        }
-        else if (int.Parse(rightsr) == 6)
-        {
-            rightCharacter.sprite = hikaruojiSprite;
-        }
-        else if (int.Parse(centersr) == 7)
-        {
-            rightCharacter.sprite = ouzismileSprite;
-        }
-        else if (int.Parse(centersr) == 8)
-        {
-            rightCharacter.sprite = hikarutroubleSprite;
-        }
-        else if (int.Parse(centersr) == 9)
-        {
-            rightCharacter.sprite = ouziojismileSprite;
-        }
-        else if (int.Parse(centersr) == 10)
-        {
-            rightCharacter.sprite = ouziojiangrySprite;
-        }
-        else if (int.Parse(centersr) == 11)
-        {
-            rightCharacter.sprite = ouziojitroubleSprite;
-        }
-        else if (int.Parse(centersr) == 12)
-        {
-            rightCharacter.sprite = rukiatroubleSprite;
-        }
-        else if (int.Parse(centersr) == 13)
-        {
-            rightCharacter.sprite = rukiaojismileSprite;
-        }
-        else if (int.Parse(centersr) == 14)
-        {
-            rightCharacter.sprite = ouziojishockSprite;
-        }
-        else if (int.Parse(centersr) == 15)
-        {
-            rightCharacter.sprite = ouziojithink_openSprite;
-        }
-        else if (int.Parse(centersr) == 16)
-        {
-            rightCharacter.sprite = ouziojithink_closeSprite;
-        }
-        else if (int.Parse(rightsr) == 24)
-        {
-            rightCharacter.sprite = statueSprite;
-        }
+        rightCharacter.sprite = Resources.Load<Sprite>("Sprites/human/" + rightsr);
+
 
         //レフト画像
         leftsr = _qdataList[index].leftimage;
         Image leftCharacter = (Image)characterleft.GetComponent<Image>();
-        if (int.Parse(leftsr) == 1)
-        {
-            leftCharacter.sprite = ouziSprite;
-        }
-        else if (int.Parse(leftsr) == 2)
-        {
-            leftCharacter.sprite = rukiaSprite;
-        }
-        else if (int.Parse(leftsr) == 0)
-        {
-            leftCharacter.sprite = clearSprite;
-        }
-        else if (int.Parse(leftsr) == 3)
-        {
-            leftCharacter.sprite = hikaruSprite;
-        }
-        else if (int.Parse(leftsr) == 4)
-        {
-            leftCharacter.sprite = ouziojiSprite;
-        }
-        else if (int.Parse(leftsr) == 5)
-        {
-            leftCharacter.sprite = rukiaojiSprite;
-        }
-        else if (int.Parse(leftsr) == 6)
-        {
-            leftCharacter.sprite = hikaruojiSprite;
-        }
-        else if (int.Parse(centersr) == 7)
-        {
-            leftCharacter.sprite = ouzismileSprite;
-        }
-        else if (int.Parse(centersr) == 8)
-        {
-            leftCharacter.sprite = hikarutroubleSprite;
-        }
-        else if (int.Parse(centersr) == 9)
-        {
-            leftCharacter.sprite = ouziojismileSprite;
-        }
-        else if (int.Parse(centersr) == 10)
-        {
-            leftCharacter.sprite = ouziojiangrySprite;
-        }
-        else if (int.Parse(centersr) == 11)
-        {
-            leftCharacter.sprite = ouziojitroubleSprite;
-        }
-        else if (int.Parse(centersr) == 12)
-        {
-            leftCharacter.sprite = rukiatroubleSprite;
-        }
-        else if (int.Parse(centersr) == 13)
-        {
-            leftCharacter.sprite = rukiaojismileSprite;
-        }
-        else if (int.Parse(centersr) == 14)
-        {
-            leftCharacter.sprite = ouziojishockSprite;
-        }
-        else if (int.Parse(centersr) == 15)
-        {
-            leftCharacter.sprite = ouziojithink_openSprite;
-        }
-        else if (int.Parse(centersr) == 16)
-        {
-            leftCharacter.sprite = ouziojithink_closeSprite;
-        }
-        else if (int.Parse(leftsr) == 24)
-        {
-            leftCharacter.sprite = statueSprite;
-        }
+        leftCharacter.sprite = Resources.Load<Sprite>("Sprites/human/" + leftsr);
+
         //画像の色
         colorsr = _qdataList[index].charactercolor;
         if(int.Parse(colorsr) == 0)
@@ -1187,48 +885,26 @@ public class Story : MonoBehaviour
         //テキストボックスの色
         textcolorsr= _qdataList[index].textcolor;
         Image textboximage = (Image)textbox.GetComponent<Image>();
+        textboximage.sprite = Resources.Load<Sprite>("Sprites/UI/" + textcolorsr);
         monthTextPanel.SetActive(true);
-        if (int.Parse(textcolorsr) == 1)
+        if (textcolorsr.Equals(0))
         {
-            textboximage.sprite = text_ouzi;
-        }
-        else if (int.Parse(textcolorsr) == 2)
-        {
-            textboximage.sprite = text_rukia;
-        }
-        else if (int.Parse(textcolorsr) == 3)
-        {
-            textboximage.sprite = text_hikaru;
-        }
-        else if (int.Parse(textcolorsr) == 4)
-        {
-            textboximage.sprite = text_mob;
-        }
-        else if (int.Parse(textcolorsr) == 6)
-        {
-            textboximage.sprite = text_monologue;
-        }
-        else if (int.Parse(textcolorsr) == 5)
-        {
-            textboximage.sprite = clearSprite;
+            textboximage.sprite = Resources.Load<Sprite>("Sprites/back/clear");
             monthTextPanel.SetActive(false);
-        }
-        else if (int.Parse(textcolorsr) == 0)
-        {
-            textboximage.sprite = text_own;
         }
 
 
 
         //名前
-        if (int.Parse(textcolorsr) == 0)
+        if (textcolorsr.Equals("text_own"))
         {
             _name.text = heroineName;
         }
-        else if(int.Parse(textcolorsr) == 6)
+        else if(textcolorsr.Equals("text_monologue"))
         {
             _name.text = "";
         }
+
         else
         {
             _name.text = _qdataList[index].nameText;
