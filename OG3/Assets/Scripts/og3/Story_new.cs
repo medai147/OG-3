@@ -4,9 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 public class Story_new : MonoBehaviour
 {
+
+    //仕様メモ
+    /*
+     * スキップは次の月または選択肢
+     */
+
+
     public bool textnextflag = false;
     private bool automodeflag = false;
     bool textread = false; //文字再生中
@@ -58,8 +66,6 @@ public class Story_new : MonoBehaviour
         //テキスト
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
-        //_monthtext = GameObject.Find("monthtext").GetComponent<Text>();
-        //_logtext = GameObject.Find("logtext").GetComponent<Text>();
 
         nameinput = PlayerPrefs.GetInt("NAMEINPUT");
         if (nameinput == 0)
@@ -92,19 +98,21 @@ public class Story_new : MonoBehaviour
         {
             //q.WriteDebugLog();
         }
-        
+
 
         //最初のスタートだから変更無し
-        StartCoroutine(Novel(qstory++));
+        StartCoroutine(Novel(qstory));
     }
 
     // Update is called once per frame
     void Update()
     {
+        //コルーチンを進める
         if (textnextflag)
         {
-            Debug.Log("a");
-            StartCoroutine(Novel(qstory++));
+            //スピードが0から戻らないから代入した　後で設定画面で選んだ物に応じた値を入れるようにしたい
+            novelspeed = 0.1f;
+            StartCoroutine(Novel(qstory));
         }
     }
 
@@ -112,15 +120,30 @@ public class Story_new : MonoBehaviour
     {
         textnextflag = false;
         //オート中
-        if(automodeflag)
+        if (automodeflag)
         {
             //オートモードの速度ボタンによってここで停止処理
             textnextflag = true;
         }
 
+        stilldisplay();
+        monthstartdisplay();
+        backdisplay();
+        characterdisplay();
+        charactercolor();
+        textcolor();
+
+
+        //名前にmonthが入っている場所を通過したらテキスト変更
+        if (_qdataList[index].nameText.Contains("month"))
+        {
+            //左上の月表示
+            GameObject.Find("monthtext").GetComponent<Text>().text = _qdataList[index].nameText.Replace("month", "");
+        }
+
         //名前
         String textcolorsr = _qdataList[index].textcolor;
-        if (textcolorsr.Equals("text_own")) 
+        if (textcolorsr.Equals("text_own"))
         {
             _name.text = heroineName;
         }
@@ -128,14 +151,15 @@ public class Story_new : MonoBehaviour
         {
             _name.text = "";
         }
-
         else
         {
             _name.text = _qdataList[index].nameText;
         }
 
+
         //本文再生
         _story.text = "";
+        messageCount = 0;
         while (_qdataList[index].storyText.Length > messageCount)
         {
             textread = true;
@@ -143,14 +167,15 @@ public class Story_new : MonoBehaviour
             messageCount++;
             yield return new WaitForSeconds(novelspeed);
         }
+
         textread = false;
-
-
+        //ストーリー番号を次に進める
+        qstory++;
     }
 
     public void onClicked_screenbutton()
     {
-        if(textread)
+        if (textread)
         {
             novelspeed = 0;
         } else
@@ -163,6 +188,110 @@ public class Story_new : MonoBehaviour
     {
         //オートモードスタート
         automodeflag = true;
+    }
+
+    private void stilldisplay()
+    {
+        //一枚絵
+        String stillsr = _qdataList[qstory].stillimage;
+        Image stillimage = (Image)GameObject.Find("stillImage").GetComponent<Image>();
+        if (stillsr.Equals("0"))
+        {
+            menubutton.SetActive(true);
+            stillimage.sprite = Resources.Load<Sprite>("Sprites/back/back_clear");
+        }
+        else
+        {
+            String getstill_index = Regex.Replace(stillsr, @"[^0-9]", "");
+            GameManager.instance.getimage[int.Parse(getstill_index)] = 1;
+            stillimage.sprite = Resources.Load<Sprite>("Sprites/back/" + stillsr.Replace(getstill_index, ""));
+            menubutton.SetActive(false);
+        }
+    }
+
+    private void monthstartdisplay()
+    {
+        //月のはじめの画像
+        String monthsr = _qdataList[qstory].monthimage;
+        Image monthimage = (Image)GameObject.Find("month").GetComponent<Image>();
+        if (monthsr.Equals("0"))
+        {
+            monthimage.sprite = Resources.Load<Sprite>("Sprites/back/back_clear");
+        } else
+        {
+            monthimage.sprite = Resources.Load<Sprite>("Sprites/month/" + monthsr);
+        }
+    }
+
+    private void backdisplay()
+    {
+        //背景
+        String backsr = _qdataList[qstory].backimage;
+        Image backimage = (Image)GameObject.Find("backgroundImage").GetComponent<Image>();
+        backimage.sprite = Resources.Load<Sprite>("Sprites/back/" + backsr);
+    }
+
+    private void characterdisplay()
+    {
+        //センター画像
+        String centersr = _qdataList[qstory].centerimage;
+        Image centerCharacter = (Image)GameObject.Find("CenterCharacterImages").GetComponent<Image>();
+        centerCharacter.sprite = Resources.Load<Sprite>("Sprites/human/" + centersr);
+
+
+        //ライト画像
+        String rightsr = _qdataList[qstory].rightimage;
+        Image rightCharacter = (Image)GameObject.Find("RightCharacterImages").GetComponent<Image>();
+        rightCharacter.sprite = Resources.Load<Sprite>("Sprites/human/" + rightsr);
+
+
+        //レフト画像
+        String leftsr = _qdataList[qstory].leftimage;
+        Image leftCharacter = (Image)GameObject.Find("LeftCharacterImages").GetComponent<Image>();
+        leftCharacter.sprite = Resources.Load<Sprite>("Sprites/human/" + leftsr);
+    }
+
+    private void charactercolor() {
+        //画像の色
+        String colorsr = _qdataList[qstory].charactercolor;
+        if (int.Parse(colorsr) == 0)
+        {
+            GameObject.Find("CenterCharacterImages").GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            GameObject.Find("RightCharacterImages").GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            GameObject.Find("LeftCharacterImages").GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        else if (int.Parse(colorsr) == 1)
+        {
+            GameObject.Find("CenterCharacterImages").GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            GameObject.Find("RightCharacterImages").GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            GameObject.Find("LeftCharacterImages").GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+        }
+        else if (int.Parse(colorsr) == 2)
+        {
+            GameObject.Find("CenterCharacterImages").GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            GameObject.Find("RightCharacterImages").GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            GameObject.Find("LeftCharacterImages").GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+        }
+        else
+        {
+            GameObject.Find("CenterCharacterImages").GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            GameObject.Find("RightCharacterImages").GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+            GameObject.Find("LeftCharacterImages").GetComponent<Image>().color = new Color32(100, 100, 100, 255);
+        }
+    }
+
+    private void textcolor()
+    {
+        //テキストボックスの色
+        String textcolorsr = _qdataList[qstory].textcolor;
+        Image textboximage = (Image)GameObject.Find("TextImage").GetComponent<Image>();
+        textboximage.sprite = Resources.Load<Sprite>("Sprites/UI/" + textcolorsr);
+        monthTextPanel.SetActive(true);
+        if (textcolorsr.Equals(0))
+        {
+            textboximage.sprite = Resources.Load<Sprite>("Sprites/back/clear");
+            monthTextPanel.SetActive(false);
+        }
     }
 }
 
