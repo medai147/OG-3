@@ -19,7 +19,6 @@ public class Story_new : MonoBehaviour
 
     public bool textnextflag = false;
     private bool automodeflag = false;
-    public bool nextflag = false; //強制的に次に進む
 
     bool textread = false; //文字再生中
     public bool animationfinishedflag = true;
@@ -126,14 +125,12 @@ public class Story_new : MonoBehaviour
     void Update()
     {
         //コルーチンを進める
-        if ((textnextflag && animationfinishedflag) || nextflag)
+        if ((textnextflag && animationfinishedflag))
         {
             //スピードが0から戻らないから代入した　後で設定画面で選んだ物に応じた値を入れるようにしたい
             novelspeed = 0.1f;
             StartCoroutine(Novel(qstory));
-            nextflag = false;
         }
-        Debug.Log(animationfinishedflag);
     }
 
     private IEnumerator Novel(int index)

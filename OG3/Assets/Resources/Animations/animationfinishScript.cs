@@ -19,14 +19,15 @@ public class animationfinishScript : MonoBehaviour
 
     public void animation_finished()
     {
-        Story_new.instance.nextflag = true;
+        Story_new.instance.textnextflag = true;
         Story_new.instance.animationfinishedflag = true;
         Destroy(this.gameObject);
     }
 
     public void fade_next()
     {
-        Story_new.instance.nextflag = true;
+        Story_new.instance.textnextflag = true;
+        Story_new.instance.animationfinishedflag = true;
         Instantiate((GameObject)Resources.Load("Animations/fadeopenImage"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, GameObject.Find("GameManager").transform);
         Destroy(this.gameObject);
     }
