@@ -8541,6 +8541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textnextflag: 0
+  animationfinishedflag: 0
   storyText: {fileID: 4900000, guid: a71b635eb2cd42b4684d128bf02ab345, type: 3}
   qstory: 0
   qNum: 0
@@ -8559,7 +8560,12 @@ MonoBehaviour:
   menubutton: {fileID: 684780954}
   monthtext: {fileID: 784189850}
   monthTextPanel: {fileID: 209087561}
-  movePanel: {fileID: 110898631}
+  moveanimationPrefab: {fileID: 6967462821017928675, guid: 6325d85b410f0b74eac84c992f45176b,
+    type: 3}
+  fadecloseanimationPrefab: {fileID: 7125835690380526520, guid: 352ac6fd090d09d4d9cdadfe1d366b2c,
+    type: 3}
+  fadeopenanimationPrefab: {fileID: 1864837302287505243, guid: 136a2c9003ad90b4ab0533663da5e5b1,
+    type: 3}
   autosetbutton:
   - {fileID: 531925031}
   - {fileID: 1444932594}

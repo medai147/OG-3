@@ -14,13 +14,18 @@ public class Story_new : MonoBehaviour
      * スキップは次の月または選択肢
      */
 
+    public static Story_new instance;
+    
 
     public bool textnextflag = false;
     private bool automodeflag = false;
     bool textread = false; //文字再生中
+    public bool animationfinishedflag = true;
 
     private Text _story; //ストーリーテキスト
     private Text _name;
+
+    private Text _move; //移動アニメーション時のテキスト
 
 
     public TextAsset storyText; //csvストーリーデータ
@@ -50,7 +55,10 @@ public class Story_new : MonoBehaviour
     [SerializeField] GameObject menubutton;
     [SerializeField] GameObject monthtext;
     [SerializeField] GameObject monthTextPanel;
-    [SerializeField] GameObject movePanel;
+
+    [SerializeField] GameObject moveanimationPrefab;
+    [SerializeField] GameObject fadecloseanimationPrefab;
+    [SerializeField] GameObject fadeopenanimationPrefab;
 
     [SerializeField] GameObject[] autosetbutton = new GameObject[5];
 
@@ -61,6 +69,14 @@ public class Story_new : MonoBehaviour
     [SerializeField] GameObject[] bgmsetbutton = new GameObject[5];
 
     // Start is called before the first frame update
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
         //テキスト
@@ -108,12 +124,13 @@ public class Story_new : MonoBehaviour
     void Update()
     {
         //コルーチンを進める
-        if (textnextflag)
+        if (textnextflag && animationfinishedflag)
         {
             //スピードが0から戻らないから代入した　後で設定画面で選んだ物に応じた値を入れるようにしたい
             novelspeed = 0.1f;
             StartCoroutine(Novel(qstory));
         }
+        Debug.Log(animationfinishedflag);
     }
 
     private IEnumerator Novel(int index)
@@ -132,6 +149,8 @@ public class Story_new : MonoBehaviour
         characterdisplay();
         charactercolor();
         textcolor();
+        moveanimation();
+        fadeanimation();
 
 
         //名前にmonthが入っている場所を通過したらテキスト変更
@@ -287,10 +306,35 @@ public class Story_new : MonoBehaviour
         Image textboximage = (Image)GameObject.Find("TextImage").GetComponent<Image>();
         textboximage.sprite = Resources.Load<Sprite>("Sprites/UI/" + textcolorsr);
         monthTextPanel.SetActive(true);
-        if (textcolorsr.Equals(0))
+        if (textcolorsr.Equals("0"))
         {
-            textboximage.sprite = Resources.Load<Sprite>("Sprites/back/clear");
+            textboximage.sprite = Resources.Load<Sprite>("Sprites/back/back_clear");
             monthTextPanel.SetActive(false);
+        }
+    }
+
+    private void moveanimation()
+    {
+        String moveanimationtext = _qdataList[qstory].moveanimation;
+        if (!moveanimationtext.Equals("0"))
+        {
+            Instantiate(moveanimationPrefab, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity,GameObject.Find("BackgroundPanel").transform);
+            _move = GameObject.Find("movetext").GetComponent<Text>();
+            _move.text = moveanimationtext;
+            animationfinishedflag = false;
+        } else
+        {
+            animationfinishedflag = true;
+        }
+    }
+
+    private void fadeanimation()
+    {
+        String fadeflag = _qdataList[qstory].fadeanimation;
+        if (int.Parse(fadeflag) == 1)
+        {
+            Instantiate(fadecloseanimationPrefab, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, GameObject.Find("GameManager").transform);
+            animationfinishedflag = false;
         }
     }
 }
@@ -317,7 +361,7 @@ public class Qdata_new
     public string selectbuttontext1;
     public string selectbuttontext2;
     public string textcolor;
-    public string animation;
+    public string fadeanimation;
     public string moveanimation;
 
 
@@ -345,7 +389,7 @@ public class Qdata_new
             selectbuttontext1 = spTxt[16];
             selectbuttontext2 = spTxt[17];
             textcolor = spTxt[18];
-            animation = spTxt[19];
+            fadeanimation = spTxt[19];
             moveanimation = spTxt[20];
         }
     }
