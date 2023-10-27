@@ -33,6 +33,10 @@ public class Story_new : MonoBehaviour
     private string _storyArray;
     private List<Qdata_new> _qdataList = new List<Qdata_new>();
 
+    AudioClip oldbgmClip = null;
+    AudioClip bgmClip = null;
+    AudioClip seClip = null;
+
 
     public int qstory = 0; //storyの番号
     public int qNum = 0; //story数
@@ -41,6 +45,8 @@ public class Story_new : MonoBehaviour
 
     public int nameinput = 0;
     private String heroineName;
+
+    AudioSource[] sounds;
 
     [SerializeField] GameObject textbox;
     [SerializeField] GameObject ScreenButton;
@@ -69,6 +75,8 @@ public class Story_new : MonoBehaviour
 
     [SerializeField] GameObject[] bgmsetbutton = new GameObject[5];
 
+
+
     // Start is called before the first frame update
 
     public void Awake()
@@ -80,6 +88,10 @@ public class Story_new : MonoBehaviour
     }
     void Start()
     {
+        //オーディオソース
+        sounds = GetComponents<AudioSource>();
+        sounds[0].Play();
+
         //テキスト
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
@@ -151,6 +163,8 @@ public class Story_new : MonoBehaviour
         textcolor();
         moveanimation();
         fadeanimation();
+        playBGM();
+        playSE();
 
 
         //名前にmonthが入っている場所を通過したらテキスト変更
@@ -337,6 +351,35 @@ public class Story_new : MonoBehaviour
             animationfinishedflag = false;
         }
     }
+
+    private void playBGM()
+    {
+        String bgm_sr = _qdataList[qstory].bgm;
+        if(!bgm_sr.Equals("0"))
+        {
+            bgmClip = Resources.Load<AudioClip>("AudioClips/" + bgm_sr);
+            if (oldbgmClip != bgmClip)
+            {
+                sounds[0].clip = bgmClip;
+                sounds[0].Play();
+            }
+            oldbgmClip = bgmClip;
+        } else
+        {
+            sounds[0].Stop();
+        }
+    }
+
+    private void playSE()
+    {
+        String se_sr = _qdataList[qstory].se;
+        if (!se_sr.Equals("0"))
+        {
+            seClip = Resources.Load<AudioClip>("AudioClips/" + se_sr);
+
+            sounds[1].PlayOneShot(seClip);
+        }
+    }
 }
 
 //質問を管理するクラス
@@ -351,9 +394,8 @@ public class Qdata_new
     public string backimage;
     public string stillimage;
     public string charactercolor;
-    public string bgm_state;
-    public string bgm_num;
-    public string se_num;
+    public string bgm;
+    public string se;
     public string selectdisp;
     public string selectbutton_num;
     public string monthimage;
@@ -368,7 +410,7 @@ public class Qdata_new
     public Qdata_new(string txt)
     {
         string[] spTxt = txt.Split(',');
-        if (spTxt.Length == 21)
+        if (spTxt.Length == 20)
         {
             number = int.Parse(spTxt[0]);
             storyText = spTxt[1];
@@ -379,18 +421,17 @@ public class Qdata_new
             backimage = spTxt[6];
             stillimage = spTxt[7];
             charactercolor = spTxt[8];
-            bgm_state = spTxt[9];
-            bgm_num = spTxt[10];
-            se_num = spTxt[11];
-            selectdisp = spTxt[12];
-            selectbutton_num = spTxt[13];
-            monthimage = spTxt[14];
-            selectbuttontext3 = spTxt[15];
-            selectbuttontext1 = spTxt[16];
-            selectbuttontext2 = spTxt[17];
-            textcolor = spTxt[18];
-            fadeanimation = spTxt[19];
-            moveanimation = spTxt[20];
+            bgm = spTxt[9];
+            se = spTxt[10];
+            selectdisp = spTxt[11];
+            selectbutton_num = spTxt[12];
+            monthimage = spTxt[13];
+            selectbuttontext3 = spTxt[14];
+            selectbuttontext1 = spTxt[15];
+            selectbuttontext2 = spTxt[16];
+            textcolor = spTxt[17];
+            fadeanimation = spTxt[18];
+            moveanimation = spTxt[19];
         }
     }
 

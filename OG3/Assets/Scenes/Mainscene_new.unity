@@ -183,7 +183,7 @@ MonoBehaviour:
   NameTextPanel: {fileID: 832699338}
   monthtext: {fileID: 784189850}
   SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
+  deleteResetButton: {fileID: 0}
   SkipselectPanel: {fileID: 77202732}
   SkipselectpanelText: {fileID: 1022087841}
   cannotskipAlertPanel: {fileID: 419977940}
@@ -318,7 +318,7 @@ RectTransform:
   - {fileID: 1260362683}
   - {fileID: 77357771}
   m_Father: {fileID: 1540306442}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -491,24 +491,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 61979394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f153989dd4cca4a81bab029a0f276f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8282d2519fbf49346b1a9b01be406d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logPanel: {fileID: 467589428}
-  MenuPanel: {fileID: 727812014}
-  Screenbutton: {fileID: 470158369}
-  TextImage: {fileID: 1241209107}
-  MainTextPanel: {fileID: 783656083}
-  NameTextPanel: {fileID: 832699338}
-  monthtext: {fileID: 784189850}
-  SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
-  SkipselectPanel: {fileID: 77202732}
-  SkipselectpanelText: {fileID: 1022087841}
-  cannotskipAlertPanel: {fileID: 419977940}
-  monthimage: {fileID: 491073850}
-  menubutton: {fileID: 684780954}
-  monthtextbg: {fileID: 1067694385}
+  menuPanel: {fileID: 0}
 --- !u!114 &61979397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,8 +540,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 61979396}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_delete
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+        m_MethodName: onClicked_deletebutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1410,7 +1396,7 @@ GameObject:
   - component: {fileID: 209087562}
   m_Layer: 5
   m_Name: monthTextPanel
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1918,166 +1904,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322433819}
-  m_CullTransparentMesh: 0
---- !u!1 &368428368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 368428369}
-  - component: {fileID: 368428373}
-  - component: {fileID: 368428372}
-  - component: {fileID: 368428371}
-  - component: {fileID: 368428370}
-  m_Layer: 5
-  m_Name: deleteResetButton
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &368428369
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368428368}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1540306442}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8687, y: -2.8418}
-  m_SizeDelta: {x: 800.1233, y: 449.9546}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &368428370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368428368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f153989dd4cca4a81bab029a0f276f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  logPanel: {fileID: 467589428}
-  MenuPanel: {fileID: 727812014}
-  Screenbutton: {fileID: 470158369}
-  TextImage: {fileID: 1241209107}
-  MainTextPanel: {fileID: 783656083}
-  NameTextPanel: {fileID: 832699338}
-  monthtext: {fileID: 784189850}
-  SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
-  SkipselectPanel: {fileID: 77202732}
-  SkipselectpanelText: {fileID: 1022087841}
-  cannotskipAlertPanel: {fileID: 419977940}
-  monthimage: {fileID: 491073850}
-  menubutton: {fileID: 684780954}
-  monthtextbg: {fileID: 1067694385}
---- !u!114 &368428371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368428368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 368428372}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 368428370}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_deleteResetButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &368428372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368428368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &368428373
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 368428368}
   m_CullTransparentMesh: 0
 --- !u!1 &375268892
 GameObject:
@@ -2703,6 +2529,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 61979396}
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+        m_MethodName: onClicked_screenbutton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &470158372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2754,7 +2592,7 @@ GameObject:
   - component: {fileID: 491073852}
   m_Layer: 5
   m_Name: month
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3406,9 +3244,10 @@ GameObject:
   - component: {fileID: 684780958}
   - component: {fileID: 684780957}
   - component: {fileID: 684780956}
+  - component: {fileID: 684780959}
   m_Layer: 5
   m_Name: menubutton
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3426,7 +3265,7 @@ RectTransform:
   m_Children:
   - {fileID: 1812783318}
   m_Father: {fileID: 1540306442}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3477,9 +3316,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClick_Menu
+      - m_Target: {fileID: 684780959}
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+        m_MethodName: onClicked_menubutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3527,6 +3366,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684780954}
   m_CullTransparentMesh: 1
+--- !u!114 &684780959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684780954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8282d2519fbf49346b1a9b01be406d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPanel: {fileID: 727812014}
 --- !u!1 &689383872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3972,7 +3824,7 @@ GameObject:
   - component: {fileID: 727812016}
   m_Layer: 5
   m_Name: MenuPanel
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4137,7 +3989,7 @@ GameObject:
   - component: {fileID: 783656084}
   m_Layer: 5
   m_Name: MainTextPanel
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4425,7 +4277,7 @@ GameObject:
   - component: {fileID: 832699339}
   m_Layer: 5
   m_Name: NameTextPanel
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4702,7 +4554,7 @@ MonoBehaviour:
   NameTextPanel: {fileID: 832699338}
   monthtext: {fileID: 784189850}
   SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
+  deleteResetButton: {fileID: 0}
   SkipselectPanel: {fileID: 77202732}
   SkipselectpanelText: {fileID: 1022087841}
   cannotskipAlertPanel: {fileID: 419977940}
@@ -5958,7 +5810,7 @@ GameObject:
   - component: {fileID: 1241209109}
   m_Layer: 5
   m_Name: TextImage
-  m_TagString: Untagged
+  m_TagString: delete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7186,7 +7038,7 @@ MonoBehaviour:
   NameTextPanel: {fileID: 832699338}
   monthtext: {fileID: 784189850}
   SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
+  deleteResetButton: {fileID: 0}
   SkipselectPanel: {fileID: 77202732}
   SkipselectpanelText: {fileID: 1022087841}
   cannotskipAlertPanel: {fileID: 419977940}
@@ -7865,7 +7717,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 867b12e860a186446b85965d3dee1200, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -8069,7 +7921,6 @@ RectTransform:
   - {fileID: 1055881136}
   - {fileID: 470158370}
   - {fileID: 77202735}
-  - {fileID: 368428369}
   - {fileID: 19048453}
   - {fileID: 684780955}
   m_Father: {fileID: 1494629274}
@@ -9149,7 +9000,7 @@ MonoBehaviour:
   NameTextPanel: {fileID: 832699338}
   monthtext: {fileID: 784189850}
   SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
+  deleteResetButton: {fileID: 0}
   SkipselectPanel: {fileID: 77202732}
   SkipselectpanelText: {fileID: 1022087841}
   cannotskipAlertPanel: {fileID: 419977940}
@@ -9767,7 +9618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2014941254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10450,7 +10301,7 @@ MonoBehaviour:
   NameTextPanel: {fileID: 832699338}
   monthtext: {fileID: 784189850}
   SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 368428368}
+  deleteResetButton: {fileID: 0}
   SkipselectPanel: {fileID: 77202732}
   SkipselectpanelText: {fileID: 1022087841}
   cannotskipAlertPanel: {fileID: 419977940}
@@ -10563,6 +10414,7 @@ GameObject:
   - component: {fileID: 2137094213}
   - component: {fileID: 2137094212}
   - component: {fileID: 2137094211}
+  - component: {fileID: 2137094214}
   m_Layer: 5
   m_Name: closebutton
   m_TagString: Untagged
@@ -10634,8 +10486,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
+      - m_Target: {fileID: 2137094214}
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
         m_MethodName: onClicked_closebutton
         m_Mode: 1
         m_Arguments:
@@ -10684,3 +10536,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137094209}
   m_CullTransparentMesh: 1
+--- !u!114 &2137094214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137094209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8282d2519fbf49346b1a9b01be406d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPanel: {fileID: 727812014}
