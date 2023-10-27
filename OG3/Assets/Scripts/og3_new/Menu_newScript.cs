@@ -5,6 +5,7 @@ using UnityEngine;
 public class Menu_newScript : MonoBehaviour
 {
     [SerializeField]GameObject menuPanel;
+    [SerializeField] GameObject settingPanel;
 
     bool deleteflag = false;
 
@@ -58,5 +59,10 @@ public class Menu_newScript : MonoBehaviour
                 deletes[i].SetActive(true);
             }
         }
+    }
+
+    public void onClickd_settingbutton()
+    {
+        settingPanel.SetActive(true);
     }
 }

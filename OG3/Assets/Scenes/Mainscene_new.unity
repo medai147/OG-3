@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 0}
+  settingPanel: {fileID: 0}
 --- !u!114 &61979397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,6 +2206,7 @@ GameObject:
   - component: {fileID: 463763837}
   - component: {fileID: 463763836}
   - component: {fileID: 463763835}
+  - component: {fileID: 463763838}
   m_Layer: 5
   m_Name: returnbutton
   m_TagString: Untagged
@@ -2276,9 +2278,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_settingreturnbutton
+      - m_Target: {fileID: 463763838}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClickd_returnbutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2326,6 +2328,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463763833}
   m_CullTransparentMesh: 0
+--- !u!114 &463763838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463763833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66f487449ef1864cbc0b0157112b74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingPanel: {fileID: 2014941253}
 --- !u!1 &467589428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,6 +3394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 727812014}
+  settingPanel: {fileID: 0}
 --- !u!1 &689383872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,7 +3868,7 @@ RectTransform:
   - {fileID: 2137094210}
   - {fileID: 42829577}
   m_Father: {fileID: 1494629274}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4541,26 +4557,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952805588}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f153989dd4cca4a81bab029a0f276f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8282d2519fbf49346b1a9b01be406d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logPanel: {fileID: 467589428}
-  MenuPanel: {fileID: 727812014}
-  Screenbutton: {fileID: 470158369}
-  TextImage: {fileID: 1241209107}
-  MainTextPanel: {fileID: 783656083}
-  NameTextPanel: {fileID: 832699338}
-  monthtext: {fileID: 784189850}
-  SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 0}
-  SkipselectPanel: {fileID: 77202732}
-  SkipselectpanelText: {fileID: 1022087841}
-  cannotskipAlertPanel: {fileID: 419977940}
-  monthimage: {fileID: 491073850}
-  menubutton: {fileID: 684780954}
-  monthtextbg: {fileID: 1067694385}
+  menuPanel: {fileID: 0}
+  settingPanel: {fileID: 2014941253}
 --- !u!114 &952805591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4605,9 +4608,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_settingbutton
+      - m_Target: {fileID: 952805590}
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+        m_MethodName: onClickd_settingbutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7877,8 +7880,8 @@ RectTransform:
   m_Children:
   - {fileID: 1540306442}
   - {fileID: 467589432}
-  - {fileID: 2014941254}
   - {fileID: 727812015}
+  - {fileID: 2014941254}
   - {fileID: 110898634}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -9618,7 +9621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2014941254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9647,7 +9650,7 @@ RectTransform:
   - {fileID: 375268893}
   - {fileID: 1293513431}
   m_Father: {fileID: 1494629274}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10549,3 +10552,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 727812014}
+  settingPanel: {fileID: 0}
