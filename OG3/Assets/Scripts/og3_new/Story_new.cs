@@ -201,6 +201,15 @@ public class Story_new : MonoBehaviour
             yield return new WaitForSeconds(novelspeed);
         }
 
+        //ログを管理するリストに名前とテキストを代入(選択肢のところはまた考える)
+        if(_name.text == "")
+        {
+            GameManager.instance.logtext.Add("\n" + _qdataList[index].storyText);
+        } else
+        {
+            GameManager.instance.logtext.Add("\n" + _name.text + ":" + _qdataList[index].storyText);
+        }
+        
         textread = false;
         //ストーリー番号を次に進める
         qstory++;

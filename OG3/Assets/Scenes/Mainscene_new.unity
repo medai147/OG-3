@@ -496,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 0}
   settingPanel: {fileID: 0}
+  logPanel: {fileID: 0}
 --- !u!114 &61979397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2443,7 +2444,7 @@ RectTransform:
   - {fileID: 966768361}
   - {fileID: 1886187479}
   m_Father: {fileID: 1494629274}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3395,6 +3396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 727812014}
   settingPanel: {fileID: 0}
+  logPanel: {fileID: 0}
 --- !u!1 &689383872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3868,7 +3870,7 @@ RectTransform:
   - {fileID: 2137094210}
   - {fileID: 42829577}
   m_Father: {fileID: 1494629274}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4564,6 +4566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 0}
   settingPanel: {fileID: 2014941253}
+  logPanel: {fileID: 0}
 --- !u!114 &952805591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6873,6 +6876,7 @@ GameObject:
   - component: {fileID: 1412459985}
   - component: {fileID: 1412459984}
   - component: {fileID: 1412459983}
+  - component: {fileID: 1412459987}
   m_Layer: 5
   m_Name: logtext
   m_TagString: Untagged
@@ -6896,8 +6900,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.94, y: 147.68852}
-  m_SizeDelta: {x: 688.19727, y: 33.16583}
+  m_AnchoredPosition: {x: -344.94, y: 147.46143}
+  m_SizeDelta: {x: 688.19727, y: 33.502537}
   m_Pivot: {x: 0, y: 0.95}
 --- !u!114 &1412459983
 MonoBehaviour:
@@ -6960,7 +6964,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d0fc0dde5eb3e6a4cad9b67aa138a09c, type: 3}
+    m_Font: {fileID: 12800000, guid: d3ea7abb427a16c449ce3b5518b82a49, type: 3}
     m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
@@ -6981,6 +6985,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412459981}
   m_CullTransparentMesh: 0
+--- !u!114 &1412459987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412459981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14367faaec6f5154db844b124e6323db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1425608192
 GameObject:
   m_ObjectHideFlags: 0
@@ -7879,8 +7895,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1540306442}
-  - {fileID: 467589432}
   - {fileID: 727812015}
+  - {fileID: 467589432}
   - {fileID: 2014941254}
   - {fileID: 110898634}
   m_Father: {fileID: 0}
@@ -8992,24 +9008,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837794151}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8f153989dd4cca4a81bab029a0f276f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8282d2519fbf49346b1a9b01be406d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuPanel: {fileID: 0}
+  settingPanel: {fileID: 0}
   logPanel: {fileID: 467589428}
-  MenuPanel: {fileID: 727812014}
-  Screenbutton: {fileID: 470158369}
-  TextImage: {fileID: 1241209107}
-  MainTextPanel: {fileID: 783656083}
-  NameTextPanel: {fileID: 832699338}
-  monthtext: {fileID: 784189850}
-  SelectButtonPanel: {fileID: 19048452}
-  deleteResetButton: {fileID: 0}
-  SkipselectPanel: {fileID: 77202732}
-  SkipselectpanelText: {fileID: 1022087841}
-  cannotskipAlertPanel: {fileID: 419977940}
-  monthimage: {fileID: 491073850}
-  menubutton: {fileID: 684780954}
-  monthtextbg: {fileID: 1067694385}
 --- !u!114 &1837794154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9055,8 +9059,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1837794153}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_log
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+        m_MethodName: onClicked_logbutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9621,7 +9625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2014941254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10553,3 +10557,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPanel: {fileID: 727812014}
   settingPanel: {fileID: 0}
+  logPanel: {fileID: 0}

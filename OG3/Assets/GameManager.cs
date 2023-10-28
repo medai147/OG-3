@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     //GameManager“à•Ï”
     string[] key = new string[6];
 
+    public List<string> logtext = new List<string>();
+
     private void Awake()
     {
         if (instance == null)

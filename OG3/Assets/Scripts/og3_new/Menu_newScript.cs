@@ -6,6 +6,7 @@ public class Menu_newScript : MonoBehaviour
 {
     [SerializeField]GameObject menuPanel;
     [SerializeField] GameObject settingPanel;
+    [SerializeField] GameObject logPanel;
 
     bool deleteflag = false;
 
@@ -64,5 +65,10 @@ public class Menu_newScript : MonoBehaviour
     public void onClickd_settingbutton()
     {
         settingPanel.SetActive(true);
+    }
+
+    public void onClicked_logbutton()
+    {
+        logPanel.SetActive(true);
     }
 }
