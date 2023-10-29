@@ -67,13 +67,6 @@ public class Story_new : MonoBehaviour
     [SerializeField] GameObject fadecloseanimationPrefab;
     [SerializeField] GameObject fadeopenanimationPrefab;
 
-    [SerializeField] GameObject[] autosetbutton = new GameObject[5];
-
-    [SerializeField] GameObject[] textsetbutton = new GameObject[5];
-
-    [SerializeField] GameObject[] sesetbutton = new GameObject[5];
-
-    [SerializeField] GameObject[] bgmsetbutton = new GameObject[5];
 
     [SerializeField] Auto_newScript autoscript;
 
@@ -442,12 +435,12 @@ public class Qdata_new
             charactercolor = spTxt[8];
             bgm = spTxt[9];
             se = spTxt[10];
-            selectdisp = spTxt[11];
-            selectbutton_num = spTxt[12];
+            selectdisp = spTxt[11];//選択肢を表示するかどうか
+            selectbutton_num = spTxt[12];//選択肢の数？
             monthimage = spTxt[13];
-            selectbuttontext3 = spTxt[14];
-            selectbuttontext1 = spTxt[15];
-            selectbuttontext2 = spTxt[16];
+            selectbuttontext3 = spTxt[14];//選択肢に表示する文字列
+            selectbuttontext1 = spTxt[15];//選択肢に表示する文字列
+            selectbuttontext2 = spTxt[16];//選択肢に表示する文字列
             textcolor = spTxt[17];
             fadeanimation = spTxt[18];
             moveanimation = spTxt[19];
