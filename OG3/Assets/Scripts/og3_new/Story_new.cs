@@ -16,7 +16,7 @@ public class Story_new : MonoBehaviour
 
     public static Story_new instance;
     
-
+    
     public bool textnextflag = false;
     private bool automodeflag = false;
 
@@ -74,6 +74,8 @@ public class Story_new : MonoBehaviour
     [SerializeField] GameObject[] sesetbutton = new GameObject[5];
 
     [SerializeField] GameObject[] bgmsetbutton = new GameObject[5];
+
+    [SerializeField] Auto_newScript autoscript;
 
 
 
@@ -143,17 +145,18 @@ public class Story_new : MonoBehaviour
             novelspeed = 0.1f;
             StartCoroutine(Novel(qstory));
         }
+
+        //オート中
+        if (autoscript.autoflag && !textread)
+        {
+            //オートモードの速度ボタンによってここで停止処理
+            textnextflag = true;
+        }
     }
 
     private IEnumerator Novel(int index)
     {
         textnextflag = false;
-        //オート中
-        if (automodeflag)
-        {
-            //オートモードの速度ボタンによってここで停止処理
-            textnextflag = true;
-        }
 
         stilldisplay();
         monthstartdisplay();
@@ -211,19 +214,26 @@ public class Story_new : MonoBehaviour
         }
         
         textread = false;
+
         //ストーリー番号を次に進める
         qstory++;
     }
 
     public void onClicked_screenbutton()
     {
-        if (textread)
+        if(!autoscript.autoflag)
         {
-            novelspeed = 0;
-        } else
-        {
-            textnextflag = true;
+            if (textread)
+            {
+                novelspeed = 0;
+
+            }
+            else
+            {
+                textnextflag = true;
+            }
         }
+
     }
 
     public void onClicked_automodebutton()
