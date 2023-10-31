@@ -46,6 +46,9 @@ public class Story_new : MonoBehaviour
     public int nameinput = 0;
     private String heroineName;
 
+    public float[]textspeed = {0.3f,0.1f,0.05f};
+    public float[] autospeed = {3f,2f,1f};
+
     AudioSource[] sounds;
 
     [SerializeField] GameObject textbox;
@@ -69,6 +72,7 @@ public class Story_new : MonoBehaviour
 
 
     [SerializeField] Auto_newScript autoscript;
+    [SerializeField] Setting_newScript settingscript;
 
 
 
@@ -131,19 +135,29 @@ public class Story_new : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //起動開始時は全て0が入る
+        Debug.Log("auto:" + settingscript.selectautobutton + " text:" + settingscript.selecttextbutton + "  bgm:" + settingscript.selectbgmbutton + " se:" + settingscript.selectsebutton);
+
         //コルーチンを進める
         if ((textnextflag && animationfinishedflag))
         {
-            //スピードが0から戻らないから代入した　後で設定画面で選んだ物に応じた値を入れるようにしたい
-            novelspeed = 0.1f;
+            //テキストを読む速度
+            novelspeed = textspeed[settingscript.selecttextbutton - 1];
             StartCoroutine(Novel(qstory));
+        } else
+        {
+            //設定画面で変更した値がすぐに反映されるように
+            if(novelspeed != 0)
+            {
+                novelspeed = textspeed[settingscript.selecttextbutton - 1];
+            }
         }
 
         //オート中
-        if (autoscript.autoflag && !textread)
+        if (autoscript.autoflag && !textread && !automode_textsendflag)
         {
-            //オートモードの速度ボタンによってここで停止処理
-            textnextflag = true;
+            automode_textsendflag = true;
+            Invoke("automode_textsend", autospeed[settingscript.selectautobutton - 1]);
         }
     }
 
@@ -212,6 +226,18 @@ public class Story_new : MonoBehaviour
         qstory++;
     }
 
+    public bool automode_textsendflag = false;
+    private void automode_textsend()
+    {
+        if(automode_textsendflag)
+        {
+            //オートモード時の次のテキストに行くフラグ
+            textnextflag = true;
+            automode_textsendflag = false;
+        }
+
+    }
+
     public void onClicked_screenbutton()
     {
         if(!autoscript.autoflag)
@@ -229,6 +255,7 @@ public class Story_new : MonoBehaviour
 
     }
 
+    
     public void onClicked_automodebutton()
     {
         //オートモードスタート

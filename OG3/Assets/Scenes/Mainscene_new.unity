@@ -1702,9 +1702,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_bgmbuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 278493643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1990,14 +1990,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_bgmbuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2951,14 +2951,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_sebuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591299785}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3541,14 +3541,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_sebuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4218,14 +4218,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_textbuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6284,9 +6284,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_textbuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6303,7 +6303,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291763570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -6417,14 +6417,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_bgmbuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6436,7 +6436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293513430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -7490,6 +7490,14 @@ MonoBehaviour:
   qstory: 0
   qNum: 0
   nameinput: 0
+  textspeed:
+  - 0.3
+  - 0.1
+  - 0.05
+  autospeed:
+  - 3
+  - 2
+  - 1
   textbox: {fileID: 783656083}
   ScreenButton: {fileID: 470158369}
   SelectButtonPanel: {fileID: 19048452}
@@ -7511,6 +7519,7 @@ MonoBehaviour:
   fadeopenanimationPrefab: {fileID: 1864837302287505243, guid: 136a2c9003ad90b4ab0533663da5e5b1,
     type: 3}
   autoscript: {fileID: 1398442715}
+  settingscript: {fileID: 2014941257}
 --- !u!82 &1494629267
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8807,14 +8816,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_textbuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8826,7 +8835,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1821617412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -9698,7 +9707,7 @@ MonoBehaviour:
   - {fileID: 1291763570}
   - {fileID: 794078786}
   - {fileID: 1821617412}
-  setbuttons:
+  sebuttons:
   - {fileID: 2096021415}
   - {fileID: 693635931}
   - {fileID: 591299785}
@@ -9706,10 +9715,10 @@ MonoBehaviour:
   - {fileID: 278493643}
   - {fileID: 375268892}
   - {fileID: 1293513430}
-  selectautobutton: 0
-  selecttextbutton: 0
-  selectsebutton: 0
-  selectbgmbutton: 0
+  selectautobutton: 2
+  selecttextbutton: 2
+  selectsebutton: 2
+  selectbgmbutton: 2
 --- !u!1 &2029998038
 GameObject:
   m_ObjectHideFlags: 0
@@ -10130,9 +10139,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Story, Assembly-CSharp
-        m_MethodName: onClicked_autospeed
+      - m_Target: {fileID: 2014941257}
+        m_TargetAssemblyTypeName: Setting_newScript, Assembly-CSharp
+        m_MethodName: onClicked_sebuttons
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10149,7 +10158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096021415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

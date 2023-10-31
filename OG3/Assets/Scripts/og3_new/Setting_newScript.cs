@@ -15,10 +15,10 @@ public class Setting_newScript : MonoBehaviour
 
     [SerializeField] GameObject[] bgmbuttons = new GameObject[3];
 
-    public int selectautobutton;
-    public int selecttextbutton;
-    public int selectsebutton;
-    public int selectbgmbutton;
+    public int selectautobutton = 2;
+    public int selecttextbutton = 2;
+    public int selectsebutton = 2;
+    public int selectbgmbutton = 2;
 
     // Start is called before the first frame update
     void Start()
