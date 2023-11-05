@@ -44,7 +44,6 @@ public class Story_new : MonoBehaviour
     float novelspeed = 0.1f; //文字の表示速度
 
     public int nameinput = 0;
-    private String heroineName;
 
     public float[]textspeed = {0.3f,0.1f,0.05f};
     public float[] autospeed = {3f,2f,1f};
@@ -95,23 +94,10 @@ public class Story_new : MonoBehaviour
         _story = GameObject.Find("MainText").GetComponent<Text>();
         _name = GameObject.Find("NameText").GetComponent<Text>();
 
-        nameinput = PlayerPrefs.GetInt("NAMEINPUT");
-        if (nameinput == 0)
-        {
-            heroineName = PlayerPrefs.GetString("INPUTNAME");
-            //Debug.Log("名前" + heroineName);
-        }
-        else
-        {
-            heroineName = PlayerPrefs.GetString("INPUTNAME2");
-            //Debug.Log("名前だよ" + heroineName);
-        }
-
-        heroineName = PlayerPrefs.GetString("INPUTNAME");
 
         //csvファイルからテキストを読み込み
         _storyArray = storyText.text.Replace(" ", "\u00A0");
-        _storyArray = storyText.text.Replace("@", heroineName);
+        _storyArray = storyText.text.Replace("@", GameManager.instance.heroinename);
         StringReader sr = new StringReader(_storyArray);
         sr.ReadLine();
         while (sr.Peek() > -1)
@@ -135,8 +121,7 @@ public class Story_new : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //起動開始時は全て0が入る
-        Debug.Log("auto:" + settingscript.selectautobutton + " text:" + settingscript.selecttextbutton + "  bgm:" + settingscript.selectbgmbutton + " se:" + settingscript.selectsebutton);
+        //Debug.Log("auto:" + settingscript.selectautobutton + " text:" + settingscript.selecttextbutton + "  bgm:" + settingscript.selectbgmbutton + " se:" + settingscript.selectsebutton);
 
         //コルーチンを進める
         if ((textnextflag && animationfinishedflag))
@@ -188,7 +173,8 @@ public class Story_new : MonoBehaviour
         String textcolorsr = _qdataList[index].textcolor;
         if (textcolorsr.Equals("text_own"))
         {
-            _name.text = heroineName;
+           
+            _name.text = GameManager.instance.heroinename;
         }
         else if (textcolorsr.Equals("text_monologue"))
         {
@@ -211,7 +197,7 @@ public class Story_new : MonoBehaviour
             yield return new WaitForSeconds(novelspeed);
         }
 
-        //ログを管理するリストに名前とテキストを代入(選択肢のところはまた考える)
+
         if(_name.text == "")
         {
             GameManager.instance.logtext.Add("\n" + _qdataList[index].storyText);
@@ -224,6 +210,7 @@ public class Story_new : MonoBehaviour
 
         //ストーリー番号を次に進める
         qstory++;
+        GameManager.instance.storynum = qstory;
     }
 
     public bool automode_textsendflag = false;
@@ -394,6 +381,7 @@ public class Story_new : MonoBehaviour
     private void playBGM()
     {
         String bgm_sr = _qdataList[qstory].bgm;
+        sounds[0].volume = (float)settingscript.selectbgmbutton / 3;
         if(!bgm_sr.Equals("0"))
         {
             bgmClip = Resources.Load<AudioClip>("AudioClips/" + bgm_sr);
@@ -412,6 +400,7 @@ public class Story_new : MonoBehaviour
     private void playSE()
     {
         String se_sr = _qdataList[qstory].se;
+        sounds[1].volume = (float)settingscript.selectsebutton / 3;
         if (!se_sr.Equals("0"))
         {
             seClip = Resources.Load<AudioClip>("AudioClips/" + se_sr);
@@ -419,6 +408,7 @@ public class Story_new : MonoBehaviour
             sounds[1].PlayOneShot(seClip);
         }
     }
+
 }
 
 //質問を管理するクラス

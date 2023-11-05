@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu_newScript : MonoBehaviour
 {
@@ -70,5 +71,11 @@ public class Menu_newScript : MonoBehaviour
     public void onClicked_logbutton()
     {
         logPanel.SetActive(true);
+    }
+
+    public void onClicked_savebutton()
+    {
+        GameManager.instance.beforescene = 1;
+        SceneManager.LoadScene("savescene_new");
     }
 }

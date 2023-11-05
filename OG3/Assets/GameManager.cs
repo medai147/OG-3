@@ -18,6 +18,14 @@ public class GameManager : MonoBehaviour
 
     public List<string> logtext = new List<string>();
 
+    //セーブ系
+    public int storynum = 0;
+    public string heroinename = "";
+
+    //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
+    public int beforescene;
+
+
     private void Awake()
     {
         if (instance == null)

@@ -17,8 +17,8 @@ public class Setting_newScript : MonoBehaviour
 
     public int selectautobutton = 2;
     public int selecttextbutton = 2;
-    public int selectsebutton = 2;
-    public int selectbgmbutton = 2;
+    public int selectsebutton = 3;
+    public int selectbgmbutton = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -76,4 +76,6 @@ public class Setting_newScript : MonoBehaviour
         selectbgmbutton = number;
         bgmbuttons[number - 1].GetComponent<Image>().enabled = true;
     }
+
+
 }
