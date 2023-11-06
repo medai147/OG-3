@@ -206,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save7_onClicked
         m_Mode: 1
@@ -367,7 +367,7 @@ RectTransform:
   m_Children:
   - {fileID: 1666710373}
   m_Father: {fileID: 289698985}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save1_onClicked
         m_Mode: 1
@@ -705,8 +705,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 289698981}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_startback
+        m_TargetAssemblyTypeName: Save_newScript, Assembly-CSharp
+        m_MethodName: onClicked_closebutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save4_onClicked
         m_Mode: 1
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: onClicked_startback
         m_Mode: 1
@@ -1111,9 +1111,9 @@ GameObject:
   - component: {fileID: 289698984}
   - component: {fileID: 289698983}
   - component: {fileID: 289698982}
-  - component: {fileID: 289698981}
   - component: {fileID: 289698980}
   - component: {fileID: 289698979}
+  - component: {fileID: 289698981}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1322,29 +1322,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 289698978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fa0b8a63a403e44b9f90df818b02a23, type: 3}
+  m_Script: {fileID: 11500000, guid: bd5588a6ac51cc2469b66a3554609950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadstill: {fileID: 2091704903}
-  loadsprite: {fileID: 21300000, guid: b5941d838cfed474ab40161f74071ebb, type: 3}
-  _save1: {fileID: 1666710371}
-  _save2: {fileID: 250279154}
-  _save3: {fileID: 952194922}
-  _save4: {fileID: 2014314038}
-  _save5: {fileID: 74114553}
-  _save6: {fileID: 1702432818}
-  _save7: {fileID: 1583950405}
-  _save8: {fileID: 397484062}
-  _save1sentence: {fileID: 610869453}
-  _save2sentence: {fileID: 1424059501}
-  _save3sentence: {fileID: 1120950982}
-  _save4sentence: {fileID: 1827646706}
-  _save5sentence: {fileID: 808564686}
-  _save6sentence: {fileID: 788068949}
-  _save7sentence: {fileID: 1299701750}
-  _save8sentence: {fileID: 743916665}
-  loadPanel: {fileID: 528814943}
-  savePanel: {fileID: 476801965}
+  savebuttons:
+  - {fileID: 83253917}
+  - {fileID: 318329829}
+  - {fileID: 1143300458}
+  - {fileID: 201036465}
+  - {fileID: 757642718}
+  - {fileID: 1942533253}
+  - {fileID: 20817696}
+  - {fileID: 1355558701}
 --- !u!114 &289698982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1395,7 +1384,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 2042599554}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1418,10 +1407,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 662495787}
-  - {fileID: 610869455}
   - {fileID: 83253918}
-  - {fileID: 1424059503}
+  - {fileID: 610869455}
   - {fileID: 318329830}
+  - {fileID: 1424059503}
   - {fileID: 1120950984}
   - {fileID: 1143300459}
   - {fileID: 1827646708}
@@ -1470,7 +1459,7 @@ RectTransform:
   m_Children:
   - {fileID: 250279156}
   m_Father: {fileID: 289698985}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1521,7 +1510,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save2_onClicked
         m_Mode: 1
@@ -2037,12 +2026,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610869452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 289698985}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2207,7 +2196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: onClicked_next
         m_Mode: 1
@@ -2419,7 +2408,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save5_onClicked
         m_Mode: 1
@@ -2943,7 +2932,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save3_onClicked
         m_Mode: 1
@@ -3155,7 +3144,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save8_onClicked
         m_Mode: 1
@@ -3356,7 +3345,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 289698985}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3828,7 +3817,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: onClicked_back
         m_Mode: 1
@@ -3961,7 +3950,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289698981}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: save6_onClicked
         m_Mode: 1

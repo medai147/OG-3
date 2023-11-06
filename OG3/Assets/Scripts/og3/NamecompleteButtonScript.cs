@@ -15,8 +15,7 @@ public class NamecompleteButtonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("NAMEINPUT", 0);
-        PlayerPrefs.Save();
+
     }
 
     // Update is called once per frame
@@ -29,9 +28,8 @@ public class NamecompleteButtonScript : MonoBehaviour
         LoadingPanel.SetActive(true);
         heroineName = _inputName.text;
         //Debug.Log(heroineName);
-        
-        PlayerPrefs.SetString("INPUTNAME", heroineName);
-        PlayerPrefs.Save();
-        SceneManager.LoadScene("Main scene");
+
+        GameManager.instance.heroinename = heroineName;
+        SceneManager.LoadScene("Mainscene_new");
     }
 }
