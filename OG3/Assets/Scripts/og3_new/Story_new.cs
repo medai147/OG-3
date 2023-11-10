@@ -113,7 +113,14 @@ public class Story_new : MonoBehaviour
             //q.WriteDebugLog();
         }
 
-
+        if(GameManager.instance.storynum != 0)
+        {
+            qstory = GameManager.instance.storynum - 1;
+        } else
+        {
+            qstory = GameManager.instance.storynum;
+        }
+        
         //最初のスタートだから変更無し
         StartCoroutine(Novel(qstory));
     }

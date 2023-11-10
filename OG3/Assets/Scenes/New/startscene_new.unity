@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 84595164}
   - component: {fileID: 84595163}
   - component: {fileID: 84595162}
+  - component: {fileID: 84595161}
   m_Layer: 5
   m_Name: loadbutton
   m_TagString: Untagged
@@ -162,6 +163,18 @@ RectTransform:
   m_AnchoredPosition: {x: 132.73, y: -183.69}
   m_SizeDelta: {x: 151.27, y: 50.098}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &84595161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84595159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ac0124b7bedb24a8f56d3168db2aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &84595162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,9 +219,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: load_onClicked
+      - m_Target: {fileID: 84595161}
+        m_TargetAssemblyTypeName: loadbuttonScript, Assembly-CSharp
+        m_MethodName: onClicked_loadbutton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

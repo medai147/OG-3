@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         coin = PlayerPrefs.GetInt("COIN", 0);
-        indexload(getimage);
+        indexload(getimage,"key");
         //getimage[1] = PlayerPrefs.GetInt("key1", 0);
     }
 
@@ -62,29 +62,29 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt(coinkey, coin);
         PlayerPrefs.Save();
 
-        indexsave(getimage);
+        indexsave(getimage,"key");
         //PlayerPrefs.SetInt("key0", getimage[0]);
         PlayerPrefs.Save();
     }
 
     //配列セーブ
-    void indexsave(int[]save)
+    void indexsave(int[]save,string pass)
     {
         key = new string[save.Length];
         for(int i = 0; i < save.Length;i++)
         {
-            key[i] = "key" + i.ToString();
+            key[i] = pass + i.ToString();
             PlayerPrefs.SetInt(key[i], save[i]);
             PlayerPrefs.Save();
         }
     }
 
     //配列ロード
-    void indexload(int[]load)
+    void indexload(int[]load, string pass)
     {
         for(int i = 0; i < load.Length;i++)
         {
-            key[i] = "key" + i.ToString();
+            key[i] = pass + i.ToString();
             getimage[i] = PlayerPrefs.GetInt(key[i], 0);
         }
     }
