@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     //セーブ系
     public int storynum = 0;
     public string heroinename = "";
+    public string screenshotpath = "";
 
     //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
     public int beforescene;

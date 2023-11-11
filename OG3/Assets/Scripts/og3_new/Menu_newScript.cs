@@ -31,8 +31,7 @@ public class Menu_newScript : MonoBehaviour
 
     public void onClicked_menubutton()
     {
-        menuPanel.SetActive(true);
-        Time.timeScale = 0;
+        Invoke("menuactive", 0.1f);
     }
 
     public void onClicked_closebutton()
@@ -77,5 +76,11 @@ public class Menu_newScript : MonoBehaviour
     {
         GameManager.instance.beforescene = 1;
         SceneManager.LoadScene("savescene_new");
+    }
+
+    public void menuactive()
+    {
+        menuPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
