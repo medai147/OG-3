@@ -17,7 +17,7 @@ public class Save_newScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AssetDatabase.Refresh();
+        //AssetDatabase.Refresh();
         Debug.Log("Start");
         for(int i = 0; i < heroinname.Length;i++)
         {
@@ -26,7 +26,7 @@ public class Save_newScript : MonoBehaviour
             photo[i] = PlayerPrefs.GetString("photo" + i);
             
             savebuttons[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = "写真：" + photo[i] + "主人公の名前：" + heroinname[i] + "ストーリー番号：" + storynum[i];
-            savebuttons[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(photo[i]);
+            savebuttons[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = LoadSprite(photo[i]);
             //savebuttons[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/UI/logo");
         }
     }
@@ -63,7 +63,7 @@ public class Save_newScript : MonoBehaviour
             PlayerPrefs.Save();
             buttonnumber = number;
             savebuttons[number].transform.GetChild(0).gameObject.GetComponent<Text>().text = "写真：" + GameManager.instance.screenshotpath + "主人公の名前：" + GameManager.instance.heroinename + "ストーリー番号：" + GameManager.instance.storynum;
-            savebuttons[number].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>(GameManager.instance.screenshotpath);
+            savebuttons[number].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = LoadSprite(GameManager.instance.screenshotpath);
             Time.timeScale = 1;
             //Debug.Log("セーブ：主人公の名前：" + GameManager.instance.heroinename + "ストーリー番号：" + GameManager.instance.storynum + "一つ前のシーン：" + GameManager.instance.beforescene);
         } else
@@ -77,6 +77,23 @@ public class Save_newScript : MonoBehaviour
             }
             Time.timeScale = 1;
             Debug.Log("ロード：主人公の名前：" + GameManager.instance.heroinename + "ストーリー番号：" + GameManager.instance.storynum + "一つ前のシーン：" + GameManager.instance.beforescene);
+        }
+    }
+
+    public static Sprite LoadSprite(string path)
+    {
+        try
+        {
+            var rawData = System.IO.File.ReadAllBytes(path);
+            Texture2D texture2D = new Texture2D(0, 0);
+            texture2D.LoadImage(rawData);
+            var sprite = Sprite.Create(texture2D, new Rect(0f, 0f, texture2D.width, texture2D.height),
+                new Vector2(0.5f, 0.5f), 100f);
+            return sprite;
+        }
+        catch (Exception e)
+        {
+            return null;
         }
     }
 

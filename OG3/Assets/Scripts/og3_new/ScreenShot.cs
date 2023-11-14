@@ -18,7 +18,7 @@ public class ScreenShot : MonoBehaviour
 
     void Start()
     {
-        path = Application.dataPath + "/Resources/" + folderName + "/";
+        path = Application.dataPath + folderName + "/";
     }
 
     public void PrintScreen()
@@ -48,7 +48,7 @@ public class ScreenShot : MonoBehaviour
 
         ScreenCapture.CaptureScreenshot(fileName);
 
-        GameManager.instance.screenshotpath = folderName + "/" + date;
+        GameManager.instance.screenshotpath = fileName;
 
 
         yield return new WaitUntil(() => File.Exists(fileName));

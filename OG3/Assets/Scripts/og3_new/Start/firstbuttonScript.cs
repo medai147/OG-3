@@ -19,6 +19,8 @@ public class firstbuttonScript : MonoBehaviour
 
     public void onClicked_firststartbutton()
     {
+        Time.timeScale = 1;
+        GameManager.instance.storynum = 0;
         inputnamePanel.SetActive(true);
     }
 }
