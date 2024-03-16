@@ -46,7 +46,17 @@ public class Save_newScript : MonoBehaviour
     
     public void onClicked_returnbutton()
     {
-        GameManager.instance.beforescene = 2;
+        if (GameManager.instance.beforescene == 1)
+        {
+            Time.timeScale = 1;
+            GameManager.instance.beforescene = 2;
+            SceneManager.LoadScene("Mainscene_new");
+        } else
+        {
+            GameManager.instance.beforescene = 2;
+            SceneManager.LoadScene("startscene_new");
+        }
+        
     }
 
     int buttonnumber = 0;
