@@ -48,6 +48,8 @@ public class Story_new : MonoBehaviour
     public float[]textspeed = {0.3f,0.1f,0.05f};
     public float[] autospeed = {3f,2f,1f};
 
+    String[] selectskipnum;//選択肢を押したときの遷移先の番号
+
     AudioSource[] sounds;
 
     [SerializeField] GameObject textbox;
@@ -129,7 +131,18 @@ public class Story_new : MonoBehaviour
     void Update()
     {
         //Debug.Log("auto:" + settingscript.selectautobutton + " text:" + settingscript.selecttextbutton + "  bgm:" + settingscript.selectbgmbutton + " se:" + settingscript.selectsebutton);
-
+        if (qstory == 93)
+        {
+            qstory = 98;
+        }
+        if (qstory == 126 || qstory == 134)
+        {
+            qstory = 142;
+        }
+        if (qstory == 186)
+        {
+            qstory = 191;
+        }
         //コルーチンを進める
         if ((textnextflag && animationfinishedflag))
         {
@@ -144,6 +157,8 @@ public class Story_new : MonoBehaviour
                 novelspeed = textspeed[settingscript.selecttextbutton - 1];
             }
         }
+
+
 
         //オート中
         if (autoscript.autoflag && !textread && !automode_textsendflag)
@@ -191,6 +206,39 @@ public class Story_new : MonoBehaviour
         {
             _name.text = _qdataList[index].nameText;
         }
+
+        //選択(仮)
+        String[] selecttext;
+        
+        selecttext = _qdataList[index].selectbuttontext1.Split(' ');
+        selectskipnum = _qdataList[index].selectbuttontext2.Split(' ');
+        int selectcount = 0;
+        foreach (string select in selecttext)
+        {
+            if(select != "0")
+            {
+                selectcount++;
+            }
+        }
+        SelectButtonPanel.SetActive(false);
+        SelectButton_3.SetActive(false);
+        if (selectcount == 2)
+        {
+            SelectButtonPanel.SetActive(true);
+
+            Selectbutton_1.transform.GetChild(0).GetComponent<Text>().text = selecttext[0];
+            Selectbutton_2.transform.GetChild(0).GetComponent<Text>().text = selecttext[1];
+        }
+        else if (selectcount == 3)
+        {
+            SelectButtonPanel.SetActive(true);
+            SelectButton_3.SetActive(true);
+
+            Selectbutton_1.transform.GetChild(0).GetComponent<Text>().text = selecttext[0];
+            Selectbutton_2.transform.GetChild(0).GetComponent<Text>().text = selecttext[1];
+            SelectButton_3.transform.GetChild(0).GetComponent<Text>().text = selecttext[2];
+        }
+
 
 
         //本文再生
@@ -246,10 +294,26 @@ public class Story_new : MonoBehaviour
                 textnextflag = true;
             }
         }
-
     }
 
-    
+    public void onClicked_selectbutton_1()
+    {
+        qstory = int.Parse(selectskipnum[0]);
+        textnextflag = true;
+    }
+
+    public void onClicked_selectbutton_2()
+    {
+        qstory = int.Parse(selectskipnum[1]);
+        textnextflag = true;
+    }
+
+    public void onClicked_selectbutton_3()
+    {
+        qstory = int.Parse(selectskipnum[2]);
+        textnextflag = true;
+    }
+
     public void onClicked_automodebutton()
     {
         //オートモードスタート
@@ -392,8 +456,10 @@ public class Story_new : MonoBehaviour
         if(!bgm_sr.Equals("0"))
         {
             bgmClip = Resources.Load<AudioClip>("AudioClips/" + bgm_sr);
+            
             if (oldbgmClip != bgmClip)
             {
+                Debug.Log(oldbgmClip + " " + bgmClip);
                 sounds[0].clip = bgmClip;
                 sounds[0].Play();
             }

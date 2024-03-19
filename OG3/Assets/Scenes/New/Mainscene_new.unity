@@ -315,8 +315,8 @@ RectTransform:
   m_Children:
   - {fileID: 182374250}
   - {fileID: 2046572880}
-  - {fileID: 1260362683}
   - {fileID: 77357771}
+  - {fileID: 1260362683}
   m_Father: {fileID: 1540306442}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -702,7 +702,7 @@ RectTransform:
   m_Children:
   - {fileID: 621865121}
   m_Father: {fileID: 19048453}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -798,9 +798,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClick_SelectButton_2
+      - m_Target: {fileID: 1494629266}
+        m_TargetAssemblyTypeName: Story_new, Assembly-CSharp
+        m_MethodName: onClicked_selectbutton_2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5904,12 +5904,12 @@ GameObject:
   - component: {fileID: 1260362685}
   - component: {fileID: 1260362684}
   m_Layer: 5
-  m_Name: SelectButton_1
+  m_Name: SelectButton_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1260362683
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5923,7 +5923,7 @@ RectTransform:
   m_Children:
   - {fileID: 1836629507}
   m_Father: {fileID: 19048453}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6019,9 +6019,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClick_SelectButton_1
+      - m_Target: {fileID: 1494629266}
+        m_TargetAssemblyTypeName: Story_new, Assembly-CSharp
+        m_MethodName: onClicked_selectbutton_3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7441,9 +7441,9 @@ MonoBehaviour:
   cannotskipAlertPanel: {fileID: 419977940}
   LoadingPanel: {fileID: 322433819}
   settingPanel: {fileID: 2014941253}
-  Selectbutton_1: {fileID: 1260362682}
+  Selectbutton_1: {fileID: 2046572879}
   Selectbutton_2: {fileID: 77357770}
-  SelectButton_3: {fileID: 2046572879}
+  SelectButton_3: {fileID: 1260362682}
   menubutton: {fileID: 684780954}
   monthtext: {fileID: 784189850}
   monthTextPanel: {fileID: 209087561}
@@ -7661,7 +7661,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 867b12e860a186446b85965d3dee1200, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 0.15
+  m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -9843,7 +9843,7 @@ GameObject:
   - component: {fileID: 2046572882}
   - component: {fileID: 2046572881}
   m_Layer: 5
-  m_Name: SelectButton_3
+  m_Name: SelectButton_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9958,9 +9958,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClick_SelectButton_3
+      - m_Target: {fileID: 1494629266}
+        m_TargetAssemblyTypeName: Story_new, Assembly-CSharp
+        m_MethodName: onClicked_selectbutton_1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
