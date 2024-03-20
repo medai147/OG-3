@@ -115,16 +115,16 @@
 114,「桜児くんいつもクラスで馴染めるように沢山声かけてくれて助かってるから、お近づきの印に誕プレ渡してもいい？」,えみ,clear,clear,clear,back_heroineroom_night,0,0,room,0,0,0,0,0,0,0,text_own,0,0
 115,「わ〜！嬉しい！ありがとー！誕プレ楽しみにしてるね！」,犬山 桜児,clear,clear,clear,back_heroineroom_night,0,0,room,0,0,0,0,0,0,0,text_ouji,0,0
 116,誕生日プレゼント、何にしよう？,えみ,clear,clear,clear,back_heroineroom_night,0,0,room,0,0,0,0,0,0,0,text_monologue,0,0
-117, , ,clear,clear,clear,back_heroineroom_night,0,0,room,0,1,3,0,スイーツ,スイーツ 煮干し１kg 手編みのマフラー,118 125 133,0,0,0
+117, , ,clear,clear,clear,back_heroineroom_night,0,0,room,0,1,3,0,スイーツ,スイーツ 煮干し１kg 手編みのマフラー,117 124 132,0,0,0
 118,  ,                ,clear,clear,clear,back_heroineroom_night,0,0,normal,0,0,0,0,0,0,0,0,1,0
-119,  ,                ,clear,clear,clear,back_heroineroom_night,0,0,normal,0,0,0,0,0,0,0,0,0,0
+119,  ,                ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,0,0,0
 120,                                  ,  ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,0,0,教室
 121,今日は桜児くんの誕生日。私なりにイ〇スタ映えしそうなスイーツを選んでみたけど喜んでくれるかな……？,えみ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 122,「桜児くん誕生日おめでとう！いつも話しかけてくれてありがとう！お近づきの印に可愛いスイーツを選んでみたよ。」,えみ,ouzioji,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_own,0,0
 123,「わ〜！かわいい！ありがとう！イ〇スタに載せちゃお！」,犬山 桜児,ouziojismile,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_ouji,0,0
 124,どうやら喜んでくれたみたいだ。よかった！,えみ,ouziojismile,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 125,  ,                ,clear,clear,clear,back_heroineroom_night,0,0,normal,0,0,0,0,0,0,0,0,1,0
-126,  ,                ,clear,clear,clear,back_heroineroom_night,0,0,normal,0,0,0,0,0,0,0,0,0,0
+126,  ,                ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,0,0,0
 127,                                  ,  ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,0,0,教室
 128,今日は桜児くんの誕生日。思いきって煮干し1kgを選んで見たけど喜んでくれるかな……？,えみ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 129,「桜児くん誕生日おめでとう！いつも話しかけてくれてありがとう！お近づきの印に煮干し1kgを選んでみたよ。」,えみ,ouzioji,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_own,0,0
@@ -132,7 +132,7 @@
 131,実はイ〇スタで煮干しダイエットが流行ってるらしいから気になってたんだよね、今日から挑戦しちゃお！」,犬山 桜児,ouziojismile,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_ouji,0,0
 132,煮干しダイエット……？まぁいいや、予想外にもとても喜んでくれたみたい！よかった！,えみ,ouziojismile,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 133,  ,                ,clear,clear,clear,back_heroineroom_night,0,0,normal,0,0,0,0,0,0,0,0,1,0
-134,  ,                ,clear,clear,clear,back_heroineroom_night,0,0,normal,0,0,0,0,0,0,0,0,0,0
+134,  ,                ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,0,0,0
 135,                                  ,  ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,0,0,教室
 136,今日は桜児くんの誕生日。私なりに頑張って手編みマフラーに挑戦したけど喜んでくれるかな……？,えみ,clear,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 137,「桜児くん誕生日おめでとう！いつも話しかけてくれてありがとう！お近づきの印にこれ、手作りしてみたよ。」,えみ,ouzioji,clear,clear,back_classroom,0,0,normal,0,0,0,0,0,0,0,text_own,0,0
@@ -157,7 +157,7 @@
 156,「私もそこのパンケーキすごく食べたかったし、いいよー！」,えみ,clear,clear,clear,back_heroineroom_noon,0,0,room,0,0,0,0,0,0,0,text_own,0,0
 157,「じゃあ土曜日に学校の近くの商店街で待ち合わせね！」,犬山 桜児,clear,clear,clear,back_heroineroom_noon,0,0,room,0,0,0,0,0,0,0,text_ouji,0,0
 158,  ,                ,clear,clear,clear,back_heroineroom_noon,0,0,street,0,0,0,0,0,0,0,0,1,0
-159,  ,                ,clear,clear,clear,back_heroineroom_noon,0,0,street,0,0,0,0,0,0,0,0,0,0
+159,  ,                ,clear,clear,clear,back_shopload,0,0,street,0,0,0,0,0,0,0,0,0,0
 160,                                  ,  ,clear,clear,clear,back_shopload,0,0,street,0,0,0,0,0,0,0,0,0,商店街
 161,……早めに着いちゃった。さすがに桜児くんも来てないみたい。,えみ,clear,clear,clear,back_shopload,0,0,street,0,0,0,0,0,0,0,text_monologue,0,0
 162,「ごっめ〜ん！先にきてたんだね、待った？」,犬山 桜児,ouziojitrouble,clear,clear,back_shopload,0,0,street,0,0,0,0,0,0,0,text_ouji,0,0
