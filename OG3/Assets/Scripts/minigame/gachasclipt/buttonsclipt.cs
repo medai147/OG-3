@@ -37,7 +37,7 @@ public class buttonsclipt : MonoBehaviour
     }
     public void onClicked_returnmenubutton()
     {
-        SceneManager.LoadScene("start scene");
+        SceneManager.LoadScene("minigamemenuscene");
     }
 
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class firstbuttonScript : MonoBehaviour
 {
     [SerializeField] GameObject inputnamePanel;
+    [SerializeField] AudioSource audiosource;
+    public AudioClip button;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,12 @@ public class firstbuttonScript : MonoBehaviour
     }
 
     public void onClicked_firststartbutton()
+    {
+        audiosource.PlayOneShot(button);
+        Invoke("firststart",1.0f);
+    }
+
+    void firststart()
     {
         Time.timeScale = 1;
         GameManager.instance.storynum = 0;

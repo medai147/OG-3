@@ -58,6 +58,6 @@ public class Startsclipt : MonoBehaviour
     {
         countTime = 30;
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        SceneManager.LoadScene("start scene");
+        SceneManager.LoadScene("minigamemenuscene");
     }
 }

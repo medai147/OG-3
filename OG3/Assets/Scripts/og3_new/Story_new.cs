@@ -135,13 +135,13 @@ public class Story_new : MonoBehaviour
         {
             qstory = 98;
         }
-        if (qstory == 123 || qstory == 131)
+        if (qstory == 122 || qstory == 130)
         {
-            qstory = 139;
+            qstory = 138;
         }
-        if (qstory == 184)
+        if (qstory == 183)
         {
-            qstory = 188;
+            qstory = 187;
         }
         //コルーチンを進める
         if ((textnextflag && animationfinishedflag))

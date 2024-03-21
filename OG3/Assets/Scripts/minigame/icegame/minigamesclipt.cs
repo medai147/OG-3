@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class minigamesclipt : MonoBehaviour
 {
@@ -12,15 +13,19 @@ public class minigamesclipt : MonoBehaviour
     public GameObject startbackimage;
     public Sprite ojistartimageSprite;
 
+    [SerializeField] AudioSource audiosource;
+    public AudioClip button;
     // Start is called before the first frame update
     void Start()
     {
+        /*
         startchange = PlayerPrefs.GetInt("START");
-        Image startimage = (Image)startbackimage.GetComponent<Image>();
+        GameObject startimage = startbackimage.GetComponent<Image>();
         if(startchange == 1)
         {
             startimage.sprite = ojistartimageSprite;
         }
+        */
     }
 
     // Update is called once per frame
@@ -38,10 +43,17 @@ public class minigamesclipt : MonoBehaviour
         SceneManager.LoadScene("minigamemenuscene");
     }
 
-    public void jumptoMinigame()
-    {
 
-            SceneManager.LoadScene("minigamemenuscene");
+
+    public void onClicked_minigamebutton()
+    {
+        audiosource.PlayOneShot(button);
+        Invoke("loadbutton", 1.0f);
+    }
+
+    void loadbutton()
+    {
+        SceneManager.LoadScene("minigamemenuscene");
     }
 
 }

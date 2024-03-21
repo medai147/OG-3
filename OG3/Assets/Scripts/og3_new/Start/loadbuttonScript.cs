@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class loadbuttonScript : MonoBehaviour
 {
+    [SerializeField] AudioSource audiosource;
+    public AudioClip button;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,15 @@ public class loadbuttonScript : MonoBehaviour
 
     public void onClicked_loadbutton()
     {
+        audiosource.PlayOneShot(button);
+        Invoke("loadbutton", 1.0f);
+    }
+
+    void loadbutton()
+    {
         SceneManager.LoadScene("savescene_new");
         GameManager.instance.beforescene = 0;
     }
+
+
 }
