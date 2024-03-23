@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
     public int beforescene;
 
-
+    public bool attention = false;
     private void Awake()
     {
         if (instance == null)
