@@ -56,7 +56,7 @@
 55,ていうかそろそろ誰かと仲良くならないとまずいぞ！どうしよう......。 ,えみ,clear,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 56,「おい、大丈夫か？さっきからボーっとしているぞ。」,目鏡 光,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_hikaru,0,0
 57,「ハッ！ごめんなさい、考え事をしてて......。」,えみ,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_own,0,0
-58,OG☆３の３人は4月のあの日からなにかと気にかけてくれていて、幸い接点は途切れていない。OG☆３は見た目だけじゃなくて中身も優しいんだな～。今は見た目おじさんだけど！！,えみ,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
+58,OG☆３の３人は4月のあの日からなにかと気にかけてくれていて、幸い接点は途切れていない。OG☆３は見た目だけじゃなくて中身も優しいんだな～。,えみ,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 59,「あの日銅像にぶつかって以来、ボーっとしていることが増えたと言っていたが......本当に大丈夫か？」,目鏡 光,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_hikaru,0,0
 60,「心配してくれてありがとうございます、光先輩！ ……でも、授業中もぼんやりすることが多くて内容がなかなか頭に入らないんですよね。」,えみ,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_own,0,0
 61,「それは心配だな......。放課後勉強をみてやろう。」,目鏡 光,hikaruoji,clear,clear,back_corridor,0,0,normal,0,0,0,0,0,0,0,text_hikaru,0,0
@@ -187,7 +187,7 @@
 186,「そういうときもあるよね〜！他の人誘うから気にしないで！」,犬山 桜児,clear,clear,clear,back_heroineroom_noon,0,0,room,0,0,0,0,0,0,0,text_ouji,0,0
 187,か、悲しい……また金欠にならないようにバイトして稼がないと！,えみ,clear,clear,clear,back_heroineroom_noon,0,0,room,0,0,0,0,0,0,0,text_monologue,0,0
 188,  ,month7月,clear,clear,clear,back_classroom,0,0,0,jingle,0,0,month_July,0,0,0,text_mob,0,0
-189,                                  ,  ,clear,clear,clear,back_garage,0,0,street,0,0,0,0,0,0,0,0,0,倉庫
+189,                                  ,  ,clear,clear,clear,back_garage,0,0,normal,0,0,0,0,0,0,0,0,0,倉庫
 190,今日は体育祭。昨日まで天気が不安だったけど、無事に晴れてよかった！,えみ,clear,clear,clear,back_garage,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 191,私は小道具の係になったから朝から忙しいし気合い入れて頑張ろう！,えみ,clear,clear,clear,back_garage,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0
 192,────皆よりもちょっと遅めに来ちゃったから軽めの荷物は運ばれちゃったみたい……,えみ,clear,clear,clear,back_garage,0,0,normal,0,0,0,0,0,0,0,text_monologue,0,0

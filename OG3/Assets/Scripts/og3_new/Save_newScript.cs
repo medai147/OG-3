@@ -24,8 +24,9 @@ public class Save_newScript : MonoBehaviour
             heroinname[i] = PlayerPrefs.GetString("heroin" + i);
             storynum[i] = PlayerPrefs.GetInt("storynum" + i);
             photo[i] = PlayerPrefs.GetString("photo" + i);
-            
-            savebuttons[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = "写真：" + photo[i] + "主人公の名前：" + heroinname[i] + "ストーリー番号：" + storynum[i];
+
+            //savebuttons[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = "写真：" + photo[i] + "主人公の名前：" + heroinname[i] + "ストーリー番号：" + storynum[i];
+            savebuttons[i].transform.GetChild(0).gameObject.GetComponent<Text>().text = "主人公の名前：" + heroinname[i] + " ストーリー番号：" + storynum[i];
             savebuttons[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = LoadSprite(photo[i]);
             //savebuttons[i].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/UI/logo");
         }
@@ -72,7 +73,8 @@ public class Save_newScript : MonoBehaviour
             PlayerPrefs.SetInt("storynum" + number, GameManager.instance.storynum);
             PlayerPrefs.Save();
             buttonnumber = number;
-            savebuttons[number].transform.GetChild(0).gameObject.GetComponent<Text>().text = "写真：" + GameManager.instance.screenshotpath + "主人公の名前：" + GameManager.instance.heroinename + "ストーリー番号：" + GameManager.instance.storynum;
+            //savebuttons[number].transform.GetChild(0).gameObject.GetComponent<Text>().text = "写真：" + GameManager.instance.screenshotpath + "主人公の名前：" + GameManager.instance.heroinename + "ストーリー番号：" + GameManager.instance.storynum;
+            savebuttons[number].transform.GetChild(0).gameObject.GetComponent<Text>().text = "主人公の名前：" + GameManager.instance.heroinename + " ストーリー番号：" + GameManager.instance.storynum;
             savebuttons[number].transform.GetChild(1).gameObject.GetComponent<Image>().sprite = LoadSprite(GameManager.instance.screenshotpath);
             Time.timeScale = 1;
             //Debug.Log("セーブ：主人公の名前：" + GameManager.instance.heroinename + "ストーリー番号：" + GameManager.instance.storynum + "一つ前のシーン：" + GameManager.instance.beforescene);

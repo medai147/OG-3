@@ -83,4 +83,12 @@ public class Menu_newScript : MonoBehaviour
         menuPanel.SetActive(true);
         Time.timeScale = 0;
     }
+
+    public void onClicked_titleback()
+    {
+        GameManager.instance.beforescene = 1;
+        Time.timeScale = 1;
+        SceneManager.LoadScene("startscene_new");
+
+    }
 }

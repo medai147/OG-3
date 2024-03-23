@@ -36,4 +36,9 @@ public class minigame_rulesclipt : MonoBehaviour
     {
         SceneManager.LoadScene("minigamemenuscene");
     }
+
+    public void onClicked_titlebackbutton()
+    {
+        SceneManager.LoadScene("startscene_new");
+    }
 }

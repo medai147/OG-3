@@ -143,6 +143,10 @@ public class Story_new : MonoBehaviour
         {
             qstory = 187;
         }
+        if(qstory == 253)
+        {
+            qstory = 0;
+        }
         //コルーチンを進める
         if ((textnextflag && animationfinishedflag))
         {
@@ -226,6 +230,7 @@ public class Story_new : MonoBehaviour
         {
             SelectButtonPanel.SetActive(true);
 
+            autoscript.autoflag = false;
             Selectbutton_1.transform.GetChild(0).GetComponent<Text>().text = selecttext[0];
             Selectbutton_2.transform.GetChild(0).GetComponent<Text>().text = selecttext[1];
         }
@@ -234,6 +239,7 @@ public class Story_new : MonoBehaviour
             SelectButtonPanel.SetActive(true);
             SelectButton_3.SetActive(true);
 
+            autoscript.autoflag = false;
             Selectbutton_1.transform.GetChild(0).GetComponent<Text>().text = selecttext[0];
             Selectbutton_2.transform.GetChild(0).GetComponent<Text>().text = selecttext[1];
             SelectButton_3.transform.GetChild(0).GetComponent<Text>().text = selecttext[2];
@@ -426,9 +432,11 @@ public class Story_new : MonoBehaviour
 
     private void moveanimation()
     {
+        
         String moveanimationtext = _qdataList[qstory].moveanimation;
         if (!moveanimationtext.Equals("0"))
         {
+            Debug.Log("アニメーションを出す");
             Instantiate(moveanimationPrefab, new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity,GameObject.Find("BackgroundPanel").transform);
             _move = GameObject.Find("movetext").GetComponent<Text>();
             _move.text = moveanimationtext;

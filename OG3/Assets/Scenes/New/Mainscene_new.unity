@@ -234,9 +234,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 15619737}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: onClicked_Start
+      - m_Target: {fileID: 684780959}
+        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+        m_MethodName: onClicked_titleback
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8665,7 +8665,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: d3ea7abb427a16c449ce3b5518b82a49, type: 3}
-    m_FontSize: 28
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
