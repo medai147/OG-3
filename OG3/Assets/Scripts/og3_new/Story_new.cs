@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using UnityEngine.SceneManagement;
 
 public class Story_new : MonoBehaviour
 {
@@ -130,6 +131,10 @@ public class Story_new : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(qstory == 50)
+        {
+            SceneManager.LoadScene("FinishScene");
+        }
         //Debug.Log("auto:" + settingscript.selectautobutton + " text:" + settingscript.selecttextbutton + "  bgm:" + settingscript.selectbgmbutton + " se:" + settingscript.selectsebutton);
         if (qstory == 93)
         {
