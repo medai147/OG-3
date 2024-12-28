@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
     public int beforescene;
 
     public bool attention = false;
+    internal Dictionary<string, int> affectionPoints;
+
+
+
     private void Awake()
     {
         if (instance == null)
