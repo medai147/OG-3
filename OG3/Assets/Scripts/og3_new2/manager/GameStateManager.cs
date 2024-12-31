@@ -4,6 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class GameStateManager
 {
+    public string heroineName = "はる";
     public int CurrentStoryID { get; set; } = 1; // 初期ストーリーID
     public Dictionary<string, int> AffectionPoints { get; private set; } = new Dictionary<string, int>();
 
@@ -19,6 +20,7 @@ public class GameStateManager
     {
         SaveData saveData = new SaveData
         {
+            heroineName = heroineName,
             currentStoryIndex = CurrentStoryID,
             affectionPoints = AffectionPoints,
             screenshotPath = GameManager.instance.screenshotpath

@@ -6,23 +6,24 @@ public class StorySystem : MonoBehaviour
     public SoundManager soundManager; // サウンド管理クラス
 
     private StoryManager storyManager; // ストーリーマネージャ
-    private int currentStoryIndex = 1; // 現在のストーリー番号
 
     public GameStateManager gameStateManager = new GameStateManager();
 
 
     void Start()
     {
+
         // StoryManagerの初期化
         storyManager = new StoryManager();
         string csvPath = Application.dataPath + "/StreamingAssets/StoryCsv.csv";
         storyManager.LoadStories(csvPath);
 
+
         // UIManagerの月画像非表示イベントを登録
         uiManager.OnMonthImageHidden += NextStory;
 
         // 最初のストーリーを表示
-        DisplayStory(gameStateManager.CurrentStoryID);
+        DisplayStory(GameManager.instance.gameStateManager.CurrentStoryID);
 
         // UIボタンのクリック処理を登録
         uiManager.SetNextButtonAction(NextStory);
@@ -46,10 +47,10 @@ public class StorySystem : MonoBehaviour
 
     public void NextStory()
     {
-        gameStateManager.CurrentStoryID++;
-        if (gameStateManager.CurrentStoryID < storyManager.stories.Count)
+        GameManager.instance.gameStateManager.CurrentStoryID++;
+        if (GameManager.instance.gameStateManager.CurrentStoryID < storyManager.stories.Count)
         {
-            DisplayStory(gameStateManager.CurrentStoryID);
+            DisplayStory(GameManager.instance.gameStateManager.CurrentStoryID);
         }
         else
         {

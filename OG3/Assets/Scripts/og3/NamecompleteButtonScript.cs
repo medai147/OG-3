@@ -29,7 +29,7 @@ public class NamecompleteButtonScript : MonoBehaviour
         heroineName = _inputName.text;
         //Debug.Log(heroineName);
 
-        GameManager.instance.heroinename = heroineName;
-        SceneManager.LoadScene("Mainscene_new");
+        GameManager.instance.gameStateManager.heroineName = heroineName;
+        SceneManager.LoadScene("Mainscene_new2");
     }
 }

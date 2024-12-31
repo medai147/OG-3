@@ -14,6 +14,8 @@ public class SaveManager : MonoBehaviour
     /// <param name="saveData">保存するデータ</param>
     public void SaveGame(int slot, SaveData saveData)
     {
+        saveData.saveTimestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"); // 現在の日時を記録
+
         string path = Application.persistentDataPath + SaveDirectory;
         if (!Directory.Exists(path))
         {
@@ -26,6 +28,7 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log($"Game saved to slot {slot}: {fullPath}");
     }
+
 
     /// <summary>
     /// 指定したスロットからゲームの状態をロードします。

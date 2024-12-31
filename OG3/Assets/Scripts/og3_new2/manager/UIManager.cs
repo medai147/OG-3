@@ -29,10 +29,12 @@ public class UIManager : MonoBehaviour
     public delegate void MonthImageHiddenHandler();
     public event MonthImageHiddenHandler OnMonthImageHidden;
 
+    GameStateManager gameStateManager = new GameStateManager();
+
     public void UpdateUI(StoryData story)
     {
         // 名前とテキストボックスを更新
-        string displayedName = story.name == "えみ" ? GameManager.instance.heroinename : story.name;
+        string displayedName = story.name == "えみ" ? GameManager.instance.gameStateManager.heroineName : story.name;
         nameText.text = displayedName;
         UpdateTextBoxImage(story.name);
 

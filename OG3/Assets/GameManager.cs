@@ -9,18 +9,15 @@ public class GameManager : MonoBehaviour
     public int[] getimage = new int[6];
 
     public int[] getcontent = new int[6];
-    public int storyindex;
+
 
     public int coin;
 
     //GameManager内変数
     string[] key = new string[6];
 
-    public List<string> logtext = new List<string>();
 
-    //セーブ系
-    public int storynum = 0;
-    public string heroinename = "";
+
     public string screenshotpath = "";
 
     //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
@@ -30,6 +27,18 @@ public class GameManager : MonoBehaviour
     internal Dictionary<string, int> affectionPoints;
 
 
+    
+
+
+
+
+
+    //いらない
+    public int storyindex;
+    public int storynum = 0;
+    public string heroinename = "";
+    public GameStateManager gameStateManager; // ゲームの状態を管理
+    public List<string> logtext = new List<string>();
 
     private void Awake()
     {
