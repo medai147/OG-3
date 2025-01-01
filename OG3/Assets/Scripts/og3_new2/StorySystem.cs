@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StorySystem : MonoBehaviour
 {
@@ -20,15 +21,13 @@ public class StorySystem : MonoBehaviour
         string csvPath = Application.dataPath + "/StreamingAssets/StoryCsv.csv";
         storyManager.LoadStories(csvPath);
 
-
         // UIManagerの月画像非表示イベントを登録
         uiManager.OnMonthImageHidden += NextStory;
 
+        uiManager.SetNextButtonAction(NextStory);
+
         // 最初のストーリーを表示
         DisplayStory(GameManager.instance.gameStateManager.CurrentStoryID);
-
-        // UIボタンのクリック処理を登録
-        uiManager.SetNextButtonAction(NextStory);
     }
 
     void DisplayStory(int storyIndex)
@@ -64,6 +63,7 @@ public class StorySystem : MonoBehaviour
 
     void OnDestroy()
     {
+        // イベントの解除
         uiManager.OnMonthImageHidden -= NextStory;
     }
 }

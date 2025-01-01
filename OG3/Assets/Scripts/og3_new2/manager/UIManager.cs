@@ -31,6 +31,11 @@ public class UIManager : MonoBehaviour
 
     GameStateManager gameStateManager = new GameStateManager();
 
+
+
+
+
+
     public void UpdateUI(StoryData story)
     {
         // 名前とテキストボックスを更新
@@ -114,8 +119,8 @@ public class UIManager : MonoBehaviour
         storyText.text = "";
         isTextDisplaying = true;
 
-        float minSpeed = 0.25f; // 最も遅い速度
-        float maxSpeed = 0.05f; // 最も速い速度
+        float minSpeed = 0.2f; // 最も遅い速度
+        float maxSpeed = 0.03f; // 最も速い速度
 
         float speedFactor = SettingManager.Instance.TextSpeed; // 範囲 [1, 3]
         float typingSpeed = Mathf.Lerp(minSpeed, maxSpeed, (speedFactor - 1) / 2);
@@ -152,11 +157,14 @@ public class UIManager : MonoBehaviour
         }
     }
 
+
     public void SetNextButtonAction(UnityEngine.Events.UnityAction action)
     {
         nextButton.onClick.RemoveAllListeners();
         nextButton.onClick.AddListener(() => OnNextButtonClick(action));
     }
+
+
 
     void ShowStillImage(string imagePath)
     {
@@ -186,6 +194,9 @@ public class UIManager : MonoBehaviour
         // イベントを発火
         OnMonthImageHidden?.Invoke();
     }
+
+
+
 
     void OnEnable()
     {

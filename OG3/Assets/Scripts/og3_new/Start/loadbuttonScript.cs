@@ -27,7 +27,7 @@ public class loadbuttonScript : MonoBehaviour
 
     void loadbutton()
     {
-        SceneManager.LoadScene("savescene_new");
+        SceneManager.LoadScene("loadscene");
         GameManager.instance.beforescene = 0;
     }
 

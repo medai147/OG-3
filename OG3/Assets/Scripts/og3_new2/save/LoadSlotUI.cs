@@ -90,7 +90,7 @@ public class LoadSlotUI : MonoBehaviour
 
         // GameManagerに状態を反映
         GameManager.instance.gameStateManager.CurrentStoryID = saveData.currentStoryIndex;
-        //GameManager.instance.gameStateManager.AffectionPoints = saveData.affectionPoints;
+        GameManager.instance.gameStateManager.heroineName = saveData.heroineName;
 
         Debug.Log($"スロット {slot} のデータをロードしました。");
 
