@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject logPanel; // ログパネルの参照
+    [SerializeField] private GameObject menuPanel;
 
     /// <summary>
     /// セーブシーンに遷移
@@ -50,6 +51,7 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void CloseMenu()
     {
-        gameObject.SetActive(false); // 現在のメニューを非表示
+        Time.timeScale = 1.0f;
+        menuPanel.SetActive(false); // 現在のメニューを非表示
     }
 }

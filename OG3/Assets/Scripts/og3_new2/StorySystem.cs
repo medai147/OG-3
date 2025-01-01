@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StorySystem : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class StorySystem : MonoBehaviour
 
     void Start()
     {
+        GameManager.instance.previousSceneName = SceneManager.GetActiveScene().name; // Œ»İ‚ÌƒV[ƒ“–¼‚ğ‹L˜^
 
         // StoryManager‚Ì‰Šú‰»
         storyManager = new StoryManager();

@@ -187,5 +187,8 @@ public class UIManager : MonoBehaviour
         OnMonthImageHidden?.Invoke();
     }
 
-
+    void OnEnable()
+    {
+        Time.timeScale = 1; // ŠÔ‚ğ³í‰»
+    }
 }

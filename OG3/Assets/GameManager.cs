@@ -20,14 +20,13 @@ public class GameManager : MonoBehaviour
 
     public string screenshotpath = "";
 
-    //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
-    public int beforescene;
+
 
     public bool attention = false;
     internal Dictionary<string, int> affectionPoints;
 
 
-    
+    public string previousSceneName; // 一つ前のシーン名を記録
 
 
 
@@ -39,6 +38,8 @@ public class GameManager : MonoBehaviour
     public string heroinename = "";
     public GameStateManager gameStateManager; // ゲームの状態を管理
     public List<string> logtext = new List<string>();
+    //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
+    public int beforescene;
 
     private void Awake()
     {
