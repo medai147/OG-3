@@ -6,10 +6,13 @@ public class StorySystem : MonoBehaviour
 {
     public UIManager uiManager; // UI管理クラス
     public SoundManager soundManager; // サウンド管理クラス
+    public AutoPlayManager autoPlayManager; 
 
     private StoryManager storyManager; // ストーリーマネージャ
 
     public GameStateManager gameStateManager = new GameStateManager();
+
+
 
 
     void Start()
@@ -25,6 +28,15 @@ public class StorySystem : MonoBehaviour
         uiManager.OnMonthImageHidden += NextStory;
 
         uiManager.SetNextButtonAction(NextStory);
+        // AutoPlayManager の初期化
+        if (autoPlayManager != null)
+        {
+            autoPlayManager.Initialize(this);
+        }
+        else
+        {
+            Debug.LogError("AutoPlayManager が設定されていません。");
+        }
 
         // 最初のストーリーを表示
         DisplayStory(GameManager.instance.gameStateManager.CurrentStoryID);

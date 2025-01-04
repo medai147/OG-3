@@ -48,7 +48,7 @@ public class StoryManager
             }
             catch (System.Exception ex)
             {
-                Debug.LogError($"データの解析に失敗しました (行 {i + 1}): {line} - {ex.Message}");
+               // Debug.LogError($"データの解析に失敗しました (行 {i + 1}): {line} - {ex.Message}");
             }
         }
 

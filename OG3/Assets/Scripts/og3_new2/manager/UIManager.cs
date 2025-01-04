@@ -32,6 +32,7 @@ public class UIManager : MonoBehaviour
     GameStateManager gameStateManager = new GameStateManager();
 
 
+    public bool IsTextFullyDisplayed => !isTextDisplaying; // テキスト表示中かどうかを確認
 
 
 

@@ -2258,8 +2258,6 @@ MonoBehaviour:
   logContent: {fileID: 1412459985}
   stillImage: {fileID: 1055881137}
   monthImage: {fileID: 491073852}
-  autoButton: {fileID: 1398442712}
-  autoDelay: 2
 --- !u!114 &448737696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7033,7 +7031,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1398442713}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2124256547}
+        m_TargetAssemblyTypeName: AutoPlayManager, Assembly-CSharp
+        m_MethodName: ToggleAutoPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1398442713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7982,6 +7992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 448737695}
   soundManager: {fileID: 448737696}
+  autoPlayManager: {fileID: 2124256547}
   gameStateManager:
     heroineName: "\u306F\u308B"
 --- !u!114 &1494629271
@@ -10529,6 +10540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2124256548}
   - component: {fileID: 2124256549}
+  - component: {fileID: 2124256547}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -10536,6 +10548,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2124256547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124256546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef2c62c9f06645488d1cb0de6288bed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoPlayButton: {fileID: 1398442712}
+  nextButton: {fileID: 470158371}
+  autoModeText: {fileID: 1667835404}
 --- !u!4 &2124256548
 Transform:
   m_ObjectHideFlags: 0
