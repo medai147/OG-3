@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//キャラクターの状態やアニメーションを管理
-//キャラクターの好感度やアニメーションフラグを制御
-public class CharacterManager
+// キャラクターの状態やアニメーションを管理
+// キャラクターの好感度やアニメーションフラグを制御
+public class CharacterManager : MonoBehaviour
 {
-    private Dictionary<string, int> affectionPoints;
+    private Dictionary<string, int> affectionPoints = new Dictionary<string, int>();
 
     public void InitializeCharacters(List<string> characters)
     {
@@ -29,4 +28,3 @@ public class CharacterManager
         }
     }
 }
-

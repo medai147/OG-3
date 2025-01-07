@@ -1,6 +1,6 @@
-﻿selectid,text,number,targetcharacter,affectionchange,condition
-1,ショッピングに誘う,69,hikaru,3,
-1,帰る,94,hikaru,0,
-2,スイーツ  ,117,ouji,0,
-2,煮干し１kg,124,ouji,3,
-2,手編みのマフラー,132,ouji,-3,
+﻿selectid,text,number,end,targetcharacter,affectionchange,condition
+1,ショッピングに誘う,69,93,hikaru,3,
+1,帰る,94,97,hikaru,0,
+2,スイーツ  ,117,122,ouji,0,
+2,煮干し１kg,124,130,ouji,3,
+2,手編みのマフラー,132,137,ouji,-3,

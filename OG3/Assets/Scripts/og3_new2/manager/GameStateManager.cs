@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameStateManager
 {
     public string heroineName = "はる";
-    public int CurrentStoryID { get; set; } = 1; // 初期ストーリーID
+    public int CurrentStoryID { get; set; } = 55; // 初期ストーリーID
     public Dictionary<string, int> AffectionPoints { get; private set; } = new Dictionary<string, int>();
 
     public GameStateManager()
