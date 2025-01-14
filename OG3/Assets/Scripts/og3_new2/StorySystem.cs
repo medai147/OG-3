@@ -7,6 +7,7 @@ public class StorySystem : MonoBehaviour
     public UIManager uiManager; // UI管理クラス
     public SoundManager soundManager; // サウンド管理クラス
     public AutoPlayManager autoPlayManager; 
+    public FadeAnimationManager fadeAnimationManager;
 
     private StoryManager storyManager; // ストーリーマネージャ
 
@@ -64,19 +65,24 @@ public class StorySystem : MonoBehaviour
 
         if (story != null)
         {
-            // UIとオーディオを更新
-            uiManager.UpdateUI(story);
-            soundManager.PlayAudio(story.bgm, story.se);
-
-            // 選択肢がある場合は選択肢を表示
-            ChoiceManager choiceManager = FindObjectOfType<ChoiceManager>();
-            if (story.selectid > 0 && choiceManager != null)
+            // fadeanimationが指定されている場合
+            if (!string.IsNullOrEmpty(story.fadeanimation))
             {
-                // 過去の選択肢をクリア
-                choiceManager.ClearChoicesUI();
+                // フェード開始時にオートモードを停止
+                //autoPlayManager.StopAutoPlay();
 
-                // 現在の選択肢を表示
-                choiceManager.DisplayChoicesForStory(story.selectid);
+                fadeAnimationManager.PlayFadeAnimation(story.fadeanimation, () =>
+                {
+                    // フェードアニメーションが完了したらUIとオーディオを更新
+                    UpdateStoryUIAndChoices(story);
+                    NextStory();
+
+                });
+            }
+            else
+            {
+                // フェードアニメーションがない場合は直接UIとオーディオを更新
+                UpdateStoryUIAndChoices(story);
             }
         }
         else
@@ -84,6 +90,32 @@ public class StorySystem : MonoBehaviour
             Debug.LogError("ストーリーデータが見つかりません: " + storyIndex);
         }
     }
+
+    /// <summary>
+    /// UI、オーディオの更新と選択肢表示を行う
+    /// </summary>
+    /// <param name="story">更新するストーリーデータ</param>
+    private void UpdateStoryUIAndChoices(StoryData story)
+    {
+        // UIとオーディオを更新
+        uiManager.UpdateUI(story);
+        soundManager.PlayAudio(story.bgm, story.se);
+
+        // 選択肢がある場合は選択肢を表示
+        ChoiceManager choiceManager = FindObjectOfType<ChoiceManager>();
+        if (story.selectid > 0 && choiceManager != null)
+        {
+            // フェード開始時にオートモードを停止
+            autoPlayManager.StopAutoPlay();
+            // 過去の選択肢をクリア
+            choiceManager.ClearChoicesUI();
+
+            // 現在の選択肢を表示
+            choiceManager.DisplayChoicesForStory(story.selectid);
+        }
+    }
+
+
 
 
     public void NextStory()

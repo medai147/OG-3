@@ -37,17 +37,17 @@ public class AutoPlayManager : MonoBehaviour
         {
             StartAutoPlay();
         }
+    }
+
+    public void StartAutoPlay()
+    {
+        isAutoPlaying = true;
+        autoPlayCoroutine = StartCoroutine(AutoPlayCoroutine());
         UpdateAutoModeTextColor(); // テキストの色を更新
         UpdateNextButtonState();  // nextButton の状態を更新
     }
 
-    private void StartAutoPlay()
-    {
-        isAutoPlaying = true;
-        autoPlayCoroutine = StartCoroutine(AutoPlayCoroutine());
-    }
-
-    private void StopAutoPlay()
+    public void StopAutoPlay()
     {
         if (autoPlayCoroutine != null)
         {
@@ -55,6 +55,8 @@ public class AutoPlayManager : MonoBehaviour
             autoPlayCoroutine = null;
         }
         isAutoPlaying = false;
+        UpdateAutoModeTextColor(); // テキストの色を更新
+        UpdateNextButtonState();  // nextButton の状態を更新
     }
 
     private IEnumerator AutoPlayCoroutine()
