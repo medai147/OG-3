@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class StorySystem : MonoBehaviour
     public SoundManager soundManager; // サウンド管理クラス
     public AutoPlayManager autoPlayManager; 
     public FadeAnimationManager fadeAnimationManager;
+    public MoveManager moveManager; // MoveManagerを参照
 
     private StoryManager storyManager; // ストーリーマネージャ
 
@@ -65,11 +67,25 @@ public class StorySystem : MonoBehaviour
 
         if (story != null)
         {
+            // moveanimation列を確認してMoveManagerを更新
+            if (!string.IsNullOrEmpty(story.moveanimation))
+            {
+                autoPlayManager.StopAutoPlay();
+                moveManager.ShowMove(story.moveanimation);
+                // 140秒後に次のストーリーに進む
+                StartCoroutine(WaitAndProceed(2.13f));
+                return; 
+            }
+            else
+            {
+                moveManager.HideMove();
+            }
+
             // fadeanimationが指定されている場合
             if (!string.IsNullOrEmpty(story.fadeanimation))
             {
                 // フェード開始時にオートモードを停止
-                //autoPlayManager.StopAutoPlay();
+                autoPlayManager.StopAutoPlay();
 
                 fadeAnimationManager.PlayFadeAnimation(story.fadeanimation, () =>
                 {
@@ -89,6 +105,15 @@ public class StorySystem : MonoBehaviour
         {
             Debug.LogError("ストーリーデータが見つかりません: " + storyIndex);
         }
+    }
+
+    /// <summary>
+    /// 指定秒数待機後に次のストーリーを進める
+    /// </summary>
+    private IEnumerator WaitAndProceed(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime); // 指定時間待機
+        NextStory(); // 次のストーリーに進む
     }
 
     /// <summary>
