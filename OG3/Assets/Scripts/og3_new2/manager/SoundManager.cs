@@ -25,6 +25,7 @@ public class SoundManager : MonoBehaviour
             }
             if(bgmName.Equals("0"))
             {
+                bgmSource.clip = null;
                 bgmSource.Stop();
             }
         }

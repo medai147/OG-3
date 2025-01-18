@@ -67,6 +67,8 @@ public class StorySystem : MonoBehaviour
 
         if (story != null)
         {
+            // フェードアニメーションがない場合は直接UIとオーディオを更新
+            UpdateStoryUIAndChoices(story);
             // moveanimation列を確認してMoveManagerを更新
             if (!string.IsNullOrEmpty(story.moveanimation))
             {
@@ -92,13 +94,7 @@ public class StorySystem : MonoBehaviour
                     // フェードアニメーションが完了したらUIとオーディオを更新
                     UpdateStoryUIAndChoices(story);
                     NextStory();
-
                 });
-            }
-            else
-            {
-                // フェードアニメーションがない場合は直接UIとオーディオを更新
-                UpdateStoryUIAndChoices(story);
             }
         }
         else
