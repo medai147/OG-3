@@ -10,6 +10,8 @@ public class StorySystem : MonoBehaviour
     public AutoPlayManager autoPlayManager; 
     public FadeAnimationManager fadeAnimationManager;
     public MoveManager moveManager; // MoveManagerを参照
+    public ScreenAnimationManager screenAnimationManager;
+    public CharacterAnimationManager characterAnimationManager;
 
     private StoryManager storyManager; // ストーリーマネージャ
 
@@ -67,6 +69,17 @@ public class StorySystem : MonoBehaviour
 
         if (story != null)
         {
+
+            //screenanimationが指定されている場合
+            if (!string.IsNullOrEmpty(story.screenanimation))
+            {
+                screenAnimationManager.PlayScreenAnimation(story.screenanimation);
+            }
+
+            //characteranimationが指定されている場合
+            characterAnimationManager.PlayCharacterAnimation(story.characteranimation);
+
+
             // フェードアニメーションがない場合は直接UIとオーディオを更新
             UpdateStoryUIAndChoices(story);
             // moveanimation列を確認してMoveManagerを更新
@@ -96,6 +109,7 @@ public class StorySystem : MonoBehaviour
                     NextStory();
                 });
             }
+
         }
         else
         {

@@ -40,7 +40,8 @@ public class UIManager : MonoBehaviour
     public void UpdateUI(StoryData story)
     {
         // 名前とテキストボックスを更新
-        string displayedName = story.name == "えみ" ? GameManager.instance.gameStateManager.heroineName : story.name;
+        string displayedName = story.name == "えみ" ? GameManager.instance.gameStateManager.heroineName :story.name;
+        displayedName = story.name == "clear" ? "" : displayedName;
         nameText.text = displayedName;
         UpdateTextBoxImage(story.name);
 
@@ -84,6 +85,7 @@ public class UIManager : MonoBehaviour
             case "犬山 桜児": textBoxSpritePath += "text_ouji"; break;
             case "本田 琉絆空": textBoxSpritePath += "text_rukia"; break;
             case "": textBoxSpritePath += "text_monologue"; break;
+            case "clear":textBoxSpritePath += "clear"; break;
             default: textBoxSpritePath += "text_mob"; break;
         }
         textBoxImage.sprite = Resources.Load<Sprite>(textBoxSpritePath);

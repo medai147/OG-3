@@ -41,7 +41,8 @@ public class StoryManager
                     selectid = int.Parse(data[11]),
                     monthimage = data[12],
                     fadeanimation = data[13],
-                    moveanimation = data[14]
+                    moveanimation = data[14],
+                    screenanimation = data[15]
                 };
 
                 stories.Add(story);
@@ -86,4 +87,5 @@ public class StoryData
     public string monthimage;
     public string fadeanimation;
     public string moveanimation;
+    public string screenanimation;
 }
