@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public Button nextButton;
 
     public GameObject logPanel; // ログ画面パネル
+    public Text monthText;
     public Text logContent; // ログ画面のテキスト表示エリア
 
     private List<string> logEntries = new List<string>(); // ログを保存するリスト
@@ -44,6 +45,8 @@ public class UIManager : MonoBehaviour
         displayedName = story.name == "clear" ? "" : displayedName;
         nameText.text = displayedName;
         UpdateTextBoxImage(story.name);
+
+        monthText.text = gameStateManager.GetMonth(story.number);
 
         // 背景とキャラクター画像を更新
         backgroundImage.sprite = Resources.Load<Sprite>("Sprites/Backgrounds/" + story.backimage);

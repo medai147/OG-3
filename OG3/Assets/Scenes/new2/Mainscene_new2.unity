@@ -2223,6 +2223,7 @@ MonoBehaviour:
   textBoxImage: {fileID: 1241209109}
   nextButton: {fileID: 470158371}
   logPanel: {fileID: 467589428}
+  monthText: {fileID: 784189852}
   logContent: {fileID: 1412459985}
   stillImage: {fileID: 1055881137}
   monthImage: {fileID: 491073852}
