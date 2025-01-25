@@ -53,6 +53,7 @@ public class minigamesclipt : MonoBehaviour
 
     void loadbutton()
     {
+        
         SceneManager.LoadScene("minigamemenuscene");
     }
 

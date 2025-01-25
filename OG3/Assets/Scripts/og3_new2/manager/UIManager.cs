@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -57,10 +58,12 @@ public class UIManager : MonoBehaviour
         // ログに追加
         AddToLog(displayedName, story.mainstory);
 
+        
         // スチル画像の表示
         if (!string.IsNullOrEmpty(story.stillimage) && story.stillimage != "0")
         {
-            ShowStillImage(story.stillimage);
+            GameManager.instance.getimage[ExtractNumber(story.stillimage)] = 1;
+            ShowStillImage(ExtractText(story.stillimage));
         }
         else
         {
@@ -201,6 +204,21 @@ public class UIManager : MonoBehaviour
         OnMonthImageHidden?.Invoke();
     }
 
+    //文字列と数字の分割
+    int ExtractNumber(string input)
+    {
+        // 数字部分を抽出
+        Match match = Regex.Match(input, @"^\d+");
+        return match.Success ? int.Parse(match.Value) : 0; // デフォルト値として0を返す
+    }
+
+
+    string ExtractText(string input)
+    {
+        // 数字以外の英文字部分を抽出
+        Match match = Regex.Match(input, @"[a-zA-Z_]+$");
+        return match.Success ? match.Value : string.Empty;
+    }
 
 
 

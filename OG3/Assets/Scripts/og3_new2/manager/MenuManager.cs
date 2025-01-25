@@ -28,6 +28,7 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void GoToTitleScene()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("startscene_new2"); // ロードシーンに遷移
     }
 
