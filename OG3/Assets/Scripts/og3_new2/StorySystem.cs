@@ -82,15 +82,12 @@ public class StorySystem : MonoBehaviour
             // moveanimation列を確認してMoveManagerを更新
             if (!string.IsNullOrEmpty(story.moveanimation))
             {
-                autoPlayManager.StopAutoPlay();
-                moveManager.ShowMove(story.moveanimation);
                 // 140秒後に次のストーリーに進む
                 StartCoroutine(WaitAndProceed(2.13f));
+                autoPlayManager.StopAutoPlay();
+                moveManager.ShowMove(story.moveanimation);
+
                 return; 
-            }
-            else
-            {
-                moveManager.HideMove();
             }
 
             // fadeanimationが指定されている場合
@@ -110,6 +107,9 @@ public class StorySystem : MonoBehaviour
         }
         else
         {
+            //終了処理
+            SceneManager.LoadScene("FinishScene2");
+
             Debug.LogError("ストーリーデータが見つかりません: " + storyIndex);
         }
     }
@@ -120,6 +120,7 @@ public class StorySystem : MonoBehaviour
     private IEnumerator WaitAndProceed(float waitTime)
     {
         yield return new WaitForSeconds(waitTime); // 指定時間待機
+        moveManager.HideMove();
         NextStory(); // 次のストーリーに進む
     }
 

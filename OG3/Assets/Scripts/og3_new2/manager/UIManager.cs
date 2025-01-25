@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -47,6 +48,11 @@ public class UIManager : MonoBehaviour
         nameText.text = displayedName;
         UpdateTextBoxImage(story.name);
 
+        string displayText = story.mainstory.Contains("@")
+            ? story.mainstory.Replace("@", GameManager.instance.gameStateManager.heroineName)
+            : story.mainstory;
+
+
         monthText.text = gameStateManager.GetMonth(story.number);
 
         // 背景とキャラクター画像を更新
@@ -55,8 +61,12 @@ public class UIManager : MonoBehaviour
         leftCharacterImage.sprite = Resources.Load<Sprite>("Sprites/Characters/" + story.leftcharacterimage);
         rightCharacterImage.sprite = Resources.Load<Sprite>("Sprites/Characters/" + story.rightcharacterimage);
 
-        // ログに追加
-        AddToLog(displayedName, story.mainstory);
+        if(!string.IsNullOrEmpty(story.mainstory))
+        {
+            // ログに追加
+            AddToLog(displayedName, displayText);
+        }
+
 
         
         // スチル画像の表示
@@ -78,7 +88,7 @@ public class UIManager : MonoBehaviour
 
 
         // テキストを表示
-        StartTextTyping(story.mainstory);
+        StartTextTyping(displayText);
     }
 
     void UpdateTextBoxImage(string name)

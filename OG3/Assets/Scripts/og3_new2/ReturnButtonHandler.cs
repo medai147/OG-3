@@ -10,6 +10,7 @@ public class ReturnButtonHandler : MonoBehaviour
         if (!string.IsNullOrEmpty(previousScene))
         {
             SceneManager.LoadScene(previousScene); // ãLò^Ç≥ÇÍÇΩÉVÅ[ÉìñºÇ…ñﬂÇÈ
+            GameManager.instance.previousSceneName = "";
         }
         else
         {

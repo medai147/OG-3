@@ -28,7 +28,7 @@ public class loadbuttonScript : MonoBehaviour
     void loadbutton()
     {
         SceneManager.LoadScene("loadscene");
-        GameManager.instance.beforescene = 0;
+        GameManager.instance.previousSceneName = "startscene_new2";
     }
 
 

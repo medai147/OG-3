@@ -17,10 +17,6 @@ public class MoveManager : MonoBehaviour
             moveText.text = locationName; // テキストを設定
             moveImage.SetActive(true);   // 表示
         }
-        else
-        {
-            moveImage.SetActive(false); // 非表示
-        }
     }
 
     /// <summary>
