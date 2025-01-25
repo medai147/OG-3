@@ -70,11 +70,8 @@ public class StorySystem : MonoBehaviour
         if (story != null)
         {
 
-            //screenanimation‚ªw’è‚³‚ê‚Ä‚¢‚éê‡
-            if (!string.IsNullOrEmpty(story.screenanimation))
-            {
-                screenAnimationManager.PlayScreenAnimation(story.screenanimation);
-            }
+            screenAnimationManager.PlayScreenAnimation(story.screenanimation);
+
 
             //characteranimation‚ªw’è‚³‚ê‚Ä‚¢‚éê‡
             characterAnimationManager.PlayCharacterAnimation(story.characteranimation);
