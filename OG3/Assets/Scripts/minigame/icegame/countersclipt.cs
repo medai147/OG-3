@@ -125,7 +125,7 @@ public class countersclipt : MonoBehaviour
             GameManager.instance.coin += 20;
             score = 0;
         }
-        else if (score >= 0 && finishpanel.activeSelf == true)
+        else if (finishpanel.activeSelf == true)
         {
             getcointext.text = "給料無し！";
             score = 0;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameStateManager
 {
     public string heroineName = "はる";
-    public int CurrentStoryID { get; set; } = 1; // 初期ストーリーID 1スタート
+    public int CurrentStoryID { get; set; } = 210; // 初期ストーリーID 1スタート
     public Dictionary<string, int> AffectionPoints { get; private set; } = new Dictionary<string, int>();
 
     // 各月の最終ストーリー番号を定義

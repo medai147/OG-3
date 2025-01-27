@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+
     //ƒQ[ƒ€‚ª•Â‚¶‚é
     void OnApplicationQuit()
     {

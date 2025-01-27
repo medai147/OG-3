@@ -28,7 +28,7 @@ public class firstbuttonScript : MonoBehaviour
     void firststart()
     {
         Time.timeScale = 1;
-        GameManager.instance.storynum = 0;
+        GameManager.instance.gameStateManager.CurrentStoryID = 1;
         inputnamePanel.SetActive(true);
     }
 }

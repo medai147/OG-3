@@ -541,8 +541,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 61979396}
-        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+      - m_Target: {fileID: 2124256549}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: onClicked_deletebutton
         m_Mode: 1
         m_Arguments:
@@ -2695,8 +2695,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 61979396}
-        m_TargetAssemblyTypeName: Menu_newScript, Assembly-CSharp
+      - m_Target: {fileID: 2124256549}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: onClicked_screenbutton
         m_Mode: 1
         m_Arguments:
@@ -3481,7 +3481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 298, y: -174}
+  m_AnchoredPosition: {x: 302, y: -172}
   m_SizeDelta: {x: 68.9393, y: 25.2884}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &684780956
@@ -7186,8 +7186,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -344.94, y: 147.46143}
-  m_SizeDelta: {x: 688.19727, y: 26.395937}
+  m_AnchoredPosition: {x: -344.94, y: 147.62302}
+  m_SizeDelta: {x: 688.19727, y: 28.202114}
   m_Pivot: {x: 0, y: 0.95}
 --- !u!114 &1412459983
 MonoBehaviour:
@@ -7599,7 +7599,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -10690,6 +10690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logPanel: {fileID: 467589428}
   menuPanel: {fileID: 727812014}
+  scrollbar: {fileID: 1886187478}
 --- !u!1 &2136643267
 GameObject:
   m_ObjectHideFlags: 0

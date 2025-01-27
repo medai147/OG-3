@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class SaveSlotUI : MonoBehaviour
 {
     public List<GameObject> saveSlots; // スロットのGameObjectを手動でアタッチ
+    public GameObject saveConfirmationPopup; // ポップアップUI
+    public Text confirmationText; // 確認テキスト
+    public Button confirmButton; // 「はい」ボタン
+    public Button cancelButton; // 「いいえ」ボタン
 
     private SaveManager saveManager;
     private StoryManager storyManager;
+    private int selectedSlot = -1; // 現在選択されたスロット
 
     void Start()
     {
@@ -27,6 +32,12 @@ public class SaveSlotUI : MonoBehaviour
 
         // 各スロットを表示
         DisplayAllSlots();
+
+        // ポップアップの初期化
+        if (saveConfirmationPopup != null)
+        {
+            saveConfirmationPopup.SetActive(false); // 最初は非表示
+        }
     }
 
     void DisplayAllSlots()
@@ -36,24 +47,16 @@ public class SaveSlotUI : MonoBehaviour
             int slot = i + 1; // スロット番号
             SaveData saveData = saveManager.LoadGame(slot);
 
-            // スロットのテキストと画像を取得
             GameObject slotObject = saveSlots[i];
             Text slotText = slotObject.transform.GetChild(0).GetComponent<Text>();
             Image slotImage = slotObject.transform.GetChild(1).GetComponent<Image>();
 
             if (saveData != null)
             {
-                // 名前とストーリー番号を表示
-                slotText.text = $"名前：{saveData.heroineName}";
-                // セーブ日時を表示
-                slotText.text += $"\nセーブ日時: {saveData.saveTimestamp}";
-                // ストーリー番号からメインテキストを取得して追加表示
+                slotText.text = $"名前：{saveData.heroineName}\nセーブ日時: {saveData.saveTimestamp}";
                 StoryData storyData = storyManager.GetStory(saveData.currentStoryIndex);
                 slotText.text += storyData != null ? $"\n{storyData.mainstory}" : "\nストーリーデータが見つかりません";
 
-
-
-                // 画像を表示
                 if (File.Exists(saveData.screenshotPath))
                 {
                     byte[] fileData = File.ReadAllBytes(saveData.screenshotPath);
@@ -63,41 +66,60 @@ public class SaveSlotUI : MonoBehaviour
                 }
                 else
                 {
-                    slotImage.sprite = null; // デフォルト画像
+                    slotImage.sprite = null;
                 }
             }
             else
             {
-                // セーブデータがない場合は空表示
                 slotText.text = "空スロット";
-                slotImage.sprite = null; // デフォルト画像
+                slotImage.sprite = null;
             }
 
-            // ボタンのクリックイベントを登録
             Button slotButton = slotObject.GetComponent<Button>();
             if (slotButton != null)
             {
                 slotButton.onClick.RemoveAllListeners();
-                slotButton.onClick.AddListener(() => OnSaveSlotClicked(slot));
+                slotButton.onClick.AddListener(() => ShowSaveConfirmation(slot));
             }
         }
     }
 
-    void OnSaveSlotClicked(int slot)
+    void ShowSaveConfirmation(int slot)
     {
-        // GameManagerにアクセスして、GameStateManagerの状態をセーブ
+        selectedSlot = slot; // 選択されたスロットを記録
+        confirmationText.text = $"スロット {slot} にセーブしますか？";
+        saveConfirmationPopup.SetActive(true); // ポップアップを表示
+
+        // 「はい」ボタンと「いいえ」ボタンのイベントを設定
+        confirmButton.onClick.RemoveAllListeners();
+        confirmButton.onClick.AddListener(ConfirmSave);
+
+        cancelButton.onClick.RemoveAllListeners();
+        cancelButton.onClick.AddListener(() => saveConfirmationPopup.SetActive(false));
+    }
+
+    void ConfirmSave()
+    {
+        if (selectedSlot < 1)
+        {
+            Debug.LogError("スロットが選択されていません。");
+            return;
+        }
+
+        // ゲームをセーブ
         if (GameManager.instance == null)
         {
             Debug.LogError("GameManager のインスタンスが見つかりません。");
             return;
         }
 
-        // GameStateManagerを取得し、現在の状態をセーブ
-        GameManager.instance.gameStateManager.SaveState(saveManager, slot);
+        GameManager.instance.gameStateManager.SaveState(saveManager, selectedSlot);
+        Debug.Log($"スロット {selectedSlot} にゲームをセーブしました。");
 
-        Debug.Log($"スロット {slot} にゲームをセーブしました。");
+        // ポップアップを閉じる
+        saveConfirmationPopup.SetActive(false);
 
-        // 再度スロット情報を更新
+        // スロット情報を更新
         DisplayAllSlots();
     }
 }

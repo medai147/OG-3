@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject logPanel; // ログパネルの参照
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private Scrollbar scrollbar; // Scrollbarコンポーネント
+
+    bool deleteflag = false;
+    GameObject[] deletes;
 
     /// <summary>
     /// セーブシーンに遷移
     /// </summary>
     public void GoToSaveScene()
     {
-        // 必要に応じて現在の状態を保存する処理を追加可能
         SceneManager.LoadScene("savescene_new2"); // セーブシーンに遷移
     }
 
@@ -40,6 +44,8 @@ public class MenuManager : MonoBehaviour
         if (logPanel != null)
         {
             logPanel.SetActive(!logPanel.activeSelf); // 表示/非表示を切り替え
+            scrollbar.value = 0.0f;
+
         }
         else
         {
@@ -52,7 +58,35 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     public void CloseMenu()
     {
-        Time.timeScale = 1.0f;
-        menuPanel.SetActive(false); // 現在のメニューを非表示
+        if(!logPanel.activeSelf)
+        {
+            Time.timeScale = 1.0f;
+            menuPanel.SetActive(false); // 現在のメニューを非表示
+        }
+
+    }
+
+    public void onClicked_deletebutton()
+    {
+        deleteflag = true;
+        deletes = GameObject.FindGameObjectsWithTag("delete");
+        for (int i = 0; i < deletes.Length; i++)
+        {
+            deletes[i].SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        // 右クリックで削除したオブジェクトを戻す処理
+        if (deleteflag && Input.GetMouseButtonDown(0)){
+            deleteflag = false;
+            for (int i = 0; i < deletes.Length; i++)
+            {
+                deletes[i].SetActive(true);
+            }
+        }
+
+
     }
 }
