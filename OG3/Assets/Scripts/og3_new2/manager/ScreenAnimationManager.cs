@@ -20,6 +20,7 @@ public class ScreenAnimationManager : MonoBehaviour
         if (screenType != "")
         {
             ScreenAnimator.CrossFade("New State", 0.1f);
+            
             ScreenPanel.SetActive(true);
             ScreenAnimator.SetTrigger(screenType);
         }

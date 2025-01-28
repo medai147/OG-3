@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public int[] getimage = new int[6];
+    public int[] getimage = new int[14];
 
     public int[] getcontent = new int[6];
 
