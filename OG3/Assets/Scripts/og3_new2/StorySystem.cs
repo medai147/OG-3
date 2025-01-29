@@ -158,32 +158,29 @@ public class StorySystem : MonoBehaviour
 
         // 現在の選択肢の範囲を取得
         ChoiceManager choiceManager = FindObjectOfType<ChoiceManager>();
-        if (choiceManager != null && choiceManager.GetCurrentChoice() != null)
+        if (choiceManager != null)
         {
-            ChoiceData currentChoice = choiceManager.GetCurrentChoice();
-
-            // EndRangeを超えた場合は最大のEndRange + 1へスキップ
-            if (currentStoryIndex >= currentChoice.EndRange)
+            // 現在の `currentStoryID` がどの `end` に一致するかチェック
+            foreach (ChoiceData choice in choiceManager.choices)
             {
-                int maxEndRange = choiceManager.GetMaxEndRange(currentChoice.SelectID);
+                if (currentStoryIndex == choice.EndRange)
+                {
+                    int selectId = choice.SelectID;
 
-                // 前回スキップした場所と同じであればスキップをしない
-                if (lastSkippedStoryIndex == maxEndRange + 1)
-                {
-                    Debug.Log($"既にスキップ済み: {lastSkippedStoryIndex}");
-                }
-                else
-                {
+                    // 同じ selectID を持つ `EndRange` の最大値を取得
+                    int maxEndRange = choiceManager.GetMaxEndRange(selectId);
+
+
                     // スキップ処理
                     GameManager.instance.gameStateManager.CurrentStoryID = maxEndRange + 1;
-                    lastSkippedStoryIndex = GameManager.instance.gameStateManager.CurrentStoryID; // スキップした場所を記録
-                    Debug.Log($"ストーリー範囲をスキップして {GameManager.instance.gameStateManager.CurrentStoryID} へ移動します。");
+  
+                    Debug.Log($"ストーリー範囲をスキップして {maxEndRange + 1} へ移動します。");
+
                     DisplayStory(GameManager.instance.gameStateManager.CurrentStoryID);
                     return;
                 }
             }
         }
-
         // 次のストーリーへ進む
         GameManager.instance.gameStateManager.CurrentStoryID++;
         if (GameManager.instance.gameStateManager.CurrentStoryID <= storyManager.stories.Count)

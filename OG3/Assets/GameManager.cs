@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public int[] getimage = new int[14];
+    public int[] getimage = new int[13];
 
     public int[] getcontent = new int[6];
 
@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int coin;
 
     //GameManager“à•Ï”
-    string[] key = new string[6];
+    string[] key = new string[13];
 
 
 

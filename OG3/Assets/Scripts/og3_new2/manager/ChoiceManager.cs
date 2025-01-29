@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ChoiceManager : MonoBehaviour
 {
-    private List<ChoiceData> choices = new List<ChoiceData>();
+    public List<ChoiceData> choices = new List<ChoiceData>();
 
     [SerializeField] private GameObject choiceButtonPrefab; // 選択肢ボタンのプレハブ
     [SerializeField] private Transform choiceContainer; // 選択肢ボタンを配置するコンテナ
@@ -158,7 +159,7 @@ public class ChoiceManager : MonoBehaviour
         StorySystem storySystem = FindObjectOfType<StorySystem>();
 
         //フェード実験のためにストーリー番号がずれたから+2している後で修正
-        storySystem.DisplayStory(choice.NextSceneID + 2);
+        storySystem.DisplayStory(choice.NextSceneID);
     }
 
 
@@ -172,21 +173,9 @@ public class ChoiceManager : MonoBehaviour
 
     public int GetMaxEndRange(int selectID)
     {
-        int maxEndRange = -1;
-
-        foreach (ChoiceData choice in choices)
-        {
-            if (choice.SelectID == selectID)
-            {
-                if (choice.EndRange > maxEndRange)
-                {
-                    maxEndRange = choice.EndRange;
-                }
-            }
-        }
-
-        return maxEndRange;
+        return choices.Where(c => c.SelectID == selectID).Max(c => c.EndRange);
     }
+
     public ChoiceData GetCurrentChoice()
     {
         return currentChoice;

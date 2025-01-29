@@ -5,18 +5,18 @@ using UnityEngine;
 public class GameStateManager
 {
     public string heroineName = "はる";
-    public int CurrentStoryID { get; set; } = 308; // 初期ストーリーID 1スタート
+    public int CurrentStoryID { get; set; } = 1; // 初期ストーリーID 1スタート
     public Dictionary<string, int> AffectionPoints { get; private set; } = new Dictionary<string, int>();
 
     // 各月の最終ストーリー番号を定義
     private Dictionary<string, int> storyEndByMonth = new Dictionary<string, int>
     {
-        { "4月", 49 }, 
-        { "5月", 138 },
-        { "6月", 187}, 
-        { "7月", 255 }, 
-        { "8月", 300 }, 
-        { "9月", 9 },
+        { "4月", 50 }, 
+        { "5月", 140 },
+        { "6月", 190 }, 
+        { "7月", 259 }, 
+        { "8月", 339 }, 
+        { "9月", 401 },
         // 必要に応じて追加
     };
 
