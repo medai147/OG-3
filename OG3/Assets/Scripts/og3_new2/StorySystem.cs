@@ -15,10 +15,8 @@ public class StorySystem : MonoBehaviour
 
     private StoryManager storyManager; // ストーリーマネージャ
 
-    public GameStateManager gameStateManager = new GameStateManager();
+    private bool isAutoActive = false; //オートモードがついていたかどうか
 
-
-    private int lastSkippedStoryIndex = -1; // 最後にスキップしたストーリー番号を記録
 
     void Start()
     {
@@ -69,7 +67,11 @@ public class StorySystem : MonoBehaviour
 
         if (story != null)
         {
-
+            if(isAutoActive)
+            {
+                autoPlayManager.StartAutoPlay();
+                isAutoActive = false;
+            }
             screenAnimationManager.PlayScreenAnimation(story.screenanimation);
 
 
@@ -84,7 +86,13 @@ public class StorySystem : MonoBehaviour
             {
                 // 140秒後に次のストーリーに進む
                 StartCoroutine(WaitAndProceed(2.13f));
-                autoPlayManager.StopAutoPlay();
+                
+                if(autoPlayManager.isAutoPlaying)
+                {
+                    isAutoActive = true;
+                    autoPlayManager.StopAutoPlay();
+                }
+                
                 moveManager.ShowMove(story.moveanimation);
 
                 return; 
@@ -94,7 +102,11 @@ public class StorySystem : MonoBehaviour
             if (!string.IsNullOrEmpty(story.fadeanimation))
             {
                 // フェード開始時にオートモードを停止
-                autoPlayManager.StopAutoPlay();
+                if (autoPlayManager.isAutoPlaying)
+                {
+                    isAutoActive = true;
+                    autoPlayManager.StopAutoPlay();
+                }
 
                 fadeAnimationManager.PlayFadeAnimation(story.fadeanimation, () =>
                 {
@@ -108,7 +120,7 @@ public class StorySystem : MonoBehaviour
         else
         {
             //終了処理
-            SceneManager.LoadScene("FinishScene2");
+            SceneManager.LoadScene("FinishScene");
 
             Debug.LogError("ストーリーデータが見つかりません: " + storyIndex);
         }
@@ -138,8 +150,9 @@ public class StorySystem : MonoBehaviour
         ChoiceManager choiceManager = FindObjectOfType<ChoiceManager>();
         if (story.selectid > 0 && choiceManager != null)
         {
-            // フェード開始時にオートモードを停止
+
             autoPlayManager.StopAutoPlay();
+
             // 過去の選択肢をクリア
             choiceManager.ClearChoicesUI();
 

@@ -8,4 +8,5 @@ public class SaveData
     public Dictionary<string, int> affectionPoints; // 好感度データ
     public string screenshotPath; // スクリーンショットのパス
     public string saveTimestamp; // セーブ日時 (ISO8601形式)
+    public List<string> loglist; //ログ
 }

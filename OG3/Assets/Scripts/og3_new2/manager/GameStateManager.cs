@@ -8,6 +8,8 @@ public class GameStateManager
     public int CurrentStoryID { get; set; } = 1; // 初期ストーリーID 1スタート
     public Dictionary<string, int> AffectionPoints { get; private set; } = new Dictionary<string, int>();
 
+    public List<string> loglist { get; set; } = new List<string>();
+
     // 各月の最終ストーリー番号を定義
     private Dictionary<string, int> storyEndByMonth = new Dictionary<string, int>
     {
@@ -32,7 +34,7 @@ public class GameStateManager
         }
         return "不明"; // 該当する月がない場合
     }
-
+    
     public GameStateManager()
     {
         // キャラクターごとの好感度を初期化
@@ -43,12 +45,14 @@ public class GameStateManager
 
     public void SaveState(SaveManager saveManager, int slot)
     {
+        Debug.Log("Saving loglist count: " + loglist.Count);
         SaveData saveData = new SaveData
         {
             heroineName = heroineName,
             currentStoryIndex = CurrentStoryID,
             affectionPoints = AffectionPoints,
-            screenshotPath = GameManager.instance.screenshotpath
+            screenshotPath = GameManager.instance.screenshotpath,
+            loglist = loglist
         };
         saveManager.SaveGame(slot, saveData);
     }

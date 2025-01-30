@@ -28,15 +28,13 @@ public class GameManager : MonoBehaviour
 
     public string previousSceneName; // 一つ前のシーン名を記録
 
-
-
+    public GameStateManager gameStateManager; // ゲームの状態を管理
 
 
     //いらない
     public int storyindex;
     public int storynum = 0;
     public string heroinename = "";
-    public GameStateManager gameStateManager; // ゲームの状態を管理
     public List<string> logtext = new List<string>();
     //遷移前のシーンがどこか(0:スタート,1:メイン,2:セーブ)
     public int beforescene;

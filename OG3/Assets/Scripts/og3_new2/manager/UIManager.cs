@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
     public delegate void MonthImageHiddenHandler();
     public event MonthImageHiddenHandler OnMonthImageHidden;
 
-    GameStateManager gameStateManager = new GameStateManager();
+    //GameStateManager gameStateManager = new GameStateManager();
 
 
     public bool IsTextFullyDisplayed => !isTextDisplaying; // テキスト表示中かどうかを確認
@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
     public void UpdateUI(StoryData story)
     {
         // 名前とテキストボックスを更新
-        string displayedName = story.name == "えみ" ? GameManager.instance.gameStateManager.heroineName :story.name;
+        string displayedName = story.name.Contains("えみ") ? story.name.Replace("えみ", GameManager.instance.gameStateManager.heroineName) : story.name;
         displayedName = story.name == "clear" ? "" : displayedName;
         nameText.text = displayedName;
         UpdateTextBoxImage(story.name);
@@ -53,7 +53,7 @@ public class UIManager : MonoBehaviour
             : story.mainstory;
 
 
-        monthText.text = gameStateManager.GetMonth(story.number);
+        monthText.text = GameManager.instance.gameStateManager.GetMonth(story.number);
 
         // 背景とキャラクター画像を更新
         backgroundImage.sprite = Resources.Load<Sprite>("Sprites/Backgrounds/" + story.backimage);
@@ -109,13 +109,13 @@ public class UIManager : MonoBehaviour
 
     void AddToLog(string name, string text)
     {
-        logEntries.Add($"<b>{name}:</b> {text}");
+        GameManager.instance.gameStateManager.loglist.Add($"<b>{name}:</b> {text}");
         UpdateLogPanel();
     }
 
     void UpdateLogPanel()
     {
-        logContent.text = string.Join("\n\n", logEntries);
+        logContent.text = string.Join("\n\n", GameManager.instance.gameStateManager.loglist);
     }
 
     public void ToggleLogPanel()

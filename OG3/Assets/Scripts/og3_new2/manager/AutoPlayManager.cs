@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class AutoPlayManager : MonoBehaviour
 {
-    private bool isAutoPlaying = false; // オート再生中かどうか
+    public bool isAutoPlaying = false; // オート再生中かどうか
     private Coroutine autoPlayCoroutine;
     private StorySystem storySystem;
     [SerializeField] private Button autoPlayButton;
