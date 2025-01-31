@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -109,16 +110,26 @@ public class UIManager : MonoBehaviour
 
     void AddToLog(string name, string text)
     {
-        if(name == "")
+        string newEntry = (name == "") ? $"<b>{name}</b> {text}" : $"<b>{name}:</b> {text}";
+
+        // loglistの最新の文章を取得（空の場合はチェックしない）
+        if (GameManager.instance.gameStateManager.loglist.Count > 0)
         {
-            GameManager.instance.gameStateManager.loglist.Add($"<b>{name}</b> {text}");
-        } else
-        {
-            GameManager.instance.gameStateManager.loglist.Add($"<b>{name}:</b> {text}");
+            string lastEntry = GameManager.instance.gameStateManager.loglist.Last();
+            if (lastEntry == newEntry)
+            {
+                UpdateLogPanel();
+                return; // 同じ内容なら追加しない
+            }
         }
-        
+
+        // loglist に追加
+        GameManager.instance.gameStateManager.loglist.Add(newEntry);
+
+        // ログパネルを更新
         UpdateLogPanel();
     }
+
 
     void UpdateLogPanel()
     {

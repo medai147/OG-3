@@ -59,7 +59,7 @@ public class LoadSlotUI : MonoBehaviour
                 }
 
                 // 名前、ストーリー番号、日時を表示
-                slotText.text = $"{saveData.heroineName}\nストーリー番号: {saveData.currentStoryIndex}\nセーブ日時: {saveData.saveTimestamp}";
+                slotText.text = $"{saveData.heroineName}\nセーブ日時: {saveData.saveTimestamp}";
 
                 // ストーリー番号からメインテキストを取得して表示
                 StoryData storyData = storyManager.GetStory(saveData.currentStoryIndex);

@@ -1826,7 +1826,7 @@ PrefabInstance:
     - target: {fileID: 8055487043062204607, guid: cd92517d941224a4189436a565ffd394,
         type: 3}
       propertyPath: getimage.Array.size
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd92517d941224a4189436a565ffd394, type: 3}
