@@ -8,15 +8,18 @@ public class StoryManager
     public List<StoryData> stories = new List<StoryData>();
 
     // CSVデータの読み込み
-    public void LoadStories(string csvPath)
+    public void LoadStories(string csvFileName)
     {
-        if (!File.Exists(csvPath))
+        TextAsset csvData = Resources.Load<TextAsset>(csvFileName);
+
+        if (csvData == null)
         {
-            Debug.LogError("指定されたCSVファイルが見つかりません: " + csvPath);
+            Debug.LogError("指定されたCSVファイルが見つかりません: " + csvFileName);
             return;
         }
 
-        string[] lines = File.ReadAllLines(csvPath);
+        string[] lines = csvData.text.Split('\n');
+
 
         for (int i = 1; i < lines.Length; i++) // ヘッダー行をスキップ
         {

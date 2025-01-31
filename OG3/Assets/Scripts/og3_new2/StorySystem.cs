@@ -24,7 +24,7 @@ public class StorySystem : MonoBehaviour
 
         // StoryManagerの初期化
         storyManager = new StoryManager();
-        string storyCsvPath = Application.dataPath + "/StreamingAssets/StoryCsv.csv";
+        string storyCsvPath =  "StoryCsv";
         storyManager.LoadStories(storyCsvPath);
 
         // ChoiceManagerの初期化
@@ -32,7 +32,7 @@ public class StorySystem : MonoBehaviour
         if (choiceManager != null)
         {
             // 選択肢データのCSVパスを指定
-            string choiceCsvPath = Application.dataPath + "/StreamingAssets/SelectCsv.csv";
+            string choiceCsvPath = "SelectCsv";
             choiceManager.LoadChoices(choiceCsvPath);
         }
         else

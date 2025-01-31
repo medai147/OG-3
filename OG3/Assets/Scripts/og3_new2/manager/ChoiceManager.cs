@@ -8,37 +8,47 @@ public class ChoiceManager : MonoBehaviour
 {
     public List<ChoiceData> choices = new List<ChoiceData>();
 
-    [SerializeField] private GameObject choiceButtonPrefab; // 選択肢ボタンのプレハブ
-    [SerializeField] private Transform choiceContainer; // 選択肢ボタンを配置するコンテナ
+    [SerializeField] private GameObject choiceButtonPrefab;
+    [SerializeField] private Transform choiceContainer;
     [SerializeField] private GameObject backImage;
 
     private ChoiceData currentChoice;
 
-    // CSVデータの読み込み
-    public void LoadChoices(string csvPath)
+    public void LoadChoices(string csvFileName)
     {
-        if (!File.Exists(csvPath))
+        TextAsset csvData = Resources.Load<TextAsset>(csvFileName);
+
+        if (csvData == null)
         {
-            Debug.LogError("選択肢CSVファイルが見つかりません: " + csvPath);
+            Debug.LogError("指定されたCSVファイルが見つかりません: " + csvFileName);
             return;
         }
 
-        string[] lines = File.ReadAllLines(csvPath);
+        string[] lines = csvData.text.Split('\n');
 
         for (int i = 1; i < lines.Length; i++) // ヘッダー行をスキップ
         {
-            string[] data = lines[i].Split(',');
+            string line = lines[i].Trim();
+            if (string.IsNullOrEmpty(line)) continue;
+
+            string[] data = line.Split(',');
+
+            if (data.Length < 7) // カラムが足りているか確認
+            {
+                Debug.LogError($"データ列が不足しています (行 {i + 1}): {line}");
+                continue;
+            }
 
             try
             {
                 ChoiceData choice = new ChoiceData
                 {
-                    SelectID = int.Parse(data[0]),
+                    SelectID = TryParseInt(data[0], i + 1, "SelectID"),
                     Text = data[1],
-                    NextSceneID = int.Parse(data[2]),
-                    EndRange = int.Parse(data[3]), // CSVから終了範囲を取得
+                    NextSceneID = TryParseInt(data[2], i + 1, "NextSceneID"),
+                    EndRange = TryParseInt(data[3], i + 1, "EndRange"),
                     TargetCharacter = data[4],
-                    AffectionChange = int.Parse(data[5]),
+                    AffectionChange = TryParseInt(data[5], i + 1, "AffectionChange"),
                     Condition = string.IsNullOrEmpty(data[6]) ? null : data[6]
                 };
 
@@ -46,13 +56,30 @@ public class ChoiceManager : MonoBehaviour
             }
             catch (System.Exception ex)
             {
-                Debug.LogError($"選択肢データの解析に失敗しました (行 {i + 1}): {ex.Message}");
+                Debug.LogError($"選択肢データの解析に失敗しました (行 {i + 1}): {line} - {ex.Message}");
             }
+        }
+
+        Debug.Log($"選択肢データを読み込みました: {choices.Count}件");
+    }
+
+    private int TryParseInt(string value, int lineNumber, string fieldName)
+    {
+        if (int.TryParse(value, out int result))
+        {
+            return result;
+        }
+        else
+        {
+            Debug.LogError($"数値変換エラー: {fieldName} (行 {lineNumber}): \"{value}\"");
+            return 0; // デフォルト値を返す
         }
     }
 
-    // 指定したストーリーの選択肢を表示する
-    public void DisplayChoicesForStory(int storySelectID)
+
+
+// 指定したストーリーの選択肢を表示する
+public void DisplayChoicesForStory(int storySelectID)
     {
         if (storySelectID <= 0)
         {
