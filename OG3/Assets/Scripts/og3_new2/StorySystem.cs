@@ -196,7 +196,7 @@ public class StorySystem : MonoBehaviour
         }
         // 次のストーリーへ進む
         GameManager.instance.gameStateManager.CurrentStoryID++;
-        if (GameManager.instance.gameStateManager.CurrentStoryID <= storyManager.stories.Count)
+        if (GameManager.instance.gameStateManager.CurrentStoryID < storyManager.stories.Count)
         {
             DisplayStory(GameManager.instance.gameStateManager.CurrentStoryID);
         }
@@ -204,6 +204,7 @@ public class StorySystem : MonoBehaviour
         {
             Debug.Log("ストーリー終了");
             // 必要に応じてエンディング処理やシーン遷移
+            SceneManager.LoadScene("FinishScene");
         }
     }
 

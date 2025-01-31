@@ -109,7 +109,14 @@ public class UIManager : MonoBehaviour
 
     void AddToLog(string name, string text)
     {
-        GameManager.instance.gameStateManager.loglist.Add($"<b>{name}:</b> {text}");
+        if(name == "")
+        {
+            GameManager.instance.gameStateManager.loglist.Add($"<b>{name}</b> {text}");
+        } else
+        {
+            GameManager.instance.gameStateManager.loglist.Add($"<b>{name}:</b> {text}");
+        }
+        
         UpdateLogPanel();
     }
 

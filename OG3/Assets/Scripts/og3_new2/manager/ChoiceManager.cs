@@ -158,7 +158,6 @@ public class ChoiceManager : MonoBehaviour
         GameManager.instance.gameStateManager.CurrentStoryID = choice.NextSceneID;
         StorySystem storySystem = FindObjectOfType<StorySystem>();
 
-        //フェード実験のためにストーリー番号がずれたから+2している後で修正
         storySystem.DisplayStory(choice.NextSceneID);
     }
 

@@ -91,6 +91,7 @@ public class LoadSlotUI : MonoBehaviour
         // GameManagerに状態を反映
         GameManager.instance.gameStateManager.CurrentStoryID = saveData.currentStoryIndex;
         GameManager.instance.gameStateManager.heroineName = saveData.heroineName;
+        GameManager.instance.gameStateManager.loglist = saveData.loglist;
 
         Debug.Log($"スロット {slot} のデータをロードしました。");
 

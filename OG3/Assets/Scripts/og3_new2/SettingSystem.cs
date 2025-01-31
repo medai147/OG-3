@@ -9,6 +9,9 @@ public class SettingSystem : MonoBehaviour
     [SerializeField] private Button[] seVolumeButtons;
     [SerializeField] private Button[] bgmVolumeButtons;
 
+    public AudioSource seSource;
+    public AudioClip seAudioClip;
+
     private void Start()
     {
         UpdateButtonStates();
@@ -29,6 +32,7 @@ public class SettingSystem : MonoBehaviour
     public void SetSEVolume(int volume)
     {
         SettingManager.Instance.SetSEVolume(volume);
+        seSource.PlayOneShot(seAudioClip);
         UpdateButtonStates();
     }
 

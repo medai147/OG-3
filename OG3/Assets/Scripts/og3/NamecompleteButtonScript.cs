@@ -30,6 +30,7 @@ public class NamecompleteButtonScript : MonoBehaviour
         //Debug.Log(heroineName);
 
         GameManager.instance.gameStateManager.heroineName = heroineName;
+        GameManager.instance.gameStateManager.loglist.Clear();
         SceneManager.LoadScene("Mainscene_new2");
     }
 }

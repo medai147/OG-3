@@ -6803,7 +6803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.50003, y: 28.097961}
+  m_AnchoredPosition: {x: -20.5, y: 28.097961}
   m_SizeDelta: {x: -55.34198, y: -77.77319}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1312638810
@@ -8121,8 +8121,6 @@ MonoBehaviour:
   moveManager: {fileID: 895008409}
   screenAnimationManager: {fileID: 669595490}
   characterAnimationManager: {fileID: 1438341505}
-  gameStateManager:
-    heroineName: "\u306F\u308B"
 --- !u!114 &1494629271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10253,6 +10251,8 @@ MonoBehaviour:
   - {fileID: 278493645}
   - {fileID: 375268894}
   - {fileID: 1293513432}
+  seSource: {fileID: 1488672273}
+  seAudioClip: {fileID: 8300000, guid: f816e3c38c47bea49b87a95c194939f8, type: 3}
 --- !u!1 &2029998038
 GameObject:
   m_ObjectHideFlags: 0
@@ -10659,6 +10659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef2c62c9f06645488d1cb0de6288bed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAutoPlaying: 0
   autoPlayButton: {fileID: 1398442712}
   nextButton: {fileID: 470158371}
   autoModeText: {fileID: 1667835404}

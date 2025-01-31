@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameStateManager
 {
     public string heroineName = "はる";
-    public int CurrentStoryID { get; set; } = 260; // 初期ストーリーID 1スタート
+    public int CurrentStoryID { get; set; } = 275; // 初期ストーリーID 1スタート
     public Dictionary<string, int> AffectionPoints { get; private set; } = new Dictionary<string, int>();
 
     public List<string> loglist { get; set; } = new List<string>();
@@ -17,8 +17,8 @@ public class GameStateManager
         { "5月", 140 },
         { "6月", 190 }, 
         { "7月", 259 }, 
-        { "8月", 339 }, 
-        { "9月", 401 },
+        { "8月", 333 }, 
+        { "9月", 396 },
         // 必要に応じて追加
     };
 
