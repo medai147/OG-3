@@ -2482,6 +2482,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2a9650a32e476804f944e344caecd55d, type: 3}
   - {fileID: 21300000, guid: 2ddd24015e2cd4843bc372eb33f41e02, type: 3}
   - {fileID: 21300000, guid: b2ecbc8f1bb329a4fb1656576cfab75a, type: 3}
+  - {fileID: 21300000, guid: e80f13d4fbd908748aea38e8d5897f02, type: 3}
   fullimage: {fileID: 951151418}
   backbutton: {fileID: 347001862}
   nextbutton: {fileID: 146426711}
