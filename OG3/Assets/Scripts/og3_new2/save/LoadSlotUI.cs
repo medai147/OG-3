@@ -23,8 +23,7 @@ public class LoadSlotUI : MonoBehaviour
 
         // StoryManagerを初期化
         storyManager = new StoryManager();
-        string csvPath = Application.dataPath + "/StreamingAssets/StoryCsv.csv";
-        storyManager.LoadStories(csvPath);
+        storyManager.LoadStories("StoryCsv");
 
         // 各スロットのデータを表示
         DisplayAllSlots();

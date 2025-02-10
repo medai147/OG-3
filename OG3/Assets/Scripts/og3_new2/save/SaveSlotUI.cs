@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class SaveSlotUI : MonoBehaviour
 {
@@ -17,7 +19,6 @@ public class SaveSlotUI : MonoBehaviour
 
     void Start()
     {
-        // SaveManagerがシーン内に存在するか確認
         saveManager = FindObjectOfType<SaveManager>();
         if (saveManager == null)
         {
@@ -25,18 +26,15 @@ public class SaveSlotUI : MonoBehaviour
             return;
         }
 
-        // StoryManagerがシーン内に存在するか確認
         storyManager = new StoryManager();
-        string csvPath = Application.dataPath + "/StreamingAssets/StoryCsv.csv";
-        storyManager.LoadStories(csvPath);
 
-        // 各スロットを表示
+        // Resources フォルダから StoryCsv.csv を読み込む
+        storyManager.LoadStories("StoryCsv");
         DisplayAllSlots();
 
-        // ポップアップの初期化
         if (saveConfirmationPopup != null)
         {
-            saveConfirmationPopup.SetActive(false); // 最初は非表示
+            saveConfirmationPopup.SetActive(false);
         }
     }
 
@@ -44,7 +42,7 @@ public class SaveSlotUI : MonoBehaviour
     {
         for (int i = 0; i < saveSlots.Count; i++)
         {
-            int slot = i + 1; // スロット番号
+            int slot = i + 1;
             SaveData saveData = saveManager.LoadGame(slot);
 
             GameObject slotObject = saveSlots[i];
@@ -57,17 +55,7 @@ public class SaveSlotUI : MonoBehaviour
                 StoryData storyData = storyManager.GetStory(saveData.currentStoryIndex);
                 slotText.text += storyData != null ? $"\n{storyData.mainstory}" : "\nストーリーデータが見つかりません";
 
-                if (File.Exists(saveData.screenshotPath))
-                {
-                    byte[] fileData = File.ReadAllBytes(saveData.screenshotPath);
-                    Texture2D texture = new Texture2D(2, 2);
-                    texture.LoadImage(fileData);
-                    slotImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-                }
-                else
-                {
-                    slotImage.sprite = null;
-                }
+                LoadScreenshot(saveData.screenshotPath, slotImage);
             }
             else
             {
@@ -84,13 +72,26 @@ public class SaveSlotUI : MonoBehaviour
         }
     }
 
+    void LoadScreenshot(string filePath, Image targetImage)
+    {
+        if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
+        {
+            targetImage.sprite = null;
+            return;
+        }
+
+        byte[] fileData = File.ReadAllBytes(filePath);
+        Texture2D texture = new Texture2D(2, 2);
+        texture.LoadImage(fileData);
+        targetImage.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
+    }
+
     void ShowSaveConfirmation(int slot)
     {
-        selectedSlot = slot; // 選択されたスロットを記録
+        selectedSlot = slot;
         confirmationText.text = $"スロット {slot} にセーブしますか？";
-        saveConfirmationPopup.SetActive(true); // ポップアップを表示
+        saveConfirmationPopup.SetActive(true);
 
-        // 「はい」ボタンと「いいえ」ボタンのイベントを設定
         confirmButton.onClick.RemoveAllListeners();
         confirmButton.onClick.AddListener(ConfirmSave);
 
@@ -106,7 +107,6 @@ public class SaveSlotUI : MonoBehaviour
             return;
         }
 
-        // ゲームをセーブ
         if (GameManager.instance == null)
         {
             Debug.LogError("GameManager のインスタンスが見つかりません。");
@@ -116,10 +116,7 @@ public class SaveSlotUI : MonoBehaviour
         GameManager.instance.gameStateManager.SaveState(saveManager, selectedSlot);
         Debug.Log($"スロット {selectedSlot} にゲームをセーブしました。");
 
-        // ポップアップを閉じる
         saveConfirmationPopup.SetActive(false);
-
-        // スロット情報を更新
         DisplayAllSlots();
     }
 }
